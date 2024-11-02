@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             gbxGameBoard = new GroupBox();
-                        light_33 = new Light();
+            light_33 = new Light();
             light_32 = new Light();
             light_31 = new Light();
             light_30 = new Light();
@@ -101,7 +101,7 @@
             light_33.TabIndex = 15;
             light_33.Tag = "ButtonOn3";
             light_33.UseVisualStyleBackColor = true;
-            light_33.Click += Light_Click;
+            light_33.Click += btnLight_Click;
             // 
             // light_32
             // 
@@ -115,7 +115,7 @@
             light_32.TabIndex = 14;
             light_32.Tag = "ButtonOn3";
             light_32.UseVisualStyleBackColor = true;
-            light_32.Click += Light_Click;
+            light_32.Click += btnLight_Click;
             // 
             // light_31
             // 
@@ -129,7 +129,7 @@
             light_31.TabIndex = 13;
             light_31.Tag = "ButtonOn3";
             light_31.UseVisualStyleBackColor = true;
-            light_31.Click += Light_Click;
+            light_31.Click += btnLight_Click;
             // 
             // light_30
             // 
@@ -143,7 +143,7 @@
             light_30.TabIndex = 12;
             light_30.Tag = "ButtonOn3";
             light_30.UseVisualStyleBackColor = true;
-            light_30.Click += Light_Click;
+            light_30.Click += btnLight_Click;
             // 
             // light_23
             // 
@@ -157,7 +157,7 @@
             light_23.TabIndex = 11;
             light_23.Tag = "ButtonOn3";
             light_23.UseVisualStyleBackColor = true;
-            light_23.Click += Light_Click;
+            light_23.Click += btnLight_Click;
             // 
             // light_22
             // 
@@ -171,7 +171,7 @@
             light_22.TabIndex = 10;
             light_22.Tag = "ButtonOn3";
             light_22.UseVisualStyleBackColor = true;
-            light_22.Click += Light_Click;
+            light_22.Click += btnLight_Click;
             // 
             // light_21
             // 
@@ -185,7 +185,7 @@
             light_21.TabIndex = 9;
             light_21.Tag = "ButtonOn3";
             light_21.UseVisualStyleBackColor = true;
-            light_21.Click += Light_Click;
+            light_21.Click += btnLight_Click;
             // 
             // light_20
             // 
@@ -199,7 +199,7 @@
             light_20.TabIndex = 8;
             light_20.Tag = "ButtonOn3";
             light_20.UseVisualStyleBackColor = true;
-            light_20.Click += Light_Click;
+            light_20.Click += btnLight_Click;
             // 
             // light_13
             // 
@@ -213,7 +213,7 @@
             light_13.TabIndex = 7;
             light_13.Tag = "ButtonOn3";
             light_13.UseVisualStyleBackColor = true;
-            light_13.Click += Light_Click;
+            light_13.Click += btnLight_Click;
             // 
             // light_12
             // 
@@ -227,7 +227,7 @@
             light_12.TabIndex = 6;
             light_12.Tag = "ButtonOn3";
             light_12.UseVisualStyleBackColor = true;
-            light_12.Click += Light_Click;
+            light_12.Click += btnLight_Click;
             // 
             // light_11
             // 
@@ -241,7 +241,7 @@
             light_11.TabIndex = 5;
             light_11.Tag = "ButtonOn3";
             light_11.UseVisualStyleBackColor = true;
-            light_11.Click += Light_Click;
+            light_11.Click += btnLight_Click;
             // 
             // light_10
             // 
@@ -255,7 +255,7 @@
             light_10.TabIndex = 4;
             light_10.Tag = "ButtonOn3";
             light_10.UseVisualStyleBackColor = true;
-            light_10.Click += Light_Click;
+            light_10.Click += btnLight_Click;
             // 
             // light_03
             // 
@@ -269,7 +269,7 @@
             light_03.TabIndex = 3;
             light_03.Tag = "ButtonOn3";
             light_03.UseVisualStyleBackColor = true;
-            light_03.Click += Light_Click;
+            light_03.Click += btnLight_Click;
             // 
             // light_02
             // 
@@ -283,7 +283,7 @@
             light_02.TabIndex = 2;
             light_02.Tag = "ButtonOn3";
             light_02.UseVisualStyleBackColor = true;
-            light_02.Click += Light_Click;
+            light_02.Click += btnLight_Click;
             // 
             // light_01
             // 
@@ -297,7 +297,7 @@
             light_01.TabIndex = 1;
             light_01.Tag = "ButtonOn3";
             light_01.UseVisualStyleBackColor = true;
-            light_01.Click += Light_Click;
+            light_01.Click += btnLight_Click;
             // 
             // light_00
             // 
@@ -311,7 +311,7 @@
             light_00.TabIndex = 0;
             light_00.Tag = "ButtonOn3";
             light_00.UseVisualStyleBackColor = true;
-            light_00.Click += Light_Click;
+            light_00.Click += btnLight_Click;
             // 
             // lblLog
             // 

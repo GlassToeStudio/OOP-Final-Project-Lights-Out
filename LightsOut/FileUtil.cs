@@ -4,9 +4,17 @@ namespace LightsOut
 {
     internal class FileUtil
     {
-        internal static string GetFileLocation(string jsonFile)
+        internal static readonly string RESOURCES = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Resources\\");
+        internal static readonly string LEVELS = Path.Combine(RESOURCES, "Levels\\");
+
+        internal static string GetFile(string jsonFile)
         {
-            return Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Resources\\") + jsonFile;
+            return Path.Combine(RESOURCES, jsonFile);
+        }
+
+        internal static string[] GetFiles(string dir)
+        {
+            return Directory.GetFiles(dir);
         }
     }
 }

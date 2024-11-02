@@ -23,20 +23,15 @@ namespace LightsOut
 
             SetInitialState();
             ConnectGemNeighbors();
-            GenerateRandomLevel();
-
         }
 
         private void SetInitialState()
         {
-            moves = 0;
-            lblSize.Text = $"{levelData.Size} x {levelData.Size}";
-            lblGoal.Text = $"{levelData.MinMoves}";
-            lblMoves.Text = moves.ToString();
+            UpdateUI();
 
             for (var i = 0; i < levelData.Board.Length; i++)
             {
-                lights[i].SetButtons(OffButton, OnButton);
+                lights[i].SetButtons(OnButton, OffButton);
                 lights[i].index = i;
 
                 if (levelData.Board[i] == 0)
@@ -84,11 +79,11 @@ namespace LightsOut
             }
         }
 
-        private void Light_Click(object sender, EventArgs e)
+        private void btnLight_Click(object sender, EventArgs e)
         {
             Light? light = sender as Light;
             light.ClickLight();
-            UpdateLevelData();
+            UpdateLevelDataBoardState();
             UpdateMoves();
             CheckWin();
         }
@@ -110,7 +105,7 @@ namespace LightsOut
                 if (solution[i] == 1)
                 {
                     lights[i].ClickLight();
-                    UpdateLevelData();
+                    UpdateLevelDataBoardState();
                     UpdateMoves();
                     CheckWin();
                     return;
@@ -126,7 +121,7 @@ namespace LightsOut
                 if (solution[i] == 1)
                 {
                     lights[i].ClickLight();
-                    UpdateLevelData();
+                    UpdateLevelDataBoardState();
                     UpdateMoves();
                     await Task.Delay(500);
                 }
@@ -134,7 +129,7 @@ namespace LightsOut
             CheckWin();
         }
 
-        private void UpdateLevelData()
+        private void UpdateLevelDataBoardState()
         {
             foreach (var light in lights)
             {
@@ -190,14 +185,13 @@ namespace LightsOut
             List<int> used = new List<int>();
             levelData = new LevelData(level + 1, size, 0);
 
-            SetInitialState();
-            ConnectGemNeighbors();
+            moves = 0;
 
             numMoves = rnd.Next(4, 12); // Can adjust difficulty
             for (int i = 0; i < numMoves; i++)
-            { 
+            {
                 int randLight = rnd.Next(0, board.Length);
-                while (used.Contains(randLight) )
+                while (used.Contains(randLight))
                 {
                     randLight = rnd.Next(0, board.Length);
                 }
@@ -205,21 +199,27 @@ namespace LightsOut
 
                 lights[randLight].ClickLight();
 
-                UpdateLevelData();
                 await Task.Delay(0);
 
                 lblLog.Text = DebugBoardState();
             }
 
+            UpdateLevelDataBoardState();
             var solution = Solver.GetSolutionMatrix(levelData);
-            levelData.MinMoves = Array.FindAll(solution, x => x == 1).Length;
-            lblSize.Text = $"{levelData.Size} x {levelData.Size}";
-            lblGoal.Text = $"{levelData.MinMoves}";
+            levelData.MinMoves = solution.Sum();
+            UpdateUI();
 
             foreach (var light in lights)
             {
                 light.Enabled = true;
             }
+        }
+
+        private void UpdateUI()
+        {
+            lblSize.Text = $"{levelData.Size} x {levelData.Size}";
+            lblGoal.Text = $"{levelData.MinMoves}";
+            lblMoves.Text = moves.ToString();
         }
 
         private void Generate_Click(object sender, EventArgs e)
