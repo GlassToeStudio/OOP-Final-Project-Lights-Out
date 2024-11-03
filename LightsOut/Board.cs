@@ -8,22 +8,22 @@ namespace LightsOut
         private readonly Light[] lights;
         private LevelData levelData;
         private int moves = 0;
-        int level = 1;
+        private int level = 1;
+        private string levelName = "Levels_1.json";
 
         public frmLightsOut()
         {
             InitializeComponent();
-            levelData = new LevelData(0, 4, 0);
+            LoadLevelFilesIntoComboBox();
 
             lights = [light_00, light_01, light_02, light_03,
                       light_10, light_11, light_12, light_13,
                       light_20, light_21, light_22, light_23,
                       light_30, light_31, light_32, light_33];
 
-            UpdateUI();
-            SetInitialState();
             ConnectLightNeighbors();
             LoadLevelFromFile();
+            UpdateUI();
         }
 
         private void SetInitialState()
@@ -113,18 +113,25 @@ namespace LightsOut
         private void LoadLevelFromFile()
         {
             moves = 0;
-            levelData = new LevelData().LoadLevelDataFromJson("Levels_1.json");
+            levelName = cbxLevelSelect.Text;
+            levelData = new LevelData().LoadLevelDataFromJson(levelName);
             level = levelData.Level;
+
             SetInitialState();
             UpdateLevelDataBoardState();
             UpdateUI();
+
+            pictureBox1.Visible = false;
+            foreach (var light in lights)
+            {
+                light.Enabled = true;
+            }
         }
     
         private void GenerateRandomLevel()
         {
-            level += 1;
             moves = 0;
-
+            level += 1;
             int size = 4;
             Random rnd = new Random();
             List<int> used = new List<int>();
@@ -150,7 +157,7 @@ namespace LightsOut
             levelData.Size = size;
             levelData.MinMoves = Solver.GetSolutionMatrix(levelData).Sum();
             UpdateUI();
-
+            pictureBox1.Visible = false;
             foreach (var light in lights)
             {
                 light.Enabled = true;
@@ -190,6 +197,7 @@ namespace LightsOut
                 }
             }
             lblLog.Text = "You Win!\nPlay Again?";
+            pictureBox1.Visible = true;
 
             foreach (var light in lights)
             {
@@ -224,9 +232,19 @@ namespace LightsOut
 
         private void btnLoad_Click(object sender, EventArgs e)
         {
-            LoadLevelFromFile();
+            LoadLevelFromFile();       
         }
-    
+
+        private void LoadLevelFilesIntoComboBox()
+        {
+            string[] files = FileUtil.GetFiles();
+            foreach (string file in files)
+            {
+                cbxLevelSelect.Items.Add(Path.GetFileName(file));
+            }
+            cbxLevelSelect.SelectedIndex = 0;
+        }
+
         private string DebugBoardState()
         {
             String output = "";

@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             gbxGameBoard = new GroupBox();
+            pictureBox1 = new PictureBox();
             light_33 = new Light();
             light_32 = new Light();
             light_31 = new Light();
@@ -57,7 +58,9 @@
             button1 = new Button();
             button2 = new Button();
             btnLoad = new Button();
+            cbxLevelSelect = new ComboBox();
             gbxGameBoard.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             gbxStats.SuspendLayout();
             SuspendLayout();
             // 
@@ -314,6 +317,18 @@
             light_00.UseVisualStyleBackColor = true;
             light_00.Click += btnLight_Click;
             // 
+            // pictureBox1
+            // 
+            pictureBox1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            pictureBox1.BackgroundImage = Properties.Resources.WinPanel;
+            pictureBox1.BackgroundImageLayout = ImageLayout.Stretch;
+            pictureBox1.Location = new Point(21, 15);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(438, 136);
+            pictureBox1.TabIndex = 9;
+            pictureBox1.TabStop = false;
+            pictureBox1.Visible = false;
+            // 
             // lblLog
             // 
             lblLog.AutoSize = true;
@@ -331,7 +346,7 @@
             btnSolve.BackgroundImageLayout = ImageLayout.Stretch;
             btnSolve.FlatStyle = FlatStyle.Flat;
             btnSolve.ForeColor = SystemColors.ActiveCaption;
-            btnSolve.Location = new Point(404, 317);
+            btnSolve.Location = new Point(404, 298);
             btnSolve.Name = "btnSolve";
             btnSolve.Size = new Size(70, 23);
             btnSolve.TabIndex = 2;
@@ -443,7 +458,7 @@
             button1.BackgroundImageLayout = ImageLayout.Stretch;
             button1.FlatStyle = FlatStyle.Flat;
             button1.ForeColor = SystemColors.ActiveCaption;
-            button1.Location = new Point(328, 317);
+            button1.Location = new Point(328, 298);
             button1.Name = "button1";
             button1.Size = new Size(70, 23);
             button1.TabIndex = 4;
@@ -457,7 +472,7 @@
             button2.BackgroundImageLayout = ImageLayout.Stretch;
             button2.FlatStyle = FlatStyle.Flat;
             button2.ForeColor = SystemColors.ActiveCaption;
-            button2.Location = new Point(404, 362);
+            button2.Location = new Point(404, 343);
             button2.Name = "button2";
             button2.Size = new Size(70, 23);
             button2.TabIndex = 6;
@@ -471,7 +486,7 @@
             btnLoad.BackgroundImageLayout = ImageLayout.Stretch;
             btnLoad.FlatStyle = FlatStyle.Flat;
             btnLoad.ForeColor = SystemColors.ActiveCaption;
-            btnLoad.Location = new Point(328, 362);
+            btnLoad.Location = new Point(328, 343);
             btnLoad.Name = "btnLoad";
             btnLoad.Size = new Size(70, 23);
             btnLoad.TabIndex = 7;
@@ -479,6 +494,17 @@
             btnLoad.UseMnemonic = false;
             btnLoad.UseVisualStyleBackColor = false;
             btnLoad.Click += btnLoad_Click;
+            // 
+            // cbxLevelSelect
+            // 
+            cbxLevelSelect.BackColor = SystemColors.InactiveCaptionText;
+            cbxLevelSelect.FlatStyle = FlatStyle.Flat;
+            cbxLevelSelect.ForeColor = SystemColors.InactiveCaption;
+            cbxLevelSelect.FormattingEnabled = true;
+            cbxLevelSelect.Location = new Point(338, 376);
+            cbxLevelSelect.Name = "cbxLevelSelect";
+            cbxLevelSelect.Size = new Size(121, 23);
+            cbxLevelSelect.TabIndex = 8;
             // 
             // frmLightsOut
             // 
@@ -488,18 +514,21 @@
             BackgroundImage = Properties.Resources.Board;
             BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(484, 411);
+            Controls.Add(pictureBox1);
+            Controls.Add(cbxLevelSelect);
             Controls.Add(btnLoad);
             Controls.Add(button1);
             Controls.Add(button2);
-            Controls.Add(gbxStats);
             Controls.Add(lblLog);
             Controls.Add(btnSolve);
             Controls.Add(gbxGameBoard);
+            Controls.Add(gbxStats);
             DoubleBuffered = true;
             Name = "frmLightsOut";
             SizeGripStyle = SizeGripStyle.Hide;
             Text = "Lights Out";
             gbxGameBoard.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             gbxStats.ResumeLayout(false);
             gbxStats.PerformLayout();
             ResumeLayout(false);
@@ -536,5 +565,7 @@
         private Button button1;
         private Button button2;
         private Button btnLoad;
+        private ComboBox cbxLevelSelect;
+        private PictureBox pictureBox1;
     }
 }

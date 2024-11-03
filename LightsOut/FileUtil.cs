@@ -12,9 +12,9 @@ namespace LightsOut
             return Path.Combine(LEVELS, fileName);
         }
 
-        internal static string[] GetFiles(string dir)
+        internal static string[] GetFiles()
         {
-            return Directory.GetFiles(dir);
+            return Directory.GetFiles(LEVELS);
         }
     }
 }
