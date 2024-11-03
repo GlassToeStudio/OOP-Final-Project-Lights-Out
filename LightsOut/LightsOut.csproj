@@ -12,15 +12,13 @@
     <None Remove="Resources\Board.jpg" />
     <None Remove="Resources\Board.png" />
     <None Remove="Resources\ButtonOff.png" />
-    <None Remove="Resources\ButtonOff3.png" />
     <None Remove="Resources\ButtonOn.png" />
-    <None Remove="Resources\ButtonOn3.png" />
     <None Remove="Resources\Levels\Levels_2.json" />
     <None Remove="Resources\Levels\Levels_3.json" />
     <None Remove="Resources\Levels\Levels_4.json" />
     <None Remove="Resources\Levels\Levels_5.json" />
     <None Remove="Resources\Levels_22.json" />
-    <None Remove="Resources\title.png" />
+    <None Remove="Resources\WinPanel.png" />
   </ItemGroup>
 
   <ItemGroup>
@@ -31,10 +29,10 @@
     <EmbeddedResource Include="Resources\Board.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </EmbeddedResource>
-    <EmbeddedResource Include="Resources\ButtonOff3.png">
+    <EmbeddedResource Include="Resources\ButtonOff.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </EmbeddedResource>
-    <EmbeddedResource Include="Resources\ButtonOn3.png">
+    <EmbeddedResource Include="Resources\ButtonOn.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </EmbeddedResource>
     <EmbeddedResource Include="Resources\Levels\Levels_1.json">
@@ -52,7 +50,7 @@
     <EmbeddedResource Include="Resources\Levels\Levels_5.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </EmbeddedResource>
-    <EmbeddedResource Include="Resources\title.png">
+    <EmbeddedResource Include="Resources\WinPanel.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </EmbeddedResource>
   </ItemGroup>

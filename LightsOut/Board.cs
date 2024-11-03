@@ -2,10 +2,10 @@ namespace LightsOut
 {
     public partial class frmLightsOut : Form
     {
-        private readonly Image? OnButton = Properties.Resources.ButtonOn3;
-        private readonly Image? OffButton = Properties.Resources.ButtonOff3;
+        private readonly Image? OnButton = Properties.Resources.ButtonOn;
+        private readonly Image? OffButton = Properties.Resources.ButtonOff;
 
-        private readonly Light[] lights;
+        private Light[] lights = new Light[16];
         private LevelData levelData;
         private int moves = 0;
         private int level = 1;
@@ -14,25 +14,31 @@ namespace LightsOut
         public frmLightsOut()
         {
             InitializeComponent();
-            LoadLevelFilesIntoComboBox();
+            GenerateGameBoard();
 
-            lights = [light_00, light_01, light_02, light_03,
-                      light_10, light_11, light_12, light_13,
-                      light_20, light_21, light_22, light_23,
-                      light_30, light_31, light_32, light_33];
-
-            ConnectLightNeighbors();
-            LoadLevelFromFile();
-            UpdateUI();
+            LoadLevels();
+            GenerateLevelFromFile();
         }
 
-        private void SetInitialState()
+        private void LoadLevels()
         {
+            string[] files = FileUtil.GetFiles();
+            foreach (string file in files)
+            {
+                cbxLevelSelect.Items.Add(Path.GetFileName(file));
+            }
+            cbxLevelSelect.SelectedIndex = 0;
+        }
+
+        private void GenerateLevelFromFile()
+        {
+            moves = 0;
+            levelName = cbxLevelSelect.Text;
+            levelData = new LevelData().LoadLevelDataFromJson(levelName);
+            level = levelData.Level;
+
             for (var i = 0; i < levelData.Board.Length; i++)
             {
-                lights[i].SetButtons(OnButton, OffButton);
-                lights[i].index = i;
-
                 if (levelData.Board[i] == 0)
                 {
                     lights[i].TurnOff();
@@ -42,92 +48,11 @@ namespace LightsOut
                     lights[i].TurnOn();
                 }
             }
-        }
 
-        private void ConnectLightNeighbors()
-        {
-            var size = 4 * 4;
-
-            for (int pos = 0; pos < size; pos++)
-            {
-                var n1 = pos - 4;
-                var n2 = pos + 4;
-
-                var n3 = pos - 1;
-                var n4 = pos + 1;
-
-                if (n1 >= 0)
-                {
-                    lights[pos].AddNeighbor(lights[n1]);
-                }
-
-                if (n2 < size)
-                {
-                    lights[pos].AddNeighbor(lights[n2]);
-                }
-
-                if (pos % 4 != 0)
-                {
-                    lights[pos].AddNeighbor(lights[n3]);
-                }
-
-                if (n4 % 4 != 0)
-                {
-                    lights[pos].AddNeighbor(lights[n4]);
-                }
-            }
-        }
-
-        private void SolveOne()
-        {
-            var solution = Solver.GetSolutionMatrix(levelData);
-            for (int i = 0; i < lights.Length; i++)
-            {
-                if (solution[i] == 1)
-                {
-                    lights[i].ClickLight();
-                    UpdateLevelDataBoardState();
-                    UpdateMoves();
-                    CheckWin();
-                    return;
-                }
-            }
-        }
-
-        private async void SolvePuzzle()
-        {
-            var solution = Solver.GetSolutionMatrix(levelData);
-            for (int i = 0; i < lights.Length; i++)
-            {
-                if (solution[i] == 1)
-                {
-                    lights[i].ClickLight();
-                    UpdateLevelDataBoardState();
-                    UpdateMoves();
-                    await Task.Delay(500);
-                }
-            }
-            CheckWin();
-        }
-
-        private void LoadLevelFromFile()
-        {
-            moves = 0;
-            levelName = cbxLevelSelect.Text;
-            levelData = new LevelData().LoadLevelDataFromJson(levelName);
-            level = levelData.Level;
-
-            SetInitialState();
-            UpdateLevelDataBoardState();
             UpdateUI();
-
-            pictureBox1.Visible = false;
-            foreach (var light in lights)
-            {
-                light.Enabled = true;
-            }
+            EnableLights();
         }
-    
+
         private void GenerateRandomLevel()
         {
             moves = 0;
@@ -151,25 +76,13 @@ namespace LightsOut
                 lblLog.Text = DebugBoardState();
             }
 
-
-            UpdateLevelDataBoardState();
+            levelData.UpdateBoard(lights);
             levelData.Level = level;
             levelData.Size = size;
             levelData.MinMoves = Solver.GetSolutionMatrix(levelData).Sum();
-            UpdateUI();
-            pictureBox1.Visible = false;
-            foreach (var light in lights)
-            {
-                light.Enabled = true;
-            }
-        }
 
-        private void UpdateLevelDataBoardState()
-        {
-            foreach (var light in lights)
-            {
-                levelData.Board[light.index] = (int)light.State;
-            }
+            UpdateUI();
+            EnableLights();
         }
 
         private void UpdateUI()
@@ -196,20 +109,68 @@ namespace LightsOut
                     return;
                 }
             }
-            lblLog.Text = "You Win!\nPlay Again?";
-            pictureBox1.Visible = true;
 
+            DisableLights();
+        }
+
+        private void DisableLights()
+        {
+            pictureBox1.Visible = true;
             foreach (var light in lights)
             {
                 light.Enabled = false;
             }
         }
-    
+
+        private void EnableLights()
+        {
+            pictureBox1.Visible = false;
+            foreach (var light in lights)
+            {
+                light.Enabled = true;
+            }
+        }
+
+        private void SolveOne()
+        {
+            var solution = Solver.GetSolutionMatrix(levelData);
+            for (int i = 0; i < lights.Length; i++)
+            {
+                if (solution[i] == 1)
+                {
+                    lights[i].ClickLight();
+
+                    levelData.UpdateBoard(lights);
+                    UpdateMoves();
+                    CheckWin();
+                    return;
+                }
+            }
+        }
+
+        private async void SolvePuzzle()
+        {
+            var solution = Solver.GetSolutionMatrix(levelData);
+            for (int i = 0; i < lights.Length; i++)
+            {
+                if (solution[i] == 1)
+                {
+                    lights[i].ClickLight();
+
+                    levelData.UpdateBoard(lights);
+                    UpdateMoves();
+                    await Task.Delay(500);
+                }
+            }
+            CheckWin();
+        }
+
         private void btnLight_Click(object sender, EventArgs e)
         {
             Light? light = sender as Light;
-            light.ClickLight();
-            UpdateLevelDataBoardState();
+            light?.ClickLight();
+
+            levelData.UpdateBoard(lights);
             UpdateMoves();
             CheckWin();
         }
@@ -227,22 +188,11 @@ namespace LightsOut
         private void btnGenerate_Click(object sender, EventArgs e)
         {
             GenerateRandomLevel();
-            lblLog.Text = DebugBoardState();
         }
 
         private void btnLoad_Click(object sender, EventArgs e)
         {
-            LoadLevelFromFile();       
-        }
-
-        private void LoadLevelFilesIntoComboBox()
-        {
-            string[] files = FileUtil.GetFiles();
-            foreach (string file in files)
-            {
-                cbxLevelSelect.Items.Add(Path.GetFileName(file));
-            }
-            cbxLevelSelect.SelectedIndex = 0;
+            GenerateLevelFromFile();       
         }
 
         private string DebugBoardState()

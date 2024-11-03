@@ -111,13 +111,12 @@
                 }
             }
 
-            //PrintMatrix(matrix);
+            PrintMatrix(matrix);
 
             int[] solution = new int[matrix.GetLength(0)];
             for (int i = 0; i < solution.Length; i++)
             {
                 solution[i] = matrix[i, matrix.GetLength(0)];
-                //Debug.Log(solution[i] + ", ");
             }
 
             return solution;
@@ -130,17 +129,17 @@
 
         private static void PrintMatrix(int[,] matrix)
         {
-            //Debug.Log("\n");
+            Console.WriteLine("\n");
             string output = "";
             for (int i = 0; i < matrix.GetLength(0); i++)
             {
                 for (int j = 0; j < matrix.GetLength(1); j++)
                 {
-                    output += matrix[i, j] + ", ";
+                    output = $"{output}{matrix[i, j]}, ";
                 }
-                output += "\n";
+                output = $"{output}\n";
             }
-            //Debug.Log(output);
+            Console.WriteLine(output);
         }
     }
 }

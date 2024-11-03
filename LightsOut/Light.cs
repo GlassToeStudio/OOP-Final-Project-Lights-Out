@@ -3,7 +3,7 @@
     /// <summary>
     /// A subcalss of Button. Used as the main game piece in Lights Out game. 
     /// </summary>
-    internal class Light : Button
+    public class Light : Button
     {
         /// <summary>Used to indicate this <seealso cref="Light"/>'s index when stored in the <seealso cref="LevelData.Board"/>'s array.</summary>
         internal int index;

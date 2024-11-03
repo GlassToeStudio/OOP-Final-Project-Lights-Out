@@ -1,6 +1,4 @@
-﻿using Newtonsoft.Json;
-
-namespace LightsOut
+﻿namespace LightsOut
 {
     public struct LevelData
     {
@@ -30,24 +28,13 @@ namespace LightsOut
                 Board[i] = levelData.Board[i];
             }
         }
-    }
 
-    public static class LeveLdataExtensions
-    {
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="levelData"></param>
-        /// <param name="jsonFile"></param>
-        /// <returns></returns>
-        public static LevelData LoadLevelDataFromJson(this LevelData levelData, string jsonFile)
+        public void UpdateBoard(Light[] lights)
         {
-            string jsonString;
-            using (var streamReader = new StreamReader(FileUtil.GetFile(jsonFile)))
+            foreach (var light in lights)
             {
-                jsonString = streamReader.ReadToEnd();
+                Board[light.index] = (int)light.State;
             }
-            return JsonConvert.DeserializeObject<LevelData>(jsonString);
         }
     }
 }

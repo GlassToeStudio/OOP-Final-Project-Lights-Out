@@ -73,9 +73,9 @@ namespace LightsOut.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap ButtonOff3 {
+        internal static System.Drawing.Bitmap ButtonOff {
             get {
-                object obj = ResourceManager.GetObject("ButtonOff3", resourceCulture);
+                object obj = ResourceManager.GetObject("ButtonOff", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -83,19 +83,9 @@ namespace LightsOut.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap ButtonOn3 {
+        internal static System.Drawing.Bitmap ButtonOn {
             get {
-                object obj = ResourceManager.GetObject("ButtonOn3", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap title {
-            get {
-                object obj = ResourceManager.GetObject("title", resourceCulture);
+                object obj = ResourceManager.GetObject("ButtonOn", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

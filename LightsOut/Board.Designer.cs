@@ -28,8 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            gbxGameBoard = new GroupBox();
-            pictureBox1 = new PictureBox();
             light_33 = new Light();
             light_32 = new Light();
             light_31 = new Light();
@@ -46,6 +44,8 @@
             light_02 = new Light();
             light_01 = new Light();
             light_00 = new Light();
+            gbxGameBoard = new GroupBox();
+            pictureBox1 = new PictureBox();
             lblLog = new Label();
             btnSolve = new Button();
             gbxStats = new GroupBox();
@@ -95,7 +95,7 @@
             // 
             // light_33
             // 
-            light_33.BackgroundImage = Properties.Resources.ButtonOn3;
+            light_33.BackgroundImage = Properties.Resources.ButtonOn;
             light_33.BackgroundImageLayout = ImageLayout.Stretch;
             light_33.FlatAppearance.BorderSize = 0;
             light_33.FlatStyle = FlatStyle.Flat;
@@ -103,13 +103,13 @@
             light_33.Name = "light_33";
             light_33.Size = new Size(75, 75);
             light_33.TabIndex = 15;
-            light_33.Tag = "ButtonOn3";
+            light_33.Tag = "ButtonOn";
             light_33.UseVisualStyleBackColor = true;
             light_33.Click += btnLight_Click;
             // 
             // light_32
             // 
-            light_32.BackgroundImage = Properties.Resources.ButtonOn3;
+            light_32.BackgroundImage = Properties.Resources.ButtonOn;
             light_32.BackgroundImageLayout = ImageLayout.Stretch;
             light_32.FlatAppearance.BorderSize = 0;
             light_32.FlatStyle = FlatStyle.Flat;
@@ -117,13 +117,13 @@
             light_32.Name = "light_32";
             light_32.Size = new Size(75, 75);
             light_32.TabIndex = 14;
-            light_32.Tag = "ButtonOn3";
+            light_32.Tag = "ButtonOn";
             light_32.UseVisualStyleBackColor = true;
             light_32.Click += btnLight_Click;
             // 
             // light_31
             // 
-            light_31.BackgroundImage = Properties.Resources.ButtonOn3;
+            light_31.BackgroundImage = Properties.Resources.ButtonOn;
             light_31.BackgroundImageLayout = ImageLayout.Stretch;
             light_31.FlatAppearance.BorderSize = 0;
             light_31.FlatStyle = FlatStyle.Flat;
@@ -131,13 +131,13 @@
             light_31.Name = "light_31";
             light_31.Size = new Size(75, 75);
             light_31.TabIndex = 13;
-            light_31.Tag = "ButtonOn3";
+            light_31.Tag = "ButtonOn";
             light_31.UseVisualStyleBackColor = true;
             light_31.Click += btnLight_Click;
             // 
             // light_30
             // 
-            light_30.BackgroundImage = Properties.Resources.ButtonOn3;
+            light_30.BackgroundImage = Properties.Resources.ButtonOn;
             light_30.BackgroundImageLayout = ImageLayout.Stretch;
             light_30.FlatAppearance.BorderSize = 0;
             light_30.FlatStyle = FlatStyle.Flat;
@@ -145,13 +145,13 @@
             light_30.Name = "light_30";
             light_30.Size = new Size(75, 75);
             light_30.TabIndex = 12;
-            light_30.Tag = "ButtonOn3";
+            light_30.Tag = "ButtonOn";
             light_30.UseVisualStyleBackColor = true;
             light_30.Click += btnLight_Click;
             // 
             // light_23
             // 
-            light_23.BackgroundImage = Properties.Resources.ButtonOn3;
+            light_23.BackgroundImage = Properties.Resources.ButtonOn;
             light_23.BackgroundImageLayout = ImageLayout.Stretch;
             light_23.FlatAppearance.BorderSize = 0;
             light_23.FlatStyle = FlatStyle.Flat;
@@ -159,13 +159,13 @@
             light_23.Name = "light_23";
             light_23.Size = new Size(75, 75);
             light_23.TabIndex = 11;
-            light_23.Tag = "ButtonOn3";
+            light_23.Tag = "ButtonOn";
             light_23.UseVisualStyleBackColor = true;
             light_23.Click += btnLight_Click;
             // 
             // light_22
             // 
-            light_22.BackgroundImage = Properties.Resources.ButtonOn3;
+            light_22.BackgroundImage = Properties.Resources.ButtonOn;
             light_22.BackgroundImageLayout = ImageLayout.Stretch;
             light_22.FlatAppearance.BorderSize = 0;
             light_22.FlatStyle = FlatStyle.Flat;
@@ -173,13 +173,13 @@
             light_22.Name = "light_22";
             light_22.Size = new Size(75, 75);
             light_22.TabIndex = 10;
-            light_22.Tag = "ButtonOn3";
+            light_22.Tag = "ButtonOn";
             light_22.UseVisualStyleBackColor = true;
             light_22.Click += btnLight_Click;
             // 
             // light_21
             // 
-            light_21.BackgroundImage = Properties.Resources.ButtonOn3;
+            light_21.BackgroundImage = Properties.Resources.ButtonOn;
             light_21.BackgroundImageLayout = ImageLayout.Stretch;
             light_21.FlatAppearance.BorderSize = 0;
             light_21.FlatStyle = FlatStyle.Flat;
@@ -187,13 +187,13 @@
             light_21.Name = "light_21";
             light_21.Size = new Size(75, 75);
             light_21.TabIndex = 9;
-            light_21.Tag = "ButtonOn3";
+            light_21.Tag = "ButtonOn";
             light_21.UseVisualStyleBackColor = true;
             light_21.Click += btnLight_Click;
             // 
             // light_20
             // 
-            light_20.BackgroundImage = Properties.Resources.ButtonOn3;
+            light_20.BackgroundImage = Properties.Resources.ButtonOn;
             light_20.BackgroundImageLayout = ImageLayout.Stretch;
             light_20.FlatAppearance.BorderSize = 0;
             light_20.FlatStyle = FlatStyle.Flat;
@@ -201,13 +201,13 @@
             light_20.Name = "light_20";
             light_20.Size = new Size(75, 75);
             light_20.TabIndex = 8;
-            light_20.Tag = "ButtonOn3";
+            light_20.Tag = "ButtonOn";
             light_20.UseVisualStyleBackColor = true;
             light_20.Click += btnLight_Click;
             // 
             // light_13
             // 
-            light_13.BackgroundImage = Properties.Resources.ButtonOn3;
+            light_13.BackgroundImage = Properties.Resources.ButtonOn;
             light_13.BackgroundImageLayout = ImageLayout.Stretch;
             light_13.FlatAppearance.BorderSize = 0;
             light_13.FlatStyle = FlatStyle.Flat;
@@ -215,13 +215,13 @@
             light_13.Name = "light_13";
             light_13.Size = new Size(75, 75);
             light_13.TabIndex = 7;
-            light_13.Tag = "ButtonOn3";
+            light_13.Tag = "ButtonOn";
             light_13.UseVisualStyleBackColor = true;
             light_13.Click += btnLight_Click;
             // 
             // light_12
             // 
-            light_12.BackgroundImage = Properties.Resources.ButtonOn3;
+            light_12.BackgroundImage = Properties.Resources.ButtonOn;
             light_12.BackgroundImageLayout = ImageLayout.Stretch;
             light_12.FlatAppearance.BorderSize = 0;
             light_12.FlatStyle = FlatStyle.Flat;
@@ -229,13 +229,13 @@
             light_12.Name = "light_12";
             light_12.Size = new Size(75, 75);
             light_12.TabIndex = 6;
-            light_12.Tag = "ButtonOn3";
+            light_12.Tag = "ButtonOn";
             light_12.UseVisualStyleBackColor = true;
             light_12.Click += btnLight_Click;
             // 
             // light_11
             // 
-            light_11.BackgroundImage = Properties.Resources.ButtonOn3;
+            light_11.BackgroundImage = Properties.Resources.ButtonOn;
             light_11.BackgroundImageLayout = ImageLayout.Stretch;
             light_11.FlatAppearance.BorderSize = 0;
             light_11.FlatStyle = FlatStyle.Flat;
@@ -243,13 +243,13 @@
             light_11.Name = "light_11";
             light_11.Size = new Size(75, 75);
             light_11.TabIndex = 5;
-            light_11.Tag = "ButtonOn3";
+            light_11.Tag = "ButtonOn";
             light_11.UseVisualStyleBackColor = true;
             light_11.Click += btnLight_Click;
             // 
             // light_10
             // 
-            light_10.BackgroundImage = Properties.Resources.ButtonOn3;
+            light_10.BackgroundImage = Properties.Resources.ButtonOn;
             light_10.BackgroundImageLayout = ImageLayout.Stretch;
             light_10.FlatAppearance.BorderSize = 0;
             light_10.FlatStyle = FlatStyle.Flat;
@@ -257,13 +257,13 @@
             light_10.Name = "light_10";
             light_10.Size = new Size(75, 75);
             light_10.TabIndex = 4;
-            light_10.Tag = "ButtonOn3";
+            light_10.Tag = "ButtonOn";
             light_10.UseVisualStyleBackColor = true;
             light_10.Click += btnLight_Click;
             // 
             // light_03
             // 
-            light_03.BackgroundImage = Properties.Resources.ButtonOn3;
+            light_03.BackgroundImage = Properties.Resources.ButtonOn;
             light_03.BackgroundImageLayout = ImageLayout.Stretch;
             light_03.FlatAppearance.BorderSize = 0;
             light_03.FlatStyle = FlatStyle.Flat;
@@ -271,13 +271,13 @@
             light_03.Name = "light_03";
             light_03.Size = new Size(75, 75);
             light_03.TabIndex = 3;
-            light_03.Tag = "ButtonOn3";
+            light_03.Tag = "ButtonOn";
             light_03.UseVisualStyleBackColor = true;
             light_03.Click += btnLight_Click;
             // 
             // light_02
             // 
-            light_02.BackgroundImage = Properties.Resources.ButtonOn3;
+            light_02.BackgroundImage = Properties.Resources.ButtonOn;
             light_02.BackgroundImageLayout = ImageLayout.Stretch;
             light_02.FlatAppearance.BorderSize = 0;
             light_02.FlatStyle = FlatStyle.Flat;
@@ -285,13 +285,13 @@
             light_02.Name = "light_02";
             light_02.Size = new Size(75, 75);
             light_02.TabIndex = 2;
-            light_02.Tag = "ButtonOn3";
+            light_02.Tag = "ButtonOn";
             light_02.UseVisualStyleBackColor = true;
             light_02.Click += btnLight_Click;
             // 
             // light_01
             // 
-            light_01.BackgroundImage = Properties.Resources.ButtonOn3;
+            light_01.BackgroundImage = Properties.Resources.ButtonOn;
             light_01.BackgroundImageLayout = ImageLayout.Stretch;
             light_01.FlatAppearance.BorderSize = 0;
             light_01.FlatStyle = FlatStyle.Flat;
@@ -299,13 +299,13 @@
             light_01.Name = "light_01";
             light_01.Size = new Size(75, 75);
             light_01.TabIndex = 1;
-            light_01.Tag = "ButtonOn3";
+            light_01.Tag = "ButtonOn";
             light_01.UseVisualStyleBackColor = true;
             light_01.Click += btnLight_Click;
             // 
             // light_00
             // 
-            light_00.BackgroundImage = Properties.Resources.ButtonOn3;
+            light_00.BackgroundImage = Properties.Resources.ButtonOn;
             light_00.BackgroundImageLayout = ImageLayout.Stretch;
             light_00.FlatAppearance.BorderSize = 0;
             light_00.FlatStyle = FlatStyle.Flat;
@@ -313,7 +313,7 @@
             light_00.Name = "light_00";
             light_00.Size = new Size(75, 75);
             light_00.TabIndex = 0;
-            light_00.Tag = "ButtonOn3";
+            light_00.Tag = "ButtonOn";
             light_00.UseVisualStyleBackColor = true;
             light_00.Click += btnLight_Click;
             // 
