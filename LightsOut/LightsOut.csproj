@@ -9,15 +9,14 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <None Remove="Resources\Board.jpg" />
     <None Remove="Resources\Board.png" />
     <None Remove="Resources\ButtonOff.png" />
     <None Remove="Resources\ButtonOn.png" />
+    <None Remove="Resources\Levels\Levels_1.json" />
     <None Remove="Resources\Levels\Levels_2.json" />
     <None Remove="Resources\Levels\Levels_3.json" />
     <None Remove="Resources\Levels\Levels_4.json" />
     <None Remove="Resources\Levels\Levels_5.json" />
-    <None Remove="Resources\Levels_22.json" />
     <None Remove="Resources\WinPanel.png" />
   </ItemGroup>
 
