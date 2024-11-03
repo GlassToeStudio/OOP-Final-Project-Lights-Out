@@ -7,9 +7,9 @@ namespace LightsOut
         internal static readonly string RESOURCES = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Resources\\");
         internal static readonly string LEVELS = Path.Combine(RESOURCES, "Levels\\");
 
-        internal static string GetFile(string jsonFile)
+        internal static string GetFile(string fileName)
         {
-            return Path.Combine(RESOURCES, jsonFile);
+            return Path.Combine(LEVELS, fileName);
         }
 
         internal static string[] GetFiles(string dir)

@@ -10,11 +10,13 @@
 
   <ItemGroup>
     <None Remove="Resources\Board.jpg" />
+    <None Remove="Resources\Board.png" />
     <None Remove="Resources\ButtonOff.png" />
     <None Remove="Resources\ButtonOff3.png" />
     <None Remove="Resources\ButtonOn.png" />
     <None Remove="Resources\ButtonOn3.png" />
     <None Remove="Resources\Levels_22.json" />
+    <None Remove="Resources\title.png" />
   </ItemGroup>
 
   <ItemGroup>
@@ -22,13 +24,19 @@
   </ItemGroup>
 
   <ItemGroup>
+    <EmbeddedResource Include="Resources\Board.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
     <EmbeddedResource Include="Resources\ButtonOff3.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </EmbeddedResource>
     <EmbeddedResource Include="Resources\ButtonOn3.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </EmbeddedResource>
-    <EmbeddedResource Include="Resources\Levels_22.json">
+    <EmbeddedResource Include="Resources\Levels\Levels_1.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\title.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </EmbeddedResource>
   </ItemGroup>
@@ -47,10 +55,6 @@
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </EmbeddedResource>
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Resources\Levels\" />
   </ItemGroup>
 
 </Project>
