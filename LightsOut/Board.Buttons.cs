@@ -37,5 +37,29 @@ namespace LightsOut
 		{
 			GenerateLevelFromFile();
 		}
-	}
+#if DEBUG
+        private void ShowHideDebug_Click(object sender, KeyPressEventArgs e)
+        {
+            switch (e.KeyChar.ToString())
+            {
+                case "d":
+                case "D":
+                    if (debug)
+                    {
+                        debug = false;
+                        this.Width = 500;
+                    }
+                    else
+                    {
+                        debug = true;
+                        this.Width = 675;
+                    }
+
+                    break;
+                default:
+                    break;
+            }
+        }
+#endif
+    }
 }

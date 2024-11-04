@@ -538,9 +538,13 @@
             Controls.Add(gbxStats);
             Controls.Add(pictureBox1);
             DoubleBuffered = true;
+            KeyPreview = true;
             Name = "frmLightsOut";
             SizeGripStyle = SizeGripStyle.Hide;
             Text = "Lights Out";
+#if DEBUG
+            KeyPress += ShowHideDebug_Click;
+#endif
             gbxGameBoard.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             gbxStats.ResumeLayout(false);
@@ -550,7 +554,7 @@
             ResumeLayout(false);
         }
 
-        #endregion
+#endregion
         private System.Windows.Forms.GroupBox gbxGameBoard;
         private Light light_00;
         private Light light_01;

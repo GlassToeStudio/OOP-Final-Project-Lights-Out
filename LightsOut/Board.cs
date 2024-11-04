@@ -15,6 +15,7 @@ namespace LightsOut
         public frmLightsOut()
         {
             InitializeComponent();
+            this.Width = 500;
             GenerateGameBoard();
 
             LoadLevels();
@@ -49,7 +50,9 @@ namespace LightsOut
                     lights[i].TurnOn();
                 }
             }
+#if DEBUG
             lblLog.Text = DebugBoardState();
+#endif
             UpdateUI();
             EnableLights();
         }
@@ -74,7 +77,9 @@ namespace LightsOut
 
                 lights[randLight].ClickLight();
 
+#if DEBUG
                 lblLog.Text = DebugBoardState();
+#endif
             }
 
             levelData.UpdateBoard(lights);
@@ -98,7 +103,9 @@ namespace LightsOut
         {
             moves += 1;
             lblMoves.Text = moves.ToString();
+#if DEBUG
             lblLog.Text = DebugBoardState();
+#endif
         }
 
         private void CheckWin()
@@ -166,7 +173,7 @@ namespace LightsOut
             }
             CheckWin();
         }
-
+#if DEBUG
         private string DebugBoardState()
         {
             String output = "";
@@ -181,28 +188,6 @@ namespace LightsOut
 
             return output;
         }
-        protected override bool ProcessCmdKey(ref Message msg, Keys keyData)
-        {
-            switch (keyData)
-            {
-                case Keys.D:
-                    if (debug)
-                    {
-                        debug = false;
-                        this.Width = 500;
-                    }
-                    else
-                    {
-                        debug = true; 
-                        this.Width = 675;
-                    }
-
-                    break;
-                default:
-                    break;
-            }
-
-            return base.ProcessCmdKey(ref msg, keyData);
-        }
+#endif
     }
 }
