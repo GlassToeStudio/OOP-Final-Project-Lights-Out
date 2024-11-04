@@ -20,7 +20,7 @@
         /// <summary>
         /// Default constructor.
         /// </summary>
-        internal Light() { }
+        internal Light() { if (DesignMode) { return; } } // Light controls were always deleted when editing main form.
 
         /// <summary>
         /// Sets the two BackgroundImages used for displaying if the <seealso cref="Light"/> is On or Off.

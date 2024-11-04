@@ -10,6 +10,7 @@ namespace LightsOut
         private int moves = 0;
         private int level = 1;
         private string levelName = "Levels_1.json";
+        bool debug = false;
 
         public frmLightsOut()
         {
@@ -48,7 +49,7 @@ namespace LightsOut
                     lights[i].TurnOn();
                 }
             }
-
+            lblLog.Text = DebugBoardState();
             UpdateUI();
             EnableLights();
         }
@@ -92,14 +93,14 @@ namespace LightsOut
             lblGoal.Text = $"{levelData.MinMoves}";
             lblMoves.Text = moves.ToString();
         }
-    
+
         private void UpdateMoves()
         {
             moves += 1;
             lblMoves.Text = moves.ToString();
             lblLog.Text = DebugBoardState();
         }
-    
+
         private void CheckWin()
         {
             foreach (var light in lights)
@@ -115,6 +116,7 @@ namespace LightsOut
 
         private void DisableLights()
         {
+            pictureBox1.BringToFront();
             pictureBox1.Visible = true;
             foreach (var light in lights)
             {
@@ -178,6 +180,29 @@ namespace LightsOut
             }
 
             return output;
+        }
+        protected override bool ProcessCmdKey(ref Message msg, Keys keyData)
+        {
+            switch (keyData)
+            {
+                case Keys.D:
+                    if (debug)
+                    {
+                        debug = false;
+                        this.Width = 500;
+                    }
+                    else
+                    {
+                        debug = true; 
+                        this.Width = 675;
+                    }
+
+                    break;
+                default:
+                    break;
+            }
+
+            return base.ProcessCmdKey(ref msg, keyData);
         }
     }
 }
