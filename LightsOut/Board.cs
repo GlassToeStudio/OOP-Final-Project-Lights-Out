@@ -1,3 +1,5 @@
+using Newtonsoft.Json;
+
 namespace LightsOut
 {
     public partial class frmLightsOut : Form
@@ -24,6 +26,7 @@ namespace LightsOut
 
         private void LoadLevels()
         {
+            cbxLevelSelect.Items.Clear();
             string[] files = FileUtil.GetFiles();
             foreach (string file in files)
             {
@@ -187,6 +190,19 @@ namespace LightsOut
             }
 
             return output;
+        }
+
+        private void btnSaveLevel_Click(object sender, EventArgs e)
+        {
+            levelData = new LevelData(levelData);
+            var solution = Solver.GetSolutionMatrix(levelData);
+            levelData.MinMoves = solution.Sum();
+            string ProjectDir = "C:\\Users\\GlassToe\\Documents\\Calhoun Comminity College\\Fall 24\\CIS 285 - Object-Oriented Programming (11022)\\Final Project\\OOP-Final-Project-Lights-Out\\LightsOut\\Resources\\Levels\\";
+            var data = JsonConvert.SerializeObject(levelData);
+            File.WriteAllText(FileUtil.GetFile($"Levels_{level}.json"), data);
+            File.WriteAllText($"{ProjectDir}Levels_{level}.json", data);
+            LoadLevels();
+            MessageBox.Show(Directory.GetCurrentDirectory());
         }
 #endif
     }

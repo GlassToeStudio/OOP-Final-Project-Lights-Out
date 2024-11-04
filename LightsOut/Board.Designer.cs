@@ -60,6 +60,7 @@
             btnLoad = new Button();
             cbxLevelSelect = new ComboBox();
             bgxDebug = new GroupBox();
+            btnSaveLevel = new Button();
             gbxGameBoard.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             gbxStats.SuspendLayout();
@@ -335,13 +336,14 @@
             // 
             lblLog.AutoSize = true;
             lblLog.BackColor = SystemColors.ActiveCaptionText;
+            lblLog.BorderStyle = BorderStyle.FixedSingle;
             lblLog.FlatStyle = FlatStyle.Flat;
             lblLog.Location = new Point(11, 234);
             lblLog.MinimumSize = new Size(130, 25);
             lblLog.Name = "lblLog";
             lblLog.Size = new Size(130, 25);
             lblLog.TabIndex = 1;
-            lblLog.Text = "Debug";
+            lblLog.Text = "0,0,0,0";
             lblLog.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // btnSolve
@@ -351,9 +353,9 @@
             btnSolve.ForeColor = SystemColors.ActiveCaption;
             btnSolve.Location = new Point(11, 49);
             btnSolve.Name = "btnSolve";
-            btnSolve.Size = new Size(77, 26);
+            btnSolve.Size = new Size(136, 26);
             btnSolve.TabIndex = 2;
-            btnSolve.Text = "Solve";
+            btnSolve.Text = "Solve All";
             btnSolve.UseMnemonic = false;
             btnSolve.UseVisualStyleBackColor = false;
             btnSolve.Click += btnSolve_Click;
@@ -463,7 +465,7 @@
             button1.ForeColor = SystemColors.ActiveCaption;
             button1.Location = new Point(11, 21);
             button1.Name = "button1";
-            button1.Size = new Size(79, 26);
+            button1.Size = new Size(136, 26);
             button1.TabIndex = 4;
             button1.Text = "Solve One";
             button1.UseMnemonic = false;
@@ -477,9 +479,9 @@
             button2.ForeColor = SystemColors.ActiveCaption;
             button2.Location = new Point(11, 77);
             button2.Name = "button2";
-            button2.Size = new Size(77, 26);
+            button2.Size = new Size(65, 40);
             button2.TabIndex = 6;
-            button2.Text = "Generate";
+            button2.Text = "Generate Random";
             button2.UseMnemonic = false;
             button2.UseVisualStyleBackColor = false;
             button2.Click += btnGenerate_Click;
@@ -489,9 +491,9 @@
             btnLoad.BackgroundImageLayout = ImageLayout.Stretch;
             btnLoad.FlatStyle = FlatStyle.Flat;
             btnLoad.ForeColor = SystemColors.ActiveCaption;
-            btnLoad.Location = new Point(11, 105);
+            btnLoad.Location = new Point(11, 166);
             btnLoad.Name = "btnLoad";
-            btnLoad.Size = new Size(77, 26);
+            btnLoad.Size = new Size(130, 26);
             btnLoad.TabIndex = 7;
             btnLoad.Text = "Load";
             btnLoad.UseMnemonic = false;
@@ -511,6 +513,7 @@
             // 
             // bgxDebug
             // 
+            bgxDebug.Controls.Add(btnSaveLevel);
             bgxDebug.Controls.Add(lblLog);
             bgxDebug.Controls.Add(cbxLevelSelect);
             bgxDebug.Controls.Add(button1);
@@ -524,6 +527,20 @@
             bgxDebug.TabIndex = 10;
             bgxDebug.TabStop = false;
             bgxDebug.Text = "Debug Panel";
+            // 
+            // btnSaveLevel
+            // 
+            btnSaveLevel.BackgroundImageLayout = ImageLayout.Stretch;
+            btnSaveLevel.FlatStyle = FlatStyle.Flat;
+            btnSaveLevel.ForeColor = SystemColors.ActiveCaption;
+            btnSaveLevel.Location = new Point(82, 77);
+            btnSaveLevel.Name = "btnSaveLevel";
+            btnSaveLevel.Size = new Size(65, 40);
+            btnSaveLevel.TabIndex = 9;
+            btnSaveLevel.Text = "Save to File";
+            btnSaveLevel.UseMnemonic = false;
+            btnSaveLevel.UseVisualStyleBackColor = false;
+            btnSaveLevel.Click += btnSaveLevel_Click;
             // 
             // frmLightsOut
             // 
@@ -542,9 +559,7 @@
             Name = "frmLightsOut";
             SizeGripStyle = SizeGripStyle.Hide;
             Text = "Lights Out";
-#if DEBUG
             KeyPress += ShowHideDebug_Click;
-#endif
             gbxGameBoard.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             gbxStats.ResumeLayout(false);
@@ -554,7 +569,7 @@
             ResumeLayout(false);
         }
 
-#endregion
+        #endregion
         private System.Windows.Forms.GroupBox gbxGameBoard;
         private Light light_00;
         private Light light_01;
@@ -587,5 +602,6 @@
         private ComboBox cbxLevelSelect;
         private PictureBox pictureBox1;
         private GroupBox bgxDebug;
+        private Button btnSaveLevel;
     }
 }
