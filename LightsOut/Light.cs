@@ -5,16 +5,16 @@
     /// </summary>
     public class Light : Button
     {
-        /// <summary>Used to indicate this <seealso cref="Light"/>'s index when stored in the <seealso cref="LevelData.Board"/>'s array.</summary>
+        /// <summary>Used to indicate this <see cref="Light"/>'s index when stored in the <see cref="LevelData.Board"/>'s array.</summary>
         public int index { get; set; }
-        /// <summary>Indicate whether this <seealso cref="Light"/> is On or Off.</summary>
+        /// <summary>Indicate whether this <see cref="Light"/> is On or Off.</summary>
         public LightState State { get; set; }
-        /// <summary>Image displayed for this <seealso cref="Light"/> when it is in<seealso cref="LightState.Off"/></summary>
+        /// <summary>Image displayed for this <see cref="Light"/> when it is in <see cref="LightState.Off"/></summary>
         public Image? OffButton { get; set; }
-        /// <summary>Image displayed for this <seealso cref="Light"/> when it is in<seealso cref="LightState.On"/></summary>
+        /// <summary>Image displayed for this <see cref="Light"/> when it is in <see cref="LightState.On"/></summary>
         public Image? OnButton { get; set; }
-        /// <summary>List to hold each <seealso cref="Light"/> that is directly touching from one of each cardinal directions. 
-        /// See also: <seealso cref="AddNeighbor(Light)"/></summary>
+        /// <summary>List to hold each <see cref="Light"/> that is directly touching from one of each cardinal directions. 
+        /// See also: <see cref="AddNeighbor(Light)"/></summary>
         public List<Light> Neighbors { get; private set; } = [];
 
         /// <summary>
@@ -23,21 +23,21 @@
         public Light() { if (DesignMode) { return; } Init(TabIndex); } // Light controls were always deleted when editing main form.
 
         /// <summary>
-        /// 
+        /// Should be called when a <see cref="Light"/> is created and when a new gamebaord is generated.
         /// </summary>
-        /// <param name="i"></param>
+        /// <param name="i">integer to indicate at what index this light is in an array of lights.</param>
         public void Init(int i)
         {
            Neighbors.Clear();
            index = i;
            TurnOff();
-            this.Enabled = true;
+           this.Enabled = true;
         }
 
         /// <summary>
-        /// Add the neighboring <seealso cref="Light"/>s to a List.
-        /// <para/>When this <seealso cref="Light"/> is clicked its <seealso cref="State"/> is changed and so are its <seealso cref="Neighbors"/>.
-        /// <para/><seealso cref="Neighbors"/> are those <seealso cref="Light"/>s touching in each cardinal direction.
+        /// Add the neighboring <see cref="Light"/>s to a List.
+        /// <para/>When this <see cref="Light"/> is clicked its <see cref="State"/> is changed and so are its <see cref="Neighbors"/>.
+        /// <para/><see cref="Neighbors"/> are those <see cref="Light"/>s touching in each cardinal direction.
         /// <code>
         /// Ex:        
         ///     • n L n
@@ -45,7 +45,7 @@
         ///     • • • •
         ///     • • • •
         /// </code>
-        /// Diagonal <seealso cref="Light"/>s are not neighbors.
+        /// Diagonal <see cref="Light"/>s are not neighbors.
         /// </summary>
         /// <param name="light"></param>
         public void AddNeighbor(Light light)
@@ -57,7 +57,7 @@
         }
 
         /// <summary>
-        /// Toggle <seealso cref="LightState"/> from <seealso cref="LightState.On"/> to <seealso cref="LightState.Off"/> or vice versa depending on current <seealso cref="State"/>.
+        /// Toggle <see cref="LightState"/> from <see cref="LightState.On"/> to <see cref="LightState.Off"/> or vice versa depending on current <see cref="State"/>.
         /// </summary>
         /// <returns>0 for Off<br/> 1 for On</returns>
         public int ToggleState()
@@ -75,7 +75,7 @@
         }
 
         /// <summary>
-        /// Click the <seealso cref="Light"/> to change its <seealso cref="State"/> and its <seealso cref="Neighbors"/> <seealso cref="State"/>.
+        /// Click the <see cref="Light"/> to change its <see cref="State"/> and its <see cref="Neighbors"/> <see cref="State"/>.
         /// </summary>
         public void ClickLight()
         {
@@ -87,7 +87,7 @@
         }
 
         /// <summary>
-        /// Change the <seealso cref="State"/> to <seealso cref="LightState.On"/> and set the <seealso cref="Light"/>'sBackgroundImage to <seealso cref="OnButton"/> .
+        /// Change the <see cref="State"/> to <see cref="LightState.On"/> and set the <see cref="Light"/>'sBackgroundImage to <see cref="OnButton"/> .
         /// </summary>
         public void TurnOn()
         {
@@ -96,7 +96,7 @@
         }
 
         /// <summary>
-        /// Change the <seealso cref="State"/> to <seealso cref="LightState.Off"/> and set the <seealso cref="Light"/>'s BackgroundImage to <seealso cref="OffButton"/> .
+        /// Change the <see cref="State"/> to <see cref="LightState.Off"/> and set the <see cref="Light"/>'s BackgroundImage to <see cref="OffButton"/> .
         /// </summary>
         public void TurnOff()
         {
