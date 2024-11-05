@@ -5,9 +5,6 @@ namespace LightsOut
 {
     public partial class Board : Form
     {
-        private readonly Image? OnButton = Properties.Resources.ButtonOn;
-        private readonly Image? OffButton = Properties.Resources.ButtonOff;
-
         private Light[] lights = [];
         private LevelData levelData;
         private int moves = 0;
@@ -20,7 +17,7 @@ namespace LightsOut
             InitializeComponent();
             PreloadLevelsData();
             levelData = new LevelData().LoadLevelDataFromJson(levelName);
-            GenerateGameBoard();
+            GenerateGameBoardsAndSelect();
             GenerateLevelFromFile();
         }
 
@@ -35,11 +32,11 @@ namespace LightsOut
             cbxLevelSelect.SelectedIndex = 0;
 
         }
-        private void GenerateGameBoard()
+
+        private void GenerateGameBoardsAndSelect()
         {
             gbxGameBoard_3x3.Visible = false;
             gbxGameBoard_4x4.Visible = false;
-            //Light[] lights_5x5 = new Light[25];
 
             Light[] lights_4x4 = [
                         light_4x4_00, light_4x4_01, light_4x4_02, light_4x4_03,
@@ -71,16 +68,12 @@ namespace LightsOut
             InitializeBoardLights();
             ConnectNeighbors();
         }
-
         private void InitializeBoardLights()
         {
             // Set On off button and index value
             for (var i = 0; i < lights.Length; i++)
             {
-                lights[i].Neighbors.Clear();
-                lights[i].SetButtons(OnButton, OffButton);
-                lights[i].index = i;
-                lights[i].TurnOff();
+                lights[i].Init(i);
             }
         }
         private void ConnectNeighbors()
@@ -117,13 +110,14 @@ namespace LightsOut
                 }
             }
         }
+       
         private void GenerateLevelFromFile()
         {
             moves = 0;
             levelName = cbxLevelSelect.Text;
             levelData = new LevelData().LoadLevelDataFromJson(levelName);
             level = levelData.Level;
-            GenerateGameBoard();
+            GenerateGameBoardsAndSelect();
             for (var i = 0; i < levelData.Board.Length; i++)
             {
                 if (levelData.Board[i] == 0)
@@ -145,7 +139,7 @@ namespace LightsOut
             moves = 0;
             level += 1;
             levelData.Size = GetBoardSizeForRandomGen();
-            GenerateGameBoard();
+            GenerateGameBoardsAndSelect();
             Random rnd = new Random();
             levelData.MinMoves = -1;
 

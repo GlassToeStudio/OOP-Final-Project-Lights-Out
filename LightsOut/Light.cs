@@ -6,13 +6,13 @@
     public class Light : Button
     {
         /// <summary>Used to indicate this <seealso cref="Light"/>'s index when stored in the <seealso cref="LevelData.Board"/>'s array.</summary>
-        public int index;
+        public int index { get; set; }
         /// <summary>Indicate whether this <seealso cref="Light"/> is On or Off.</summary>
-        public LightState State;
+        public LightState State { get; set; }
         /// <summary>Image displayed for this <seealso cref="Light"/> when it is in<seealso cref="LightState.Off"/></summary>
-        public Image? OffButton { get; private set; }
+        public Image? OffButton { get; set; }
         /// <summary>Image displayed for this <seealso cref="Light"/> when it is in<seealso cref="LightState.On"/></summary>
-        public Image? OnButton { get; private set; }
+        public Image? OnButton { get; set; }
         /// <summary>List to hold each <seealso cref="Light"/> that is directly touching from one of each cardinal directions. 
         /// See also: <seealso cref="AddNeighbor(Light)"/></summary>
         public List<Light> Neighbors { get; private set; } = [];
@@ -20,28 +20,14 @@
         /// <summary>
         /// Default constructor.
         /// </summary>
-        public Light() { if (DesignMode) { return; } } // Light controls were always deleted when editing main form.
+        public Light() { if (DesignMode) { return; } Init(TabIndex); } // Light controls were always deleted when editing main form.
 
-        /// <summary>
-        /// Sets the two BackgroundImages used for displaying if the <seealso cref="Light"/> is On or Off.
-        /// </summary>
-        /// <param name="onButton">Image displayed when Light is On</param>
-        /// <param name="offButton">Image displayed when Light is Off</param>
-        public Light(Image? onButton, Image? offButton)
+
+        public void Init(int i)
         {
-            OnButton = onButton;
-            OffButton = offButton;
-            if (DesignMode) { return; }
-        }
-        /// <summary>
-        /// Sets the two BackgroundImages used for displaying if the <seealso cref="Light"/> is On or Off.
-        /// </summary>
-        /// <param name="onButton">Image displayed when Light is On</param>
-        /// <param name="offButton">Image displayed when Light is Off</param>
-        public void SetButtons(Image? onButton, Image? offButton)
-        {
-            OnButton = onButton;
-            OffButton = offButton;
+           Neighbors.Clear();
+           index = i;
+           TurnOff();
         }
 
         /// <summary>
