@@ -22,12 +22,16 @@
         /// </summary>
         public Light() { if (DesignMode) { return; } Init(TabIndex); } // Light controls were always deleted when editing main form.
 
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="i"></param>
         public void Init(int i)
         {
            Neighbors.Clear();
            index = i;
            TurnOff();
+            this.Enabled = true;
         }
 
         /// <summary>
