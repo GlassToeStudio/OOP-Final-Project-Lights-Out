@@ -13,7 +13,6 @@ namespace LightsOut
         private int moves = 0;
         private int level = 1;
         private string levelName = "Levels_1.json";
-        bool debug = false;
 
         /// <summary>
         /// 
@@ -36,7 +35,6 @@ namespace LightsOut
                 cbxLevelSelect.Items.Add(Path.GetFileName(file));
             }
             cbxLevelSelect.SelectedIndex = 0;
-
         }
 
         private void GenerateGameBoardsAndSelect()
@@ -85,6 +83,7 @@ namespace LightsOut
                 lights[i].Init(i);
             }
         }
+      
         private void ConnectNeighbors()
         {
             // Connect neighbors
@@ -126,7 +125,9 @@ namespace LightsOut
             levelName = cbxLevelSelect.Text;
             levelData = new LevelData().LoadLevelDataFromJson(levelName);
             level = levelData.Level;
+
             GenerateGameBoardsAndSelect();
+            
             for (var i = 0; i < levelData.Board.Length; i++)
             {
                 if (levelData.Board[i] == 0)
@@ -138,7 +139,9 @@ namespace LightsOut
                     lights[i].TurnOn();
                 }
             }
+
             lblLog.Text = DebugBoardState();
+            UpdateUI();
         }
 
         private void OnCLickLight(Light light)
@@ -166,9 +169,7 @@ namespace LightsOut
         {
             moves += 1;
             lblMoves.Text = moves.ToString();
-#if DEBUG
             lblLog.Text = DebugBoardState();
-#endif
         }
 
         private void CheckWin()
@@ -189,22 +190,6 @@ namespace LightsOut
             }
         }
 
-        private int GetBoardSizeForRandomGen()
-        {
-            if (rb3x3.Checked)
-            {
-                return 3;
-            }
-            else if (rb4x4.Checked)
-            {
-                return 4;
-            }
-            else if (rb5x5.Checked)
-            {
-                return 5;
-            }
-            return 4;
-        }
 
         #region Buttons
         private void Light_Click(object sender, EventArgs e)

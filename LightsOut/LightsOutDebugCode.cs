@@ -52,6 +52,22 @@ namespace LightsOut
             }
         }
 
+        private int GetBoardSizeForRandomGen()
+        {
+            if (rb3x3.Checked)
+            {
+                return 3;
+            }
+            else if (rb4x4.Checked)
+            {
+                return 4;
+            }
+            else if (rb5x5.Checked)
+            {
+                return 5;
+            }
+            return 4;
+        }
 
         private void SolveOne()
         {
@@ -138,14 +154,12 @@ namespace LightsOut
             {
                 case "d":
                 case "D":
-                    if (debug)
+                    if (this.Width == 675)
                     {
-                        debug = false;
                         this.Width = 500;
                     }
                     else
                     {
-                        debug = true;
                         this.Width = 675;
                     }
 
