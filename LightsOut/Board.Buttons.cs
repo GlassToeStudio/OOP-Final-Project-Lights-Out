@@ -1,43 +1,41 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Newtonsoft.Json;
 
 namespace LightsOut
 {
-    partial class frmLightsOut
+    partial class Board
     {
-		private void btnLight_Click(object sender, EventArgs e)
+		private void Light_Click(object sender, EventArgs e)
 		{
-			Light? light = sender as Light;
-			light?.ClickLight();
-
-			levelData.UpdateBoard(lights);
-			UpdateMoves();
+            Light? light = sender as Light;
+			OnCLickLight(light);
 			CheckWin();
 		}
 
-		private void btnSolve_Click(object sender, EventArgs e)
-		{
-			SolvePuzzle();
-		}
-
-		private void btnSolveOne_Click(object sender, EventArgs e)
-		{
-			SolveOne();
-		}
-
-		private void btnGenerate_Click(object sender, EventArgs e)
-		{
-			GenerateRandomLevel();
-		}
-
-		private void btnLoad_Click(object sender, EventArgs e)
+		private void LoadLevel_Click(object sender, EventArgs e)
 		{
 			GenerateLevelFromFile();
-		}
+            UpdateUI();
+            EnableLights();
+        }
 #if DEBUG
+
+        private void SolveAll_Click(object sender, EventArgs e)
+        {
+            SolvePuzzle();
+        }
+
+        private void SolveOne_Click(object sender, EventArgs e)
+        {
+            SolveOne();
+        }
+
+        private void GenerateRandom_Click(object sender, EventArgs e)
+        {
+            GenerateRandomLevel();
+            UpdateUI();
+            EnableLights();
+        }
+
         private void ShowHideDebug_Click(object sender, KeyPressEventArgs e)
         {
             switch (e.KeyChar.ToString())
@@ -59,6 +57,18 @@ namespace LightsOut
                 default:
                     break;
             }
+        }
+        
+        private void SaveLevelToFile_Click(object sender, EventArgs e)
+        {
+            levelData = new LevelData(levelData);
+            var solution = Solver.GetSolutionMatrix(levelData);
+            levelData.MinMoves = solution.Sum();
+            string ProjectDir = "C:\\Users\\GlassToe\\Documents\\Calhoun Comminity College\\Fall 24\\CIS 285 - Object-Oriented Programming (11022)\\Final Project\\OOP-Final-Project-Lights-Out\\LightsOut\\Resources\\Levels\\";
+            var data = JsonConvert.SerializeObject(levelData);
+            File.WriteAllText(FileUtil.GetLevelFile($"Levels_{level}.json"), data);
+            File.WriteAllText($"{ProjectDir}Levels_{level}.json", data);
+            PreloadLevelsData();
         }
 #endif
     }

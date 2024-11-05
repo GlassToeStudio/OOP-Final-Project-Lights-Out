@@ -14,8 +14,8 @@
             Size = size;
             MinMoves = minMoves;
             Board = new int[Size * Size];
-        }
-
+        }       
+        
         public LevelData(LevelData levelData)
         {
             Level = levelData.Level;

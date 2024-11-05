@@ -6,6 +6,10 @@
     <Nullable>enable</Nullable>
     <UseWindowsForms>true</UseWindowsForms>
     <ImplicitUsings>enable</ImplicitUsings>
+    <StartupObject></StartupObject>
+    <ApplicationIcon>LightsOut.ico</ApplicationIcon>
+    <GenerateDocumentationFile>True</GenerateDocumentationFile>
+    <PackageIcon>LightsOut.png</PackageIcon>
   </PropertyGroup>
 
   <ItemGroup>
@@ -14,12 +18,19 @@
     <None Remove="Resources\ButtonOn.png" />
     <None Remove="Resources\Levels\Levels_1.json" />
     <None Remove="Resources\Levels\Levels_10.json" />
+    <None Remove="Resources\Levels\Levels_11.json" />
     <None Remove="Resources\Levels\Levels_2.json" />
     <None Remove="Resources\Levels\Levels_3.json" />
     <None Remove="Resources\Levels\Levels_4.json" />
     <None Remove="Resources\Levels\Levels_5.json" />
     <None Remove="Resources\Levels\Levels_8.json" />
+    <None Remove="Resources\Levels\Levels_9.json" />
+    <None Remove="Resources\Levels\Snap-sound-effect.wav" />
     <None Remove="Resources\WinPanel.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="LightsOut.ico" />
   </ItemGroup>
 
   <ItemGroup>
@@ -39,9 +50,6 @@
     <EmbeddedResource Include="Resources\Levels\Levels_1.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </EmbeddedResource>
-    <EmbeddedResource Include="Resources\Levels\Levels_10.json">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
     <EmbeddedResource Include="Resources\Levels\Levels_2.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </EmbeddedResource>
@@ -54,7 +62,7 @@
     <EmbeddedResource Include="Resources\Levels\Levels_5.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </EmbeddedResource>
-    <EmbeddedResource Include="Resources\Levels\Levels_8.json">
+    <EmbeddedResource Include="Resources\Sounds\Snap-sound-effect.wav">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </EmbeddedResource>
     <EmbeddedResource Include="Resources\WinPanel.png">

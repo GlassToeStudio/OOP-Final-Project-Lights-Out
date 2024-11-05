@@ -1,38 +1,42 @@
 using Newtonsoft.Json;
+using System.Media;
 
 namespace LightsOut
 {
-    public partial class frmLightsOut : Form
+    public partial class Board : Form
     {
         private readonly Image? OnButton = Properties.Resources.ButtonOn;
         private readonly Image? OffButton = Properties.Resources.ButtonOff;
 
-        private Light[] lights = new Light[16];
+        private Light[] lights = [];
         private LevelData levelData;
         private int moves = 0;
         private int level = 1;
         private string levelName = "Levels_1.json";
         bool debug = false;
 
-        public frmLightsOut()
+        public Board()
         {
             InitializeComponent();
-            this.Width = 500;
+            PreloadLevelsData();
+
+            levelData = new LevelData().LoadLevelDataFromJson(levelName);
+            
             GenerateGameBoard();
 
-            LoadLevels();
             GenerateLevelFromFile();
         }
 
-        private void LoadLevels()
+        private void PreloadLevelsData()
         {
             cbxLevelSelect.Items.Clear();
-            string[] files = FileUtil.GetFiles();
+            string[] files = FileUtil.GetFileFromLevelsFolder();
             foreach (string file in files)
             {
                 cbxLevelSelect.Items.Add(Path.GetFileName(file));
             }
             cbxLevelSelect.SelectedIndex = 0;
+
         }
 
         private void GenerateLevelFromFile()
@@ -41,7 +45,7 @@ namespace LightsOut
             levelName = cbxLevelSelect.Text;
             levelData = new LevelData().LoadLevelDataFromJson(levelName);
             level = levelData.Level;
-
+            GenerateGameBoard();
             for (var i = 0; i < levelData.Board.Length; i++)
             {
                 if (levelData.Board[i] == 0)
@@ -56,42 +60,51 @@ namespace LightsOut
 #if DEBUG
             lblLog.Text = DebugBoardState();
 #endif
-            UpdateUI();
-            EnableLights();
         }
 
         private void GenerateRandomLevel()
         {
             moves = 0;
             level += 1;
-            int size = 4;
+            levelData.Size = GetBoardSizeForRandomGen();
+            GenerateGameBoard();
             Random rnd = new Random();
-            List<int> used = new List<int>();
-            int numMoves = rnd.Next(4, size * size + 1); // Can adjust difficulty
-            for (int i = 0; i < numMoves; i++)
-            {
-                int randLight = rnd.Next(0, size * size);
-                // We do this so that we can only ever touch each light once.
-                while (used.Contains(randLight))
-                {
-                    randLight = rnd.Next(0, size * size);
-                }
-                used.Add(randLight);
+            levelData.MinMoves = -1;
 
-                lights[randLight].ClickLight();
+            while (levelData.MinMoves != numMinMoves.Value)
+            {
+                foreach (var light in lights)
+                {
+                    light.TurnOff();
+                }
+                List<int> used = new List<int>();
+                int iterations = rnd.Next(levelData.Size * levelData.Size + 1);
+                for (int i = 0; i < iterations; i++)
+                {
+                    int randLight = rnd.Next(0, levelData.Size * levelData.Size);
+                    // We do this so that we can only ever touch each light once.
+                    while (used.Contains(randLight))
+                    {
+                        randLight = rnd.Next(0, levelData.Size * levelData.Size);
+                    }
+                    used.Add(randLight);
+
+                    lights[randLight].ClickLight();
+                    levelData.UpdateBoard(lights);
 
 #if DEBUG
-                lblLog.Text = DebugBoardState();
+                    lblLog.Text = DebugBoardState();
 #endif
+                }
+                levelData = new LevelData(level, levelData.Size, 0);
+                levelData.UpdateBoard(lights);
+                levelData.MinMoves = Solver.GetSolutionMatrix(levelData).Sum();
+
+                if(numMinMoves.Value == 0)
+                {
+                    break;
+                }
             }
-
-            levelData.UpdateBoard(lights);
-            levelData.Level = level;
-            levelData.Size = size;
-            levelData.MinMoves = Solver.GetSolutionMatrix(levelData).Sum();
-
-            UpdateUI();
-            EnableLights();
         }
 
         private void UpdateUI()
@@ -126,8 +139,8 @@ namespace LightsOut
 
         private void DisableLights()
         {
-            pictureBox1.BringToFront();
-            pictureBox1.Visible = true;
+            pbxWinImage.BringToFront();
+            pbxWinImage.Visible = true;
             foreach (var light in lights)
             {
                 light.Enabled = false;
@@ -136,7 +149,7 @@ namespace LightsOut
 
         private void EnableLights()
         {
-            pictureBox1.Visible = false;
+            pbxWinImage.Visible = false;
             foreach (var light in lights)
             {
                 light.Enabled = true;
@@ -150,14 +163,24 @@ namespace LightsOut
             {
                 if (solution[i] == 1)
                 {
-                    lights[i].ClickLight();
-
-                    levelData.UpdateBoard(lights);
-                    UpdateMoves();
+                    OnCLickLight(lights[i]);
                     CheckWin();
                     return;
                 }
             }
+        }
+
+        private void OnCLickLight(Light light)
+        {
+            using (var clickSound = new SoundPlayer())
+            {
+                clickSound.SoundLocation = FileUtil.GetSoundFile("Snap-sound-effect.wav");
+                clickSound.Play();
+            }
+            light.ClickLight();
+
+            levelData.UpdateBoard(lights);
+            UpdateMoves();
         }
 
         private async void SolvePuzzle()
@@ -167,42 +190,59 @@ namespace LightsOut
             {
                 if (solution[i] == 1)
                 {
-                    lights[i].ClickLight();
-
-                    levelData.UpdateBoard(lights);
-                    UpdateMoves();
+                    OnCLickLight(lights[i]);
                     await Task.Delay(500);
                 }
             }
             CheckWin();
         }
 #if DEBUG
+
+
         private string DebugBoardState()
         {
             String output = "";
-            for (int i = 0; i < levelData.Board.Length; i++)
+            if (levelData.Size == 4)
             {
-                if (i % 4 == 0 && i != 0)
+                for (int i = 0; i < levelData.Board.Length; i++)
                 {
-                    output += "\n";
+                    if (i % 4 == 0 && i != 0)
+                    {
+                        output += "\n";
+                    }
+                    output += levelData.Board[i] + ", ";
                 }
-                output += levelData.Board[i] + ", ";
+            }
+            else
+            {
+                for (int i = 0; i < levelData.Board.Length; i++)
+                {
+                    if (i % 3 == 0 && i != 0)
+                    {
+                        output += "\n";
+                    }
+                    output += levelData.Board[i] + ", ";
+                }
             }
 
             return output;
         }
 
-        private void btnSaveLevel_Click(object sender, EventArgs e)
+        private int GetBoardSizeForRandomGen()
         {
-            levelData = new LevelData(levelData);
-            var solution = Solver.GetSolutionMatrix(levelData);
-            levelData.MinMoves = solution.Sum();
-            string ProjectDir = "C:\\Users\\GlassToe\\Documents\\Calhoun Comminity College\\Fall 24\\CIS 285 - Object-Oriented Programming (11022)\\Final Project\\OOP-Final-Project-Lights-Out\\LightsOut\\Resources\\Levels\\";
-            var data = JsonConvert.SerializeObject(levelData);
-            File.WriteAllText(FileUtil.GetFile($"Levels_{level}.json"), data);
-            File.WriteAllText($"{ProjectDir}Levels_{level}.json", data);
-            LoadLevels();
-            MessageBox.Show(Directory.GetCurrentDirectory());
+            if (rb3x3.Checked)
+            {
+                return 3;
+            }
+            else if (rb4x4.Checked)
+            {
+                return 4;
+            }
+            else if(rb5x5.Checked)
+            {
+                return 5;
+            }
+            return 4;
         }
 #endif
     }

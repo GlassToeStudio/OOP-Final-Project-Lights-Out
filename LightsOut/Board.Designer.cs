@@ -1,6 +1,6 @@
 ﻿namespace LightsOut
 {
-    partial class frmLightsOut
+    partial class Board
     {
         /// <summary>
         ///  Required designer variable.
@@ -28,309 +28,326 @@
         /// </summary>
         private void InitializeComponent()
         {
-            light_33 = new Light();
-            light_32 = new Light();
-            light_31 = new Light();
-            light_30 = new Light();
-            light_23 = new Light();
-            light_22 = new Light();
-            light_21 = new Light();
-            light_20 = new Light();
-            light_13 = new Light();
-            light_12 = new Light();
-            light_11 = new Light();
-            light_10 = new Light();
-            light_03 = new Light();
-            light_02 = new Light();
-            light_01 = new Light();
-            light_00 = new Light();
-            gbxGameBoard = new GroupBox();
-            pictureBox1 = new PictureBox();
+            light_4x4_33 = new Light();
+            light_4x4_32 = new Light();
+            light_4x4_31 = new Light();
+            light_4x4_30 = new Light();
+            light_4x4_23 = new Light();
+            light_4x4_22 = new Light();
+            light_4x4_21 = new Light();
+            light_4x4_20 = new Light();
+            light_4x4_13 = new Light();
+            light_4x4_12 = new Light();
+            light_4x4_11 = new Light();
+            light_4x4_10 = new Light();
+            light_4x4_03 = new Light();
+            light_4x4_02 = new Light();
+            light_4x4_01 = new Light();
+            light_4x4_00 = new Light();
+            gbxGameBoard_4x4 = new GroupBox();
+            pbxWinImage = new PictureBox();
             lblLog = new Label();
-            btnSolve = new Button();
+            btnSolveAll = new Button();
             gbxStats = new GroupBox();
             lblMoves = new Label();
             lblGoal = new Label();
-            label4 = new Label();
-            label3 = new Label();
+            lblMovesLabel = new Label();
+            lblGoalLabel = new Label();
             lblSize = new Label();
-            label1 = new Label();
-            button1 = new Button();
-            button2 = new Button();
+            lblSizeLabel = new Label();
+            btnSolveOne = new Button();
+            btnGenerateRandom = new Button();
             btnLoad = new Button();
             cbxLevelSelect = new ComboBox();
             bgxDebug = new GroupBox();
+            numMinMoves = new NumericUpDown();
+            lblMinMovesInput = new Label();
+            rb5x5 = new RadioButton();
+            rb4x4 = new RadioButton();
+            rb3x3 = new RadioButton();
             btnSaveLevel = new Button();
-            gbxGameBoard.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            gbxGameBoard_3x3 = new GroupBox();
+            light_3x3_22 = new Light();
+            light_3x3_21 = new Light();
+            light_3x3_20 = new Light();
+            light_3x3_12 = new Light();
+            light_3x3_11 = new Light();
+            light_3x3_10 = new Light();
+            light_3x3_02 = new Light();
+            light_3x3_01 = new Light();
+            light_3x3_00 = new Light();
+            gbxGameBoard_4x4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pbxWinImage).BeginInit();
             gbxStats.SuspendLayout();
             bgxDebug.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)numMinMoves).BeginInit();
+            gbxGameBoard_3x3.SuspendLayout();
             SuspendLayout();
             // 
-            // light_33
+            // light_4x4_33
             // 
-            light_33.BackgroundImage = Properties.Resources.ButtonOn;
-            light_33.BackgroundImageLayout = ImageLayout.Stretch;
-            light_33.FlatAppearance.BorderSize = 0;
-            light_33.FlatStyle = FlatStyle.Flat;
-            light_33.Location = new Point(230, 235);
-            light_33.Name = "light_33";
-            light_33.Size = new Size(75, 75);
-            light_33.TabIndex = 15;
-            light_33.Tag = "ButtonOn";
-            light_33.UseVisualStyleBackColor = true;
-            light_33.Click += btnLight_Click;
+            light_4x4_33.BackgroundImage = Properties.Resources.ButtonOn;
+            light_4x4_33.BackgroundImageLayout = ImageLayout.Stretch;
+            light_4x4_33.FlatAppearance.BorderSize = 0;
+            light_4x4_33.FlatStyle = FlatStyle.Flat;
+            light_4x4_33.Location = new Point(230, 235);
+            light_4x4_33.Name = "light_4x4_33";
+            light_4x4_33.Size = new Size(75, 75);
+            light_4x4_33.TabIndex = 15;
+            light_4x4_33.Tag = "ButtonOn";
+            light_4x4_33.UseVisualStyleBackColor = true;
+            light_4x4_33.Click += Light_Click;
             // 
-            // light_32
+            // light_4x4_32
             // 
-            light_32.BackgroundImage = Properties.Resources.ButtonOn;
-            light_32.BackgroundImageLayout = ImageLayout.Stretch;
-            light_32.FlatAppearance.BorderSize = 0;
-            light_32.FlatStyle = FlatStyle.Flat;
-            light_32.Location = new Point(155, 235);
-            light_32.Name = "light_32";
-            light_32.Size = new Size(75, 75);
-            light_32.TabIndex = 14;
-            light_32.Tag = "ButtonOn";
-            light_32.UseVisualStyleBackColor = true;
-            light_32.Click += btnLight_Click;
+            light_4x4_32.BackgroundImage = Properties.Resources.ButtonOn;
+            light_4x4_32.BackgroundImageLayout = ImageLayout.Stretch;
+            light_4x4_32.FlatAppearance.BorderSize = 0;
+            light_4x4_32.FlatStyle = FlatStyle.Flat;
+            light_4x4_32.Location = new Point(155, 235);
+            light_4x4_32.Name = "light_4x4_32";
+            light_4x4_32.Size = new Size(75, 75);
+            light_4x4_32.TabIndex = 14;
+            light_4x4_32.Tag = "ButtonOn";
+            light_4x4_32.UseVisualStyleBackColor = true;
+            light_4x4_32.Click += Light_Click;
             // 
-            // light_31
+            // light_4x4_31
             // 
-            light_31.BackgroundImage = Properties.Resources.ButtonOn;
-            light_31.BackgroundImageLayout = ImageLayout.Stretch;
-            light_31.FlatAppearance.BorderSize = 0;
-            light_31.FlatStyle = FlatStyle.Flat;
-            light_31.Location = new Point(80, 235);
-            light_31.Name = "light_31";
-            light_31.Size = new Size(75, 75);
-            light_31.TabIndex = 13;
-            light_31.Tag = "ButtonOn";
-            light_31.UseVisualStyleBackColor = true;
-            light_31.Click += btnLight_Click;
+            light_4x4_31.BackgroundImage = Properties.Resources.ButtonOn;
+            light_4x4_31.BackgroundImageLayout = ImageLayout.Stretch;
+            light_4x4_31.FlatAppearance.BorderSize = 0;
+            light_4x4_31.FlatStyle = FlatStyle.Flat;
+            light_4x4_31.Location = new Point(80, 235);
+            light_4x4_31.Name = "light_4x4_31";
+            light_4x4_31.Size = new Size(75, 75);
+            light_4x4_31.TabIndex = 13;
+            light_4x4_31.Tag = "ButtonOn";
+            light_4x4_31.UseVisualStyleBackColor = true;
+            light_4x4_31.Click += Light_Click;
             // 
-            // light_30
+            // light_4x4_30
             // 
-            light_30.BackgroundImage = Properties.Resources.ButtonOn;
-            light_30.BackgroundImageLayout = ImageLayout.Stretch;
-            light_30.FlatAppearance.BorderSize = 0;
-            light_30.FlatStyle = FlatStyle.Flat;
-            light_30.Location = new Point(5, 235);
-            light_30.Name = "light_30";
-            light_30.Size = new Size(75, 75);
-            light_30.TabIndex = 12;
-            light_30.Tag = "ButtonOn";
-            light_30.UseVisualStyleBackColor = true;
-            light_30.Click += btnLight_Click;
+            light_4x4_30.BackgroundImage = Properties.Resources.ButtonOn;
+            light_4x4_30.BackgroundImageLayout = ImageLayout.Stretch;
+            light_4x4_30.FlatAppearance.BorderSize = 0;
+            light_4x4_30.FlatStyle = FlatStyle.Flat;
+            light_4x4_30.Location = new Point(5, 235);
+            light_4x4_30.Name = "light_4x4_30";
+            light_4x4_30.Size = new Size(75, 75);
+            light_4x4_30.TabIndex = 12;
+            light_4x4_30.Tag = "ButtonOn";
+            light_4x4_30.UseVisualStyleBackColor = true;
+            light_4x4_30.Click += Light_Click;
             // 
-            // light_23
+            // light_4x4_23
             // 
-            light_23.BackgroundImage = Properties.Resources.ButtonOn;
-            light_23.BackgroundImageLayout = ImageLayout.Stretch;
-            light_23.FlatAppearance.BorderSize = 0;
-            light_23.FlatStyle = FlatStyle.Flat;
-            light_23.Location = new Point(230, 160);
-            light_23.Name = "light_23";
-            light_23.Size = new Size(75, 75);
-            light_23.TabIndex = 11;
-            light_23.Tag = "ButtonOn";
-            light_23.UseVisualStyleBackColor = true;
-            light_23.Click += btnLight_Click;
+            light_4x4_23.BackgroundImage = Properties.Resources.ButtonOn;
+            light_4x4_23.BackgroundImageLayout = ImageLayout.Stretch;
+            light_4x4_23.FlatAppearance.BorderSize = 0;
+            light_4x4_23.FlatStyle = FlatStyle.Flat;
+            light_4x4_23.Location = new Point(230, 160);
+            light_4x4_23.Name = "light_4x4_23";
+            light_4x4_23.Size = new Size(75, 75);
+            light_4x4_23.TabIndex = 11;
+            light_4x4_23.Tag = "ButtonOn";
+            light_4x4_23.UseVisualStyleBackColor = true;
+            light_4x4_23.Click += Light_Click;
             // 
-            // light_22
+            // light_4x4_22
             // 
-            light_22.BackgroundImage = Properties.Resources.ButtonOn;
-            light_22.BackgroundImageLayout = ImageLayout.Stretch;
-            light_22.FlatAppearance.BorderSize = 0;
-            light_22.FlatStyle = FlatStyle.Flat;
-            light_22.Location = new Point(155, 160);
-            light_22.Name = "light_22";
-            light_22.Size = new Size(75, 75);
-            light_22.TabIndex = 10;
-            light_22.Tag = "ButtonOn";
-            light_22.UseVisualStyleBackColor = true;
-            light_22.Click += btnLight_Click;
+            light_4x4_22.BackgroundImage = Properties.Resources.ButtonOn;
+            light_4x4_22.BackgroundImageLayout = ImageLayout.Stretch;
+            light_4x4_22.FlatAppearance.BorderSize = 0;
+            light_4x4_22.FlatStyle = FlatStyle.Flat;
+            light_4x4_22.Location = new Point(155, 160);
+            light_4x4_22.Name = "light_4x4_22";
+            light_4x4_22.Size = new Size(75, 75);
+            light_4x4_22.TabIndex = 10;
+            light_4x4_22.Tag = "ButtonOn";
+            light_4x4_22.UseVisualStyleBackColor = true;
+            light_4x4_22.Click += Light_Click;
             // 
-            // light_21
+            // light_4x4_21
             // 
-            light_21.BackgroundImage = Properties.Resources.ButtonOn;
-            light_21.BackgroundImageLayout = ImageLayout.Stretch;
-            light_21.FlatAppearance.BorderSize = 0;
-            light_21.FlatStyle = FlatStyle.Flat;
-            light_21.Location = new Point(80, 160);
-            light_21.Name = "light_21";
-            light_21.Size = new Size(75, 75);
-            light_21.TabIndex = 9;
-            light_21.Tag = "ButtonOn";
-            light_21.UseVisualStyleBackColor = true;
-            light_21.Click += btnLight_Click;
+            light_4x4_21.BackgroundImage = Properties.Resources.ButtonOn;
+            light_4x4_21.BackgroundImageLayout = ImageLayout.Stretch;
+            light_4x4_21.FlatAppearance.BorderSize = 0;
+            light_4x4_21.FlatStyle = FlatStyle.Flat;
+            light_4x4_21.Location = new Point(80, 160);
+            light_4x4_21.Name = "light_4x4_21";
+            light_4x4_21.Size = new Size(75, 75);
+            light_4x4_21.TabIndex = 9;
+            light_4x4_21.Tag = "ButtonOn";
+            light_4x4_21.UseVisualStyleBackColor = true;
+            light_4x4_21.Click += Light_Click;
             // 
-            // light_20
+            // light_4x4_20
             // 
-            light_20.BackgroundImage = Properties.Resources.ButtonOn;
-            light_20.BackgroundImageLayout = ImageLayout.Stretch;
-            light_20.FlatAppearance.BorderSize = 0;
-            light_20.FlatStyle = FlatStyle.Flat;
-            light_20.Location = new Point(5, 160);
-            light_20.Name = "light_20";
-            light_20.Size = new Size(75, 75);
-            light_20.TabIndex = 8;
-            light_20.Tag = "ButtonOn";
-            light_20.UseVisualStyleBackColor = true;
-            light_20.Click += btnLight_Click;
+            light_4x4_20.BackgroundImage = Properties.Resources.ButtonOn;
+            light_4x4_20.BackgroundImageLayout = ImageLayout.Stretch;
+            light_4x4_20.FlatAppearance.BorderSize = 0;
+            light_4x4_20.FlatStyle = FlatStyle.Flat;
+            light_4x4_20.Location = new Point(5, 160);
+            light_4x4_20.Name = "light_4x4_20";
+            light_4x4_20.Size = new Size(75, 75);
+            light_4x4_20.TabIndex = 8;
+            light_4x4_20.Tag = "ButtonOn";
+            light_4x4_20.UseVisualStyleBackColor = true;
+            light_4x4_20.Click += Light_Click;
             // 
-            // light_13
+            // light_4x4_13
             // 
-            light_13.BackgroundImage = Properties.Resources.ButtonOn;
-            light_13.BackgroundImageLayout = ImageLayout.Stretch;
-            light_13.FlatAppearance.BorderSize = 0;
-            light_13.FlatStyle = FlatStyle.Flat;
-            light_13.Location = new Point(230, 85);
-            light_13.Name = "light_13";
-            light_13.Size = new Size(75, 75);
-            light_13.TabIndex = 7;
-            light_13.Tag = "ButtonOn";
-            light_13.UseVisualStyleBackColor = true;
-            light_13.Click += btnLight_Click;
+            light_4x4_13.BackgroundImage = Properties.Resources.ButtonOn;
+            light_4x4_13.BackgroundImageLayout = ImageLayout.Stretch;
+            light_4x4_13.FlatAppearance.BorderSize = 0;
+            light_4x4_13.FlatStyle = FlatStyle.Flat;
+            light_4x4_13.Location = new Point(230, 85);
+            light_4x4_13.Name = "light_4x4_13";
+            light_4x4_13.Size = new Size(75, 75);
+            light_4x4_13.TabIndex = 7;
+            light_4x4_13.Tag = "ButtonOn";
+            light_4x4_13.UseVisualStyleBackColor = true;
+            light_4x4_13.Click += Light_Click;
             // 
-            // light_12
+            // light_4x4_12
             // 
-            light_12.BackgroundImage = Properties.Resources.ButtonOn;
-            light_12.BackgroundImageLayout = ImageLayout.Stretch;
-            light_12.FlatAppearance.BorderSize = 0;
-            light_12.FlatStyle = FlatStyle.Flat;
-            light_12.Location = new Point(155, 85);
-            light_12.Name = "light_12";
-            light_12.Size = new Size(75, 75);
-            light_12.TabIndex = 6;
-            light_12.Tag = "ButtonOn";
-            light_12.UseVisualStyleBackColor = true;
-            light_12.Click += btnLight_Click;
+            light_4x4_12.BackgroundImage = Properties.Resources.ButtonOn;
+            light_4x4_12.BackgroundImageLayout = ImageLayout.Stretch;
+            light_4x4_12.FlatAppearance.BorderSize = 0;
+            light_4x4_12.FlatStyle = FlatStyle.Flat;
+            light_4x4_12.Location = new Point(155, 85);
+            light_4x4_12.Name = "light_4x4_12";
+            light_4x4_12.Size = new Size(75, 75);
+            light_4x4_12.TabIndex = 6;
+            light_4x4_12.Tag = "ButtonOn";
+            light_4x4_12.UseVisualStyleBackColor = true;
+            light_4x4_12.Click += Light_Click;
             // 
-            // light_11
+            // light_4x4_11
             // 
-            light_11.BackgroundImage = Properties.Resources.ButtonOn;
-            light_11.BackgroundImageLayout = ImageLayout.Stretch;
-            light_11.FlatAppearance.BorderSize = 0;
-            light_11.FlatStyle = FlatStyle.Flat;
-            light_11.Location = new Point(80, 85);
-            light_11.Name = "light_11";
-            light_11.Size = new Size(75, 75);
-            light_11.TabIndex = 5;
-            light_11.Tag = "ButtonOn";
-            light_11.UseVisualStyleBackColor = true;
-            light_11.Click += btnLight_Click;
+            light_4x4_11.BackgroundImage = Properties.Resources.ButtonOn;
+            light_4x4_11.BackgroundImageLayout = ImageLayout.Stretch;
+            light_4x4_11.FlatAppearance.BorderSize = 0;
+            light_4x4_11.FlatStyle = FlatStyle.Flat;
+            light_4x4_11.Location = new Point(80, 85);
+            light_4x4_11.Name = "light_4x4_11";
+            light_4x4_11.Size = new Size(75, 75);
+            light_4x4_11.TabIndex = 5;
+            light_4x4_11.Tag = "ButtonOn";
+            light_4x4_11.UseVisualStyleBackColor = true;
+            light_4x4_11.Click += Light_Click;
             // 
-            // light_10
+            // light_4x4_10
             // 
-            light_10.BackgroundImage = Properties.Resources.ButtonOn;
-            light_10.BackgroundImageLayout = ImageLayout.Stretch;
-            light_10.FlatAppearance.BorderSize = 0;
-            light_10.FlatStyle = FlatStyle.Flat;
-            light_10.Location = new Point(5, 85);
-            light_10.Name = "light_10";
-            light_10.Size = new Size(75, 75);
-            light_10.TabIndex = 4;
-            light_10.Tag = "ButtonOn";
-            light_10.UseVisualStyleBackColor = true;
-            light_10.Click += btnLight_Click;
+            light_4x4_10.BackgroundImage = Properties.Resources.ButtonOn;
+            light_4x4_10.BackgroundImageLayout = ImageLayout.Stretch;
+            light_4x4_10.FlatAppearance.BorderSize = 0;
+            light_4x4_10.FlatStyle = FlatStyle.Flat;
+            light_4x4_10.Location = new Point(5, 85);
+            light_4x4_10.Name = "light_4x4_10";
+            light_4x4_10.Size = new Size(75, 75);
+            light_4x4_10.TabIndex = 4;
+            light_4x4_10.Tag = "ButtonOn";
+            light_4x4_10.UseVisualStyleBackColor = true;
+            light_4x4_10.Click += Light_Click;
             // 
-            // light_03
+            // light_4x4_03
             // 
-            light_03.BackgroundImage = Properties.Resources.ButtonOn;
-            light_03.BackgroundImageLayout = ImageLayout.Stretch;
-            light_03.FlatAppearance.BorderSize = 0;
-            light_03.FlatStyle = FlatStyle.Flat;
-            light_03.Location = new Point(230, 10);
-            light_03.Name = "light_03";
-            light_03.Size = new Size(75, 75);
-            light_03.TabIndex = 3;
-            light_03.Tag = "ButtonOn";
-            light_03.UseVisualStyleBackColor = true;
-            light_03.Click += btnLight_Click;
+            light_4x4_03.BackgroundImage = Properties.Resources.ButtonOn;
+            light_4x4_03.BackgroundImageLayout = ImageLayout.Stretch;
+            light_4x4_03.FlatAppearance.BorderSize = 0;
+            light_4x4_03.FlatStyle = FlatStyle.Flat;
+            light_4x4_03.Location = new Point(230, 10);
+            light_4x4_03.Name = "light_4x4_03";
+            light_4x4_03.Size = new Size(75, 75);
+            light_4x4_03.TabIndex = 3;
+            light_4x4_03.Tag = "ButtonOn";
+            light_4x4_03.UseVisualStyleBackColor = true;
+            light_4x4_03.Click += Light_Click;
             // 
-            // light_02
+            // light_4x4_02
             // 
-            light_02.BackgroundImage = Properties.Resources.ButtonOn;
-            light_02.BackgroundImageLayout = ImageLayout.Stretch;
-            light_02.FlatAppearance.BorderSize = 0;
-            light_02.FlatStyle = FlatStyle.Flat;
-            light_02.Location = new Point(155, 10);
-            light_02.Name = "light_02";
-            light_02.Size = new Size(75, 75);
-            light_02.TabIndex = 2;
-            light_02.Tag = "ButtonOn";
-            light_02.UseVisualStyleBackColor = true;
-            light_02.Click += btnLight_Click;
+            light_4x4_02.BackgroundImage = Properties.Resources.ButtonOn;
+            light_4x4_02.BackgroundImageLayout = ImageLayout.Stretch;
+            light_4x4_02.FlatAppearance.BorderSize = 0;
+            light_4x4_02.FlatStyle = FlatStyle.Flat;
+            light_4x4_02.Location = new Point(155, 10);
+            light_4x4_02.Name = "light_4x4_02";
+            light_4x4_02.Size = new Size(75, 75);
+            light_4x4_02.TabIndex = 2;
+            light_4x4_02.Tag = "ButtonOn";
+            light_4x4_02.UseVisualStyleBackColor = true;
+            light_4x4_02.Click += Light_Click;
             // 
-            // light_01
+            // light_4x4_01
             // 
-            light_01.BackgroundImage = Properties.Resources.ButtonOn;
-            light_01.BackgroundImageLayout = ImageLayout.Stretch;
-            light_01.FlatAppearance.BorderSize = 0;
-            light_01.FlatStyle = FlatStyle.Flat;
-            light_01.Location = new Point(80, 10);
-            light_01.Name = "light_01";
-            light_01.Size = new Size(75, 75);
-            light_01.TabIndex = 1;
-            light_01.Tag = "ButtonOn";
-            light_01.UseVisualStyleBackColor = true;
-            light_01.Click += btnLight_Click;
+            light_4x4_01.BackgroundImage = Properties.Resources.ButtonOn;
+            light_4x4_01.BackgroundImageLayout = ImageLayout.Stretch;
+            light_4x4_01.FlatAppearance.BorderSize = 0;
+            light_4x4_01.FlatStyle = FlatStyle.Flat;
+            light_4x4_01.Location = new Point(80, 10);
+            light_4x4_01.Name = "light_4x4_01";
+            light_4x4_01.Size = new Size(75, 75);
+            light_4x4_01.TabIndex = 1;
+            light_4x4_01.Tag = "ButtonOn";
+            light_4x4_01.UseVisualStyleBackColor = true;
+            light_4x4_01.Click += Light_Click;
             // 
-            // light_00
+            // light_4x4_00
             // 
-            light_00.BackgroundImage = Properties.Resources.ButtonOn;
-            light_00.BackgroundImageLayout = ImageLayout.Stretch;
-            light_00.FlatAppearance.BorderSize = 0;
-            light_00.FlatStyle = FlatStyle.Flat;
-            light_00.Location = new Point(5, 10);
-            light_00.Name = "light_00";
-            light_00.Size = new Size(75, 75);
-            light_00.TabIndex = 0;
-            light_00.Tag = "ButtonOn";
-            light_00.UseVisualStyleBackColor = true;
-            light_00.Click += btnLight_Click;
+            light_4x4_00.BackgroundImage = Properties.Resources.ButtonOn;
+            light_4x4_00.BackgroundImageLayout = ImageLayout.Stretch;
+            light_4x4_00.FlatAppearance.BorderSize = 0;
+            light_4x4_00.FlatStyle = FlatStyle.Flat;
+            light_4x4_00.Location = new Point(5, 10);
+            light_4x4_00.Name = "light_4x4_00";
+            light_4x4_00.Size = new Size(75, 75);
+            light_4x4_00.TabIndex = 0;
+            light_4x4_00.Tag = "ButtonOn";
+            light_4x4_00.UseVisualStyleBackColor = true;
+            light_4x4_00.Click += Light_Click;
             // 
-            // gbxGameBoard
+            // gbxGameBoard_4x4
             // 
-            gbxGameBoard.BackColor = Color.Black;
-            gbxGameBoard.BackgroundImageLayout = ImageLayout.Stretch;
-            gbxGameBoard.Controls.Add(light_33);
-            gbxGameBoard.Controls.Add(light_32);
-            gbxGameBoard.Controls.Add(light_31);
-            gbxGameBoard.Controls.Add(light_30);
-            gbxGameBoard.Controls.Add(light_23);
-            gbxGameBoard.Controls.Add(light_22);
-            gbxGameBoard.Controls.Add(light_21);
-            gbxGameBoard.Controls.Add(light_20);
-            gbxGameBoard.Controls.Add(light_13);
-            gbxGameBoard.Controls.Add(light_12);
-            gbxGameBoard.Controls.Add(light_11);
-            gbxGameBoard.Controls.Add(light_10);
-            gbxGameBoard.Controls.Add(light_03);
-            gbxGameBoard.Controls.Add(light_02);
-            gbxGameBoard.Controls.Add(light_01);
-            gbxGameBoard.Controls.Add(light_00);
-            gbxGameBoard.FlatStyle = FlatStyle.Flat;
-            gbxGameBoard.Location = new Point(8, 88);
-            gbxGameBoard.Margin = new Padding(2);
-            gbxGameBoard.Name = "gbxGameBoard";
-            gbxGameBoard.Padding = new Padding(2);
-            gbxGameBoard.Size = new Size(311, 316);
-            gbxGameBoard.TabIndex = 0;
-            gbxGameBoard.TabStop = false;
+            gbxGameBoard_4x4.BackColor = Color.Black;
+            gbxGameBoard_4x4.BackgroundImageLayout = ImageLayout.Stretch;
+            gbxGameBoard_4x4.Controls.Add(light_4x4_33);
+            gbxGameBoard_4x4.Controls.Add(light_4x4_32);
+            gbxGameBoard_4x4.Controls.Add(light_4x4_31);
+            gbxGameBoard_4x4.Controls.Add(light_4x4_30);
+            gbxGameBoard_4x4.Controls.Add(light_4x4_23);
+            gbxGameBoard_4x4.Controls.Add(light_4x4_22);
+            gbxGameBoard_4x4.Controls.Add(light_4x4_21);
+            gbxGameBoard_4x4.Controls.Add(light_4x4_20);
+            gbxGameBoard_4x4.Controls.Add(light_4x4_13);
+            gbxGameBoard_4x4.Controls.Add(light_4x4_12);
+            gbxGameBoard_4x4.Controls.Add(light_4x4_11);
+            gbxGameBoard_4x4.Controls.Add(light_4x4_10);
+            gbxGameBoard_4x4.Controls.Add(light_4x4_03);
+            gbxGameBoard_4x4.Controls.Add(light_4x4_02);
+            gbxGameBoard_4x4.Controls.Add(light_4x4_01);
+            gbxGameBoard_4x4.Controls.Add(light_4x4_00);
+            gbxGameBoard_4x4.FlatStyle = FlatStyle.Flat;
+            gbxGameBoard_4x4.Location = new Point(8, 88);
+            gbxGameBoard_4x4.Margin = new Padding(2);
+            gbxGameBoard_4x4.Name = "gbxGameBoard_4x4";
+            gbxGameBoard_4x4.Padding = new Padding(2);
+            gbxGameBoard_4x4.Size = new Size(310, 315);
+            gbxGameBoard_4x4.TabIndex = 0;
+            gbxGameBoard_4x4.TabStop = false;
             // 
-            // pictureBox1
+            // pbxWinImage
             // 
-            pictureBox1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            pictureBox1.BackgroundImage = Properties.Resources.WinPanel;
-            pictureBox1.BackgroundImageLayout = ImageLayout.Stretch;
-            pictureBox1.Location = new Point(21, 15);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(613, 136);
-            pictureBox1.TabIndex = 9;
-            pictureBox1.TabStop = false;
-            pictureBox1.Visible = false;
+            pbxWinImage.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            pbxWinImage.BackgroundImage = Properties.Resources.WinPanel;
+            pbxWinImage.BackgroundImageLayout = ImageLayout.Stretch;
+            pbxWinImage.Location = new Point(21, 15);
+            pbxWinImage.Name = "pbxWinImage";
+            pbxWinImage.Size = new Size(620, 136);
+            pbxWinImage.TabIndex = 9;
+            pbxWinImage.TabStop = false;
+            pbxWinImage.Visible = false;
             // 
             // lblLog
             // 
@@ -338,7 +355,7 @@
             lblLog.BackColor = SystemColors.ActiveCaptionText;
             lblLog.BorderStyle = BorderStyle.FixedSingle;
             lblLog.FlatStyle = FlatStyle.Flat;
-            lblLog.Location = new Point(11, 234);
+            lblLog.Location = new Point(11, 242);
             lblLog.MinimumSize = new Size(130, 25);
             lblLog.Name = "lblLog";
             lblLog.Size = new Size(130, 25);
@@ -346,29 +363,29 @@
             lblLog.Text = "0,0,0,0";
             lblLog.TextAlign = ContentAlignment.MiddleCenter;
             // 
-            // btnSolve
+            // btnSolveAll
             // 
-            btnSolve.BackgroundImageLayout = ImageLayout.Stretch;
-            btnSolve.FlatStyle = FlatStyle.Flat;
-            btnSolve.ForeColor = SystemColors.ActiveCaption;
-            btnSolve.Location = new Point(11, 49);
-            btnSolve.Name = "btnSolve";
-            btnSolve.Size = new Size(136, 26);
-            btnSolve.TabIndex = 2;
-            btnSolve.Text = "Solve All";
-            btnSolve.UseMnemonic = false;
-            btnSolve.UseVisualStyleBackColor = false;
-            btnSolve.Click += btnSolve_Click;
+            btnSolveAll.BackgroundImageLayout = ImageLayout.Stretch;
+            btnSolveAll.FlatStyle = FlatStyle.Flat;
+            btnSolveAll.ForeColor = SystemColors.ActiveCaption;
+            btnSolveAll.Location = new Point(11, 49);
+            btnSolveAll.Name = "btnSolveAll";
+            btnSolveAll.Size = new Size(136, 26);
+            btnSolveAll.TabIndex = 2;
+            btnSolveAll.Text = "Solve All";
+            btnSolveAll.UseMnemonic = false;
+            btnSolveAll.UseVisualStyleBackColor = false;
+            btnSolveAll.Click += SolveAll_Click;
             // 
             // gbxStats
             // 
             gbxStats.BackColor = Color.Black;
             gbxStats.Controls.Add(lblMoves);
             gbxStats.Controls.Add(lblGoal);
-            gbxStats.Controls.Add(label4);
-            gbxStats.Controls.Add(label3);
+            gbxStats.Controls.Add(lblMovesLabel);
+            gbxStats.Controls.Add(lblGoalLabel);
             gbxStats.Controls.Add(lblSize);
-            gbxStats.Controls.Add(label1);
+            gbxStats.Controls.Add(lblSizeLabel);
             gbxStats.ForeColor = SystemColors.ActiveCaption;
             gbxStats.Location = new Point(324, 89);
             gbxStats.Name = "gbxStats";
@@ -409,27 +426,27 @@
             lblGoal.Text = "5";
             lblGoal.TextAlign = ContentAlignment.TopRight;
             // 
-            // label4
+            // lblMovesLabel
             // 
-            label4.AutoSize = true;
-            label4.BackColor = Color.Black;
-            label4.ForeColor = SystemColors.ActiveCaption;
-            label4.Location = new Point(19, 86);
-            label4.Name = "label4";
-            label4.Size = new Size(45, 15);
-            label4.TabIndex = 3;
-            label4.Text = "Moves:";
+            lblMovesLabel.AutoSize = true;
+            lblMovesLabel.BackColor = Color.Black;
+            lblMovesLabel.ForeColor = SystemColors.ActiveCaption;
+            lblMovesLabel.Location = new Point(19, 86);
+            lblMovesLabel.Name = "lblMovesLabel";
+            lblMovesLabel.Size = new Size(45, 15);
+            lblMovesLabel.TabIndex = 3;
+            lblMovesLabel.Text = "Moves:";
             // 
-            // label3
+            // lblGoalLabel
             // 
-            label3.AutoSize = true;
-            label3.BackColor = Color.Black;
-            label3.ForeColor = SystemColors.ActiveCaption;
-            label3.Location = new Point(19, 56);
-            label3.Name = "label3";
-            label3.Size = new Size(34, 15);
-            label3.TabIndex = 2;
-            label3.Text = "Goal:";
+            lblGoalLabel.AutoSize = true;
+            lblGoalLabel.BackColor = Color.Black;
+            lblGoalLabel.ForeColor = SystemColors.ActiveCaption;
+            lblGoalLabel.Location = new Point(19, 56);
+            lblGoalLabel.Name = "lblGoalLabel";
+            lblGoalLabel.Size = new Size(34, 15);
+            lblGoalLabel.TabIndex = 2;
+            lblGoalLabel.Text = "Goal:";
             // 
             // lblSize
             // 
@@ -447,58 +464,58 @@
             lblSize.Text = "4 x 4";
             lblSize.TextAlign = ContentAlignment.TopRight;
             // 
-            // label1
+            // lblSizeLabel
             // 
-            label1.AutoSize = true;
-            label1.BackColor = Color.Black;
-            label1.ForeColor = SystemColors.ActiveCaption;
-            label1.Location = new Point(19, 26);
-            label1.Name = "label1";
-            label1.Size = new Size(30, 15);
-            label1.TabIndex = 0;
-            label1.Text = "Size:";
+            lblSizeLabel.AutoSize = true;
+            lblSizeLabel.BackColor = Color.Black;
+            lblSizeLabel.ForeColor = SystemColors.ActiveCaption;
+            lblSizeLabel.Location = new Point(19, 26);
+            lblSizeLabel.Name = "lblSizeLabel";
+            lblSizeLabel.Size = new Size(30, 15);
+            lblSizeLabel.TabIndex = 0;
+            lblSizeLabel.Text = "Size:";
             // 
-            // button1
+            // btnSolveOne
             // 
-            button1.BackgroundImageLayout = ImageLayout.Stretch;
-            button1.FlatStyle = FlatStyle.Flat;
-            button1.ForeColor = SystemColors.ActiveCaption;
-            button1.Location = new Point(11, 21);
-            button1.Name = "button1";
-            button1.Size = new Size(136, 26);
-            button1.TabIndex = 4;
-            button1.Text = "Solve One";
-            button1.UseMnemonic = false;
-            button1.UseVisualStyleBackColor = false;
-            button1.Click += btnSolveOne_Click;
+            btnSolveOne.BackgroundImageLayout = ImageLayout.Stretch;
+            btnSolveOne.FlatStyle = FlatStyle.Flat;
+            btnSolveOne.ForeColor = SystemColors.ActiveCaption;
+            btnSolveOne.Location = new Point(11, 21);
+            btnSolveOne.Name = "btnSolveOne";
+            btnSolveOne.Size = new Size(136, 26);
+            btnSolveOne.TabIndex = 4;
+            btnSolveOne.Text = "Solve One";
+            btnSolveOne.UseMnemonic = false;
+            btnSolveOne.UseVisualStyleBackColor = false;
+            btnSolveOne.Click += SolveOne_Click;
             // 
-            // button2
+            // btnGenerateRandom
             // 
-            button2.BackgroundImageLayout = ImageLayout.Stretch;
-            button2.FlatStyle = FlatStyle.Flat;
-            button2.ForeColor = SystemColors.ActiveCaption;
-            button2.Location = new Point(11, 77);
-            button2.Name = "button2";
-            button2.Size = new Size(65, 40);
-            button2.TabIndex = 6;
-            button2.Text = "Generate Random";
-            button2.UseMnemonic = false;
-            button2.UseVisualStyleBackColor = false;
-            button2.Click += btnGenerate_Click;
+            btnGenerateRandom.BackgroundImageLayout = ImageLayout.Stretch;
+            btnGenerateRandom.FlatStyle = FlatStyle.Flat;
+            btnGenerateRandom.ForeColor = SystemColors.ActiveCaption;
+            btnGenerateRandom.Location = new Point(11, 85);
+            btnGenerateRandom.Name = "btnGenerateRandom";
+            btnGenerateRandom.Size = new Size(65, 40);
+            btnGenerateRandom.TabIndex = 6;
+            btnGenerateRandom.Text = "Generate Random";
+            btnGenerateRandom.UseMnemonic = false;
+            btnGenerateRandom.UseVisualStyleBackColor = false;
+            btnGenerateRandom.Click += GenerateRandom_Click;
             // 
             // btnLoad
             // 
             btnLoad.BackgroundImageLayout = ImageLayout.Stretch;
             btnLoad.FlatStyle = FlatStyle.Flat;
             btnLoad.ForeColor = SystemColors.ActiveCaption;
-            btnLoad.Location = new Point(11, 166);
+            btnLoad.Location = new Point(11, 186);
             btnLoad.Name = "btnLoad";
             btnLoad.Size = new Size(130, 26);
             btnLoad.TabIndex = 7;
             btnLoad.Text = "Load";
             btnLoad.UseMnemonic = false;
             btnLoad.UseVisualStyleBackColor = false;
-            btnLoad.Click += btnLoad_Click;
+            btnLoad.Click += LoadLevel_Click;
             // 
             // cbxLevelSelect
             // 
@@ -506,43 +523,252 @@
             cbxLevelSelect.FlatStyle = FlatStyle.Flat;
             cbxLevelSelect.ForeColor = SystemColors.InactiveCaption;
             cbxLevelSelect.FormattingEnabled = true;
-            cbxLevelSelect.Location = new Point(11, 198);
+            cbxLevelSelect.Location = new Point(11, 216);
             cbxLevelSelect.Name = "cbxLevelSelect";
             cbxLevelSelect.Size = new Size(130, 23);
             cbxLevelSelect.TabIndex = 8;
             // 
             // bgxDebug
             // 
+            bgxDebug.Controls.Add(numMinMoves);
+            bgxDebug.Controls.Add(lblMinMovesInput);
+            bgxDebug.Controls.Add(rb5x5);
+            bgxDebug.Controls.Add(rb4x4);
+            bgxDebug.Controls.Add(rb3x3);
             bgxDebug.Controls.Add(btnSaveLevel);
             bgxDebug.Controls.Add(lblLog);
             bgxDebug.Controls.Add(cbxLevelSelect);
-            bgxDebug.Controls.Add(button1);
+            bgxDebug.Controls.Add(btnSolveOne);
             bgxDebug.Controls.Add(btnLoad);
-            bgxDebug.Controls.Add(btnSolve);
-            bgxDebug.Controls.Add(button2);
+            bgxDebug.Controls.Add(btnSolveAll);
+            bgxDebug.Controls.Add(btnGenerateRandom);
             bgxDebug.ForeColor = SystemColors.ActiveCaption;
             bgxDebug.Location = new Point(500, 88);
             bgxDebug.Name = "bgxDebug";
-            bgxDebug.Size = new Size(150, 309);
+            bgxDebug.Size = new Size(150, 315);
             bgxDebug.TabIndex = 10;
             bgxDebug.TabStop = false;
             bgxDebug.Text = "Debug Panel";
+            // 
+            // numMinMoves
+            // 
+            numMinMoves.BackColor = SystemColors.ControlText;
+            numMinMoves.BorderStyle = BorderStyle.None;
+            numMinMoves.ForeColor = SystemColors.ActiveCaption;
+            numMinMoves.Location = new Point(81, 158);
+            numMinMoves.Name = "numMinMoves";
+            numMinMoves.Size = new Size(60, 19);
+            numMinMoves.TabIndex = 12;
+            numMinMoves.TextAlign = HorizontalAlignment.Center;
+            numMinMoves.Value = new decimal(new int[] { 5, 0, 0, 0 });
+            // 
+            // lblMinMovesInput
+            // 
+            lblMinMovesInput.AutoSize = true;
+            lblMinMovesInput.Location = new Point(79, 139);
+            lblMinMovesInput.Name = "lblMinMovesInput";
+            lblMinMovesInput.Size = new Size(66, 15);
+            lblMinMovesInput.TabIndex = 14;
+            lblMinMovesInput.Text = "Min Moves";
+            // 
+            // rb5x5
+            // 
+            rb5x5.AutoSize = true;
+            rb5x5.FlatStyle = FlatStyle.Flat;
+            rb5x5.Location = new Point(86, 119);
+            rb5x5.Name = "rb5x5";
+            rb5x5.Size = new Size(48, 19);
+            rb5x5.TabIndex = 12;
+            rb5x5.Text = "5 x 5";
+            rb5x5.UseVisualStyleBackColor = true;
+            // 
+            // rb4x4
+            // 
+            rb4x4.AutoSize = true;
+            rb4x4.Checked = true;
+            rb4x4.FlatStyle = FlatStyle.Flat;
+            rb4x4.Location = new Point(86, 101);
+            rb4x4.Name = "rb4x4";
+            rb4x4.Size = new Size(48, 19);
+            rb4x4.TabIndex = 11;
+            rb4x4.TabStop = true;
+            rb4x4.Text = "4 x 4";
+            rb4x4.UseVisualStyleBackColor = true;
+            // 
+            // rb3x3
+            // 
+            rb3x3.AutoSize = true;
+            rb3x3.FlatStyle = FlatStyle.Flat;
+            rb3x3.Location = new Point(86, 83);
+            rb3x3.Name = "rb3x3";
+            rb3x3.Size = new Size(48, 19);
+            rb3x3.TabIndex = 10;
+            rb3x3.Text = "3 x 3";
+            rb3x3.UseVisualStyleBackColor = true;
             // 
             // btnSaveLevel
             // 
             btnSaveLevel.BackgroundImageLayout = ImageLayout.Stretch;
             btnSaveLevel.FlatStyle = FlatStyle.Flat;
             btnSaveLevel.ForeColor = SystemColors.ActiveCaption;
-            btnSaveLevel.Location = new Point(82, 77);
+            btnSaveLevel.Location = new Point(11, 137);
             btnSaveLevel.Name = "btnSaveLevel";
             btnSaveLevel.Size = new Size(65, 40);
             btnSaveLevel.TabIndex = 9;
             btnSaveLevel.Text = "Save to File";
             btnSaveLevel.UseMnemonic = false;
             btnSaveLevel.UseVisualStyleBackColor = false;
-            btnSaveLevel.Click += btnSaveLevel_Click;
+            btnSaveLevel.Click += SaveLevelToFile_Click;
             // 
-            // frmLightsOut
+            // gbxGameBoard_3x3
+            // 
+            gbxGameBoard_3x3.BackColor = Color.Black;
+            gbxGameBoard_3x3.BackgroundImageLayout = ImageLayout.Stretch;
+            gbxGameBoard_3x3.Controls.Add(light_3x3_22);
+            gbxGameBoard_3x3.Controls.Add(light_3x3_21);
+            gbxGameBoard_3x3.Controls.Add(light_3x3_20);
+            gbxGameBoard_3x3.Controls.Add(light_3x3_12);
+            gbxGameBoard_3x3.Controls.Add(light_3x3_11);
+            gbxGameBoard_3x3.Controls.Add(light_3x3_10);
+            gbxGameBoard_3x3.Controls.Add(light_3x3_02);
+            gbxGameBoard_3x3.Controls.Add(light_3x3_01);
+            gbxGameBoard_3x3.Controls.Add(light_3x3_00);
+            gbxGameBoard_3x3.FlatStyle = FlatStyle.Flat;
+            gbxGameBoard_3x3.Location = new Point(7, 86);
+            gbxGameBoard_3x3.Margin = new Padding(2);
+            gbxGameBoard_3x3.Name = "gbxGameBoard_3x3";
+            gbxGameBoard_3x3.Padding = new Padding(2);
+            gbxGameBoard_3x3.Size = new Size(311, 315);
+            gbxGameBoard_3x3.TabIndex = 11;
+            gbxGameBoard_3x3.TabStop = false;
+            // 
+            // light_3x3_22
+            // 
+            light_3x3_22.BackgroundImage = Properties.Resources.ButtonOn;
+            light_3x3_22.BackgroundImageLayout = ImageLayout.Stretch;
+            light_3x3_22.FlatAppearance.BorderSize = 0;
+            light_3x3_22.FlatStyle = FlatStyle.Flat;
+            light_3x3_22.Location = new Point(207, 210);
+            light_3x3_22.Name = "light_3x3_22";
+            light_3x3_22.Size = new Size(100, 100);
+            light_3x3_22.TabIndex = 10;
+            light_3x3_22.Tag = "";
+            light_3x3_22.UseVisualStyleBackColor = true;
+            light_3x3_22.Click += Light_Click;
+            // 
+            // light_3x3_21
+            // 
+            light_3x3_21.BackgroundImage = Properties.Resources.ButtonOn;
+            light_3x3_21.BackgroundImageLayout = ImageLayout.Stretch;
+            light_3x3_21.FlatAppearance.BorderSize = 0;
+            light_3x3_21.FlatStyle = FlatStyle.Flat;
+            light_3x3_21.Location = new Point(106, 210);
+            light_3x3_21.Name = "light_3x3_21";
+            light_3x3_21.Size = new Size(100, 100);
+            light_3x3_21.TabIndex = 9;
+            light_3x3_21.Tag = "";
+            light_3x3_21.UseVisualStyleBackColor = true;
+            light_3x3_21.Click += Light_Click;
+            // 
+            // light_3x3_20
+            // 
+            light_3x3_20.BackgroundImage = Properties.Resources.ButtonOn;
+            light_3x3_20.BackgroundImageLayout = ImageLayout.Stretch;
+            light_3x3_20.FlatAppearance.BorderSize = 0;
+            light_3x3_20.FlatStyle = FlatStyle.Flat;
+            light_3x3_20.Location = new Point(5, 210);
+            light_3x3_20.Name = "light_3x3_20";
+            light_3x3_20.Size = new Size(100, 100);
+            light_3x3_20.TabIndex = 8;
+            light_3x3_20.Tag = "";
+            light_3x3_20.UseVisualStyleBackColor = true;
+            light_3x3_20.Click += Light_Click;
+            // 
+            // light_3x3_12
+            // 
+            light_3x3_12.BackgroundImage = Properties.Resources.ButtonOn;
+            light_3x3_12.BackgroundImageLayout = ImageLayout.Stretch;
+            light_3x3_12.FlatAppearance.BorderSize = 0;
+            light_3x3_12.FlatStyle = FlatStyle.Flat;
+            light_3x3_12.Location = new Point(207, 110);
+            light_3x3_12.Name = "light_3x3_12";
+            light_3x3_12.Size = new Size(100, 100);
+            light_3x3_12.TabIndex = 6;
+            light_3x3_12.Tag = "";
+            light_3x3_12.UseVisualStyleBackColor = true;
+            light_3x3_12.Click += Light_Click;
+            // 
+            // light_3x3_11
+            // 
+            light_3x3_11.BackgroundImage = Properties.Resources.ButtonOn;
+            light_3x3_11.BackgroundImageLayout = ImageLayout.Stretch;
+            light_3x3_11.FlatAppearance.BorderSize = 0;
+            light_3x3_11.FlatStyle = FlatStyle.Flat;
+            light_3x3_11.Location = new Point(106, 110);
+            light_3x3_11.Name = "light_3x3_11";
+            light_3x3_11.Size = new Size(100, 100);
+            light_3x3_11.TabIndex = 5;
+            light_3x3_11.Tag = "";
+            light_3x3_11.UseVisualStyleBackColor = true;
+            light_3x3_11.Click += Light_Click;
+            // 
+            // light_3x3_10
+            // 
+            light_3x3_10.BackgroundImage = Properties.Resources.ButtonOn;
+            light_3x3_10.BackgroundImageLayout = ImageLayout.Stretch;
+            light_3x3_10.FlatAppearance.BorderSize = 0;
+            light_3x3_10.FlatStyle = FlatStyle.Flat;
+            light_3x3_10.Location = new Point(5, 110);
+            light_3x3_10.Name = "light_3x3_10";
+            light_3x3_10.Size = new Size(100, 100);
+            light_3x3_10.TabIndex = 4;
+            light_3x3_10.Tag = "";
+            light_3x3_10.UseVisualStyleBackColor = true;
+            light_3x3_10.Click += Light_Click;
+            // 
+            // light_3x3_02
+            // 
+            light_3x3_02.BackgroundImage = Properties.Resources.ButtonOn;
+            light_3x3_02.BackgroundImageLayout = ImageLayout.Stretch;
+            light_3x3_02.FlatAppearance.BorderSize = 0;
+            light_3x3_02.FlatStyle = FlatStyle.Flat;
+            light_3x3_02.Location = new Point(207, 10);
+            light_3x3_02.Name = "light_3x3_02";
+            light_3x3_02.Size = new Size(100, 100);
+            light_3x3_02.TabIndex = 2;
+            light_3x3_02.Tag = "";
+            light_3x3_02.UseVisualStyleBackColor = true;
+            light_3x3_02.Click += Light_Click;
+            // 
+            // light_3x3_01
+            // 
+            light_3x3_01.BackgroundImage = Properties.Resources.ButtonOn;
+            light_3x3_01.BackgroundImageLayout = ImageLayout.Stretch;
+            light_3x3_01.FlatAppearance.BorderSize = 0;
+            light_3x3_01.FlatStyle = FlatStyle.Flat;
+            light_3x3_01.Location = new Point(106, 10);
+            light_3x3_01.Name = "light_3x3_01";
+            light_3x3_01.Size = new Size(100, 100);
+            light_3x3_01.TabIndex = 1;
+            light_3x3_01.Tag = "";
+            light_3x3_01.UseVisualStyleBackColor = true;
+            light_3x3_01.Click += Light_Click;
+            // 
+            // light_3x3_00
+            // 
+            light_3x3_00.BackgroundImage = Properties.Resources.ButtonOn;
+            light_3x3_00.BackgroundImageLayout = ImageLayout.Stretch;
+            light_3x3_00.FlatAppearance.BorderSize = 0;
+            light_3x3_00.FlatStyle = FlatStyle.Flat;
+            light_3x3_00.Location = new Point(5, 10);
+            light_3x3_00.Name = "light_3x3_00";
+            light_3x3_00.Size = new Size(100, 100);
+            light_3x3_00.TabIndex = 0;
+            light_3x3_00.Tag = "";
+            light_3x3_00.UseVisualStyleBackColor = true;
+            light_3x3_00.Click += Light_Click;
+            // 
+            // Board
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
@@ -550,58 +776,80 @@
             BackgroundImage = Properties.Resources.Board;
             BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(659, 411);
+            Controls.Add(gbxGameBoard_3x3);
             Controls.Add(bgxDebug);
-            Controls.Add(gbxGameBoard);
             Controls.Add(gbxStats);
-            Controls.Add(pictureBox1);
+            Controls.Add(gbxGameBoard_4x4);
+            Controls.Add(pbxWinImage);
             DoubleBuffered = true;
             KeyPreview = true;
-            Name = "frmLightsOut";
+            Name = "Board";
             SizeGripStyle = SizeGripStyle.Hide;
             Text = "Lights Out";
             KeyPress += ShowHideDebug_Click;
-            gbxGameBoard.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            gbxGameBoard_4x4.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)pbxWinImage).EndInit();
             gbxStats.ResumeLayout(false);
             gbxStats.PerformLayout();
             bgxDebug.ResumeLayout(false);
             bgxDebug.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)numMinMoves).EndInit();
+            gbxGameBoard_3x3.ResumeLayout(false);
             ResumeLayout(false);
         }
 
         #endregion
-        private System.Windows.Forms.GroupBox gbxGameBoard;
-        private Light light_00;
-        private Light light_01;
-        private Light light_13;
-        private Light light_12;
-        private Light light_11;
-        private Light light_10;
-        private Light light_03;
-        private Light light_02;
-        private Light light_33;
-        private Light light_32;
-        private Light light_31;
-        private Light light_30;
-        private Light light_23;
-        private Light light_22;
-        private Light light_21;
-        private Light light_20;
-        private Label lblLog;
-        private Button btnSolve;
+        private PictureBox pbxWinImage;
+        
+        private GroupBox gbxGameBoard_4x4;
+        private Light light_4x4_00;
+        private Light light_4x4_01;
+        private Light light_4x4_02;
+        private Light light_4x4_03;
+        private Light light_4x4_10;
+        private Light light_4x4_11;
+        private Light light_4x4_12;
+        private Light light_4x4_13;
+        private Light light_4x4_20;
+        private Light light_4x4_21;
+        private Light light_4x4_22;
+        private Light light_4x4_23;
+        private Light light_4x4_30;
+        private Light light_4x4_31;
+        private Light light_4x4_32;
+        private Light light_4x4_33;
+
         private GroupBox gbxStats;
-        private Label lblMoves;
-        private Label lblGoal;
-        private Label label4;
-        private Label label3;
+        private Label lblSizeLabel;
         private Label lblSize;
-        private Label label1;
-        private Button button1;
-        private Button button2;
-        private Button btnLoad;
-        private ComboBox cbxLevelSelect;
-        private PictureBox pictureBox1;
+        private Label lblGoalLabel;
+        private Label lblGoal;
+        private Label lblMovesLabel;
+        private Label lblMoves;
+
         private GroupBox bgxDebug;
+        private Button btnSolveOne;
+        private Button btnSolveAll;
+        private Button btnGenerateRandom;
+        private Button btnLoad;
         private Button btnSaveLevel;
+        private ComboBox cbxLevelSelect;
+        private Label lblLog;
+        
+        private GroupBox gbxGameBoard_3x3;
+        private Light light_3x3_22;
+        private Light light_3x3_21;
+        private Light light_3x3_20;
+        private Light light_3x3_12;
+        private Light light_3x3_11;
+        private Light light_3x3_10;
+        private Light light_3x3_02;
+        private Light light_3x3_01;
+        private Light light_3x3_00;
+        private RadioButton rb4x4;
+        private RadioButton rb3x3;
+        private RadioButton rb5x5;
+        private Label lblMinMovesInput;
+        private NumericUpDown numMinMoves;
     }
 }

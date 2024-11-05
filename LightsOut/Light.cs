@@ -27,6 +27,17 @@
         /// </summary>
         /// <param name="onButton">Image displayed when Light is On</param>
         /// <param name="offButton">Image displayed when Light is Off</param>
+        public Light(Image? onButton, Image? offButton)
+        {
+            OnButton = onButton;
+            OffButton = offButton;
+            if (DesignMode) { return; }
+        }
+        /// <summary>
+        /// Sets the two BackgroundImages used for displaying if the <seealso cref="Light"/> is On or Off.
+        /// </summary>
+        /// <param name="onButton">Image displayed when Light is On</param>
+        /// <param name="offButton">Image displayed when Light is Off</param>
         public void SetButtons(Image? onButton, Image? offButton)
         {
             OnButton = onButton;

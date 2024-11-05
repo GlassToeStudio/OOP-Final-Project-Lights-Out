@@ -6,13 +6,19 @@ namespace LightsOut
     {
         internal static readonly string RESOURCES = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Resources\\");
         internal static readonly string LEVELS = Path.Combine(RESOURCES, "Levels\\");
+        internal static readonly string SOUNDS = Path.Combine(RESOURCES, "Sounds\\");
 
-        internal static string GetFile(string fileName)
+        internal static string GetLevelFile(string fileName)
         {
             return Path.Combine(LEVELS, fileName);
         }
 
-        internal static string[] GetFiles()
+        internal static string GetSoundFile(string fileName)
+        {
+            return Path.Combine(SOUNDS, fileName);
+        }
+
+        internal static string[] GetFileFromLevelsFolder()
         {
             return Directory.GetFiles(LEVELS);
         }
