@@ -19,12 +19,12 @@ namespace LightsOut
         {
             InitializeComponent();
             PreloadLevelsData();
-
             levelData = new LevelData().LoadLevelDataFromJson(levelName);
+
             
             GenerateGameBoard();
 
-            GenerateLevelFromFile();
+            //GenerateLevelFromFile();
         }
 
         private void PreloadLevelsData()
@@ -90,17 +90,16 @@ namespace LightsOut
                     used.Add(randLight);
 
                     lights[randLight].ClickLight();
-                    levelData.UpdateBoard(lights);
+                    //levelData.UpdateBoard(lights);
 
-#if DEBUG
-                    lblLog.Text = DebugBoardState();
-#endif
                 }
                 levelData = new LevelData(level, levelData.Size, 0);
                 levelData.UpdateBoard(lights);
                 levelData.MinMoves = Solver.GetSolutionMatrix(levelData).Sum();
-
-                if(numMinMoves.Value == 0)
+#if DEBUG
+                lblLog.Text = DebugBoardState();
+#endif
+                if (numMinMoves.Value == 0)
                 {
                     break;
                 }
