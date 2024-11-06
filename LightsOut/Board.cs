@@ -216,7 +216,7 @@ namespace LightsOut
         private void LoadNextLevel_Click(object sender, EventArgs e)
         {
             int index = cbxLevelSelect.SelectedIndex;
-            index = Math.Min(index + 1, cbxLevelSelect.Items.Count-1);
+            index = Math.Min(index + 1, cbxLevelSelect.Items.Count - 1);
             cbxLevelSelect.SelectedIndex = index;
             LoadLevel_Click(this, EventArgs.Empty);
         }
@@ -226,6 +226,5 @@ namespace LightsOut
             LoadLevel_Click(this, EventArgs.Empty);
         }
         #endregion
-
     }
 }

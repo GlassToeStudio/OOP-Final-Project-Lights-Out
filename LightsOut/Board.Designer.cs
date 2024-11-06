@@ -60,6 +60,8 @@
             btnLoad = new Button();
             cbxLevelSelect = new ComboBox();
             bgxDebug = new GroupBox();
+            txtFileName = new TextBox();
+            lblFileName = new Label();
             numMinMoves = new NumericUpDown();
             lblMinMovesInput = new Label();
             rb5x5 = new RadioButton();
@@ -79,6 +81,7 @@
             btnPrevious = new Button();
             btnRedo = new Button();
             btnNext = new Button();
+            label1 = new Label();
             gbxGameBoard_4x4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pbxWinImage).BeginInit();
             gbxStats.SuspendLayout();
@@ -406,7 +409,7 @@
             lblLog.BackColor = SystemColors.ActiveCaptionText;
             lblLog.BorderStyle = BorderStyle.FixedSingle;
             lblLog.FlatStyle = FlatStyle.Flat;
-            lblLog.Location = new Point(11, 242);
+            lblLog.Location = new Point(11, 323);
             lblLog.MinimumSize = new Size(130, 25);
             lblLog.Name = "lblLog";
             lblLog.Size = new Size(130, 25);
@@ -547,7 +550,7 @@
             btnGenerateRandom.ForeColor = SystemColors.ActiveCaption;
             btnGenerateRandom.Location = new Point(11, 85);
             btnGenerateRandom.Name = "btnGenerateRandom";
-            btnGenerateRandom.Size = new Size(65, 40);
+            btnGenerateRandom.Size = new Size(65, 92);
             btnGenerateRandom.TabIndex = 6;
             btnGenerateRandom.Text = "Generate Random";
             btnGenerateRandom.UseMnemonic = false;
@@ -559,7 +562,7 @@
             btnLoad.BackgroundImageLayout = ImageLayout.Stretch;
             btnLoad.FlatStyle = FlatStyle.Flat;
             btnLoad.ForeColor = SystemColors.ActiveCaption;
-            btnLoad.Location = new Point(11, 186);
+            btnLoad.Location = new Point(11, 267);
             btnLoad.Name = "btnLoad";
             btnLoad.Size = new Size(130, 26);
             btnLoad.TabIndex = 7;
@@ -574,13 +577,15 @@
             cbxLevelSelect.FlatStyle = FlatStyle.Flat;
             cbxLevelSelect.ForeColor = SystemColors.InactiveCaption;
             cbxLevelSelect.FormattingEnabled = true;
-            cbxLevelSelect.Location = new Point(11, 216);
+            cbxLevelSelect.Location = new Point(11, 297);
             cbxLevelSelect.Name = "cbxLevelSelect";
             cbxLevelSelect.Size = new Size(130, 23);
             cbxLevelSelect.TabIndex = 8;
             // 
             // bgxDebug
             // 
+            bgxDebug.Controls.Add(txtFileName);
+            bgxDebug.Controls.Add(lblFileName);
             bgxDebug.Controls.Add(numMinMoves);
             bgxDebug.Controls.Add(lblMinMovesInput);
             bgxDebug.Controls.Add(rb5x5);
@@ -594,12 +599,35 @@
             bgxDebug.Controls.Add(btnSolveAll);
             bgxDebug.Controls.Add(btnGenerateRandom);
             bgxDebug.ForeColor = SystemColors.ActiveCaption;
-            bgxDebug.Location = new Point(500, 88);
+            bgxDebug.Location = new Point(500, 15);
             bgxDebug.Name = "bgxDebug";
-            bgxDebug.Size = new Size(150, 315);
+            bgxDebug.Size = new Size(150, 388);
             bgxDebug.TabIndex = 10;
             bgxDebug.TabStop = false;
             bgxDebug.Text = "Debug Panel";
+            // 
+            // txtFileName
+            // 
+            txtFileName.BackColor = Color.FromArgb(64, 64, 64);
+            txtFileName.BorderStyle = BorderStyle.None;
+            txtFileName.ForeColor = SystemColors.ActiveCaption;
+            txtFileName.Location = new Point(78, 215);
+            txtFileName.Name = "txtFileName";
+            txtFileName.Size = new Size(63, 16);
+            txtFileName.TabIndex = 16;
+            txtFileName.Text = "Levels_10";
+            txtFileName.TextAlign = HorizontalAlignment.Center;
+            txtFileName.Leave += txtFileName_Leave;
+            txtFileName.Validating += txtFileName_Validating;
+            // 
+            // lblFileName
+            // 
+            lblFileName.AutoSize = true;
+            lblFileName.Location = new Point(11, 216);
+            lblFileName.Name = "lblFileName";
+            lblFileName.Size = new Size(60, 15);
+            lblFileName.TabIndex = 15;
+            lblFileName.Text = "File Name";
             // 
             // numMinMoves
             // 
@@ -662,9 +690,9 @@
             btnSaveLevel.BackgroundImageLayout = ImageLayout.Stretch;
             btnSaveLevel.FlatStyle = FlatStyle.Flat;
             btnSaveLevel.ForeColor = SystemColors.ActiveCaption;
-            btnSaveLevel.Location = new Point(11, 137);
+            btnSaveLevel.Location = new Point(11, 183);
             btnSaveLevel.Name = "btnSaveLevel";
-            btnSaveLevel.Size = new Size(65, 40);
+            btnSaveLevel.Size = new Size(130, 28);
             btnSaveLevel.TabIndex = 9;
             btnSaveLevel.Text = "Save to File";
             btnSaveLevel.UseMnemonic = false;
@@ -851,9 +879,9 @@
             btnPrevious.FlatStyle = FlatStyle.Flat;
             btnPrevious.Font = new Font("Segoe UI", 25F);
             btnPrevious.ForeColor = SystemColors.ActiveCaption;
-            btnPrevious.Location = new Point(324, 230);
+            btnPrevious.Location = new Point(324, 321);
             btnPrevious.Name = "btnPrevious";
-            btnPrevious.Size = new Size(45, 78);
+            btnPrevious.Size = new Size(45, 80);
             btnPrevious.TabIndex = 12;
             btnPrevious.Text = "◄";
             btnPrevious.UseVisualStyleBackColor = true;
@@ -864,9 +892,9 @@
             btnRedo.FlatStyle = FlatStyle.Flat;
             btnRedo.Font = new Font("Segoe UI", 25F);
             btnRedo.ForeColor = SystemColors.ActiveCaption;
-            btnRedo.Location = new Point(377, 230);
+            btnRedo.Location = new Point(377, 321);
             btnRedo.Name = "btnRedo";
-            btnRedo.Size = new Size(45, 78);
+            btnRedo.Size = new Size(45, 80);
             btnRedo.TabIndex = 13;
             btnRedo.Text = "⟲";
             btnRedo.UseVisualStyleBackColor = true;
@@ -877,13 +905,23 @@
             btnNext.FlatStyle = FlatStyle.Flat;
             btnNext.Font = new Font("Segoe UI", 25F);
             btnNext.ForeColor = SystemColors.ActiveCaption;
-            btnNext.Location = new Point(429, 230);
+            btnNext.Location = new Point(429, 321);
             btnNext.Name = "btnNext";
-            btnNext.Size = new Size(45, 78);
+            btnNext.Size = new Size(45, 80);
             btnNext.TabIndex = 14;
             btnNext.Text = "►";
             btnNext.UseVisualStyleBackColor = true;
             btnNext.Click += LoadNextLevel_Click;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Location = new Point(324, 235);
+            label1.MinimumSize = new Size(150, 75);
+            label1.Name = "label1";
+            label1.Size = new Size(150, 75);
+            label1.TabIndex = 15;
+            label1.Text = "label1";
             // 
             // Board
             // 
@@ -893,6 +931,7 @@
             BackgroundImage = Properties.Resources.Board;
             BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(659, 411);
+            Controls.Add(label1);
             Controls.Add(btnNext);
             Controls.Add(btnRedo);
             Controls.Add(btnPrevious);
@@ -916,6 +955,7 @@
             ((System.ComponentModel.ISupportInitialize)numMinMoves).EndInit();
             gbxGameBoard_3x3.ResumeLayout(false);
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
@@ -974,5 +1014,8 @@
         private Button btnPrevious;
         private Button btnRedo;
         private Button btnNext;
+        private Label label1;
+        private TextBox txtFileName;
+        private Label lblFileName;
     }
 }

@@ -1,14 +1,11 @@
 ﻿using Newtonsoft.Json;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.ComponentModel;
 
 namespace LightsOut
 {
     partial class Board
     {
+        #region Generation
         private void GenerateRandomLevel()
         {
             moves = 0;
@@ -50,6 +47,7 @@ namespace LightsOut
                     break;
                 }
             }
+            txtFileName.Text = $"Levels_{level}";
         }
 
         private int GetBoardSizeForRandomGen()
@@ -68,7 +66,9 @@ namespace LightsOut
             }
             return 4;
         }
+        #endregion
 
+        #region Solver
         private void SolveOne()
         {
             var solution = Solver.GetSolutionMatrix(levelData);
@@ -82,7 +82,6 @@ namespace LightsOut
                 }
             }
         }
-
 
         private async void SolvePuzzle()
         {
@@ -98,40 +97,9 @@ namespace LightsOut
             CheckWin();
         }
 
+        #endregion
 
-        private string DebugBoardState()
-        {
-            String output = "";
-            if (levelData.Size == 4)
-            {
-                for (int i = 0; i < levelData.Board.Length; i++)
-                {
-                    if (i % 4 == 0 && i != 0)
-                    {
-                        output += "\n";
-                    }
-                    output += levelData.Board[i] + ", ";
-                }
-            }
-            else
-            {
-                for (int i = 0; i < levelData.Board.Length; i++)
-                {
-                    if (i % 3 == 0 && i != 0)
-                    {
-                        output += "\n";
-                    }
-                    output += levelData.Board[i] + ", ";
-                }
-            }
-
-            return output;
-        }
-
-
-
-
-
+        #region Buttons
         private void SolveAll_Click(object sender, EventArgs e)
         {
             SolvePuzzle();
@@ -168,17 +136,87 @@ namespace LightsOut
                     break;
             }
         }
-
+      
         private void SaveLevelToFile_Click(object sender, EventArgs e)
         {
-            levelData = new LevelData(levelData);
-            var solution = Solver.GetSolutionMatrix(levelData);
-            levelData.MinMoves = solution.Sum();
+            LevelData ld = new LevelData(levelData);
+            var solution = Solver.GetSolutionMatrix(ld);
+            ld.MinMoves = solution.Sum();
             string ProjectDir = "C:\\Users\\GlassToe\\Documents\\Calhoun Comminity College\\Fall 24\\CIS 285 - Object-Oriented Programming (11022)\\Final Project\\OOP-Final-Project-Lights-Out\\LightsOut\\Resources\\Levels\\";
-            var data = JsonConvert.SerializeObject(levelData);
-            File.WriteAllText(FileUtil.GetLevelFile($"Levels_{level}.json"), data);
-            File.WriteAllText($"{ProjectDir}Levels_{level}.json", data);
+            string fileName = $"Levels_{level}.json";
+            if(cbxLevelSelect.Items.Contains(fileName))
+            {
+                MessageBox.Show($"{fileName} Exists, choose a new name!", "File Exists!");
+                return;
+            }
+
+
+            var data = JsonConvert.SerializeObject(ld);
+            File.WriteAllText(FileUtil.GetLevelFile(fileName), data);
+            File.WriteAllText($"{ProjectDir}{fileName}", data);
+            levelData = ld;
+            MessageBox.Show($"{fileName} created!", "Level Saved");
             PreloadLevelsData();
+        }
+
+        #endregion
+
+        #region Validation
+        private void txtFileName_Leave(object sender, EventArgs e)
+        {
+            txtFileName_Validating(this, new CancelEventArgs());
+        }
+
+        private void txtFileName_Validating(object sender, CancelEventArgs e)
+        {
+            try
+            {
+                level = int.Parse(txtFileName.Text.Split("_")[1]);
+                string fileName = $"{txtFileName.Text}.json";
+                if (cbxLevelSelect.Items.Contains(fileName))
+                {
+                    MessageBox.Show($"{fileName} Exists, choose a new name!", "File Exists!");
+                    return;
+                }
+            }
+            catch
+            {
+                e.Cancel = true;
+                level = int.Parse((cbxLevelSelect.Text.Split("_")[1]).Replace
+                    (".json", ""));
+                txtFileName.Text = $"Levels_{level}";
+            }
+        }
+
+        #endregion
+       
+        private string DebugBoardState()
+        {
+            String output = "";
+            if (levelData.Size == 4)
+            {
+                for (int i = 0; i < levelData.Board.Length; i++)
+                {
+                    if (i % 4 == 0 && i != 0)
+                    {
+                        output += "\n";
+                    }
+                    output += levelData.Board[i] + ", ";
+                }
+            }
+            else
+            {
+                for (int i = 0; i < levelData.Board.Length; i++)
+                {
+                    if (i % 3 == 0 && i != 0)
+                    {
+                        output += "\n";
+                    }
+                    output += levelData.Board[i] + ", ";
+                }
+            }
+
+            return output;
         }
     }
 }
