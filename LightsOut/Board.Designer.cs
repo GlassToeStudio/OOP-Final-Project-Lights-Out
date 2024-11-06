@@ -76,6 +76,9 @@
             light_3x3_02 = new Light();
             light_3x3_01 = new Light();
             light_3x3_00 = new Light();
+            btnPrevious = new Button();
+            btnRedo = new Button();
+            btnNext = new Button();
             gbxGameBoard_4x4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pbxWinImage).BeginInit();
             gbxStats.SuspendLayout();
@@ -843,6 +846,45 @@
             light_3x3_00.UseVisualStyleBackColor = true;
             light_3x3_00.Click += Light_Click;
             // 
+            // btnPrevious
+            // 
+            btnPrevious.FlatStyle = FlatStyle.Flat;
+            btnPrevious.Font = new Font("Segoe UI", 25F);
+            btnPrevious.ForeColor = SystemColors.ActiveCaption;
+            btnPrevious.Location = new Point(324, 230);
+            btnPrevious.Name = "btnPrevious";
+            btnPrevious.Size = new Size(45, 78);
+            btnPrevious.TabIndex = 12;
+            btnPrevious.Text = "◄";
+            btnPrevious.UseVisualStyleBackColor = true;
+            btnPrevious.Click += LoadPreviousLevel_Click;
+            // 
+            // btnRedo
+            // 
+            btnRedo.FlatStyle = FlatStyle.Flat;
+            btnRedo.Font = new Font("Segoe UI", 25F);
+            btnRedo.ForeColor = SystemColors.ActiveCaption;
+            btnRedo.Location = new Point(377, 230);
+            btnRedo.Name = "btnRedo";
+            btnRedo.Size = new Size(45, 78);
+            btnRedo.TabIndex = 13;
+            btnRedo.Text = "⟲";
+            btnRedo.UseVisualStyleBackColor = true;
+            btnRedo.Click += ReloadLevel_Click;
+            // 
+            // btnNext
+            // 
+            btnNext.FlatStyle = FlatStyle.Flat;
+            btnNext.Font = new Font("Segoe UI", 25F);
+            btnNext.ForeColor = SystemColors.ActiveCaption;
+            btnNext.Location = new Point(429, 230);
+            btnNext.Name = "btnNext";
+            btnNext.Size = new Size(45, 78);
+            btnNext.TabIndex = 14;
+            btnNext.Text = "►";
+            btnNext.UseVisualStyleBackColor = true;
+            btnNext.Click += LoadNextLevel_Click;
+            // 
             // Board
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -851,6 +893,9 @@
             BackgroundImage = Properties.Resources.Board;
             BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(659, 411);
+            Controls.Add(btnNext);
+            Controls.Add(btnRedo);
+            Controls.Add(btnPrevious);
             Controls.Add(gbxGameBoard_3x3);
             Controls.Add(bgxDebug);
             Controls.Add(gbxStats);
@@ -926,5 +971,8 @@
         private RadioButton rb5x5;
         private Label lblMinMovesInput;
         private NumericUpDown numMinMoves;
+        private Button btnPrevious;
+        private Button btnRedo;
+        private Button btnNext;
     }
 }

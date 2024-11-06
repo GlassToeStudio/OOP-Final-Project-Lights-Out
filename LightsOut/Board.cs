@@ -11,7 +11,7 @@ namespace LightsOut
         private Light[] lights = [];
         private LevelData levelData;
         private int moves = 0;
-        private int level = 1;
+        private int level = 0;
         private string levelName = "Levels_1.json";
 
         /// <summary>
@@ -83,7 +83,7 @@ namespace LightsOut
                 lights[i].Init(i);
             }
         }
-      
+
         private void ConnectNeighbors()
         {
             // Connect neighbors
@@ -118,7 +118,7 @@ namespace LightsOut
                 }
             }
         }
-       
+
         private void GenerateLevelFromFile()
         {
             moves = 0;
@@ -127,7 +127,7 @@ namespace LightsOut
             level = levelData.Level;
 
             GenerateGameBoardsAndSelect();
-            
+
             for (var i = 0; i < levelData.Board.Length; i++)
             {
                 if (levelData.Board[i] == 0)
@@ -204,6 +204,28 @@ namespace LightsOut
             GenerateLevelFromFile();
             UpdateUI();
         }
+
+        private void LoadPreviousLevel_Click(object sender, EventArgs e)
+        {
+            int index = cbxLevelSelect.SelectedIndex;
+            index = Math.Max(index - 1, 0);
+            cbxLevelSelect.SelectedIndex = index;
+            LoadLevel_Click(this, EventArgs.Empty);
+        }
+
+        private void LoadNextLevel_Click(object sender, EventArgs e)
+        {
+            int index = cbxLevelSelect.SelectedIndex;
+            index = Math.Min(index + 1, cbxLevelSelect.Items.Count-1);
+            cbxLevelSelect.SelectedIndex = index;
+            LoadLevel_Click(this, EventArgs.Empty);
+        }
+
+        private void ReloadLevel_Click(object sender, EventArgs e)
+        {
+            LoadLevel_Click(this, EventArgs.Empty);
+        }
         #endregion
+
     }
 }
