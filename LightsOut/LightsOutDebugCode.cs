@@ -139,6 +139,9 @@ namespace LightsOut
 
         private void SaveLevelToFile_Click(object sender, EventArgs e)
         {
+            MessageBox.Show("Not working with the new load level system.", "Error!");
+            return;
+
             LevelData ld = new LevelData(levelData);
             var solution = Solver.GetSolutionMatrix(ld);
             ld.MinMoves = solution.Sum();

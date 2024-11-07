@@ -21,6 +21,21 @@ namespace LightsOut
                 jsonString = streamReader.ReadToEnd();
             }
             return JsonConvert.DeserializeObject<LevelData>(jsonString);
-        }       
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="levels"></param>
+        /// <returns></returns>
+        public static AllLevels LoadLevels(this AllLevels levels)
+        {
+            string jsonString;
+            using (var streamReader = new StreamReader(FileUtil.GetLevelFile("Levels.json")))
+            {
+                jsonString = streamReader.ReadToEnd();
+            }
+            return JsonConvert.DeserializeObject<AllLevels>(jsonString);
+        }
     }
 }

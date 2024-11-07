@@ -1,4 +1,5 @@
 using Newtonsoft.Json;
+using System.ComponentModel;
 using System.Media;
 
 namespace LightsOut
@@ -20,10 +21,12 @@ namespace LightsOut
         public Board()
         {
             InitializeComponent();
-            PreloadLevelsData();
+            //PreloadLevelsData();
+            PreloadAllLevelsData();
             levelData = new LevelData().LoadLevelDataFromJson(levelName);
             GenerateGameBoardsAndSelect();
-            GenerateLevelFromFile();
+            //GenerateLevelFromFile();
+            GenerateLevelFromLevels();
         }
 
         private void PreloadLevelsData()
@@ -33,6 +36,18 @@ namespace LightsOut
             foreach (string file in files)
             {
                 cbxLevelSelect.Items.Add(Path.GetFileName(file));
+            }
+            cbxLevelSelect.SelectedIndex = 0;
+        }
+
+        AllLevels levels;
+        private void PreloadAllLevelsData()
+        {
+            cbxLevelSelect.Items.Clear();
+            levels = new AllLevels().LoadLevels();
+            foreach (LevelData ld in levels.Levels)
+            {
+                cbxLevelSelect.Items.Add(ld.Name);
             }
             cbxLevelSelect.SelectedIndex = 0;
         }
@@ -155,6 +170,31 @@ namespace LightsOut
             lblLog.Text = DebugBoardState();
             UpdateUI();
         }
+     
+        private void GenerateLevelFromLevels()
+        {
+            moves = 0;
+            levelName = cbxLevelSelect.Text;
+            levelData = levels.Levels[cbxLevelSelect.SelectedIndex];
+            level = levelData.Level;
+
+            GenerateGameBoardsAndSelect();
+
+            for (var i = 0; i < levelData.Board.Length; i++)
+            {
+                if (levelData.Board[i] == 0)
+                {
+                    lights[i].TurnOff();
+                }
+                else
+                {
+                    lights[i].TurnOn();
+                }
+            }
+
+            lblLog.Text = DebugBoardState();
+            UpdateUI();
+        }
 
         private void OnCLickLight(Light light)
         {
@@ -213,7 +253,8 @@ namespace LightsOut
 
         private void LoadLevel_Click(object sender, EventArgs e)
         {
-            GenerateLevelFromFile();
+            //GenerateLevelFromFile();
+            GenerateLevelFromLevels();
             UpdateUI();
         }
 
