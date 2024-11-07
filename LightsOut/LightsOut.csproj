@@ -17,14 +17,11 @@
     <None Remove="Resources\ButtonOff.png" />
     <None Remove="Resources\ButtonOn.png" />
     <None Remove="Resources\Levels\Levels_1.json" />
-    <None Remove="Resources\Levels\Levels_10.json" />
-    <None Remove="Resources\Levels\Levels_11.json" />
+
     <None Remove="Resources\Levels\Levels_2.json" />
     <None Remove="Resources\Levels\Levels_3.json" />
     <None Remove="Resources\Levels\Levels_4.json" />
     <None Remove="Resources\Levels\Levels_5.json" />
-    <None Remove="Resources\Levels\Levels_8.json" />
-    <None Remove="Resources\Levels\Levels_9.json" />
     <None Remove="Resources\Levels\Snap-sound-effect.wav" />
     <None Remove="Resources\WinPanel.png" />
   </ItemGroup>

@@ -82,12 +82,39 @@
             btnRedo = new Button();
             btnNext = new Button();
             label1 = new Label();
+            gbxGameBoard_5x5 = new GroupBox();
+            light_5x5_44 = new Light();
+            light_5x5_43 = new Light();
+            light_5x5_42 = new Light();
+            light_5x5_41 = new Light();
+            light_5x5_40 = new Light();
+            light_5x5_34 = new Light();
+            light_5x5_33 = new Light();
+            light_5x5_32 = new Light();
+            light_5x5_31 = new Light();
+            light_5x5_30 = new Light();
+            light_5x5_24 = new Light();
+            light_5x5_23 = new Light();
+            light_5x5_22 = new Light();
+            light_5x5_21 = new Light();
+            light_5x5_20 = new Light();
+            light_5x5_14 = new Light();
+            light_5x5_13 = new Light();
+            light_5x5_12 = new Light();
+            light_5x5_11 = new Light();
+            light_5x5_10 = new Light();
+            light_5x5_04 = new Light();
+            light_5x5_03 = new Light();
+            light_5x5_02 = new Light();
+            light_5x5_01 = new Light();
+            light_5x5_00 = new Light();
             gbxGameBoard_4x4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pbxWinImage).BeginInit();
             gbxStats.SuspendLayout();
             bgxDebug.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)numMinMoves).BeginInit();
             gbxGameBoard_3x3.SuspendLayout();
+            gbxGameBoard_5x5.SuspendLayout();
             SuspendLayout();
             // 
             // light_4x4_33
@@ -409,7 +436,7 @@
             lblLog.BackColor = SystemColors.ActiveCaptionText;
             lblLog.BorderStyle = BorderStyle.FixedSingle;
             lblLog.FlatStyle = FlatStyle.Flat;
-            lblLog.Location = new Point(11, 323);
+            lblLog.Location = new Point(11, 307);
             lblLog.MinimumSize = new Size(130, 25);
             lblLog.Name = "lblLog";
             lblLog.Size = new Size(130, 25);
@@ -562,7 +589,7 @@
             btnLoad.BackgroundImageLayout = ImageLayout.Stretch;
             btnLoad.FlatStyle = FlatStyle.Flat;
             btnLoad.ForeColor = SystemColors.ActiveCaption;
-            btnLoad.Location = new Point(11, 267);
+            btnLoad.Location = new Point(11, 251);
             btnLoad.Name = "btnLoad";
             btnLoad.Size = new Size(130, 26);
             btnLoad.TabIndex = 7;
@@ -577,7 +604,7 @@
             cbxLevelSelect.FlatStyle = FlatStyle.Flat;
             cbxLevelSelect.ForeColor = SystemColors.InactiveCaption;
             cbxLevelSelect.FormattingEnabled = true;
-            cbxLevelSelect.Location = new Point(11, 297);
+            cbxLevelSelect.Location = new Point(11, 281);
             cbxLevelSelect.Name = "cbxLevelSelect";
             cbxLevelSelect.Size = new Size(130, 23);
             cbxLevelSelect.TabIndex = 8;
@@ -617,8 +644,6 @@
             txtFileName.TabIndex = 16;
             txtFileName.Text = "Levels_10";
             txtFileName.TextAlign = HorizontalAlignment.Center;
-            txtFileName.Leave += txtFileName_Leave;
-            txtFileName.Validating += txtFileName_Validating;
             // 
             // lblFileName
             // 
@@ -713,7 +738,7 @@
             gbxGameBoard_3x3.Controls.Add(light_3x3_01);
             gbxGameBoard_3x3.Controls.Add(light_3x3_00);
             gbxGameBoard_3x3.FlatStyle = FlatStyle.Flat;
-            gbxGameBoard_3x3.Location = new Point(7, 86);
+            gbxGameBoard_3x3.Location = new Point(8, 88);
             gbxGameBoard_3x3.Margin = new Padding(2);
             gbxGameBoard_3x3.Name = "gbxGameBoard_3x3";
             gbxGameBoard_3x3.Padding = new Padding(2);
@@ -923,6 +948,446 @@
             label1.TabIndex = 15;
             label1.Text = "label1";
             // 
+            // gbxGameBoard_5x5
+            // 
+            gbxGameBoard_5x5.BackColor = Color.Black;
+            gbxGameBoard_5x5.BackgroundImageLayout = ImageLayout.Stretch;
+            gbxGameBoard_5x5.Controls.Add(light_5x5_44);
+            gbxGameBoard_5x5.Controls.Add(light_5x5_43);
+            gbxGameBoard_5x5.Controls.Add(light_5x5_42);
+            gbxGameBoard_5x5.Controls.Add(light_5x5_41);
+            gbxGameBoard_5x5.Controls.Add(light_5x5_40);
+            gbxGameBoard_5x5.Controls.Add(light_5x5_34);
+            gbxGameBoard_5x5.Controls.Add(light_5x5_33);
+            gbxGameBoard_5x5.Controls.Add(light_5x5_32);
+            gbxGameBoard_5x5.Controls.Add(light_5x5_31);
+            gbxGameBoard_5x5.Controls.Add(light_5x5_30);
+            gbxGameBoard_5x5.Controls.Add(light_5x5_24);
+            gbxGameBoard_5x5.Controls.Add(light_5x5_23);
+            gbxGameBoard_5x5.Controls.Add(light_5x5_22);
+            gbxGameBoard_5x5.Controls.Add(light_5x5_21);
+            gbxGameBoard_5x5.Controls.Add(light_5x5_20);
+            gbxGameBoard_5x5.Controls.Add(light_5x5_14);
+            gbxGameBoard_5x5.Controls.Add(light_5x5_13);
+            gbxGameBoard_5x5.Controls.Add(light_5x5_12);
+            gbxGameBoard_5x5.Controls.Add(light_5x5_11);
+            gbxGameBoard_5x5.Controls.Add(light_5x5_10);
+            gbxGameBoard_5x5.Controls.Add(light_5x5_04);
+            gbxGameBoard_5x5.Controls.Add(light_5x5_03);
+            gbxGameBoard_5x5.Controls.Add(light_5x5_02);
+            gbxGameBoard_5x5.Controls.Add(light_5x5_01);
+            gbxGameBoard_5x5.Controls.Add(light_5x5_00);
+            gbxGameBoard_5x5.FlatStyle = FlatStyle.Flat;
+            gbxGameBoard_5x5.Location = new Point(8, 88);
+            gbxGameBoard_5x5.Margin = new Padding(2);
+            gbxGameBoard_5x5.MaximumSize = new Size(310, 315);
+            gbxGameBoard_5x5.MinimumSize = new Size(310, 315);
+            gbxGameBoard_5x5.Name = "gbxGameBoard_5x5";
+            gbxGameBoard_5x5.Padding = new Padding(2);
+            gbxGameBoard_5x5.Size = new Size(310, 315);
+            gbxGameBoard_5x5.TabIndex = 16;
+            gbxGameBoard_5x5.TabStop = false;
+            // 
+            // light_5x5_44
+            // 
+            light_5x5_44.BackgroundImage = Properties.Resources.ButtonOff;
+            light_5x5_44.BackgroundImageLayout = ImageLayout.Stretch;
+            light_5x5_44.FlatAppearance.BorderSize = 0;
+            light_5x5_44.FlatStyle = FlatStyle.Flat;
+            light_5x5_44.index = 24;
+            light_5x5_44.Location = new Point(245, 250);
+            light_5x5_44.Name = "light_5x5_44";
+            light_5x5_44.OffButton = Properties.Resources.ButtonOff;
+            light_5x5_44.OnButton = Properties.Resources.ButtonOn;
+            light_5x5_44.Size = new Size(60, 60);
+            light_5x5_44.State = LightState.Off;
+            light_5x5_44.TabIndex = 24;
+            light_5x5_44.UseVisualStyleBackColor = true;
+            // 
+            // light_5x5_43
+            // 
+            light_5x5_43.BackgroundImage = Properties.Resources.ButtonOff;
+            light_5x5_43.BackgroundImageLayout = ImageLayout.Stretch;
+            light_5x5_43.FlatAppearance.BorderSize = 0;
+            light_5x5_43.FlatStyle = FlatStyle.Flat;
+            light_5x5_43.index = 23;
+            light_5x5_43.Location = new Point(185, 250);
+            light_5x5_43.Name = "light_5x5_43";
+            light_5x5_43.OffButton = Properties.Resources.ButtonOff;
+            light_5x5_43.OnButton = Properties.Resources.ButtonOn;
+            light_5x5_43.Size = new Size(60, 60);
+            light_5x5_43.State = LightState.Off;
+            light_5x5_43.TabIndex = 23;
+            light_5x5_43.UseVisualStyleBackColor = true;
+            // 
+            // light_5x5_42
+            // 
+            light_5x5_42.BackgroundImage = Properties.Resources.ButtonOff;
+            light_5x5_42.BackgroundImageLayout = ImageLayout.Stretch;
+            light_5x5_42.FlatAppearance.BorderSize = 0;
+            light_5x5_42.FlatStyle = FlatStyle.Flat;
+            light_5x5_42.index = 22;
+            light_5x5_42.Location = new Point(125, 250);
+            light_5x5_42.Name = "light_5x5_42";
+            light_5x5_42.OffButton = Properties.Resources.ButtonOff;
+            light_5x5_42.OnButton = Properties.Resources.ButtonOn;
+            light_5x5_42.Size = new Size(60, 60);
+            light_5x5_42.State = LightState.Off;
+            light_5x5_42.TabIndex = 22;
+            light_5x5_42.UseVisualStyleBackColor = true;
+            // 
+            // light_5x5_41
+            // 
+            light_5x5_41.BackgroundImage = Properties.Resources.ButtonOff;
+            light_5x5_41.BackgroundImageLayout = ImageLayout.Stretch;
+            light_5x5_41.FlatAppearance.BorderSize = 0;
+            light_5x5_41.FlatStyle = FlatStyle.Flat;
+            light_5x5_41.index = 21;
+            light_5x5_41.Location = new Point(65, 250);
+            light_5x5_41.Name = "light_5x5_41";
+            light_5x5_41.OffButton = Properties.Resources.ButtonOff;
+            light_5x5_41.OnButton = Properties.Resources.ButtonOn;
+            light_5x5_41.Size = new Size(60, 60);
+            light_5x5_41.State = LightState.Off;
+            light_5x5_41.TabIndex = 21;
+            light_5x5_41.UseVisualStyleBackColor = true;
+            // 
+            // light_5x5_40
+            // 
+            light_5x5_40.BackgroundImage = Properties.Resources.ButtonOff;
+            light_5x5_40.BackgroundImageLayout = ImageLayout.Stretch;
+            light_5x5_40.FlatAppearance.BorderSize = 0;
+            light_5x5_40.FlatStyle = FlatStyle.Flat;
+            light_5x5_40.index = 20;
+            light_5x5_40.Location = new Point(5, 250);
+            light_5x5_40.Name = "light_5x5_40";
+            light_5x5_40.OffButton = Properties.Resources.ButtonOff;
+            light_5x5_40.OnButton = Properties.Resources.ButtonOn;
+            light_5x5_40.Size = new Size(60, 60);
+            light_5x5_40.State = LightState.Off;
+            light_5x5_40.TabIndex = 20;
+            light_5x5_40.UseVisualStyleBackColor = true;
+            // 
+            // light_5x5_34
+            // 
+            light_5x5_34.BackgroundImage = Properties.Resources.ButtonOff;
+            light_5x5_34.BackgroundImageLayout = ImageLayout.Stretch;
+            light_5x5_34.FlatAppearance.BorderSize = 0;
+            light_5x5_34.FlatStyle = FlatStyle.Flat;
+            light_5x5_34.index = 19;
+            light_5x5_34.Location = new Point(245, 190);
+            light_5x5_34.Name = "light_5x5_34";
+            light_5x5_34.OffButton = Properties.Resources.ButtonOff;
+            light_5x5_34.OnButton = Properties.Resources.ButtonOn;
+            light_5x5_34.Size = new Size(60, 60);
+            light_5x5_34.State = LightState.Off;
+            light_5x5_34.TabIndex = 19;
+            light_5x5_34.UseVisualStyleBackColor = true;
+            // 
+            // light_5x5_33
+            // 
+            light_5x5_33.BackgroundImage = Properties.Resources.ButtonOff;
+            light_5x5_33.BackgroundImageLayout = ImageLayout.Stretch;
+            light_5x5_33.FlatAppearance.BorderSize = 0;
+            light_5x5_33.FlatStyle = FlatStyle.Flat;
+            light_5x5_33.index = 18;
+            light_5x5_33.Location = new Point(185, 190);
+            light_5x5_33.Name = "light_5x5_33";
+            light_5x5_33.OffButton = Properties.Resources.ButtonOff;
+            light_5x5_33.OnButton = Properties.Resources.ButtonOn;
+            light_5x5_33.Size = new Size(60, 60);
+            light_5x5_33.State = LightState.Off;
+            light_5x5_33.TabIndex = 18;
+            light_5x5_33.UseVisualStyleBackColor = true;
+            // 
+            // light_5x5_32
+            // 
+            light_5x5_32.BackgroundImage = Properties.Resources.ButtonOff;
+            light_5x5_32.BackgroundImageLayout = ImageLayout.Stretch;
+            light_5x5_32.FlatAppearance.BorderSize = 0;
+            light_5x5_32.FlatStyle = FlatStyle.Flat;
+            light_5x5_32.index = 17;
+            light_5x5_32.Location = new Point(125, 190);
+            light_5x5_32.Name = "light_5x5_32";
+            light_5x5_32.OffButton = Properties.Resources.ButtonOff;
+            light_5x5_32.OnButton = Properties.Resources.ButtonOn;
+            light_5x5_32.Size = new Size(60, 60);
+            light_5x5_32.State = LightState.Off;
+            light_5x5_32.TabIndex = 17;
+            light_5x5_32.UseVisualStyleBackColor = true;
+            // 
+            // light_5x5_31
+            // 
+            light_5x5_31.BackgroundImage = Properties.Resources.ButtonOff;
+            light_5x5_31.BackgroundImageLayout = ImageLayout.Stretch;
+            light_5x5_31.FlatAppearance.BorderSize = 0;
+            light_5x5_31.FlatStyle = FlatStyle.Flat;
+            light_5x5_31.index = 16;
+            light_5x5_31.Location = new Point(65, 190);
+            light_5x5_31.Name = "light_5x5_31";
+            light_5x5_31.OffButton = Properties.Resources.ButtonOff;
+            light_5x5_31.OnButton = Properties.Resources.ButtonOn;
+            light_5x5_31.Size = new Size(60, 60);
+            light_5x5_31.State = LightState.Off;
+            light_5x5_31.TabIndex = 16;
+            light_5x5_31.UseVisualStyleBackColor = true;
+            // 
+            // light_5x5_30
+            // 
+            light_5x5_30.BackgroundImage = Properties.Resources.ButtonOff;
+            light_5x5_30.BackgroundImageLayout = ImageLayout.Stretch;
+            light_5x5_30.FlatAppearance.BorderSize = 0;
+            light_5x5_30.FlatStyle = FlatStyle.Flat;
+            light_5x5_30.index = 15;
+            light_5x5_30.Location = new Point(5, 190);
+            light_5x5_30.Name = "light_5x5_30";
+            light_5x5_30.OffButton = Properties.Resources.ButtonOff;
+            light_5x5_30.OnButton = Properties.Resources.ButtonOn;
+            light_5x5_30.Size = new Size(60, 60);
+            light_5x5_30.State = LightState.Off;
+            light_5x5_30.TabIndex = 15;
+            light_5x5_30.UseVisualStyleBackColor = true;
+            // 
+            // light_5x5_24
+            // 
+            light_5x5_24.BackgroundImage = Properties.Resources.ButtonOff;
+            light_5x5_24.BackgroundImageLayout = ImageLayout.Stretch;
+            light_5x5_24.FlatAppearance.BorderSize = 0;
+            light_5x5_24.FlatStyle = FlatStyle.Flat;
+            light_5x5_24.index = 14;
+            light_5x5_24.Location = new Point(245, 130);
+            light_5x5_24.Name = "light_5x5_24";
+            light_5x5_24.OffButton = Properties.Resources.ButtonOff;
+            light_5x5_24.OnButton = Properties.Resources.ButtonOn;
+            light_5x5_24.Size = new Size(60, 60);
+            light_5x5_24.State = LightState.Off;
+            light_5x5_24.TabIndex = 14;
+            light_5x5_24.UseVisualStyleBackColor = true;
+            // 
+            // light_5x5_23
+            // 
+            light_5x5_23.BackgroundImage = Properties.Resources.ButtonOff;
+            light_5x5_23.BackgroundImageLayout = ImageLayout.Stretch;
+            light_5x5_23.FlatAppearance.BorderSize = 0;
+            light_5x5_23.FlatStyle = FlatStyle.Flat;
+            light_5x5_23.index = 13;
+            light_5x5_23.Location = new Point(185, 130);
+            light_5x5_23.Name = "light_5x5_23";
+            light_5x5_23.OffButton = Properties.Resources.ButtonOff;
+            light_5x5_23.OnButton = Properties.Resources.ButtonOn;
+            light_5x5_23.Size = new Size(60, 60);
+            light_5x5_23.State = LightState.Off;
+            light_5x5_23.TabIndex = 13;
+            light_5x5_23.UseVisualStyleBackColor = true;
+            // 
+            // light_5x5_22
+            // 
+            light_5x5_22.BackgroundImage = Properties.Resources.ButtonOff;
+            light_5x5_22.BackgroundImageLayout = ImageLayout.Stretch;
+            light_5x5_22.FlatAppearance.BorderSize = 0;
+            light_5x5_22.FlatStyle = FlatStyle.Flat;
+            light_5x5_22.index = 12;
+            light_5x5_22.Location = new Point(125, 130);
+            light_5x5_22.Name = "light_5x5_22";
+            light_5x5_22.OffButton = Properties.Resources.ButtonOff;
+            light_5x5_22.OnButton = Properties.Resources.ButtonOn;
+            light_5x5_22.Size = new Size(60, 60);
+            light_5x5_22.State = LightState.Off;
+            light_5x5_22.TabIndex = 12;
+            light_5x5_22.UseVisualStyleBackColor = true;
+            // 
+            // light_5x5_21
+            // 
+            light_5x5_21.BackgroundImage = Properties.Resources.ButtonOff;
+            light_5x5_21.BackgroundImageLayout = ImageLayout.Stretch;
+            light_5x5_21.FlatAppearance.BorderSize = 0;
+            light_5x5_21.FlatStyle = FlatStyle.Flat;
+            light_5x5_21.index = 11;
+            light_5x5_21.Location = new Point(65, 130);
+            light_5x5_21.Name = "light_5x5_21";
+            light_5x5_21.OffButton = Properties.Resources.ButtonOff;
+            light_5x5_21.OnButton = Properties.Resources.ButtonOn;
+            light_5x5_21.Size = new Size(60, 60);
+            light_5x5_21.State = LightState.Off;
+            light_5x5_21.TabIndex = 11;
+            light_5x5_21.UseVisualStyleBackColor = true;
+            // 
+            // light_5x5_20
+            // 
+            light_5x5_20.BackgroundImage = Properties.Resources.ButtonOff;
+            light_5x5_20.BackgroundImageLayout = ImageLayout.Stretch;
+            light_5x5_20.FlatAppearance.BorderSize = 0;
+            light_5x5_20.FlatStyle = FlatStyle.Flat;
+            light_5x5_20.index = 10;
+            light_5x5_20.Location = new Point(5, 130);
+            light_5x5_20.Name = "light_5x5_20";
+            light_5x5_20.OffButton = Properties.Resources.ButtonOff;
+            light_5x5_20.OnButton = Properties.Resources.ButtonOn;
+            light_5x5_20.Size = new Size(60, 60);
+            light_5x5_20.State = LightState.Off;
+            light_5x5_20.TabIndex = 10;
+            light_5x5_20.UseVisualStyleBackColor = true;
+            // 
+            // light_5x5_14
+            // 
+            light_5x5_14.BackgroundImage = Properties.Resources.ButtonOff;
+            light_5x5_14.BackgroundImageLayout = ImageLayout.Stretch;
+            light_5x5_14.FlatAppearance.BorderSize = 0;
+            light_5x5_14.FlatStyle = FlatStyle.Flat;
+            light_5x5_14.index = 9;
+            light_5x5_14.Location = new Point(245, 70);
+            light_5x5_14.Name = "light_5x5_14";
+            light_5x5_14.OffButton = Properties.Resources.ButtonOff;
+            light_5x5_14.OnButton = Properties.Resources.ButtonOn;
+            light_5x5_14.Size = new Size(60, 60);
+            light_5x5_14.State = LightState.Off;
+            light_5x5_14.TabIndex = 9;
+            light_5x5_14.UseVisualStyleBackColor = true;
+            // 
+            // light_5x5_13
+            // 
+            light_5x5_13.BackgroundImage = Properties.Resources.ButtonOff;
+            light_5x5_13.BackgroundImageLayout = ImageLayout.Stretch;
+            light_5x5_13.FlatAppearance.BorderSize = 0;
+            light_5x5_13.FlatStyle = FlatStyle.Flat;
+            light_5x5_13.index = 8;
+            light_5x5_13.Location = new Point(185, 70);
+            light_5x5_13.Name = "light_5x5_13";
+            light_5x5_13.OffButton = Properties.Resources.ButtonOff;
+            light_5x5_13.OnButton = Properties.Resources.ButtonOn;
+            light_5x5_13.Size = new Size(60, 60);
+            light_5x5_13.State = LightState.Off;
+            light_5x5_13.TabIndex = 8;
+            light_5x5_13.UseVisualStyleBackColor = true;
+            // 
+            // light_5x5_12
+            // 
+            light_5x5_12.BackgroundImage = Properties.Resources.ButtonOff;
+            light_5x5_12.BackgroundImageLayout = ImageLayout.Stretch;
+            light_5x5_12.FlatAppearance.BorderSize = 0;
+            light_5x5_12.FlatStyle = FlatStyle.Flat;
+            light_5x5_12.index = 7;
+            light_5x5_12.Location = new Point(125, 70);
+            light_5x5_12.Name = "light_5x5_12";
+            light_5x5_12.OffButton = Properties.Resources.ButtonOff;
+            light_5x5_12.OnButton = Properties.Resources.ButtonOn;
+            light_5x5_12.Size = new Size(60, 60);
+            light_5x5_12.State = LightState.Off;
+            light_5x5_12.TabIndex = 7;
+            light_5x5_12.UseVisualStyleBackColor = true;
+            // 
+            // light_5x5_11
+            // 
+            light_5x5_11.BackgroundImage = Properties.Resources.ButtonOff;
+            light_5x5_11.BackgroundImageLayout = ImageLayout.Stretch;
+            light_5x5_11.FlatAppearance.BorderSize = 0;
+            light_5x5_11.FlatStyle = FlatStyle.Flat;
+            light_5x5_11.index = 6;
+            light_5x5_11.Location = new Point(65, 70);
+            light_5x5_11.Name = "light_5x5_11";
+            light_5x5_11.OffButton = Properties.Resources.ButtonOff;
+            light_5x5_11.OnButton = Properties.Resources.ButtonOn;
+            light_5x5_11.Size = new Size(60, 60);
+            light_5x5_11.State = LightState.Off;
+            light_5x5_11.TabIndex = 6;
+            light_5x5_11.UseVisualStyleBackColor = true;
+            // 
+            // light_5x5_10
+            // 
+            light_5x5_10.BackgroundImage = Properties.Resources.ButtonOff;
+            light_5x5_10.BackgroundImageLayout = ImageLayout.Stretch;
+            light_5x5_10.FlatAppearance.BorderSize = 0;
+            light_5x5_10.FlatStyle = FlatStyle.Flat;
+            light_5x5_10.index = 5;
+            light_5x5_10.Location = new Point(5, 70);
+            light_5x5_10.Name = "light_5x5_10";
+            light_5x5_10.OffButton = Properties.Resources.ButtonOff;
+            light_5x5_10.OnButton = Properties.Resources.ButtonOn;
+            light_5x5_10.Size = new Size(60, 60);
+            light_5x5_10.State = LightState.Off;
+            light_5x5_10.TabIndex = 5;
+            light_5x5_10.UseVisualStyleBackColor = true;
+            // 
+            // light_5x5_04
+            // 
+            light_5x5_04.BackgroundImage = Properties.Resources.ButtonOff;
+            light_5x5_04.BackgroundImageLayout = ImageLayout.Stretch;
+            light_5x5_04.FlatAppearance.BorderSize = 0;
+            light_5x5_04.FlatStyle = FlatStyle.Flat;
+            light_5x5_04.index = 4;
+            light_5x5_04.Location = new Point(245, 10);
+            light_5x5_04.Name = "light_5x5_04";
+            light_5x5_04.OffButton = Properties.Resources.ButtonOff;
+            light_5x5_04.OnButton = Properties.Resources.ButtonOn;
+            light_5x5_04.Size = new Size(60, 60);
+            light_5x5_04.State = LightState.Off;
+            light_5x5_04.TabIndex = 4;
+            light_5x5_04.UseVisualStyleBackColor = true;
+            // 
+            // light_5x5_03
+            // 
+            light_5x5_03.BackgroundImage = Properties.Resources.ButtonOff;
+            light_5x5_03.BackgroundImageLayout = ImageLayout.Stretch;
+            light_5x5_03.FlatAppearance.BorderSize = 0;
+            light_5x5_03.FlatStyle = FlatStyle.Flat;
+            light_5x5_03.index = 3;
+            light_5x5_03.Location = new Point(185, 10);
+            light_5x5_03.Name = "light_5x5_03";
+            light_5x5_03.OffButton = Properties.Resources.ButtonOff;
+            light_5x5_03.OnButton = Properties.Resources.ButtonOn;
+            light_5x5_03.Size = new Size(60, 60);
+            light_5x5_03.State = LightState.Off;
+            light_5x5_03.TabIndex = 3;
+            light_5x5_03.UseVisualStyleBackColor = true;
+            // 
+            // light_5x5_02
+            // 
+            light_5x5_02.BackgroundImage = Properties.Resources.ButtonOff;
+            light_5x5_02.BackgroundImageLayout = ImageLayout.Stretch;
+            light_5x5_02.FlatAppearance.BorderSize = 0;
+            light_5x5_02.FlatStyle = FlatStyle.Flat;
+            light_5x5_02.index = 2;
+            light_5x5_02.Location = new Point(125, 10);
+            light_5x5_02.Name = "light_5x5_02";
+            light_5x5_02.OffButton = Properties.Resources.ButtonOff;
+            light_5x5_02.OnButton = Properties.Resources.ButtonOn;
+            light_5x5_02.Size = new Size(60, 60);
+            light_5x5_02.State = LightState.Off;
+            light_5x5_02.TabIndex = 2;
+            light_5x5_02.UseVisualStyleBackColor = true;
+            // 
+            // light_5x5_01
+            // 
+            light_5x5_01.BackgroundImage = Properties.Resources.ButtonOff;
+            light_5x5_01.BackgroundImageLayout = ImageLayout.Stretch;
+            light_5x5_01.FlatAppearance.BorderSize = 0;
+            light_5x5_01.FlatStyle = FlatStyle.Flat;
+            light_5x5_01.index = 1;
+            light_5x5_01.Location = new Point(65, 10);
+            light_5x5_01.Name = "light_5x5_01";
+            light_5x5_01.OffButton = Properties.Resources.ButtonOff;
+            light_5x5_01.OnButton = Properties.Resources.ButtonOn;
+            light_5x5_01.Size = new Size(60, 60);
+            light_5x5_01.State = LightState.Off;
+            light_5x5_01.TabIndex = 1;
+            light_5x5_01.UseVisualStyleBackColor = true;
+            // 
+            // light_5x5_00
+            // 
+            light_5x5_00.BackgroundImage = Properties.Resources.ButtonOff;
+            light_5x5_00.BackgroundImageLayout = ImageLayout.Stretch;
+            light_5x5_00.FlatAppearance.BorderSize = 0;
+            light_5x5_00.FlatStyle = FlatStyle.Flat;
+            light_5x5_00.index = 0;
+            light_5x5_00.Location = new Point(5, 10);
+            light_5x5_00.Name = "light_5x5_00";
+            light_5x5_00.OffButton = Properties.Resources.ButtonOff;
+            light_5x5_00.OnButton = Properties.Resources.ButtonOn;
+            light_5x5_00.Size = new Size(60, 60);
+            light_5x5_00.State = LightState.Off;
+            light_5x5_00.TabIndex = 0;
+            light_5x5_00.UseVisualStyleBackColor = true;
+            // 
             // Board
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -931,15 +1396,16 @@
             BackgroundImage = Properties.Resources.Board;
             BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(659, 411);
+            Controls.Add(gbxGameBoard_5x5);
             Controls.Add(label1);
             Controls.Add(btnNext);
             Controls.Add(btnRedo);
             Controls.Add(btnPrevious);
-            Controls.Add(gbxGameBoard_3x3);
             Controls.Add(bgxDebug);
             Controls.Add(gbxStats);
             Controls.Add(gbxGameBoard_4x4);
             Controls.Add(pbxWinImage);
+            Controls.Add(gbxGameBoard_3x3);
             DoubleBuffered = true;
             KeyPreview = true;
             Name = "Board";
@@ -954,6 +1420,7 @@
             bgxDebug.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)numMinMoves).EndInit();
             gbxGameBoard_3x3.ResumeLayout(false);
+            gbxGameBoard_5x5.ResumeLayout(false);
             ResumeLayout(false);
             PerformLayout();
         }
@@ -1017,5 +1484,33 @@
         private Label label1;
         private TextBox txtFileName;
         private Label lblFileName;
+        
+        private GroupBox gbxGameBoard_5x5;
+        private Light light_5x5_04;
+        private Light light_5x5_03;
+        private Light light_5x5_02;
+        private Light light_5x5_01;
+        private Light light_5x5_00;
+        private Light light_5x5_14;
+        private Light light_5x5_13;
+        private Light light_5x5_12;
+        private Light light_5x5_11;
+        private Light light_5x5_10;
+        private Light light_5x5_24;
+        private Light light_5x5_23;
+        private Light light_5x5_22;
+        private Light light_5x5_21;
+        private Light light_5x5_20;
+        private Light light_5x5_34;
+        private Light light_5x5_33;
+        private Light light_5x5_32;
+        private Light light_5x5_31;
+        private Light light_5x5_30;
+        private Light light_5x5_44;
+        private Light light_5x5_43;
+        private Light light_5x5_42;
+        private Light light_5x5_41;
+        private Light light_5x5_40;
+
     }
 }

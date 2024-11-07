@@ -136,7 +136,7 @@ namespace LightsOut
                     break;
             }
         }
-      
+
         private void SaveLevelToFile_Click(object sender, EventArgs e)
         {
             LevelData ld = new LevelData(levelData);
@@ -144,7 +144,7 @@ namespace LightsOut
             ld.MinMoves = solution.Sum();
             string ProjectDir = "C:\\Users\\GlassToe\\Documents\\Calhoun Comminity College\\Fall 24\\CIS 285 - Object-Oriented Programming (11022)\\Final Project\\OOP-Final-Project-Lights-Out\\LightsOut\\Resources\\Levels\\";
             string fileName = $"Levels_{level}.json";
-            if(cbxLevelSelect.Items.Contains(fileName))
+            if (cbxLevelSelect.Items.Contains(fileName))
             {
                 MessageBox.Show($"{fileName} Exists, choose a new name!", "File Exists!");
                 return;
@@ -162,12 +162,7 @@ namespace LightsOut
         #endregion
 
         #region Validation
-        private void txtFileName_Leave(object sender, EventArgs e)
-        {
-            txtFileName_Validating(this, new CancelEventArgs());
-        }
-
-        private void txtFileName_Validating(object sender, CancelEventArgs e)
+        private bool ValidateFileName()
         {
             try
             {
@@ -176,44 +171,35 @@ namespace LightsOut
                 if (cbxLevelSelect.Items.Contains(fileName))
                 {
                     MessageBox.Show($"{fileName} Exists, choose a new name!", "File Exists!");
-                    return;
+                    return false;
                 }
             }
             catch
             {
-                e.Cancel = true;
                 level = int.Parse((cbxLevelSelect.Text.Split("_")[1]).Replace
                     (".json", ""));
                 txtFileName.Text = $"Levels_{level}";
+                return false;
             }
+            return true;
         }
 
         #endregion
-       
+
         private string DebugBoardState()
         {
-            String output = "";
-            if (levelData.Size == 4)
+            string onglyph = "⦿";
+            string offglyph = "○";
+
+            string output = "";
+
+            for (int i = 0; i < levelData.Board.Length; i++)
             {
-                for (int i = 0; i < levelData.Board.Length; i++)
+                if (i % levelData.Size == 0 && i != 0)
                 {
-                    if (i % 4 == 0 && i != 0)
-                    {
-                        output += "\n";
-                    }
-                    output += levelData.Board[i] + ", ";
-                }
-            }
-            else
-            {
-                for (int i = 0; i < levelData.Board.Length; i++)
-                {
-                    if (i % 3 == 0 && i != 0)
-                    {
-                        output += "\n";
-                    }
-                    output += levelData.Board[i] + ", ";
-                }
+                    output += "\n";
+                } 
+                output += $"{(levelData.Board[i] == 0 ? offglyph : onglyph)} ";
             }
 
             return output;

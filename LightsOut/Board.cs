@@ -41,6 +41,14 @@ namespace LightsOut
         {
             gbxGameBoard_3x3.Visible = false;
             gbxGameBoard_4x4.Visible = false;
+            gbxGameBoard_5x5.Visible = false;
+
+            Light[] lights_5x5 = [
+                        light_5x5_00, light_5x5_01, light_5x5_02, light_5x5_03, light_5x5_04,
+                        light_5x5_10, light_5x5_11, light_5x5_12, light_5x5_13, light_5x5_14,
+                        light_5x5_20, light_5x5_21, light_5x5_22, light_5x5_23, light_5x5_24,
+                        light_5x5_30, light_5x5_31, light_5x5_32, light_5x5_33, light_5x5_34,
+                        light_5x5_40, light_5x5_41, light_5x5_42, light_5x5_43, light_5x5_44];
 
             Light[] lights_4x4 = [
                         light_4x4_00, light_4x4_01, light_4x4_02, light_4x4_03,
@@ -62,6 +70,10 @@ namespace LightsOut
                 case 4:
                     gbxGameBoard_4x4.Visible = true;
                     lights = lights_4x4;
+                    break;
+                case 5:
+                    gbxGameBoard_5x5.Visible = true;
+                    lights = lights_5x5;
                     break;
                 default:
                     gbxGameBoard_4x4.Visible = true;
