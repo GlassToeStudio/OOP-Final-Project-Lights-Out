@@ -175,7 +175,7 @@ namespace LightsOut
         {
             moves = 0;
             levelName = cbxLevelSelect.Text;
-            levelData = levels.Levels[cbxLevelSelect.SelectedIndex];
+            levelData = new LevelData(levels.Levels[cbxLevelSelect.SelectedIndex]);
             level = levelData.Level;
 
             GenerateGameBoardsAndSelect();
