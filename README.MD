@@ -102,9 +102,6 @@ public static AllLevels LoadLevels(this AllLevels levels)
 
 Used like:
 ```cs
-// cbxLevelSelect is a dropdown box that shows all loaded levels by name. 
-// Each level can be selected and then loaded by the index of the level selected in the combo box.
-// A new LevelData struct is created.
-levelData = new LevelData(levels.Levels[cbxLevelSelect.SelectedIndex]);
+levels = new AllLevels().LoadLevels();
 ```
 ### Level Saving
