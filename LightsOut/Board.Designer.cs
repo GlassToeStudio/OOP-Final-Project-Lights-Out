@@ -1007,6 +1007,7 @@
             light_5x5_44.State = LightState.Off;
             light_5x5_44.TabIndex = 24;
             light_5x5_44.UseVisualStyleBackColor = true;
+            light_5x5_44.Click += Light_Click;
             // 
             // light_5x5_43
             // 
@@ -1023,6 +1024,7 @@
             light_5x5_43.State = LightState.Off;
             light_5x5_43.TabIndex = 23;
             light_5x5_43.UseVisualStyleBackColor = true;
+            light_5x5_43.Click += Light_Click;
             // 
             // light_5x5_42
             // 
@@ -1039,6 +1041,7 @@
             light_5x5_42.State = LightState.Off;
             light_5x5_42.TabIndex = 22;
             light_5x5_42.UseVisualStyleBackColor = true;
+            light_5x5_42.Click += Light_Click;
             // 
             // light_5x5_41
             // 
@@ -1055,6 +1058,7 @@
             light_5x5_41.State = LightState.Off;
             light_5x5_41.TabIndex = 21;
             light_5x5_41.UseVisualStyleBackColor = true;
+            light_5x5_41.Click += Light_Click;
             // 
             // light_5x5_40
             // 
@@ -1071,6 +1075,7 @@
             light_5x5_40.State = LightState.Off;
             light_5x5_40.TabIndex = 20;
             light_5x5_40.UseVisualStyleBackColor = true;
+            light_5x5_40.Click += Light_Click;
             // 
             // light_5x5_34
             // 
@@ -1087,6 +1092,7 @@
             light_5x5_34.State = LightState.Off;
             light_5x5_34.TabIndex = 19;
             light_5x5_34.UseVisualStyleBackColor = true;
+            light_5x5_34.Click += Light_Click;
             // 
             // light_5x5_33
             // 
@@ -1103,6 +1109,7 @@
             light_5x5_33.State = LightState.Off;
             light_5x5_33.TabIndex = 18;
             light_5x5_33.UseVisualStyleBackColor = true;
+            light_5x5_33.Click += Light_Click;
             // 
             // light_5x5_32
             // 
@@ -1119,6 +1126,7 @@
             light_5x5_32.State = LightState.Off;
             light_5x5_32.TabIndex = 17;
             light_5x5_32.UseVisualStyleBackColor = true;
+            light_5x5_32.Click += Light_Click;
             // 
             // light_5x5_31
             // 
@@ -1135,6 +1143,7 @@
             light_5x5_31.State = LightState.Off;
             light_5x5_31.TabIndex = 16;
             light_5x5_31.UseVisualStyleBackColor = true;
+            light_5x5_31.Click += Light_Click;
             // 
             // light_5x5_30
             // 
@@ -1151,6 +1160,7 @@
             light_5x5_30.State = LightState.Off;
             light_5x5_30.TabIndex = 15;
             light_5x5_30.UseVisualStyleBackColor = true;
+            light_5x5_30.Click += Light_Click;
             // 
             // light_5x5_24
             // 
@@ -1167,6 +1177,7 @@
             light_5x5_24.State = LightState.Off;
             light_5x5_24.TabIndex = 14;
             light_5x5_24.UseVisualStyleBackColor = true;
+            light_5x5_24.Click += Light_Click;
             // 
             // light_5x5_23
             // 
@@ -1183,6 +1194,7 @@
             light_5x5_23.State = LightState.Off;
             light_5x5_23.TabIndex = 13;
             light_5x5_23.UseVisualStyleBackColor = true;
+            light_5x5_23.Click += Light_Click;
             // 
             // light_5x5_22
             // 
@@ -1199,6 +1211,7 @@
             light_5x5_22.State = LightState.Off;
             light_5x5_22.TabIndex = 12;
             light_5x5_22.UseVisualStyleBackColor = true;
+            light_5x5_22.Click += Light_Click;
             // 
             // light_5x5_21
             // 
@@ -1215,6 +1228,7 @@
             light_5x5_21.State = LightState.Off;
             light_5x5_21.TabIndex = 11;
             light_5x5_21.UseVisualStyleBackColor = true;
+            light_5x5_21.Click += Light_Click;
             // 
             // light_5x5_20
             // 
@@ -1231,6 +1245,7 @@
             light_5x5_20.State = LightState.Off;
             light_5x5_20.TabIndex = 10;
             light_5x5_20.UseVisualStyleBackColor = true;
+            light_5x5_20.Click += Light_Click;
             // 
             // light_5x5_14
             // 
@@ -1247,6 +1262,7 @@
             light_5x5_14.State = LightState.Off;
             light_5x5_14.TabIndex = 9;
             light_5x5_14.UseVisualStyleBackColor = true;
+            light_5x5_14.Click += Light_Click;
             // 
             // light_5x5_13
             // 
@@ -1263,6 +1279,7 @@
             light_5x5_13.State = LightState.Off;
             light_5x5_13.TabIndex = 8;
             light_5x5_13.UseVisualStyleBackColor = true;
+            light_5x5_13.Click += Light_Click;
             // 
             // light_5x5_12
             // 
@@ -1279,6 +1296,7 @@
             light_5x5_12.State = LightState.Off;
             light_5x5_12.TabIndex = 7;
             light_5x5_12.UseVisualStyleBackColor = true;
+            light_5x5_12.Click += Light_Click;
             // 
             // light_5x5_11
             // 
@@ -1295,6 +1313,7 @@
             light_5x5_11.State = LightState.Off;
             light_5x5_11.TabIndex = 6;
             light_5x5_11.UseVisualStyleBackColor = true;
+            light_5x5_11.Click += Light_Click;
             // 
             // light_5x5_10
             // 
@@ -1311,6 +1330,7 @@
             light_5x5_10.State = LightState.Off;
             light_5x5_10.TabIndex = 5;
             light_5x5_10.UseVisualStyleBackColor = true;
+            light_5x5_10.Click += Light_Click;
             // 
             // light_5x5_04
             // 
@@ -1327,6 +1347,7 @@
             light_5x5_04.State = LightState.Off;
             light_5x5_04.TabIndex = 4;
             light_5x5_04.UseVisualStyleBackColor = true;
+            light_5x5_04.Click += Light_Click;
             // 
             // light_5x5_03
             // 
@@ -1343,6 +1364,7 @@
             light_5x5_03.State = LightState.Off;
             light_5x5_03.TabIndex = 3;
             light_5x5_03.UseVisualStyleBackColor = true;
+            light_5x5_03.Click += Light_Click;
             // 
             // light_5x5_02
             // 
@@ -1359,6 +1381,7 @@
             light_5x5_02.State = LightState.Off;
             light_5x5_02.TabIndex = 2;
             light_5x5_02.UseVisualStyleBackColor = true;
+            light_5x5_02.Click += Light_Click;
             // 
             // light_5x5_01
             // 
@@ -1375,6 +1398,7 @@
             light_5x5_01.State = LightState.Off;
             light_5x5_01.TabIndex = 1;
             light_5x5_01.UseVisualStyleBackColor = true;
+            light_5x5_01.Click += Light_Click;
             // 
             // light_5x5_00
             // 
@@ -1391,6 +1415,7 @@
             light_5x5_00.State = LightState.Off;
             light_5x5_00.TabIndex = 0;
             light_5x5_00.UseVisualStyleBackColor = true;
+            light_5x5_00.Click += Light_Click;
             // 
             // Board
             // 
@@ -1407,9 +1432,9 @@
             Controls.Add(btnPrevious);
             Controls.Add(bgxDebug);
             Controls.Add(gbxStats);
-            Controls.Add(gbxGameBoard_4x4);
             Controls.Add(pbxWinImage);
             Controls.Add(gbxGameBoard_3x3);
+            Controls.Add(gbxGameBoard_4x4);
             DoubleBuffered = true;
             KeyPreview = true;
             Name = "Board";

@@ -87,6 +87,7 @@ namespace LightsOut
                     break;
                 case 5:
                     gbxGameBoard_5x5.Visible = true;
+                    gbxGameBoard_5x5.BringToFront();
                     lights = lights_5x5;
                     break;
                 default:
@@ -103,7 +104,6 @@ namespace LightsOut
 
         private void InitializeBoardLights()
         {
-            // Set On off button and Index value
             for (var i = 0; i < lights.Length; i++)
             {
                 lights[i].Init(i);
