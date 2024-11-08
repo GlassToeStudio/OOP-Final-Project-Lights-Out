@@ -81,7 +81,7 @@
             btnPrevious = new Button();
             btnRedo = new Button();
             btnNext = new Button();
-            label1 = new Label();
+            pnlStars = new Label();
             gbxGameBoard_5x5 = new GroupBox();
             light_5x5_44 = new Light();
             light_5x5_43 = new Light();
@@ -642,7 +642,7 @@
             txtFileName.Name = "txtFileName";
             txtFileName.Size = new Size(63, 16);
             txtFileName.TabIndex = 16;
-            txtFileName.Text = "Levels_10";
+            txtFileName.Text = "...";
             txtFileName.TextAlign = HorizontalAlignment.Center;
             // 
             // lblFileName
@@ -938,19 +938,19 @@
             btnNext.UseVisualStyleBackColor = true;
             btnNext.Click += LoadNextLevel_Click;
             // 
-            // label1
+            // pnlStars
             // 
-            label1.AutoSize = true;
-            label1.Font = new Font("Segoe UI", 35F);
-            label1.ForeColor = SystemColors.ActiveCaption;
-            label1.Location = new Point(324, 235);
-            label1.MaximumSize = new Size(150, 75);
-            label1.MinimumSize = new Size(150, 75);
-            label1.Name = "label1";
-            label1.Size = new Size(150, 75);
-            label1.TabIndex = 15;
-            label1.Text = "★★★";
-            label1.TextAlign = ContentAlignment.MiddleCenter;
+            pnlStars.AutoSize = true;
+            pnlStars.Font = new Font("Segoe UI", 35F);
+            pnlStars.ForeColor = SystemColors.ActiveCaption;
+            pnlStars.Location = new Point(324, 235);
+            pnlStars.MaximumSize = new Size(150, 75);
+            pnlStars.MinimumSize = new Size(150, 75);
+            pnlStars.Name = "pnlStars";
+            pnlStars.Size = new Size(150, 75);
+            pnlStars.TabIndex = 15;
+            pnlStars.Text = "★★★";
+            pnlStars.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // gbxGameBoard_5x5
             // 
@@ -1401,7 +1401,7 @@
             BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(659, 411);
             Controls.Add(gbxGameBoard_5x5);
-            Controls.Add(label1);
+            Controls.Add(pnlStars);
             Controls.Add(btnNext);
             Controls.Add(btnRedo);
             Controls.Add(btnPrevious);
@@ -1485,7 +1485,7 @@
         private Button btnPrevious;
         private Button btnRedo;
         private Button btnNext;
-        private Label label1;
+        private Label pnlStars;
         private TextBox txtFileName;
         private Label lblFileName;
         
