@@ -8,9 +8,6 @@ namespace LightsOut
         #region Generation
         private void GenerateRandomLevel()
         {
-            // TODO We have 60 premade levels, do something different for how we number generated levels
-            level += 1; 
-
             moves = 0;
             levelData.Size = GetBoardSizeForRandomGen();
             GenerateGameBoardsAndSelect();
@@ -49,8 +46,8 @@ namespace LightsOut
                 }
             }
 
-            //TODO: Use the ToString() method for filename, append generated to file name.
-            // Save files to some other location of pc.
+            btnSaveLevel.Enabled = true;
+           
             txtFileName.Text = $"{levelData}_generated";
         }
 
@@ -143,34 +140,18 @@ namespace LightsOut
 
         private void SaveLevelToFile_Click(object sender, EventArgs e)
         {
-            //TODO:
-            /*
-             * Change directory of save file.
-             * Change file name to use the ToString() method of LevelData.
-             * Append 'Generated' into file name.
-             * The generated levels will be saved elsewhere and can be
-             * manually added to the Levels.json file if desired.
-            */
-            
-            
-            //MessageBox.Show("Not working with the new load level system.", "Error!");
-            //return;
-            
-
-
-            LevelData ld = new LevelData(levelData);
-            var solution = Solver.GetSolutionMatrix(ld);
-            ld.MinMoves = solution.Sum();
             string ProjectDir = "C:\\Users\\GlassToe\\Documents\\Calhoun Comminity College\\Fall 24\\CIS 285 - Object-Oriented Programming (11022)\\Final Project\\OOP-Final-Project-Lights-Out\\LightsOut\\Resources\\Levels\\";
-            string fileName = $"{ld}_generated";
+           
+            cbxLevelSelect.Items.Add(levelData.Name);
+            levels.Levels = [.. levels.Levels, levelData];
+            cbxLevelSelect.SelectedIndex = cbxLevelSelect.Items.Count - 1;
 
-            var data = JsonConvert.SerializeObject(ld);
-            //File.WriteAllText(FileUtil.GetLevelFile(fileName), data);
-            File.WriteAllText($"{ProjectDir}{fileName}", data);
-            levelData = ld;
+            string fileName = $"{levelData}_generated";
+            var data = JsonConvert.SerializeObject(levels);
+            File.WriteAllText(FileUtil.GetLevelFile("Levels.json"), data);
+            File.WriteAllText($"{ProjectDir}Levels.json", data);
             MessageBox.Show($"{fileName} created!", "Level Saved");
-            cbxLevelSelect.Items.Add(ld.Name);
-            levels.Levels = [.. levels.Levels, ld];   
+            btnSaveLevel.Enabled = false;
         }
 
         #endregion

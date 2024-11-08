@@ -52,6 +52,7 @@ namespace LightsOut
 
         private void GenerateGameBoardsAndSelect()
         {
+            btnSaveLevel.Enabled = false;
             gbxGameBoard_3x3.Visible = false;
             gbxGameBoard_4x4.Visible = false;
             gbxGameBoard_5x5.Visible = false;
