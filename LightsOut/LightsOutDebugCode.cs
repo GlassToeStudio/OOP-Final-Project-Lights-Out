@@ -8,8 +8,10 @@ namespace LightsOut
         #region Generation
         private void GenerateRandomLevel()
         {
+            // TODO We have 60 premade levels, do something different for how we number generated levels
+            level += 1; 
+
             moves = 0;
-            level += 1;
             levelData.Size = GetBoardSizeForRandomGen();
             GenerateGameBoardsAndSelect();
             Random rnd = new Random();
@@ -47,6 +49,9 @@ namespace LightsOut
                     break;
                 }
             }
+
+            //TODO: Use the ToString() method for filename, append generated to file name.
+            // Save files to some other location of pc.
             txtFileName.Text = $"Levels_{level}";
         }
 
@@ -139,8 +144,20 @@ namespace LightsOut
 
         private void SaveLevelToFile_Click(object sender, EventArgs e)
         {
+            //TODO:
+            /*
+             * Change directory of save file.
+             * Change file name to use the ToString() method of LevelData.
+             * Append 'Generated' into file name.
+             * The generated levels will be saved elsewhere and can be
+             * manually added to the Levels.json file if desired.
+            */
+            
+            
             MessageBox.Show("Not working with the new load level system.", "Error!");
             return;
+            
+
 
             LevelData ld = new LevelData(levelData);
             var solution = Solver.GetSolutionMatrix(ld);

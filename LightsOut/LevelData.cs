@@ -40,9 +40,9 @@
             }
         }
 
-        //public override readonly string ToString()
-        //{
-        //    return $"Level: {Level}, Size: {Size}, Goal: {MinMoves}";
-        //}
+        public override readonly string ToString()
+        {
+            return $"Level_{Level}_{Size}x{Size}_Goal_{MinMoves}";
+        }
     }
 }
