@@ -15,7 +15,7 @@ namespace LightsOut
 
         private int moves = 0;
         private int level = 0;
-        private string levelName;
+        private string levelName = string.Empty;
 
         /// <summary>
         /// 
