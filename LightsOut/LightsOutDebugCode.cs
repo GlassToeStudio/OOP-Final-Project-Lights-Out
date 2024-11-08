@@ -36,10 +36,9 @@ namespace LightsOut
                     used.Add(randLight);
 
                     lights[randLight].ClickLight();
-                    //levelData.UpdateBoard(lights);
 
                 }
-                levelData = new LevelData(level, levelData.Size, 0);
+                levelData = new LevelData(rnd.Next(1000,9000)+level, levelData.Size, 0);
                 levelData.UpdateBoard(lights);
                 levelData.MinMoves = Solver.GetSolutionMatrix(levelData).Sum();
                 lblLog.Text = DebugBoardState();
@@ -52,7 +51,7 @@ namespace LightsOut
 
             //TODO: Use the ToString() method for filename, append generated to file name.
             // Save files to some other location of pc.
-            txtFileName.Text = $"Levels_{level}";
+            txtFileName.Text = $"{levelData}_generated";
         }
 
         private int GetBoardSizeForRandomGen()
@@ -154,8 +153,8 @@ namespace LightsOut
             */
             
             
-            MessageBox.Show("Not working with the new load level system.", "Error!");
-            return;
+            //MessageBox.Show("Not working with the new load level system.", "Error!");
+            //return;
             
 
 
@@ -163,20 +162,15 @@ namespace LightsOut
             var solution = Solver.GetSolutionMatrix(ld);
             ld.MinMoves = solution.Sum();
             string ProjectDir = "C:\\Users\\GlassToe\\Documents\\Calhoun Comminity College\\Fall 24\\CIS 285 - Object-Oriented Programming (11022)\\Final Project\\OOP-Final-Project-Lights-Out\\LightsOut\\Resources\\Levels\\";
-            string fileName = $"Levels_{level}.json";
-            if (cbxLevelSelect.Items.Contains(fileName))
-            {
-                MessageBox.Show($"{fileName} Exists, choose a new name!", "File Exists!");
-                return;
-            }
-
+            string fileName = $"{ld}_generated";
 
             var data = JsonConvert.SerializeObject(ld);
-            File.WriteAllText(FileUtil.GetLevelFile(fileName), data);
+            //File.WriteAllText(FileUtil.GetLevelFile(fileName), data);
             File.WriteAllText($"{ProjectDir}{fileName}", data);
             levelData = ld;
             MessageBox.Show($"{fileName} created!", "Level Saved");
-            PreloadLevelsData();
+            cbxLevelSelect.Items.Add(ld.Name);
+            levels.Levels = [.. levels.Levels, ld];   
         }
 
         #endregion

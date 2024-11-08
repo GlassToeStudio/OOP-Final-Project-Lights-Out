@@ -1,5 +1,3 @@
-using Newtonsoft.Json;
-using System.ComponentModel;
 using System.Media;
 
 namespace LightsOut
@@ -173,7 +171,7 @@ namespace LightsOut
             lblLog.Text = DebugBoardState();
             UpdateUI();
         }
-     
+
         private void GenerateLevelFromLevels()
         {
             moves = 0;
