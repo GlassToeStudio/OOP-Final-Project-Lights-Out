@@ -9,11 +9,13 @@ namespace LightsOut
     /// </summary>
     public partial class Board : Form
     {
-        private Light[] lights = [];
+        private AllLevels levels;
         private LevelData levelData;
+        private Light[] lights = [];
+
         private int moves = 0;
         private int level = 0;
-        private string levelName = "Levels_1.json";
+        private string levelName;
 
         /// <summary>
         /// 
@@ -21,16 +23,15 @@ namespace LightsOut
         public Board()
         {
             InitializeComponent();
-            //PreloadLevelsData();
             PreloadAllLevelsData();
-            levelData = new LevelData().LoadLevelDataFromJson(levelName);
-            GenerateGameBoardsAndSelect();
-            //GenerateLevelFromFile();
             GenerateLevelFromLevels();
         }
 
         private void PreloadLevelsData()
         {
+            MessageBox.Show("Do not call this method.", "error");
+            return;
+
             cbxLevelSelect.Items.Clear();
             string[] files = FileUtil.GetFileFromLevelsFolder();
             foreach (string file in files)
@@ -40,7 +41,6 @@ namespace LightsOut
             cbxLevelSelect.SelectedIndex = 0;
         }
 
-        AllLevels levels;
         private void PreloadAllLevelsData()
         {
             cbxLevelSelect.Items.Clear();
@@ -104,7 +104,7 @@ namespace LightsOut
 
         private void InitializeBoardLights()
         {
-            // Set On off button and index value
+            // Set On off button and Index value
             for (var i = 0; i < lights.Length; i++)
             {
                 lights[i].Init(i);
@@ -148,6 +148,9 @@ namespace LightsOut
 
         private void GenerateLevelFromFile()
         {
+            MessageBox.Show("Do not call this method.", "error");
+            return;
+
             moves = 0;
             levelName = cbxLevelSelect.Text;
             levelData = new LevelData().LoadLevelDataFromJson(levelName);

@@ -5,8 +5,8 @@
     /// </summary>
     public class Light : Button
     {
-        /// <summary>Used to indicate this <see cref="Light"/>'s index when stored in the <see cref="LevelData.Board"/>'s array.</summary>
-        public int index { get; set; }
+        /// <summary>Used to indicate this <see cref="Light"/>'s Index when stored in the <see cref="LevelData.Board"/>'s array.</summary>
+        public int Index { get; set; }
         /// <summary>Indicate whether this <see cref="Light"/> is On or Off.</summary>
         public LightState State { get; set; }
         /// <summary>Image displayed for this <see cref="Light"/> when it is in <see cref="LightState.Off"/></summary>
@@ -25,11 +25,11 @@
         /// <summary>
         /// Should be called when a <see cref="Light"/> is created and when a new gamebaord is generated.
         /// </summary>
-        /// <param name="i">integer to indicate at what index this light is in an array of lights.</param>
+        /// <param name="i">integer to indicate at what Index this light is in an array of lights.</param>
         public void Init(int i)
         {
            Neighbors.Clear();
-           index = i;
+           Index = i;
            TurnOff();
            this.Enabled = true;
         }

@@ -1,7 +1,4 @@
-﻿using System.Runtime.CompilerServices;
-using Newtonsoft.Json;
-
-namespace LightsOut
+﻿namespace LightsOut
 {
     public struct LevelData
     {
@@ -39,7 +36,7 @@ namespace LightsOut
         {
             foreach (var light in lights)
             {
-                Board[light.index] = (int)light.State;
+                Board[light.Index] = (int)light.State;
             }
         }
 

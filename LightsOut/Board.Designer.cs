@@ -123,7 +123,7 @@
             light_4x4_33.BackgroundImageLayout = ImageLayout.Stretch;
             light_4x4_33.FlatAppearance.BorderSize = 0;
             light_4x4_33.FlatStyle = FlatStyle.Flat;
-            light_4x4_33.index = 15;
+            light_4x4_33.Index = 15;
             light_4x4_33.Location = new Point(230, 235);
             light_4x4_33.Name = "light_4x4_33";
             light_4x4_33.OffButton = Properties.Resources.ButtonOff;
@@ -140,7 +140,7 @@
             light_4x4_32.BackgroundImageLayout = ImageLayout.Stretch;
             light_4x4_32.FlatAppearance.BorderSize = 0;
             light_4x4_32.FlatStyle = FlatStyle.Flat;
-            light_4x4_32.index = 14;
+            light_4x4_32.Index = 14;
             light_4x4_32.Location = new Point(155, 235);
             light_4x4_32.Name = "light_4x4_32";
             light_4x4_32.OffButton = Properties.Resources.ButtonOff;
@@ -157,7 +157,7 @@
             light_4x4_31.BackgroundImageLayout = ImageLayout.Stretch;
             light_4x4_31.FlatAppearance.BorderSize = 0;
             light_4x4_31.FlatStyle = FlatStyle.Flat;
-            light_4x4_31.index = 13;
+            light_4x4_31.Index = 13;
             light_4x4_31.Location = new Point(80, 235);
             light_4x4_31.Name = "light_4x4_31";
             light_4x4_31.OffButton = Properties.Resources.ButtonOff;
@@ -174,7 +174,7 @@
             light_4x4_30.BackgroundImageLayout = ImageLayout.Stretch;
             light_4x4_30.FlatAppearance.BorderSize = 0;
             light_4x4_30.FlatStyle = FlatStyle.Flat;
-            light_4x4_30.index = 12;
+            light_4x4_30.Index = 12;
             light_4x4_30.Location = new Point(5, 235);
             light_4x4_30.Name = "light_4x4_30";
             light_4x4_30.OffButton = Properties.Resources.ButtonOff;
@@ -191,7 +191,7 @@
             light_4x4_23.BackgroundImageLayout = ImageLayout.Stretch;
             light_4x4_23.FlatAppearance.BorderSize = 0;
             light_4x4_23.FlatStyle = FlatStyle.Flat;
-            light_4x4_23.index = 11;
+            light_4x4_23.Index = 11;
             light_4x4_23.Location = new Point(230, 160);
             light_4x4_23.Name = "light_4x4_23";
             light_4x4_23.OffButton = Properties.Resources.ButtonOff;
@@ -208,7 +208,7 @@
             light_4x4_22.BackgroundImageLayout = ImageLayout.Stretch;
             light_4x4_22.FlatAppearance.BorderSize = 0;
             light_4x4_22.FlatStyle = FlatStyle.Flat;
-            light_4x4_22.index = 10;
+            light_4x4_22.Index = 10;
             light_4x4_22.Location = new Point(155, 160);
             light_4x4_22.Name = "light_4x4_22";
             light_4x4_22.OffButton = Properties.Resources.ButtonOff;
@@ -225,7 +225,7 @@
             light_4x4_21.BackgroundImageLayout = ImageLayout.Stretch;
             light_4x4_21.FlatAppearance.BorderSize = 0;
             light_4x4_21.FlatStyle = FlatStyle.Flat;
-            light_4x4_21.index = 9;
+            light_4x4_21.Index = 9;
             light_4x4_21.Location = new Point(80, 160);
             light_4x4_21.Name = "light_4x4_21";
             light_4x4_21.OffButton = Properties.Resources.ButtonOff;
@@ -242,7 +242,7 @@
             light_4x4_20.BackgroundImageLayout = ImageLayout.Stretch;
             light_4x4_20.FlatAppearance.BorderSize = 0;
             light_4x4_20.FlatStyle = FlatStyle.Flat;
-            light_4x4_20.index = 8;
+            light_4x4_20.Index = 8;
             light_4x4_20.Location = new Point(5, 160);
             light_4x4_20.Name = "light_4x4_20";
             light_4x4_20.OffButton = Properties.Resources.ButtonOff;
@@ -259,7 +259,7 @@
             light_4x4_13.BackgroundImageLayout = ImageLayout.Stretch;
             light_4x4_13.FlatAppearance.BorderSize = 0;
             light_4x4_13.FlatStyle = FlatStyle.Flat;
-            light_4x4_13.index = 7;
+            light_4x4_13.Index = 7;
             light_4x4_13.Location = new Point(230, 85);
             light_4x4_13.Name = "light_4x4_13";
             light_4x4_13.OffButton = Properties.Resources.ButtonOff;
@@ -276,7 +276,7 @@
             light_4x4_12.BackgroundImageLayout = ImageLayout.Stretch;
             light_4x4_12.FlatAppearance.BorderSize = 0;
             light_4x4_12.FlatStyle = FlatStyle.Flat;
-            light_4x4_12.index = 6;
+            light_4x4_12.Index = 6;
             light_4x4_12.Location = new Point(155, 85);
             light_4x4_12.Name = "light_4x4_12";
             light_4x4_12.OffButton = Properties.Resources.ButtonOff;
@@ -293,7 +293,7 @@
             light_4x4_11.BackgroundImageLayout = ImageLayout.Stretch;
             light_4x4_11.FlatAppearance.BorderSize = 0;
             light_4x4_11.FlatStyle = FlatStyle.Flat;
-            light_4x4_11.index = 5;
+            light_4x4_11.Index = 5;
             light_4x4_11.Location = new Point(80, 85);
             light_4x4_11.Name = "light_4x4_11";
             light_4x4_11.OffButton = Properties.Resources.ButtonOff;
@@ -310,7 +310,7 @@
             light_4x4_10.BackgroundImageLayout = ImageLayout.Stretch;
             light_4x4_10.FlatAppearance.BorderSize = 0;
             light_4x4_10.FlatStyle = FlatStyle.Flat;
-            light_4x4_10.index = 4;
+            light_4x4_10.Index = 4;
             light_4x4_10.Location = new Point(5, 85);
             light_4x4_10.Name = "light_4x4_10";
             light_4x4_10.OffButton = Properties.Resources.ButtonOff;
@@ -327,7 +327,7 @@
             light_4x4_03.BackgroundImageLayout = ImageLayout.Stretch;
             light_4x4_03.FlatAppearance.BorderSize = 0;
             light_4x4_03.FlatStyle = FlatStyle.Flat;
-            light_4x4_03.index = 3;
+            light_4x4_03.Index = 3;
             light_4x4_03.Location = new Point(230, 10);
             light_4x4_03.Name = "light_4x4_03";
             light_4x4_03.OffButton = Properties.Resources.ButtonOff;
@@ -344,7 +344,7 @@
             light_4x4_02.BackgroundImageLayout = ImageLayout.Stretch;
             light_4x4_02.FlatAppearance.BorderSize = 0;
             light_4x4_02.FlatStyle = FlatStyle.Flat;
-            light_4x4_02.index = 2;
+            light_4x4_02.Index = 2;
             light_4x4_02.Location = new Point(155, 10);
             light_4x4_02.Name = "light_4x4_02";
             light_4x4_02.OffButton = Properties.Resources.ButtonOff;
@@ -361,7 +361,7 @@
             light_4x4_01.BackgroundImageLayout = ImageLayout.Stretch;
             light_4x4_01.FlatAppearance.BorderSize = 0;
             light_4x4_01.FlatStyle = FlatStyle.Flat;
-            light_4x4_01.index = 1;
+            light_4x4_01.Index = 1;
             light_4x4_01.Location = new Point(80, 10);
             light_4x4_01.Name = "light_4x4_01";
             light_4x4_01.OffButton = Properties.Resources.ButtonOff;
@@ -378,7 +378,7 @@
             light_4x4_00.BackgroundImageLayout = ImageLayout.Stretch;
             light_4x4_00.FlatAppearance.BorderSize = 0;
             light_4x4_00.FlatStyle = FlatStyle.Flat;
-            light_4x4_00.index = 0;
+            light_4x4_00.Index = 0;
             light_4x4_00.Location = new Point(5, 10);
             light_4x4_00.Name = "light_4x4_00";
             light_4x4_00.OffButton = Properties.Resources.ButtonOff;
@@ -752,7 +752,7 @@
             light_3x3_22.BackgroundImageLayout = ImageLayout.Stretch;
             light_3x3_22.FlatAppearance.BorderSize = 0;
             light_3x3_22.FlatStyle = FlatStyle.Flat;
-            light_3x3_22.index = 8;
+            light_3x3_22.Index = 8;
             light_3x3_22.Location = new Point(207, 210);
             light_3x3_22.Name = "light_3x3_22";
             light_3x3_22.OffButton = Properties.Resources.ButtonOff;
@@ -769,7 +769,7 @@
             light_3x3_21.BackgroundImageLayout = ImageLayout.Stretch;
             light_3x3_21.FlatAppearance.BorderSize = 0;
             light_3x3_21.FlatStyle = FlatStyle.Flat;
-            light_3x3_21.index = 7;
+            light_3x3_21.Index = 7;
             light_3x3_21.Location = new Point(106, 210);
             light_3x3_21.Name = "light_3x3_21";
             light_3x3_21.OffButton = Properties.Resources.ButtonOff;
@@ -786,7 +786,7 @@
             light_3x3_20.BackgroundImageLayout = ImageLayout.Stretch;
             light_3x3_20.FlatAppearance.BorderSize = 0;
             light_3x3_20.FlatStyle = FlatStyle.Flat;
-            light_3x3_20.index = 6;
+            light_3x3_20.Index = 6;
             light_3x3_20.Location = new Point(5, 210);
             light_3x3_20.Name = "light_3x3_20";
             light_3x3_20.OffButton = Properties.Resources.ButtonOff;
@@ -803,7 +803,7 @@
             light_3x3_12.BackgroundImageLayout = ImageLayout.Stretch;
             light_3x3_12.FlatAppearance.BorderSize = 0;
             light_3x3_12.FlatStyle = FlatStyle.Flat;
-            light_3x3_12.index = 5;
+            light_3x3_12.Index = 5;
             light_3x3_12.Location = new Point(207, 110);
             light_3x3_12.Name = "light_3x3_12";
             light_3x3_12.OffButton = Properties.Resources.ButtonOff;
@@ -820,7 +820,7 @@
             light_3x3_11.BackgroundImageLayout = ImageLayout.Stretch;
             light_3x3_11.FlatAppearance.BorderSize = 0;
             light_3x3_11.FlatStyle = FlatStyle.Flat;
-            light_3x3_11.index = 4;
+            light_3x3_11.Index = 4;
             light_3x3_11.Location = new Point(106, 110);
             light_3x3_11.Name = "light_3x3_11";
             light_3x3_11.OffButton = Properties.Resources.ButtonOff;
@@ -837,7 +837,7 @@
             light_3x3_10.BackgroundImageLayout = ImageLayout.Stretch;
             light_3x3_10.FlatAppearance.BorderSize = 0;
             light_3x3_10.FlatStyle = FlatStyle.Flat;
-            light_3x3_10.index = 3;
+            light_3x3_10.Index = 3;
             light_3x3_10.Location = new Point(5, 110);
             light_3x3_10.Name = "light_3x3_10";
             light_3x3_10.OffButton = Properties.Resources.ButtonOff;
@@ -854,7 +854,7 @@
             light_3x3_02.BackgroundImageLayout = ImageLayout.Stretch;
             light_3x3_02.FlatAppearance.BorderSize = 0;
             light_3x3_02.FlatStyle = FlatStyle.Flat;
-            light_3x3_02.index = 2;
+            light_3x3_02.Index = 2;
             light_3x3_02.Location = new Point(207, 10);
             light_3x3_02.Name = "light_3x3_02";
             light_3x3_02.OffButton = Properties.Resources.ButtonOff;
@@ -871,7 +871,7 @@
             light_3x3_01.BackgroundImageLayout = ImageLayout.Stretch;
             light_3x3_01.FlatAppearance.BorderSize = 0;
             light_3x3_01.FlatStyle = FlatStyle.Flat;
-            light_3x3_01.index = 1;
+            light_3x3_01.Index = 1;
             light_3x3_01.Location = new Point(106, 10);
             light_3x3_01.Name = "light_3x3_01";
             light_3x3_01.OffButton = Properties.Resources.ButtonOff;
@@ -888,7 +888,7 @@
             light_3x3_00.BackgroundImageLayout = ImageLayout.Stretch;
             light_3x3_00.FlatAppearance.BorderSize = 0;
             light_3x3_00.FlatStyle = FlatStyle.Flat;
-            light_3x3_00.index = 0;
+            light_3x3_00.Index = 0;
             light_3x3_00.Location = new Point(5, 10);
             light_3x3_00.Name = "light_3x3_00";
             light_3x3_00.OffButton = Properties.Resources.ButtonOff;
@@ -994,7 +994,7 @@
             light_5x5_44.BackgroundImageLayout = ImageLayout.Stretch;
             light_5x5_44.FlatAppearance.BorderSize = 0;
             light_5x5_44.FlatStyle = FlatStyle.Flat;
-            light_5x5_44.index = 24;
+            light_5x5_44.Index = 24;
             light_5x5_44.Location = new Point(245, 250);
             light_5x5_44.Name = "light_5x5_44";
             light_5x5_44.OffButton = Properties.Resources.ButtonOff;
@@ -1010,7 +1010,7 @@
             light_5x5_43.BackgroundImageLayout = ImageLayout.Stretch;
             light_5x5_43.FlatAppearance.BorderSize = 0;
             light_5x5_43.FlatStyle = FlatStyle.Flat;
-            light_5x5_43.index = 23;
+            light_5x5_43.Index = 23;
             light_5x5_43.Location = new Point(185, 250);
             light_5x5_43.Name = "light_5x5_43";
             light_5x5_43.OffButton = Properties.Resources.ButtonOff;
@@ -1026,7 +1026,7 @@
             light_5x5_42.BackgroundImageLayout = ImageLayout.Stretch;
             light_5x5_42.FlatAppearance.BorderSize = 0;
             light_5x5_42.FlatStyle = FlatStyle.Flat;
-            light_5x5_42.index = 22;
+            light_5x5_42.Index = 22;
             light_5x5_42.Location = new Point(125, 250);
             light_5x5_42.Name = "light_5x5_42";
             light_5x5_42.OffButton = Properties.Resources.ButtonOff;
@@ -1042,7 +1042,7 @@
             light_5x5_41.BackgroundImageLayout = ImageLayout.Stretch;
             light_5x5_41.FlatAppearance.BorderSize = 0;
             light_5x5_41.FlatStyle = FlatStyle.Flat;
-            light_5x5_41.index = 21;
+            light_5x5_41.Index = 21;
             light_5x5_41.Location = new Point(65, 250);
             light_5x5_41.Name = "light_5x5_41";
             light_5x5_41.OffButton = Properties.Resources.ButtonOff;
@@ -1058,7 +1058,7 @@
             light_5x5_40.BackgroundImageLayout = ImageLayout.Stretch;
             light_5x5_40.FlatAppearance.BorderSize = 0;
             light_5x5_40.FlatStyle = FlatStyle.Flat;
-            light_5x5_40.index = 20;
+            light_5x5_40.Index = 20;
             light_5x5_40.Location = new Point(5, 250);
             light_5x5_40.Name = "light_5x5_40";
             light_5x5_40.OffButton = Properties.Resources.ButtonOff;
@@ -1074,7 +1074,7 @@
             light_5x5_34.BackgroundImageLayout = ImageLayout.Stretch;
             light_5x5_34.FlatAppearance.BorderSize = 0;
             light_5x5_34.FlatStyle = FlatStyle.Flat;
-            light_5x5_34.index = 19;
+            light_5x5_34.Index = 19;
             light_5x5_34.Location = new Point(245, 190);
             light_5x5_34.Name = "light_5x5_34";
             light_5x5_34.OffButton = Properties.Resources.ButtonOff;
@@ -1090,7 +1090,7 @@
             light_5x5_33.BackgroundImageLayout = ImageLayout.Stretch;
             light_5x5_33.FlatAppearance.BorderSize = 0;
             light_5x5_33.FlatStyle = FlatStyle.Flat;
-            light_5x5_33.index = 18;
+            light_5x5_33.Index = 18;
             light_5x5_33.Location = new Point(185, 190);
             light_5x5_33.Name = "light_5x5_33";
             light_5x5_33.OffButton = Properties.Resources.ButtonOff;
@@ -1106,7 +1106,7 @@
             light_5x5_32.BackgroundImageLayout = ImageLayout.Stretch;
             light_5x5_32.FlatAppearance.BorderSize = 0;
             light_5x5_32.FlatStyle = FlatStyle.Flat;
-            light_5x5_32.index = 17;
+            light_5x5_32.Index = 17;
             light_5x5_32.Location = new Point(125, 190);
             light_5x5_32.Name = "light_5x5_32";
             light_5x5_32.OffButton = Properties.Resources.ButtonOff;
@@ -1122,7 +1122,7 @@
             light_5x5_31.BackgroundImageLayout = ImageLayout.Stretch;
             light_5x5_31.FlatAppearance.BorderSize = 0;
             light_5x5_31.FlatStyle = FlatStyle.Flat;
-            light_5x5_31.index = 16;
+            light_5x5_31.Index = 16;
             light_5x5_31.Location = new Point(65, 190);
             light_5x5_31.Name = "light_5x5_31";
             light_5x5_31.OffButton = Properties.Resources.ButtonOff;
@@ -1138,7 +1138,7 @@
             light_5x5_30.BackgroundImageLayout = ImageLayout.Stretch;
             light_5x5_30.FlatAppearance.BorderSize = 0;
             light_5x5_30.FlatStyle = FlatStyle.Flat;
-            light_5x5_30.index = 15;
+            light_5x5_30.Index = 15;
             light_5x5_30.Location = new Point(5, 190);
             light_5x5_30.Name = "light_5x5_30";
             light_5x5_30.OffButton = Properties.Resources.ButtonOff;
@@ -1154,7 +1154,7 @@
             light_5x5_24.BackgroundImageLayout = ImageLayout.Stretch;
             light_5x5_24.FlatAppearance.BorderSize = 0;
             light_5x5_24.FlatStyle = FlatStyle.Flat;
-            light_5x5_24.index = 14;
+            light_5x5_24.Index = 14;
             light_5x5_24.Location = new Point(245, 130);
             light_5x5_24.Name = "light_5x5_24";
             light_5x5_24.OffButton = Properties.Resources.ButtonOff;
@@ -1170,7 +1170,7 @@
             light_5x5_23.BackgroundImageLayout = ImageLayout.Stretch;
             light_5x5_23.FlatAppearance.BorderSize = 0;
             light_5x5_23.FlatStyle = FlatStyle.Flat;
-            light_5x5_23.index = 13;
+            light_5x5_23.Index = 13;
             light_5x5_23.Location = new Point(185, 130);
             light_5x5_23.Name = "light_5x5_23";
             light_5x5_23.OffButton = Properties.Resources.ButtonOff;
@@ -1186,7 +1186,7 @@
             light_5x5_22.BackgroundImageLayout = ImageLayout.Stretch;
             light_5x5_22.FlatAppearance.BorderSize = 0;
             light_5x5_22.FlatStyle = FlatStyle.Flat;
-            light_5x5_22.index = 12;
+            light_5x5_22.Index = 12;
             light_5x5_22.Location = new Point(125, 130);
             light_5x5_22.Name = "light_5x5_22";
             light_5x5_22.OffButton = Properties.Resources.ButtonOff;
@@ -1202,7 +1202,7 @@
             light_5x5_21.BackgroundImageLayout = ImageLayout.Stretch;
             light_5x5_21.FlatAppearance.BorderSize = 0;
             light_5x5_21.FlatStyle = FlatStyle.Flat;
-            light_5x5_21.index = 11;
+            light_5x5_21.Index = 11;
             light_5x5_21.Location = new Point(65, 130);
             light_5x5_21.Name = "light_5x5_21";
             light_5x5_21.OffButton = Properties.Resources.ButtonOff;
@@ -1218,7 +1218,7 @@
             light_5x5_20.BackgroundImageLayout = ImageLayout.Stretch;
             light_5x5_20.FlatAppearance.BorderSize = 0;
             light_5x5_20.FlatStyle = FlatStyle.Flat;
-            light_5x5_20.index = 10;
+            light_5x5_20.Index = 10;
             light_5x5_20.Location = new Point(5, 130);
             light_5x5_20.Name = "light_5x5_20";
             light_5x5_20.OffButton = Properties.Resources.ButtonOff;
@@ -1234,7 +1234,7 @@
             light_5x5_14.BackgroundImageLayout = ImageLayout.Stretch;
             light_5x5_14.FlatAppearance.BorderSize = 0;
             light_5x5_14.FlatStyle = FlatStyle.Flat;
-            light_5x5_14.index = 9;
+            light_5x5_14.Index = 9;
             light_5x5_14.Location = new Point(245, 70);
             light_5x5_14.Name = "light_5x5_14";
             light_5x5_14.OffButton = Properties.Resources.ButtonOff;
@@ -1250,7 +1250,7 @@
             light_5x5_13.BackgroundImageLayout = ImageLayout.Stretch;
             light_5x5_13.FlatAppearance.BorderSize = 0;
             light_5x5_13.FlatStyle = FlatStyle.Flat;
-            light_5x5_13.index = 8;
+            light_5x5_13.Index = 8;
             light_5x5_13.Location = new Point(185, 70);
             light_5x5_13.Name = "light_5x5_13";
             light_5x5_13.OffButton = Properties.Resources.ButtonOff;
@@ -1266,7 +1266,7 @@
             light_5x5_12.BackgroundImageLayout = ImageLayout.Stretch;
             light_5x5_12.FlatAppearance.BorderSize = 0;
             light_5x5_12.FlatStyle = FlatStyle.Flat;
-            light_5x5_12.index = 7;
+            light_5x5_12.Index = 7;
             light_5x5_12.Location = new Point(125, 70);
             light_5x5_12.Name = "light_5x5_12";
             light_5x5_12.OffButton = Properties.Resources.ButtonOff;
@@ -1282,7 +1282,7 @@
             light_5x5_11.BackgroundImageLayout = ImageLayout.Stretch;
             light_5x5_11.FlatAppearance.BorderSize = 0;
             light_5x5_11.FlatStyle = FlatStyle.Flat;
-            light_5x5_11.index = 6;
+            light_5x5_11.Index = 6;
             light_5x5_11.Location = new Point(65, 70);
             light_5x5_11.Name = "light_5x5_11";
             light_5x5_11.OffButton = Properties.Resources.ButtonOff;
@@ -1298,7 +1298,7 @@
             light_5x5_10.BackgroundImageLayout = ImageLayout.Stretch;
             light_5x5_10.FlatAppearance.BorderSize = 0;
             light_5x5_10.FlatStyle = FlatStyle.Flat;
-            light_5x5_10.index = 5;
+            light_5x5_10.Index = 5;
             light_5x5_10.Location = new Point(5, 70);
             light_5x5_10.Name = "light_5x5_10";
             light_5x5_10.OffButton = Properties.Resources.ButtonOff;
@@ -1314,7 +1314,7 @@
             light_5x5_04.BackgroundImageLayout = ImageLayout.Stretch;
             light_5x5_04.FlatAppearance.BorderSize = 0;
             light_5x5_04.FlatStyle = FlatStyle.Flat;
-            light_5x5_04.index = 4;
+            light_5x5_04.Index = 4;
             light_5x5_04.Location = new Point(245, 10);
             light_5x5_04.Name = "light_5x5_04";
             light_5x5_04.OffButton = Properties.Resources.ButtonOff;
@@ -1330,7 +1330,7 @@
             light_5x5_03.BackgroundImageLayout = ImageLayout.Stretch;
             light_5x5_03.FlatAppearance.BorderSize = 0;
             light_5x5_03.FlatStyle = FlatStyle.Flat;
-            light_5x5_03.index = 3;
+            light_5x5_03.Index = 3;
             light_5x5_03.Location = new Point(185, 10);
             light_5x5_03.Name = "light_5x5_03";
             light_5x5_03.OffButton = Properties.Resources.ButtonOff;
@@ -1346,7 +1346,7 @@
             light_5x5_02.BackgroundImageLayout = ImageLayout.Stretch;
             light_5x5_02.FlatAppearance.BorderSize = 0;
             light_5x5_02.FlatStyle = FlatStyle.Flat;
-            light_5x5_02.index = 2;
+            light_5x5_02.Index = 2;
             light_5x5_02.Location = new Point(125, 10);
             light_5x5_02.Name = "light_5x5_02";
             light_5x5_02.OffButton = Properties.Resources.ButtonOff;
@@ -1362,7 +1362,7 @@
             light_5x5_01.BackgroundImageLayout = ImageLayout.Stretch;
             light_5x5_01.FlatAppearance.BorderSize = 0;
             light_5x5_01.FlatStyle = FlatStyle.Flat;
-            light_5x5_01.index = 1;
+            light_5x5_01.Index = 1;
             light_5x5_01.Location = new Point(65, 10);
             light_5x5_01.Name = "light_5x5_01";
             light_5x5_01.OffButton = Properties.Resources.ButtonOff;
@@ -1378,7 +1378,7 @@
             light_5x5_00.BackgroundImageLayout = ImageLayout.Stretch;
             light_5x5_00.FlatAppearance.BorderSize = 0;
             light_5x5_00.FlatStyle = FlatStyle.Flat;
-            light_5x5_00.index = 0;
+            light_5x5_00.Index = 0;
             light_5x5_00.Location = new Point(5, 10);
             light_5x5_00.Name = "light_5x5_00";
             light_5x5_00.OffButton = Properties.Resources.ButtonOff;

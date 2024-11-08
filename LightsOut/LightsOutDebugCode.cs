@@ -164,31 +164,6 @@ namespace LightsOut
 
         #endregion
 
-        #region Validation
-        private bool ValidateFileName()
-        {
-            try
-            {
-                level = int.Parse(txtFileName.Text.Split("_")[1]);
-                string fileName = $"{txtFileName.Text}.json";
-                if (cbxLevelSelect.Items.Contains(fileName))
-                {
-                    MessageBox.Show($"{fileName} Exists, choose a new name!", "File Exists!");
-                    return false;
-                }
-            }
-            catch
-            {
-                level = int.Parse((cbxLevelSelect.Text.Split("_")[1]).Replace
-                    (".json", ""));
-                txtFileName.Text = $"Levels_{level}";
-                return false;
-            }
-            return true;
-        }
-
-        #endregion
-
         private string DebugBoardState()
         {
             string onglyph = "⦿";
