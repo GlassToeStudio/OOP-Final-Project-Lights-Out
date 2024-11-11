@@ -12,8 +12,6 @@ namespace LightsOut
         private Light[] lights = [];
 
         private int moves = 0;
-        private int level = 0;
-        private string levelName = string.Empty;
 
         /// <summary>
         /// 
@@ -138,8 +136,6 @@ namespace LightsOut
 #if DEBUG
             cbxLevelSelect.SelectedIndex = LevelDatabase.SelectedIndex;
 #endif
-            levelName = levelData.Name;
-            level = levelData.Level;
 
             GenerateGameBoardsAndSelect();
 

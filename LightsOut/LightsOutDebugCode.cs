@@ -35,7 +35,7 @@ namespace LightsOut
                     lights[randLight].ClickLight();
 
                 }
-                levelData = new LevelData(rnd.Next(1000,9000)+level, levelData.Size, 0);
+                levelData = new LevelData(rnd.Next(1000,9000), levelData.Size, 0);
                 levelData.UpdateBoard(lights);
                 levelData.MinMoves = Solver.GetSolutionMatrix(levelData).Sum();
                 lblLog.Text = DebugBoardState();
