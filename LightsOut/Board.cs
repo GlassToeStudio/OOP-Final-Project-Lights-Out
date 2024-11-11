@@ -25,20 +25,6 @@ namespace LightsOut
             GenerateLevelFromLevels();
         }
 
-        private void PreloadLevelsData()
-        {
-            MessageBox.Show("Do not call this method.", "error");
-            return;
-
-            cbxLevelSelect.Items.Clear();
-            string[] files = FileUtil.GetFileFromLevelsFolder();
-            foreach (string file in files)
-            {
-                cbxLevelSelect.Items.Add(Path.GetFileName(file));
-            }
-            cbxLevelSelect.SelectedIndex = 0;
-        }
-
         private void PreloadAllLevelsData()
         {
             cbxLevelSelect.Items.Clear();
@@ -143,34 +129,6 @@ namespace LightsOut
                     lights[pos].AddNeighbor(lights[n4]);
                 }
             }
-        }
-
-        private void GenerateLevelFromFile()
-        {
-            MessageBox.Show("Do not call this method.", "error");
-            return;
-
-            moves = 0;
-            levelName = cbxLevelSelect.Text;
-            levelData = new LevelData().LoadLevelDataFromJson(levelName);
-            level = levelData.Level;
-
-            GenerateGameBoardsAndSelect();
-
-            for (var i = 0; i < levelData.Board.Length; i++)
-            {
-                if (levelData.Board[i] == 0)
-                {
-                    lights[i].TurnOff();
-                }
-                else
-                {
-                    lights[i].TurnOn();
-                }
-            }
-
-            lblLog.Text = DebugBoardState();
-            UpdateUI();
         }
 
         private void GenerateLevelFromLevels()
