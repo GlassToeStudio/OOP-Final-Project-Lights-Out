@@ -143,11 +143,11 @@ namespace LightsOut
             string ProjectDir = "C:\\Users\\GlassToe\\Documents\\Calhoun Comminity College\\Fall 24\\CIS 285 - Object-Oriented Programming (11022)\\Final Project\\OOP-Final-Project-Lights-Out\\LightsOut\\Resources\\Levels\\";
            
             cbxLevelSelect.Items.Add(levelData.Name);
-            levels.Levels = [.. levels.Levels, levelData];
+            LevelDatabase.Levels = [.. LevelDatabase.Levels, levelData];
             cbxLevelSelect.SelectedIndex = cbxLevelSelect.Items.Count - 1;
 
             string fileName = $"{levelData}_generated";
-            var data = JsonConvert.SerializeObject(levels);
+            var data = JsonConvert.SerializeObject(LevelDatabase);
             File.WriteAllText(FileUtil.GetLevelFile("Levels.json"), data);
             File.WriteAllText($"{ProjectDir}Levels.json", data);
             MessageBox.Show($"{fileName} created!", "Level Saved");

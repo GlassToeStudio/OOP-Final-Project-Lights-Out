@@ -1,4 +1,4 @@
-using System.Media;
+﻿using System.Media;
 
 namespace LightsOut
 {
@@ -7,7 +7,7 @@ namespace LightsOut
     /// </summary>
     public partial class Board : Form
     {
-        private AllLevels levels;
+        private AllLevels LevelDatabase;
         private LevelData levelData;
         private Light[] lights = [];
 
@@ -42,8 +42,8 @@ namespace LightsOut
         private void PreloadAllLevelsData()
         {
             cbxLevelSelect.Items.Clear();
-            levels = new AllLevels().LoadLevels();
-            foreach (LevelData ld in levels.Levels)
+            LevelDatabase = new AllLevels().LoadLevels();
+            foreach (LevelData ld in LevelDatabase.Levels)
             {
                 cbxLevelSelect.Items.Add(ld.Name);
             }
@@ -176,8 +176,11 @@ namespace LightsOut
         private void GenerateLevelFromLevels()
         {
             moves = 0;
-            levelName = cbxLevelSelect.Text;
-            levelData = new LevelData(levels.Levels[cbxLevelSelect.SelectedIndex]);
+            levelData = new LevelData(LevelDatabase[LevelDatabase.SelectedIndex]);
+#if DEBUG
+            cbxLevelSelect.SelectedIndex = LevelDatabase.SelectedIndex;
+#endif
+            levelName = levelData.Name;
             level = levelData.Level;
 
             GenerateGameBoardsAndSelect();
@@ -238,6 +241,8 @@ namespace LightsOut
 
             pbxWinImage.BringToFront();
             pbxWinImage.Visible = true;
+            pnlStars.Text = "★★★";
+            pnlStars.Text = "☆☆☆";
             foreach (var light in lights)
             {
                 light.Enabled = false;
@@ -255,24 +260,23 @@ namespace LightsOut
 
         private void LoadLevel_Click(object sender, EventArgs e)
         {
-            //GenerateLevelFromFile();
+#if DEBUG
+            if (!e.Equals(EventArgs.Empty)) // If we are trying to load from the level list in the combo box
+                LevelDatabase.SelectedIndex = cbxLevelSelect.SelectedIndex;
+#endif
             GenerateLevelFromLevels();
             UpdateUI();
         }
 
         private void LoadPreviousLevel_Click(object sender, EventArgs e)
         {
-            int index = cbxLevelSelect.SelectedIndex;
-            index = Math.Max(index - 1, 0);
-            cbxLevelSelect.SelectedIndex = index;
+            LevelDatabase.SelectedIndex = LevelDatabase.Previous;
             LoadLevel_Click(this, EventArgs.Empty);
         }
 
         private void LoadNextLevel_Click(object sender, EventArgs e)
         {
-            int index = cbxLevelSelect.SelectedIndex;
-            index = Math.Min(index + 1, cbxLevelSelect.Items.Count - 1);
-            cbxLevelSelect.SelectedIndex = index;
+            LevelDatabase.SelectedIndex = LevelDatabase.Next;
             LoadLevel_Click(this, EventArgs.Empty);
         }
 

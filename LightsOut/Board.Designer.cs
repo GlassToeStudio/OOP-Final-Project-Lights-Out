@@ -564,7 +564,7 @@
             btnSolveOne.Location = new Point(11, 21);
             btnSolveOne.Name = "btnSolveOne";
             btnSolveOne.Size = new Size(136, 26);
-            btnSolveOne.TabIndex = 4;
+            btnSolveOne.TabIndex = 1;
             btnSolveOne.Text = "Solve One";
             btnSolveOne.UseMnemonic = false;
             btnSolveOne.UseVisualStyleBackColor = false;
@@ -578,7 +578,7 @@
             btnGenerateRandom.Location = new Point(11, 85);
             btnGenerateRandom.Name = "btnGenerateRandom";
             btnGenerateRandom.Size = new Size(65, 92);
-            btnGenerateRandom.TabIndex = 6;
+            btnGenerateRandom.TabIndex = 7;
             btnGenerateRandom.Text = "Generate Random";
             btnGenerateRandom.UseMnemonic = false;
             btnGenerateRandom.UseVisualStyleBackColor = false;
@@ -592,7 +592,7 @@
             btnLoad.Location = new Point(11, 251);
             btnLoad.Name = "btnLoad";
             btnLoad.Size = new Size(130, 26);
-            btnLoad.TabIndex = 7;
+            btnLoad.TabIndex = 9;
             btnLoad.Text = "Load";
             btnLoad.UseMnemonic = false;
             btnLoad.UseVisualStyleBackColor = false;
@@ -641,7 +641,7 @@
             txtFileName.Location = new Point(78, 215);
             txtFileName.Name = "txtFileName";
             txtFileName.Size = new Size(63, 16);
-            txtFileName.TabIndex = 16;
+            txtFileName.TabIndex = 6;
             txtFileName.Text = "...";
             txtFileName.TextAlign = HorizontalAlignment.Center;
             // 
@@ -662,7 +662,7 @@
             numMinMoves.Location = new Point(81, 158);
             numMinMoves.Name = "numMinMoves";
             numMinMoves.Size = new Size(60, 19);
-            numMinMoves.TabIndex = 12;
+            numMinMoves.TabIndex = 6;
             numMinMoves.TextAlign = HorizontalAlignment.Center;
             numMinMoves.Value = new decimal(new int[] { 5, 0, 0, 0 });
             // 
@@ -682,7 +682,7 @@
             rb5x5.Location = new Point(86, 119);
             rb5x5.Name = "rb5x5";
             rb5x5.Size = new Size(48, 19);
-            rb5x5.TabIndex = 12;
+            rb5x5.TabIndex = 5;
             rb5x5.Text = "5 x 5";
             rb5x5.UseVisualStyleBackColor = true;
             // 
@@ -694,7 +694,7 @@
             rb4x4.Location = new Point(86, 101);
             rb4x4.Name = "rb4x4";
             rb4x4.Size = new Size(48, 19);
-            rb4x4.TabIndex = 11;
+            rb4x4.TabIndex = 4;
             rb4x4.TabStop = true;
             rb4x4.Text = "4 x 4";
             rb4x4.UseVisualStyleBackColor = true;
@@ -706,7 +706,7 @@
             rb3x3.Location = new Point(86, 83);
             rb3x3.Name = "rb3x3";
             rb3x3.Size = new Size(48, 19);
-            rb3x3.TabIndex = 10;
+            rb3x3.TabIndex = 3;
             rb3x3.Text = "3 x 3";
             rb3x3.UseVisualStyleBackColor = true;
             // 
@@ -718,7 +718,7 @@
             btnSaveLevel.Location = new Point(11, 183);
             btnSaveLevel.Name = "btnSaveLevel";
             btnSaveLevel.Size = new Size(130, 28);
-            btnSaveLevel.TabIndex = 9;
+            btnSaveLevel.TabIndex = 7;
             btnSaveLevel.Text = "Save to File";
             btnSaveLevel.UseMnemonic = false;
             btnSaveLevel.UseVisualStyleBackColor = false;
@@ -907,7 +907,7 @@
             btnPrevious.Location = new Point(324, 321);
             btnPrevious.Name = "btnPrevious";
             btnPrevious.Size = new Size(45, 80);
-            btnPrevious.TabIndex = 12;
+            btnPrevious.TabIndex = 1;
             btnPrevious.Text = "◄";
             btnPrevious.UseVisualStyleBackColor = true;
             btnPrevious.Click += LoadPreviousLevel_Click;
@@ -920,7 +920,7 @@
             btnRedo.Location = new Point(377, 321);
             btnRedo.Name = "btnRedo";
             btnRedo.Size = new Size(45, 80);
-            btnRedo.TabIndex = 13;
+            btnRedo.TabIndex = 2;
             btnRedo.Text = "⟲";
             btnRedo.UseVisualStyleBackColor = true;
             btnRedo.Click += ReloadLevel_Click;
@@ -933,7 +933,7 @@
             btnNext.Location = new Point(429, 321);
             btnNext.Name = "btnNext";
             btnNext.Size = new Size(45, 80);
-            btnNext.TabIndex = 14;
+            btnNext.TabIndex = 3;
             btnNext.Text = "►";
             btnNext.UseVisualStyleBackColor = true;
             btnNext.Click += LoadNextLevel_Click;
@@ -989,7 +989,7 @@
             gbxGameBoard_5x5.Name = "gbxGameBoard_5x5";
             gbxGameBoard_5x5.Padding = new Padding(2);
             gbxGameBoard_5x5.Size = new Size(310, 315);
-            gbxGameBoard_5x5.TabIndex = 16;
+            gbxGameBoard_5x5.TabIndex = 0;
             gbxGameBoard_5x5.TabStop = false;
             // 
             // light_5x5_44
