@@ -25,13 +25,16 @@ namespace LightsOut
 
         private void PreloadAllLevelsData()
         {
-            cbxLevelSelect.Items.Clear();
             LevelDatabase = new AllLevels().LoadLevels();
+#if DEBUG
+
+            cbxLevelSelect.Items.Clear();
             foreach (LevelData ld in LevelDatabase.Levels)
             {
                 cbxLevelSelect.Items.Add(ld.Name);
             }
             cbxLevelSelect.SelectedIndex = 0;
+#endif
         }
 
         private void GenerateGameBoardsAndSelect()
@@ -170,7 +173,7 @@ namespace LightsOut
 
         private void UpdateUI()
         {
-            gbxStats.Text = $"Level {levelData.Level}";
+            gbxStats.Text = levelData.Name;
             lblSize.Text = $"{levelData.Size} x {levelData.Size}";
             lblGoal.Text = $"{levelData.MinMoves}";
             lblMoves.Text = moves.ToString();
@@ -197,12 +200,17 @@ namespace LightsOut
             pbxWinImage.Visible = true;
             pnlStars.Text = "★★★";
             pnlStars.Text = "☆☆☆";
+            levelData.Completed = true;
             foreach (var light in lights)
             {
                 light.Enabled = false;
             }
         }
 
+        private void SaveUserData()
+        {
+            MessageBox.Show("Saving user data...");
+        }
 
         #region Buttons
         private void Light_Click(object sender, EventArgs e)
@@ -238,6 +246,11 @@ namespace LightsOut
         {
             LoadLevel_Click(this, EventArgs.Empty);
         }
+        private void Board_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            SaveUserData();
+        }
         #endregion
+
     }
 }
