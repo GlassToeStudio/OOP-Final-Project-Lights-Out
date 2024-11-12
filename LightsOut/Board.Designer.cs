@@ -1440,6 +1440,7 @@
             Name = "Board";
             SizeGripStyle = SizeGripStyle.Hide;
             Text = "Lights Out";
+            FormClosing += Board_FormClosing;
             KeyPress += ShowHideDebug_Click;
             gbxGameBoard_4x4.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)pbxWinImage).EndInit();
