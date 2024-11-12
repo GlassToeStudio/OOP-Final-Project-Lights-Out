@@ -24,18 +24,5 @@
                 return Levels[SelectedIndex];
             }
         }
-
-        #region GetIndex
-        //public int this[LevelData ld] => FindNameIndex(ld);     
-
-        //private int FindNameIndex(LevelData ld)
-        //{
-        //    return Array.FindIndex(Levels, x => x.ToString() == ld.ToString());
-
-        //    throw new ArgumentOutOfRangeException(
-        //        nameof(ld),
-        //        $"Name {ld} is not supported.\nName input must be in the form Levels x, etc");
-        //}
-        #endregion
     }
 }
