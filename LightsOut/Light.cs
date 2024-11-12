@@ -39,7 +39,7 @@
         /// <para/>When this <see cref="Light"/> is clicked its <see cref="State"/> is changed and so are its <see cref="Neighbors"/>.
         /// <para/><see cref="Neighbors"/> are those <see cref="Light"/>s touching in each cardinal direction.
         /// <code>
-        /// Ex:        
+        /// Ex:
         ///     • n L n
         ///     • • n •
         ///     • • • •
