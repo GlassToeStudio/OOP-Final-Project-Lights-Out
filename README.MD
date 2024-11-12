@@ -21,7 +21,8 @@ Levels are stored in .json format With Level number, Level size (3 for a 3x3 boa
     "Level": 1,
     "Size": 3,
     "MinMoves": 2,
-    "Board": [ 0, 1, 0, 0, 1, 0, 0, 0, 1 ]
+    "Board": [ 0, 1, 0, 0, 1, 0, 0, 0, 1 ],
+    "Name": "Level 1"
 }
 ```
 
@@ -53,25 +54,21 @@ All levels are stored an a larger json object.
 
 ```json
 {
-    "Levels": [
-        {
-            "Level": 1,
-            "Size": 3,
-            "MinMoves": 2,
-            "Board": [ 0, 1, 0, 0, 1, 0, 0, 0, 1 ]
-        },
-        {
-            "Level": 2,
-            "Size": 3,
-            "MinMoves": 3,
-            "Board": [ 0, 1, 0, 1, 1, 0, 1, 1, 1 ]
-        },
-        {
-            "Level": 3,
-            "Size": 3,
-            "MinMoves": 3,
-            "Board": [ 1, 0, 1, 1, 1, 1, 1, 0, 1 ]
-        },
+  "Levels": [
+    {
+      "Level": 1,
+      "Size": 3,
+      "MinMoves": 2,
+      "Board": [0, 1, 0, 0, 1, 0, 0, 0, 1],
+      "Name": "Level 1"
+    },
+    {
+      "Level": 2,
+      "Size": 3,
+      "MinMoves": 3,
+      "Board": [0, 1, 0, 1, 1, 0, 1, 1, 1],
+      "Name": "Level 2"
+    },
         ...
 ```
 Which is held in a simple struct, AllLevels. Which just has an array of LevelData.
