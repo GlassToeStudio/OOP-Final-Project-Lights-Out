@@ -2,15 +2,39 @@
 {
     public struct LevelData
     {
+        /// <summary>
+        /// The number of this level. Ex: Level 1.
+        /// </summary>
         public int Level;
+        /// <summary>
+        /// Size of board Ex: Size = 4 => 4x4 board.
+        /// </summary>
         public int Size;
+        /// <summary>
+        /// >Minimum moves required to complete the level.
+        /// </summary>
         public int MinMoves;
+        /// <summary>
+        /// integer array representing a data model of the Board. 
+        /// </summary>
         public int[] Board = [];
+        /// <summary>
+        /// True of this level has been completed, false otherwise.
+        /// </summary>
+        public bool Completed = false;
 
+        /// <summary>Return "Level {level}" Ex: "Level 1".</summary>
         public readonly string Name => $"Level {Level}";
 
+        /// <summary>Default constructor.</summary>
         public LevelData() { }
 
+        /// <summary>
+        /// Constructor
+        /// </summary>
+        /// <param name="level">This levels index.</param>
+        /// <param name="size">Size of board Ex: Size=4 => 4x4 board.</param>
+        /// <param name="minMoves">Min moves required to complete the level.</param>
         public LevelData(int level, int size, int minMoves)
         {
             Level = level;
@@ -19,6 +43,10 @@
             Board = new int[Size * Size];
         }
 
+        /// <summary>
+        /// Construct a new LevelData object from an existing LevelData object.
+        /// </summary>
+        /// <param name="levelData">Existing LevelData object.</param>
         public LevelData(LevelData levelData)
         {
             Level = levelData.Level;
@@ -32,6 +60,10 @@
             }
         }
 
+        /// <summary>
+        /// Update Board data to match the View data. 
+        /// </summary>
+        /// <param name="lights">Array of Lights that is the interactive View.</param>
         public readonly void UpdateBoard(Light[] lights)
         {
             foreach (var light in lights)
@@ -40,6 +72,10 @@
             }
         }
 
+        /// <summary>
+        /// The fully qualified type name.
+        /// </summary>
+        /// <returns>Human readable string of the LevelData fields.</returns>
         public override readonly string ToString()
         {
             return $"Level_{Level}_{Size}x{Size}_Goal_{MinMoves}";
