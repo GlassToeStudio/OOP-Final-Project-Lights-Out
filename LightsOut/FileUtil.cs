@@ -23,4 +23,14 @@ namespace LightsOut
             return Directory.GetFiles(LEVELS);
         }
     }
+
+    public class UserData : AllLevels
+    {
+        int CurrentLevel = 0;
+        int[] BoardState => PlayerProgress[CurrentLevel].Board;
+
+        LevelData[] PlayerProgress = [];
+
+        public UserData() { }
+    }
 }
