@@ -1,21 +1,13 @@
-﻿using System.Collections;
-using System.Windows.Forms;
-
-namespace LightsOut
+﻿namespace LightsOut
 {
-    public struct AllLevels
+    public class AllLevels
     {
         public LevelData[] Levels;
-        private int selectedIndex = 0;
-        public int SelectedIndex
-        {
-            get { return selectedIndex; }
-            set { selectedIndex = value; }
-        }
+        public int SelectedIndex { get; set; }
         public int Count => Levels.Length;
-        public LevelData SelectedItem => this[selectedIndex];
-        public int Next => Math.Min(selectedIndex+1, this.Count - 1);
-        public int Previous => Math.Max(selectedIndex-1, 0);
+        public int Next => Math.Min(SelectedIndex + 1, this.Count - 1);
+        public int Previous => Math.Max(SelectedIndex - 1, 0);
+        public LevelData SelectedItem => this[SelectedIndex];
 
 
         public AllLevels()
@@ -28,8 +20,8 @@ namespace LightsOut
         {
             get
             {
-                selectedIndex = index;
-                return Levels[index];
+                SelectedIndex = index;
+                return Levels[SelectedIndex];
             }
         }
 
