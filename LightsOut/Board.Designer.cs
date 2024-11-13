@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Board));
             light_4x4_33 = new Light();
             light_4x4_32 = new Light();
             light_4x4_31 = new Light();
@@ -50,6 +51,7 @@
             btnSolveAll = new Button();
             gbxStats = new GroupBox();
             lblMoves = new Label();
+            pnlStars = new Label();
             lblGoal = new Label();
             lblMovesLabel = new Label();
             lblGoalLabel = new Label();
@@ -81,7 +83,6 @@
             btnPrevious = new Button();
             btnRedo = new Button();
             btnNext = new Button();
-            pnlStars = new Label();
             gbxGameBoard_5x5 = new GroupBox();
             light_5x5_44 = new Light();
             light_5x5_43 = new Light();
@@ -108,6 +109,7 @@
             light_5x5_02 = new Light();
             light_5x5_01 = new Light();
             light_5x5_00 = new Light();
+            label1 = new Label();
             gbxGameBoard_4x4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pbxWinImage).BeginInit();
             gbxStats.SuspendLayout();
@@ -122,6 +124,8 @@
             light_4x4_33.BackgroundImage = Properties.Resources.ButtonOff;
             light_4x4_33.BackgroundImageLayout = ImageLayout.Stretch;
             light_4x4_33.FlatAppearance.BorderSize = 0;
+            light_4x4_33.FlatAppearance.MouseDownBackColor = Color.Aquamarine;
+            light_4x4_33.FlatAppearance.MouseOverBackColor = Color.DimGray;
             light_4x4_33.FlatStyle = FlatStyle.Flat;
             light_4x4_33.Index = 15;
             light_4x4_33.Location = new Point(230, 235);
@@ -131,7 +135,7 @@
             light_4x4_33.Size = new Size(75, 75);
             light_4x4_33.State = LightState.Off;
             light_4x4_33.TabIndex = 15;
-            light_4x4_33.UseVisualStyleBackColor = true;
+            light_4x4_33.UseVisualStyleBackColor = false;
             light_4x4_33.Click += Light_Click;
             // 
             // light_4x4_32
@@ -139,6 +143,8 @@
             light_4x4_32.BackgroundImage = Properties.Resources.ButtonOff;
             light_4x4_32.BackgroundImageLayout = ImageLayout.Stretch;
             light_4x4_32.FlatAppearance.BorderSize = 0;
+            light_4x4_32.FlatAppearance.MouseDownBackColor = Color.Aquamarine;
+            light_4x4_32.FlatAppearance.MouseOverBackColor = Color.DimGray;
             light_4x4_32.FlatStyle = FlatStyle.Flat;
             light_4x4_32.Index = 14;
             light_4x4_32.Location = new Point(155, 235);
@@ -148,7 +154,7 @@
             light_4x4_32.Size = new Size(75, 75);
             light_4x4_32.State = LightState.Off;
             light_4x4_32.TabIndex = 14;
-            light_4x4_32.UseVisualStyleBackColor = true;
+            light_4x4_32.UseVisualStyleBackColor = false;
             light_4x4_32.Click += Light_Click;
             // 
             // light_4x4_31
@@ -156,6 +162,8 @@
             light_4x4_31.BackgroundImage = Properties.Resources.ButtonOff;
             light_4x4_31.BackgroundImageLayout = ImageLayout.Stretch;
             light_4x4_31.FlatAppearance.BorderSize = 0;
+            light_4x4_31.FlatAppearance.MouseDownBackColor = Color.Aquamarine;
+            light_4x4_31.FlatAppearance.MouseOverBackColor = Color.DimGray;
             light_4x4_31.FlatStyle = FlatStyle.Flat;
             light_4x4_31.Index = 13;
             light_4x4_31.Location = new Point(80, 235);
@@ -165,7 +173,7 @@
             light_4x4_31.Size = new Size(75, 75);
             light_4x4_31.State = LightState.Off;
             light_4x4_31.TabIndex = 13;
-            light_4x4_31.UseVisualStyleBackColor = true;
+            light_4x4_31.UseVisualStyleBackColor = false;
             light_4x4_31.Click += Light_Click;
             // 
             // light_4x4_30
@@ -173,6 +181,8 @@
             light_4x4_30.BackgroundImage = Properties.Resources.ButtonOff;
             light_4x4_30.BackgroundImageLayout = ImageLayout.Stretch;
             light_4x4_30.FlatAppearance.BorderSize = 0;
+            light_4x4_30.FlatAppearance.MouseDownBackColor = Color.Aquamarine;
+            light_4x4_30.FlatAppearance.MouseOverBackColor = Color.DimGray;
             light_4x4_30.FlatStyle = FlatStyle.Flat;
             light_4x4_30.Index = 12;
             light_4x4_30.Location = new Point(5, 235);
@@ -182,7 +192,7 @@
             light_4x4_30.Size = new Size(75, 75);
             light_4x4_30.State = LightState.Off;
             light_4x4_30.TabIndex = 12;
-            light_4x4_30.UseVisualStyleBackColor = true;
+            light_4x4_30.UseVisualStyleBackColor = false;
             light_4x4_30.Click += Light_Click;
             // 
             // light_4x4_23
@@ -190,6 +200,8 @@
             light_4x4_23.BackgroundImage = Properties.Resources.ButtonOff;
             light_4x4_23.BackgroundImageLayout = ImageLayout.Stretch;
             light_4x4_23.FlatAppearance.BorderSize = 0;
+            light_4x4_23.FlatAppearance.MouseDownBackColor = Color.Aquamarine;
+            light_4x4_23.FlatAppearance.MouseOverBackColor = Color.DimGray;
             light_4x4_23.FlatStyle = FlatStyle.Flat;
             light_4x4_23.Index = 11;
             light_4x4_23.Location = new Point(230, 160);
@@ -199,7 +211,7 @@
             light_4x4_23.Size = new Size(75, 75);
             light_4x4_23.State = LightState.Off;
             light_4x4_23.TabIndex = 11;
-            light_4x4_23.UseVisualStyleBackColor = true;
+            light_4x4_23.UseVisualStyleBackColor = false;
             light_4x4_23.Click += Light_Click;
             // 
             // light_4x4_22
@@ -207,6 +219,8 @@
             light_4x4_22.BackgroundImage = Properties.Resources.ButtonOff;
             light_4x4_22.BackgroundImageLayout = ImageLayout.Stretch;
             light_4x4_22.FlatAppearance.BorderSize = 0;
+            light_4x4_22.FlatAppearance.MouseDownBackColor = Color.Aquamarine;
+            light_4x4_22.FlatAppearance.MouseOverBackColor = Color.DimGray;
             light_4x4_22.FlatStyle = FlatStyle.Flat;
             light_4x4_22.Index = 10;
             light_4x4_22.Location = new Point(155, 160);
@@ -216,7 +230,7 @@
             light_4x4_22.Size = new Size(75, 75);
             light_4x4_22.State = LightState.Off;
             light_4x4_22.TabIndex = 10;
-            light_4x4_22.UseVisualStyleBackColor = true;
+            light_4x4_22.UseVisualStyleBackColor = false;
             light_4x4_22.Click += Light_Click;
             // 
             // light_4x4_21
@@ -224,6 +238,8 @@
             light_4x4_21.BackgroundImage = Properties.Resources.ButtonOff;
             light_4x4_21.BackgroundImageLayout = ImageLayout.Stretch;
             light_4x4_21.FlatAppearance.BorderSize = 0;
+            light_4x4_21.FlatAppearance.MouseDownBackColor = Color.Aquamarine;
+            light_4x4_21.FlatAppearance.MouseOverBackColor = Color.DimGray;
             light_4x4_21.FlatStyle = FlatStyle.Flat;
             light_4x4_21.Index = 9;
             light_4x4_21.Location = new Point(80, 160);
@@ -233,7 +249,7 @@
             light_4x4_21.Size = new Size(75, 75);
             light_4x4_21.State = LightState.Off;
             light_4x4_21.TabIndex = 9;
-            light_4x4_21.UseVisualStyleBackColor = true;
+            light_4x4_21.UseVisualStyleBackColor = false;
             light_4x4_21.Click += Light_Click;
             // 
             // light_4x4_20
@@ -241,6 +257,8 @@
             light_4x4_20.BackgroundImage = Properties.Resources.ButtonOff;
             light_4x4_20.BackgroundImageLayout = ImageLayout.Stretch;
             light_4x4_20.FlatAppearance.BorderSize = 0;
+            light_4x4_20.FlatAppearance.MouseDownBackColor = Color.Aquamarine;
+            light_4x4_20.FlatAppearance.MouseOverBackColor = Color.DimGray;
             light_4x4_20.FlatStyle = FlatStyle.Flat;
             light_4x4_20.Index = 8;
             light_4x4_20.Location = new Point(5, 160);
@@ -250,7 +268,7 @@
             light_4x4_20.Size = new Size(75, 75);
             light_4x4_20.State = LightState.Off;
             light_4x4_20.TabIndex = 8;
-            light_4x4_20.UseVisualStyleBackColor = true;
+            light_4x4_20.UseVisualStyleBackColor = false;
             light_4x4_20.Click += Light_Click;
             // 
             // light_4x4_13
@@ -258,6 +276,8 @@
             light_4x4_13.BackgroundImage = Properties.Resources.ButtonOff;
             light_4x4_13.BackgroundImageLayout = ImageLayout.Stretch;
             light_4x4_13.FlatAppearance.BorderSize = 0;
+            light_4x4_13.FlatAppearance.MouseDownBackColor = Color.Aquamarine;
+            light_4x4_13.FlatAppearance.MouseOverBackColor = Color.DimGray;
             light_4x4_13.FlatStyle = FlatStyle.Flat;
             light_4x4_13.Index = 7;
             light_4x4_13.Location = new Point(230, 85);
@@ -267,7 +287,7 @@
             light_4x4_13.Size = new Size(75, 75);
             light_4x4_13.State = LightState.Off;
             light_4x4_13.TabIndex = 7;
-            light_4x4_13.UseVisualStyleBackColor = true;
+            light_4x4_13.UseVisualStyleBackColor = false;
             light_4x4_13.Click += Light_Click;
             // 
             // light_4x4_12
@@ -275,6 +295,8 @@
             light_4x4_12.BackgroundImage = Properties.Resources.ButtonOff;
             light_4x4_12.BackgroundImageLayout = ImageLayout.Stretch;
             light_4x4_12.FlatAppearance.BorderSize = 0;
+            light_4x4_12.FlatAppearance.MouseDownBackColor = Color.Aquamarine;
+            light_4x4_12.FlatAppearance.MouseOverBackColor = Color.DimGray;
             light_4x4_12.FlatStyle = FlatStyle.Flat;
             light_4x4_12.Index = 6;
             light_4x4_12.Location = new Point(155, 85);
@@ -284,7 +306,7 @@
             light_4x4_12.Size = new Size(75, 75);
             light_4x4_12.State = LightState.Off;
             light_4x4_12.TabIndex = 6;
-            light_4x4_12.UseVisualStyleBackColor = true;
+            light_4x4_12.UseVisualStyleBackColor = false;
             light_4x4_12.Click += Light_Click;
             // 
             // light_4x4_11
@@ -292,6 +314,8 @@
             light_4x4_11.BackgroundImage = Properties.Resources.ButtonOff;
             light_4x4_11.BackgroundImageLayout = ImageLayout.Stretch;
             light_4x4_11.FlatAppearance.BorderSize = 0;
+            light_4x4_11.FlatAppearance.MouseDownBackColor = Color.Aquamarine;
+            light_4x4_11.FlatAppearance.MouseOverBackColor = Color.DimGray;
             light_4x4_11.FlatStyle = FlatStyle.Flat;
             light_4x4_11.Index = 5;
             light_4x4_11.Location = new Point(80, 85);
@@ -301,7 +325,7 @@
             light_4x4_11.Size = new Size(75, 75);
             light_4x4_11.State = LightState.Off;
             light_4x4_11.TabIndex = 5;
-            light_4x4_11.UseVisualStyleBackColor = true;
+            light_4x4_11.UseVisualStyleBackColor = false;
             light_4x4_11.Click += Light_Click;
             // 
             // light_4x4_10
@@ -309,6 +333,8 @@
             light_4x4_10.BackgroundImage = Properties.Resources.ButtonOff;
             light_4x4_10.BackgroundImageLayout = ImageLayout.Stretch;
             light_4x4_10.FlatAppearance.BorderSize = 0;
+            light_4x4_10.FlatAppearance.MouseDownBackColor = Color.Aquamarine;
+            light_4x4_10.FlatAppearance.MouseOverBackColor = Color.DimGray;
             light_4x4_10.FlatStyle = FlatStyle.Flat;
             light_4x4_10.Index = 4;
             light_4x4_10.Location = new Point(5, 85);
@@ -318,7 +344,7 @@
             light_4x4_10.Size = new Size(75, 75);
             light_4x4_10.State = LightState.Off;
             light_4x4_10.TabIndex = 4;
-            light_4x4_10.UseVisualStyleBackColor = true;
+            light_4x4_10.UseVisualStyleBackColor = false;
             light_4x4_10.Click += Light_Click;
             // 
             // light_4x4_03
@@ -326,6 +352,8 @@
             light_4x4_03.BackgroundImage = Properties.Resources.ButtonOff;
             light_4x4_03.BackgroundImageLayout = ImageLayout.Stretch;
             light_4x4_03.FlatAppearance.BorderSize = 0;
+            light_4x4_03.FlatAppearance.MouseDownBackColor = Color.Aquamarine;
+            light_4x4_03.FlatAppearance.MouseOverBackColor = Color.DimGray;
             light_4x4_03.FlatStyle = FlatStyle.Flat;
             light_4x4_03.Index = 3;
             light_4x4_03.Location = new Point(230, 10);
@@ -335,7 +363,7 @@
             light_4x4_03.Size = new Size(75, 75);
             light_4x4_03.State = LightState.Off;
             light_4x4_03.TabIndex = 3;
-            light_4x4_03.UseVisualStyleBackColor = true;
+            light_4x4_03.UseVisualStyleBackColor = false;
             light_4x4_03.Click += Light_Click;
             // 
             // light_4x4_02
@@ -343,6 +371,8 @@
             light_4x4_02.BackgroundImage = Properties.Resources.ButtonOff;
             light_4x4_02.BackgroundImageLayout = ImageLayout.Stretch;
             light_4x4_02.FlatAppearance.BorderSize = 0;
+            light_4x4_02.FlatAppearance.MouseDownBackColor = Color.Aquamarine;
+            light_4x4_02.FlatAppearance.MouseOverBackColor = Color.DimGray;
             light_4x4_02.FlatStyle = FlatStyle.Flat;
             light_4x4_02.Index = 2;
             light_4x4_02.Location = new Point(155, 10);
@@ -352,7 +382,7 @@
             light_4x4_02.Size = new Size(75, 75);
             light_4x4_02.State = LightState.Off;
             light_4x4_02.TabIndex = 2;
-            light_4x4_02.UseVisualStyleBackColor = true;
+            light_4x4_02.UseVisualStyleBackColor = false;
             light_4x4_02.Click += Light_Click;
             // 
             // light_4x4_01
@@ -360,6 +390,8 @@
             light_4x4_01.BackgroundImage = Properties.Resources.ButtonOff;
             light_4x4_01.BackgroundImageLayout = ImageLayout.Stretch;
             light_4x4_01.FlatAppearance.BorderSize = 0;
+            light_4x4_01.FlatAppearance.MouseDownBackColor = Color.Aquamarine;
+            light_4x4_01.FlatAppearance.MouseOverBackColor = Color.DimGray;
             light_4x4_01.FlatStyle = FlatStyle.Flat;
             light_4x4_01.Index = 1;
             light_4x4_01.Location = new Point(80, 10);
@@ -369,7 +401,7 @@
             light_4x4_01.Size = new Size(75, 75);
             light_4x4_01.State = LightState.Off;
             light_4x4_01.TabIndex = 1;
-            light_4x4_01.UseVisualStyleBackColor = true;
+            light_4x4_01.UseVisualStyleBackColor = false;
             light_4x4_01.Click += Light_Click;
             // 
             // light_4x4_00
@@ -377,6 +409,8 @@
             light_4x4_00.BackgroundImage = Properties.Resources.ButtonOff;
             light_4x4_00.BackgroundImageLayout = ImageLayout.Stretch;
             light_4x4_00.FlatAppearance.BorderSize = 0;
+            light_4x4_00.FlatAppearance.MouseDownBackColor = Color.Aquamarine;
+            light_4x4_00.FlatAppearance.MouseOverBackColor = Color.DimGray;
             light_4x4_00.FlatStyle = FlatStyle.Flat;
             light_4x4_00.Index = 0;
             light_4x4_00.Location = new Point(5, 10);
@@ -386,13 +420,13 @@
             light_4x4_00.Size = new Size(75, 75);
             light_4x4_00.State = LightState.Off;
             light_4x4_00.TabIndex = 0;
-            light_4x4_00.UseVisualStyleBackColor = true;
+            light_4x4_00.UseVisualStyleBackColor = false;
             light_4x4_00.Click += Light_Click;
             // 
             // gbxGameBoard_4x4
             // 
-            gbxGameBoard_4x4.BackColor = Color.Black;
-            gbxGameBoard_4x4.BackgroundImageLayout = ImageLayout.Stretch;
+            gbxGameBoard_4x4.BackColor = Color.Transparent;
+            gbxGameBoard_4x4.BackgroundImageLayout = ImageLayout.None;
             gbxGameBoard_4x4.Controls.Add(light_4x4_33);
             gbxGameBoard_4x4.Controls.Add(light_4x4_32);
             gbxGameBoard_4x4.Controls.Add(light_4x4_31);
@@ -410,8 +444,10 @@
             gbxGameBoard_4x4.Controls.Add(light_4x4_01);
             gbxGameBoard_4x4.Controls.Add(light_4x4_00);
             gbxGameBoard_4x4.FlatStyle = FlatStyle.Flat;
-            gbxGameBoard_4x4.Location = new Point(8, 88);
+            gbxGameBoard_4x4.Location = new Point(10, 90);
             gbxGameBoard_4x4.Margin = new Padding(2);
+            gbxGameBoard_4x4.MaximumSize = new Size(310, 315);
+            gbxGameBoard_4x4.MinimumSize = new Size(310, 315);
             gbxGameBoard_4x4.Name = "gbxGameBoard_4x4";
             gbxGameBoard_4x4.Padding = new Padding(2);
             gbxGameBoard_4x4.Size = new Size(310, 315);
@@ -448,7 +484,7 @@
             // 
             btnSolveAll.BackgroundImageLayout = ImageLayout.Stretch;
             btnSolveAll.FlatStyle = FlatStyle.Flat;
-            btnSolveAll.ForeColor = SystemColors.ActiveCaption;
+            btnSolveAll.ForeColor = Color.Aquamarine;
             btnSolveAll.Location = new Point(11, 49);
             btnSolveAll.Name = "btnSolveAll";
             btnSolveAll.Size = new Size(136, 26);
@@ -460,17 +496,20 @@
             // 
             // gbxStats
             // 
-            gbxStats.BackColor = Color.Black;
+            gbxStats.BackColor = Color.Transparent;
             gbxStats.Controls.Add(lblMoves);
+            gbxStats.Controls.Add(pnlStars);
             gbxStats.Controls.Add(lblGoal);
             gbxStats.Controls.Add(lblMovesLabel);
             gbxStats.Controls.Add(lblGoalLabel);
             gbxStats.Controls.Add(lblSize);
             gbxStats.Controls.Add(lblSizeLabel);
-            gbxStats.ForeColor = SystemColors.ActiveCaption;
-            gbxStats.Location = new Point(324, 89);
+            gbxStats.FlatStyle = FlatStyle.Flat;
+            gbxStats.Font = new Font("Segoe UI", 12F);
+            gbxStats.ForeColor = Color.Aquamarine;
+            gbxStats.Location = new Point(330, 87);
             gbxStats.Name = "gbxStats";
-            gbxStats.Size = new Size(150, 135);
+            gbxStats.Size = new Size(155, 230);
             gbxStats.TabIndex = 3;
             gbxStats.TabStop = false;
             gbxStats.Text = "Level X";
@@ -478,31 +517,47 @@
             // lblMoves
             // 
             lblMoves.AutoSize = true;
-            lblMoves.BackColor = Color.Black;
+            lblMoves.BackColor = Color.Transparent;
             lblMoves.FlatStyle = FlatStyle.Flat;
-            lblMoves.ForeColor = SystemColors.ActiveCaption;
+            lblMoves.ForeColor = Color.Aquamarine;
             lblMoves.ImageAlign = ContentAlignment.MiddleRight;
             lblMoves.Location = new Point(85, 86);
             lblMoves.MinimumSize = new Size(50, 0);
             lblMoves.Name = "lblMoves";
             lblMoves.RightToLeft = RightToLeft.No;
-            lblMoves.Size = new Size(50, 15);
+            lblMoves.Size = new Size(50, 21);
             lblMoves.TabIndex = 5;
             lblMoves.Text = "0";
             lblMoves.TextAlign = ContentAlignment.TopRight;
             // 
+            // pnlStars
+            // 
+            pnlStars.AutoSize = true;
+            pnlStars.BackColor = Color.Transparent;
+            pnlStars.FlatStyle = FlatStyle.Flat;
+            pnlStars.Font = new Font("Segoe UI", 35F);
+            pnlStars.ForeColor = Color.Aquamarine;
+            pnlStars.Location = new Point(0, 108);
+            pnlStars.MaximumSize = new Size(150, 75);
+            pnlStars.MinimumSize = new Size(150, 50);
+            pnlStars.Name = "pnlStars";
+            pnlStars.Size = new Size(150, 62);
+            pnlStars.TabIndex = 15;
+            pnlStars.Text = "★★★";
+            pnlStars.TextAlign = ContentAlignment.MiddleCenter;
+            // 
             // lblGoal
             // 
             lblGoal.AutoSize = true;
-            lblGoal.BackColor = Color.Black;
+            lblGoal.BackColor = Color.Transparent;
             lblGoal.FlatStyle = FlatStyle.Flat;
-            lblGoal.ForeColor = SystemColors.ActiveCaption;
+            lblGoal.ForeColor = Color.Aquamarine;
             lblGoal.ImageAlign = ContentAlignment.MiddleRight;
             lblGoal.Location = new Point(85, 56);
             lblGoal.MinimumSize = new Size(50, 0);
             lblGoal.Name = "lblGoal";
             lblGoal.RightToLeft = RightToLeft.No;
-            lblGoal.Size = new Size(50, 15);
+            lblGoal.Size = new Size(50, 21);
             lblGoal.TabIndex = 4;
             lblGoal.Text = "5";
             lblGoal.TextAlign = ContentAlignment.TopRight;
@@ -510,37 +565,37 @@
             // lblMovesLabel
             // 
             lblMovesLabel.AutoSize = true;
-            lblMovesLabel.BackColor = Color.Black;
-            lblMovesLabel.ForeColor = SystemColors.ActiveCaption;
+            lblMovesLabel.BackColor = Color.Transparent;
+            lblMovesLabel.ForeColor = Color.Aquamarine;
             lblMovesLabel.Location = new Point(19, 86);
             lblMovesLabel.Name = "lblMovesLabel";
-            lblMovesLabel.Size = new Size(45, 15);
+            lblMovesLabel.Size = new Size(59, 21);
             lblMovesLabel.TabIndex = 3;
             lblMovesLabel.Text = "Moves:";
             // 
             // lblGoalLabel
             // 
             lblGoalLabel.AutoSize = true;
-            lblGoalLabel.BackColor = Color.Black;
-            lblGoalLabel.ForeColor = SystemColors.ActiveCaption;
+            lblGoalLabel.BackColor = Color.Transparent;
+            lblGoalLabel.ForeColor = Color.Aquamarine;
             lblGoalLabel.Location = new Point(19, 56);
             lblGoalLabel.Name = "lblGoalLabel";
-            lblGoalLabel.Size = new Size(34, 15);
+            lblGoalLabel.Size = new Size(45, 21);
             lblGoalLabel.TabIndex = 2;
             lblGoalLabel.Text = "Goal:";
             // 
             // lblSize
             // 
             lblSize.AutoSize = true;
-            lblSize.BackColor = Color.Black;
+            lblSize.BackColor = Color.Transparent;
             lblSize.FlatStyle = FlatStyle.Flat;
-            lblSize.ForeColor = SystemColors.ActiveCaption;
+            lblSize.ForeColor = Color.Aquamarine;
             lblSize.ImageAlign = ContentAlignment.MiddleRight;
             lblSize.Location = new Point(85, 26);
             lblSize.MinimumSize = new Size(50, 0);
             lblSize.Name = "lblSize";
             lblSize.RightToLeft = RightToLeft.No;
-            lblSize.Size = new Size(50, 15);
+            lblSize.Size = new Size(50, 21);
             lblSize.TabIndex = 1;
             lblSize.Text = "4 x 4";
             lblSize.TextAlign = ContentAlignment.TopRight;
@@ -548,11 +603,11 @@
             // lblSizeLabel
             // 
             lblSizeLabel.AutoSize = true;
-            lblSizeLabel.BackColor = Color.Black;
-            lblSizeLabel.ForeColor = SystemColors.ActiveCaption;
+            lblSizeLabel.BackColor = Color.Transparent;
+            lblSizeLabel.ForeColor = Color.Aquamarine;
             lblSizeLabel.Location = new Point(19, 26);
             lblSizeLabel.Name = "lblSizeLabel";
-            lblSizeLabel.Size = new Size(30, 15);
+            lblSizeLabel.Size = new Size(41, 21);
             lblSizeLabel.TabIndex = 0;
             lblSizeLabel.Text = "Size:";
             // 
@@ -560,7 +615,7 @@
             // 
             btnSolveOne.BackgroundImageLayout = ImageLayout.Stretch;
             btnSolveOne.FlatStyle = FlatStyle.Flat;
-            btnSolveOne.ForeColor = SystemColors.ActiveCaption;
+            btnSolveOne.ForeColor = Color.Aquamarine;
             btnSolveOne.Location = new Point(11, 21);
             btnSolveOne.Name = "btnSolveOne";
             btnSolveOne.Size = new Size(136, 26);
@@ -574,7 +629,7 @@
             // 
             btnGenerateRandom.BackgroundImageLayout = ImageLayout.Stretch;
             btnGenerateRandom.FlatStyle = FlatStyle.Flat;
-            btnGenerateRandom.ForeColor = SystemColors.ActiveCaption;
+            btnGenerateRandom.ForeColor = Color.Aquamarine;
             btnGenerateRandom.Location = new Point(11, 85);
             btnGenerateRandom.Name = "btnGenerateRandom";
             btnGenerateRandom.Size = new Size(65, 92);
@@ -588,7 +643,7 @@
             // 
             btnLoad.BackgroundImageLayout = ImageLayout.Stretch;
             btnLoad.FlatStyle = FlatStyle.Flat;
-            btnLoad.ForeColor = SystemColors.ActiveCaption;
+            btnLoad.ForeColor = Color.Aquamarine;
             btnLoad.Location = new Point(11, 251);
             btnLoad.Name = "btnLoad";
             btnLoad.Size = new Size(130, 26);
@@ -625,7 +680,7 @@
             bgxDebug.Controls.Add(btnLoad);
             bgxDebug.Controls.Add(btnSolveAll);
             bgxDebug.Controls.Add(btnGenerateRandom);
-            bgxDebug.ForeColor = SystemColors.ActiveCaption;
+            bgxDebug.ForeColor = Color.Aquamarine;
             bgxDebug.Location = new Point(500, 15);
             bgxDebug.Name = "bgxDebug";
             bgxDebug.Size = new Size(150, 388);
@@ -637,7 +692,7 @@
             // 
             txtFileName.BackColor = Color.FromArgb(64, 64, 64);
             txtFileName.BorderStyle = BorderStyle.None;
-            txtFileName.ForeColor = SystemColors.ActiveCaption;
+            txtFileName.ForeColor = Color.Aquamarine;
             txtFileName.Location = new Point(78, 215);
             txtFileName.Name = "txtFileName";
             txtFileName.Size = new Size(63, 16);
@@ -658,7 +713,7 @@
             // 
             numMinMoves.BackColor = SystemColors.ControlText;
             numMinMoves.BorderStyle = BorderStyle.None;
-            numMinMoves.ForeColor = SystemColors.ActiveCaption;
+            numMinMoves.ForeColor = Color.Aquamarine;
             numMinMoves.Location = new Point(81, 158);
             numMinMoves.Name = "numMinMoves";
             numMinMoves.Size = new Size(60, 19);
@@ -714,7 +769,7 @@
             // 
             btnSaveLevel.BackgroundImageLayout = ImageLayout.Stretch;
             btnSaveLevel.FlatStyle = FlatStyle.Flat;
-            btnSaveLevel.ForeColor = SystemColors.ActiveCaption;
+            btnSaveLevel.ForeColor = Color.Aquamarine;
             btnSaveLevel.Location = new Point(11, 183);
             btnSaveLevel.Name = "btnSaveLevel";
             btnSaveLevel.Size = new Size(130, 28);
@@ -726,7 +781,7 @@
             // 
             // gbxGameBoard_3x3
             // 
-            gbxGameBoard_3x3.BackColor = Color.Black;
+            gbxGameBoard_3x3.BackColor = Color.Transparent;
             gbxGameBoard_3x3.BackgroundImageLayout = ImageLayout.Stretch;
             gbxGameBoard_3x3.Controls.Add(light_3x3_22);
             gbxGameBoard_3x3.Controls.Add(light_3x3_21);
@@ -738,11 +793,13 @@
             gbxGameBoard_3x3.Controls.Add(light_3x3_01);
             gbxGameBoard_3x3.Controls.Add(light_3x3_00);
             gbxGameBoard_3x3.FlatStyle = FlatStyle.Flat;
-            gbxGameBoard_3x3.Location = new Point(8, 88);
+            gbxGameBoard_3x3.Location = new Point(10, 90);
             gbxGameBoard_3x3.Margin = new Padding(2);
+            gbxGameBoard_3x3.MaximumSize = new Size(310, 315);
+            gbxGameBoard_3x3.MinimumSize = new Size(310, 315);
             gbxGameBoard_3x3.Name = "gbxGameBoard_3x3";
             gbxGameBoard_3x3.Padding = new Padding(2);
-            gbxGameBoard_3x3.Size = new Size(311, 315);
+            gbxGameBoard_3x3.Size = new Size(310, 315);
             gbxGameBoard_3x3.TabIndex = 11;
             gbxGameBoard_3x3.TabStop = false;
             // 
@@ -751,6 +808,8 @@
             light_3x3_22.BackgroundImage = Properties.Resources.ButtonOff;
             light_3x3_22.BackgroundImageLayout = ImageLayout.Stretch;
             light_3x3_22.FlatAppearance.BorderSize = 0;
+            light_3x3_22.FlatAppearance.MouseDownBackColor = Color.Aquamarine;
+            light_3x3_22.FlatAppearance.MouseOverBackColor = Color.DimGray;
             light_3x3_22.FlatStyle = FlatStyle.Flat;
             light_3x3_22.Index = 8;
             light_3x3_22.Location = new Point(207, 210);
@@ -768,6 +827,8 @@
             light_3x3_21.BackgroundImage = Properties.Resources.ButtonOff;
             light_3x3_21.BackgroundImageLayout = ImageLayout.Stretch;
             light_3x3_21.FlatAppearance.BorderSize = 0;
+            light_3x3_21.FlatAppearance.MouseDownBackColor = Color.Aquamarine;
+            light_3x3_21.FlatAppearance.MouseOverBackColor = Color.DimGray;
             light_3x3_21.FlatStyle = FlatStyle.Flat;
             light_3x3_21.Index = 7;
             light_3x3_21.Location = new Point(106, 210);
@@ -785,6 +846,8 @@
             light_3x3_20.BackgroundImage = Properties.Resources.ButtonOff;
             light_3x3_20.BackgroundImageLayout = ImageLayout.Stretch;
             light_3x3_20.FlatAppearance.BorderSize = 0;
+            light_3x3_20.FlatAppearance.MouseDownBackColor = Color.Aquamarine;
+            light_3x3_20.FlatAppearance.MouseOverBackColor = Color.DimGray;
             light_3x3_20.FlatStyle = FlatStyle.Flat;
             light_3x3_20.Index = 6;
             light_3x3_20.Location = new Point(5, 210);
@@ -802,6 +865,8 @@
             light_3x3_12.BackgroundImage = Properties.Resources.ButtonOff;
             light_3x3_12.BackgroundImageLayout = ImageLayout.Stretch;
             light_3x3_12.FlatAppearance.BorderSize = 0;
+            light_3x3_12.FlatAppearance.MouseDownBackColor = Color.Aquamarine;
+            light_3x3_12.FlatAppearance.MouseOverBackColor = Color.DimGray;
             light_3x3_12.FlatStyle = FlatStyle.Flat;
             light_3x3_12.Index = 5;
             light_3x3_12.Location = new Point(207, 110);
@@ -819,6 +884,8 @@
             light_3x3_11.BackgroundImage = Properties.Resources.ButtonOff;
             light_3x3_11.BackgroundImageLayout = ImageLayout.Stretch;
             light_3x3_11.FlatAppearance.BorderSize = 0;
+            light_3x3_11.FlatAppearance.MouseDownBackColor = Color.Aquamarine;
+            light_3x3_11.FlatAppearance.MouseOverBackColor = Color.DimGray;
             light_3x3_11.FlatStyle = FlatStyle.Flat;
             light_3x3_11.Index = 4;
             light_3x3_11.Location = new Point(106, 110);
@@ -836,6 +903,8 @@
             light_3x3_10.BackgroundImage = Properties.Resources.ButtonOff;
             light_3x3_10.BackgroundImageLayout = ImageLayout.Stretch;
             light_3x3_10.FlatAppearance.BorderSize = 0;
+            light_3x3_10.FlatAppearance.MouseDownBackColor = Color.Aquamarine;
+            light_3x3_10.FlatAppearance.MouseOverBackColor = Color.DimGray;
             light_3x3_10.FlatStyle = FlatStyle.Flat;
             light_3x3_10.Index = 3;
             light_3x3_10.Location = new Point(5, 110);
@@ -853,6 +922,8 @@
             light_3x3_02.BackgroundImage = Properties.Resources.ButtonOff;
             light_3x3_02.BackgroundImageLayout = ImageLayout.Stretch;
             light_3x3_02.FlatAppearance.BorderSize = 0;
+            light_3x3_02.FlatAppearance.MouseDownBackColor = Color.Aquamarine;
+            light_3x3_02.FlatAppearance.MouseOverBackColor = Color.DimGray;
             light_3x3_02.FlatStyle = FlatStyle.Flat;
             light_3x3_02.Index = 2;
             light_3x3_02.Location = new Point(207, 10);
@@ -870,6 +941,8 @@
             light_3x3_01.BackgroundImage = Properties.Resources.ButtonOff;
             light_3x3_01.BackgroundImageLayout = ImageLayout.Stretch;
             light_3x3_01.FlatAppearance.BorderSize = 0;
+            light_3x3_01.FlatAppearance.MouseDownBackColor = Color.Aquamarine;
+            light_3x3_01.FlatAppearance.MouseOverBackColor = Color.DimGray;
             light_3x3_01.FlatStyle = FlatStyle.Flat;
             light_3x3_01.Index = 1;
             light_3x3_01.Location = new Point(106, 10);
@@ -887,6 +960,8 @@
             light_3x3_00.BackgroundImage = Properties.Resources.ButtonOff;
             light_3x3_00.BackgroundImageLayout = ImageLayout.Stretch;
             light_3x3_00.FlatAppearance.BorderSize = 0;
+            light_3x3_00.FlatAppearance.MouseDownBackColor = Color.Aquamarine;
+            light_3x3_00.FlatAppearance.MouseOverBackColor = Color.DimGray;
             light_3x3_00.FlatStyle = FlatStyle.Flat;
             light_3x3_00.Index = 0;
             light_3x3_00.Location = new Point(5, 10);
@@ -901,60 +976,61 @@
             // 
             // btnPrevious
             // 
+            btnPrevious.BackColor = Color.Transparent;
+            btnPrevious.FlatAppearance.BorderColor = Color.FromArgb(64, 64, 64);
+            btnPrevious.FlatAppearance.BorderSize = 2;
+            btnPrevious.FlatAppearance.MouseDownBackColor = Color.Gray;
+            btnPrevious.FlatAppearance.MouseOverBackColor = Color.DimGray;
             btnPrevious.FlatStyle = FlatStyle.Flat;
             btnPrevious.Font = new Font("Segoe UI", 25F);
-            btnPrevious.ForeColor = SystemColors.ActiveCaption;
-            btnPrevious.Location = new Point(324, 321);
+            btnPrevious.ForeColor = Color.Aquamarine;
+            btnPrevious.Location = new Point(330, 323);
             btnPrevious.Name = "btnPrevious";
             btnPrevious.Size = new Size(45, 80);
             btnPrevious.TabIndex = 1;
             btnPrevious.Text = "◄";
-            btnPrevious.UseVisualStyleBackColor = true;
+            btnPrevious.UseVisualStyleBackColor = false;
             btnPrevious.Click += LoadPreviousLevel_Click;
             // 
             // btnRedo
             // 
+            btnRedo.BackColor = Color.Transparent;
+            btnRedo.FlatAppearance.BorderColor = Color.FromArgb(64, 64, 64);
+            btnRedo.FlatAppearance.BorderSize = 2;
+            btnRedo.FlatAppearance.MouseDownBackColor = Color.Gray;
+            btnRedo.FlatAppearance.MouseOverBackColor = Color.DimGray;
             btnRedo.FlatStyle = FlatStyle.Flat;
             btnRedo.Font = new Font("Segoe UI", 25F);
-            btnRedo.ForeColor = SystemColors.ActiveCaption;
-            btnRedo.Location = new Point(377, 321);
+            btnRedo.ForeColor = Color.Aquamarine;
+            btnRedo.Location = new Point(385, 323);
             btnRedo.Name = "btnRedo";
             btnRedo.Size = new Size(45, 80);
             btnRedo.TabIndex = 2;
             btnRedo.Text = "⟲";
-            btnRedo.UseVisualStyleBackColor = true;
+            btnRedo.UseVisualStyleBackColor = false;
             btnRedo.Click += ReloadLevel_Click;
             // 
             // btnNext
             // 
+            btnNext.BackColor = Color.Transparent;
+            btnNext.FlatAppearance.BorderColor = Color.FromArgb(64, 64, 64);
+            btnNext.FlatAppearance.BorderSize = 2;
+            btnNext.FlatAppearance.MouseDownBackColor = Color.Gray;
+            btnNext.FlatAppearance.MouseOverBackColor = Color.DimGray;
             btnNext.FlatStyle = FlatStyle.Flat;
             btnNext.Font = new Font("Segoe UI", 25F);
-            btnNext.ForeColor = SystemColors.ActiveCaption;
-            btnNext.Location = new Point(429, 321);
+            btnNext.ForeColor = Color.Aquamarine;
+            btnNext.Location = new Point(440, 323);
             btnNext.Name = "btnNext";
             btnNext.Size = new Size(45, 80);
             btnNext.TabIndex = 3;
             btnNext.Text = "►";
-            btnNext.UseVisualStyleBackColor = true;
+            btnNext.UseVisualStyleBackColor = false;
             btnNext.Click += LoadNextLevel_Click;
-            // 
-            // pnlStars
-            // 
-            pnlStars.AutoSize = true;
-            pnlStars.Font = new Font("Segoe UI", 35F);
-            pnlStars.ForeColor = SystemColors.ActiveCaption;
-            pnlStars.Location = new Point(324, 235);
-            pnlStars.MaximumSize = new Size(150, 75);
-            pnlStars.MinimumSize = new Size(150, 75);
-            pnlStars.Name = "pnlStars";
-            pnlStars.Size = new Size(150, 75);
-            pnlStars.TabIndex = 15;
-            pnlStars.Text = "★★★";
-            pnlStars.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // gbxGameBoard_5x5
             // 
-            gbxGameBoard_5x5.BackColor = Color.Black;
+            gbxGameBoard_5x5.BackColor = Color.Transparent;
             gbxGameBoard_5x5.BackgroundImageLayout = ImageLayout.Stretch;
             gbxGameBoard_5x5.Controls.Add(light_5x5_44);
             gbxGameBoard_5x5.Controls.Add(light_5x5_43);
@@ -982,7 +1058,7 @@
             gbxGameBoard_5x5.Controls.Add(light_5x5_01);
             gbxGameBoard_5x5.Controls.Add(light_5x5_00);
             gbxGameBoard_5x5.FlatStyle = FlatStyle.Flat;
-            gbxGameBoard_5x5.Location = new Point(8, 88);
+            gbxGameBoard_5x5.Location = new Point(10, 90);
             gbxGameBoard_5x5.Margin = new Padding(2);
             gbxGameBoard_5x5.MaximumSize = new Size(310, 315);
             gbxGameBoard_5x5.MinimumSize = new Size(310, 315);
@@ -997,6 +1073,8 @@
             light_5x5_44.BackgroundImage = Properties.Resources.ButtonOff;
             light_5x5_44.BackgroundImageLayout = ImageLayout.Stretch;
             light_5x5_44.FlatAppearance.BorderSize = 0;
+            light_5x5_44.FlatAppearance.MouseDownBackColor = Color.Aquamarine;
+            light_5x5_44.FlatAppearance.MouseOverBackColor = Color.DimGray;
             light_5x5_44.FlatStyle = FlatStyle.Flat;
             light_5x5_44.Index = 24;
             light_5x5_44.Location = new Point(245, 250);
@@ -1014,6 +1092,8 @@
             light_5x5_43.BackgroundImage = Properties.Resources.ButtonOff;
             light_5x5_43.BackgroundImageLayout = ImageLayout.Stretch;
             light_5x5_43.FlatAppearance.BorderSize = 0;
+            light_5x5_43.FlatAppearance.MouseDownBackColor = Color.Aquamarine;
+            light_5x5_43.FlatAppearance.MouseOverBackColor = Color.DimGray;
             light_5x5_43.FlatStyle = FlatStyle.Flat;
             light_5x5_43.Index = 23;
             light_5x5_43.Location = new Point(185, 250);
@@ -1031,6 +1111,8 @@
             light_5x5_42.BackgroundImage = Properties.Resources.ButtonOff;
             light_5x5_42.BackgroundImageLayout = ImageLayout.Stretch;
             light_5x5_42.FlatAppearance.BorderSize = 0;
+            light_5x5_42.FlatAppearance.MouseDownBackColor = Color.Aquamarine;
+            light_5x5_42.FlatAppearance.MouseOverBackColor = Color.DimGray;
             light_5x5_42.FlatStyle = FlatStyle.Flat;
             light_5x5_42.Index = 22;
             light_5x5_42.Location = new Point(125, 250);
@@ -1048,6 +1130,8 @@
             light_5x5_41.BackgroundImage = Properties.Resources.ButtonOff;
             light_5x5_41.BackgroundImageLayout = ImageLayout.Stretch;
             light_5x5_41.FlatAppearance.BorderSize = 0;
+            light_5x5_41.FlatAppearance.MouseDownBackColor = Color.Aquamarine;
+            light_5x5_41.FlatAppearance.MouseOverBackColor = Color.DimGray;
             light_5x5_41.FlatStyle = FlatStyle.Flat;
             light_5x5_41.Index = 21;
             light_5x5_41.Location = new Point(65, 250);
@@ -1065,6 +1149,8 @@
             light_5x5_40.BackgroundImage = Properties.Resources.ButtonOff;
             light_5x5_40.BackgroundImageLayout = ImageLayout.Stretch;
             light_5x5_40.FlatAppearance.BorderSize = 0;
+            light_5x5_40.FlatAppearance.MouseDownBackColor = Color.Aquamarine;
+            light_5x5_40.FlatAppearance.MouseOverBackColor = Color.DimGray;
             light_5x5_40.FlatStyle = FlatStyle.Flat;
             light_5x5_40.Index = 20;
             light_5x5_40.Location = new Point(5, 250);
@@ -1082,6 +1168,8 @@
             light_5x5_34.BackgroundImage = Properties.Resources.ButtonOff;
             light_5x5_34.BackgroundImageLayout = ImageLayout.Stretch;
             light_5x5_34.FlatAppearance.BorderSize = 0;
+            light_5x5_34.FlatAppearance.MouseDownBackColor = Color.Aquamarine;
+            light_5x5_34.FlatAppearance.MouseOverBackColor = Color.DimGray;
             light_5x5_34.FlatStyle = FlatStyle.Flat;
             light_5x5_34.Index = 19;
             light_5x5_34.Location = new Point(245, 190);
@@ -1099,6 +1187,8 @@
             light_5x5_33.BackgroundImage = Properties.Resources.ButtonOff;
             light_5x5_33.BackgroundImageLayout = ImageLayout.Stretch;
             light_5x5_33.FlatAppearance.BorderSize = 0;
+            light_5x5_33.FlatAppearance.MouseDownBackColor = Color.Aquamarine;
+            light_5x5_33.FlatAppearance.MouseOverBackColor = Color.DimGray;
             light_5x5_33.FlatStyle = FlatStyle.Flat;
             light_5x5_33.Index = 18;
             light_5x5_33.Location = new Point(185, 190);
@@ -1116,6 +1206,8 @@
             light_5x5_32.BackgroundImage = Properties.Resources.ButtonOff;
             light_5x5_32.BackgroundImageLayout = ImageLayout.Stretch;
             light_5x5_32.FlatAppearance.BorderSize = 0;
+            light_5x5_32.FlatAppearance.MouseDownBackColor = Color.Aquamarine;
+            light_5x5_32.FlatAppearance.MouseOverBackColor = Color.DimGray;
             light_5x5_32.FlatStyle = FlatStyle.Flat;
             light_5x5_32.Index = 17;
             light_5x5_32.Location = new Point(125, 190);
@@ -1133,6 +1225,8 @@
             light_5x5_31.BackgroundImage = Properties.Resources.ButtonOff;
             light_5x5_31.BackgroundImageLayout = ImageLayout.Stretch;
             light_5x5_31.FlatAppearance.BorderSize = 0;
+            light_5x5_31.FlatAppearance.MouseDownBackColor = Color.Aquamarine;
+            light_5x5_31.FlatAppearance.MouseOverBackColor = Color.DimGray;
             light_5x5_31.FlatStyle = FlatStyle.Flat;
             light_5x5_31.Index = 16;
             light_5x5_31.Location = new Point(65, 190);
@@ -1150,6 +1244,8 @@
             light_5x5_30.BackgroundImage = Properties.Resources.ButtonOff;
             light_5x5_30.BackgroundImageLayout = ImageLayout.Stretch;
             light_5x5_30.FlatAppearance.BorderSize = 0;
+            light_5x5_30.FlatAppearance.MouseDownBackColor = Color.Aquamarine;
+            light_5x5_30.FlatAppearance.MouseOverBackColor = Color.DimGray;
             light_5x5_30.FlatStyle = FlatStyle.Flat;
             light_5x5_30.Index = 15;
             light_5x5_30.Location = new Point(5, 190);
@@ -1167,6 +1263,8 @@
             light_5x5_24.BackgroundImage = Properties.Resources.ButtonOff;
             light_5x5_24.BackgroundImageLayout = ImageLayout.Stretch;
             light_5x5_24.FlatAppearance.BorderSize = 0;
+            light_5x5_24.FlatAppearance.MouseDownBackColor = Color.Aquamarine;
+            light_5x5_24.FlatAppearance.MouseOverBackColor = Color.DimGray;
             light_5x5_24.FlatStyle = FlatStyle.Flat;
             light_5x5_24.Index = 14;
             light_5x5_24.Location = new Point(245, 130);
@@ -1184,6 +1282,8 @@
             light_5x5_23.BackgroundImage = Properties.Resources.ButtonOff;
             light_5x5_23.BackgroundImageLayout = ImageLayout.Stretch;
             light_5x5_23.FlatAppearance.BorderSize = 0;
+            light_5x5_23.FlatAppearance.MouseDownBackColor = Color.Aquamarine;
+            light_5x5_23.FlatAppearance.MouseOverBackColor = Color.DimGray;
             light_5x5_23.FlatStyle = FlatStyle.Flat;
             light_5x5_23.Index = 13;
             light_5x5_23.Location = new Point(185, 130);
@@ -1201,6 +1301,8 @@
             light_5x5_22.BackgroundImage = Properties.Resources.ButtonOff;
             light_5x5_22.BackgroundImageLayout = ImageLayout.Stretch;
             light_5x5_22.FlatAppearance.BorderSize = 0;
+            light_5x5_22.FlatAppearance.MouseDownBackColor = Color.Aquamarine;
+            light_5x5_22.FlatAppearance.MouseOverBackColor = Color.DimGray;
             light_5x5_22.FlatStyle = FlatStyle.Flat;
             light_5x5_22.Index = 12;
             light_5x5_22.Location = new Point(125, 130);
@@ -1218,6 +1320,8 @@
             light_5x5_21.BackgroundImage = Properties.Resources.ButtonOff;
             light_5x5_21.BackgroundImageLayout = ImageLayout.Stretch;
             light_5x5_21.FlatAppearance.BorderSize = 0;
+            light_5x5_21.FlatAppearance.MouseDownBackColor = Color.Aquamarine;
+            light_5x5_21.FlatAppearance.MouseOverBackColor = Color.DimGray;
             light_5x5_21.FlatStyle = FlatStyle.Flat;
             light_5x5_21.Index = 11;
             light_5x5_21.Location = new Point(65, 130);
@@ -1235,6 +1339,8 @@
             light_5x5_20.BackgroundImage = Properties.Resources.ButtonOff;
             light_5x5_20.BackgroundImageLayout = ImageLayout.Stretch;
             light_5x5_20.FlatAppearance.BorderSize = 0;
+            light_5x5_20.FlatAppearance.MouseDownBackColor = Color.Aquamarine;
+            light_5x5_20.FlatAppearance.MouseOverBackColor = Color.DimGray;
             light_5x5_20.FlatStyle = FlatStyle.Flat;
             light_5x5_20.Index = 10;
             light_5x5_20.Location = new Point(5, 130);
@@ -1252,6 +1358,8 @@
             light_5x5_14.BackgroundImage = Properties.Resources.ButtonOff;
             light_5x5_14.BackgroundImageLayout = ImageLayout.Stretch;
             light_5x5_14.FlatAppearance.BorderSize = 0;
+            light_5x5_14.FlatAppearance.MouseDownBackColor = Color.Aquamarine;
+            light_5x5_14.FlatAppearance.MouseOverBackColor = Color.DimGray;
             light_5x5_14.FlatStyle = FlatStyle.Flat;
             light_5x5_14.Index = 9;
             light_5x5_14.Location = new Point(245, 70);
@@ -1269,6 +1377,8 @@
             light_5x5_13.BackgroundImage = Properties.Resources.ButtonOff;
             light_5x5_13.BackgroundImageLayout = ImageLayout.Stretch;
             light_5x5_13.FlatAppearance.BorderSize = 0;
+            light_5x5_13.FlatAppearance.MouseDownBackColor = Color.Aquamarine;
+            light_5x5_13.FlatAppearance.MouseOverBackColor = Color.DimGray;
             light_5x5_13.FlatStyle = FlatStyle.Flat;
             light_5x5_13.Index = 8;
             light_5x5_13.Location = new Point(185, 70);
@@ -1286,6 +1396,8 @@
             light_5x5_12.BackgroundImage = Properties.Resources.ButtonOff;
             light_5x5_12.BackgroundImageLayout = ImageLayout.Stretch;
             light_5x5_12.FlatAppearance.BorderSize = 0;
+            light_5x5_12.FlatAppearance.MouseDownBackColor = Color.Aquamarine;
+            light_5x5_12.FlatAppearance.MouseOverBackColor = Color.DimGray;
             light_5x5_12.FlatStyle = FlatStyle.Flat;
             light_5x5_12.Index = 7;
             light_5x5_12.Location = new Point(125, 70);
@@ -1303,6 +1415,8 @@
             light_5x5_11.BackgroundImage = Properties.Resources.ButtonOff;
             light_5x5_11.BackgroundImageLayout = ImageLayout.Stretch;
             light_5x5_11.FlatAppearance.BorderSize = 0;
+            light_5x5_11.FlatAppearance.MouseDownBackColor = Color.Aquamarine;
+            light_5x5_11.FlatAppearance.MouseOverBackColor = Color.DimGray;
             light_5x5_11.FlatStyle = FlatStyle.Flat;
             light_5x5_11.Index = 6;
             light_5x5_11.Location = new Point(65, 70);
@@ -1320,6 +1434,8 @@
             light_5x5_10.BackgroundImage = Properties.Resources.ButtonOff;
             light_5x5_10.BackgroundImageLayout = ImageLayout.Stretch;
             light_5x5_10.FlatAppearance.BorderSize = 0;
+            light_5x5_10.FlatAppearance.MouseDownBackColor = Color.Aquamarine;
+            light_5x5_10.FlatAppearance.MouseOverBackColor = Color.DimGray;
             light_5x5_10.FlatStyle = FlatStyle.Flat;
             light_5x5_10.Index = 5;
             light_5x5_10.Location = new Point(5, 70);
@@ -1337,6 +1453,8 @@
             light_5x5_04.BackgroundImage = Properties.Resources.ButtonOff;
             light_5x5_04.BackgroundImageLayout = ImageLayout.Stretch;
             light_5x5_04.FlatAppearance.BorderSize = 0;
+            light_5x5_04.FlatAppearance.MouseDownBackColor = Color.Aquamarine;
+            light_5x5_04.FlatAppearance.MouseOverBackColor = Color.DimGray;
             light_5x5_04.FlatStyle = FlatStyle.Flat;
             light_5x5_04.Index = 4;
             light_5x5_04.Location = new Point(245, 10);
@@ -1354,6 +1472,8 @@
             light_5x5_03.BackgroundImage = Properties.Resources.ButtonOff;
             light_5x5_03.BackgroundImageLayout = ImageLayout.Stretch;
             light_5x5_03.FlatAppearance.BorderSize = 0;
+            light_5x5_03.FlatAppearance.MouseDownBackColor = Color.Aquamarine;
+            light_5x5_03.FlatAppearance.MouseOverBackColor = Color.DimGray;
             light_5x5_03.FlatStyle = FlatStyle.Flat;
             light_5x5_03.Index = 3;
             light_5x5_03.Location = new Point(185, 10);
@@ -1371,6 +1491,8 @@
             light_5x5_02.BackgroundImage = Properties.Resources.ButtonOff;
             light_5x5_02.BackgroundImageLayout = ImageLayout.Stretch;
             light_5x5_02.FlatAppearance.BorderSize = 0;
+            light_5x5_02.FlatAppearance.MouseDownBackColor = Color.Aquamarine;
+            light_5x5_02.FlatAppearance.MouseOverBackColor = Color.DimGray;
             light_5x5_02.FlatStyle = FlatStyle.Flat;
             light_5x5_02.Index = 2;
             light_5x5_02.Location = new Point(125, 10);
@@ -1388,6 +1510,8 @@
             light_5x5_01.BackgroundImage = Properties.Resources.ButtonOff;
             light_5x5_01.BackgroundImageLayout = ImageLayout.Stretch;
             light_5x5_01.FlatAppearance.BorderSize = 0;
+            light_5x5_01.FlatAppearance.MouseDownBackColor = Color.Aquamarine;
+            light_5x5_01.FlatAppearance.MouseOverBackColor = Color.DimGray;
             light_5x5_01.FlatStyle = FlatStyle.Flat;
             light_5x5_01.Index = 1;
             light_5x5_01.Location = new Point(65, 10);
@@ -1405,6 +1529,8 @@
             light_5x5_00.BackgroundImage = Properties.Resources.ButtonOff;
             light_5x5_00.BackgroundImageLayout = ImageLayout.Stretch;
             light_5x5_00.FlatAppearance.BorderSize = 0;
+            light_5x5_00.FlatAppearance.MouseDownBackColor = Color.Aquamarine;
+            light_5x5_00.FlatAppearance.MouseOverBackColor = Color.DimGray;
             light_5x5_00.FlatStyle = FlatStyle.Flat;
             light_5x5_00.Index = 0;
             light_5x5_00.Location = new Point(5, 10);
@@ -1417,6 +1543,18 @@
             light_5x5_00.UseVisualStyleBackColor = true;
             light_5x5_00.Click += Light_Click;
             // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.BackColor = Color.Transparent;
+            label1.Font = new Font("Segoe UI", 50F);
+            label1.ForeColor = Color.Aquamarine;
+            label1.Location = new Point(59, 0);
+            label1.Name = "label1";
+            label1.Size = new Size(363, 89);
+            label1.TabIndex = 12;
+            label1.Text = "Lights Out!";
+            // 
             // Board
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -1424,19 +1562,24 @@
             BackColor = Color.Black;
             BackgroundImage = Properties.Resources.Board;
             BackgroundImageLayout = ImageLayout.Stretch;
+            CancelButton = btnRedo;
             ClientSize = new Size(659, 411);
-            Controls.Add(gbxGameBoard_5x5);
-            Controls.Add(pnlStars);
+            Controls.Add(label1);
             Controls.Add(btnNext);
             Controls.Add(btnRedo);
             Controls.Add(btnPrevious);
             Controls.Add(bgxDebug);
             Controls.Add(gbxStats);
+            Controls.Add(gbxGameBoard_5x5);
             Controls.Add(pbxWinImage);
             Controls.Add(gbxGameBoard_3x3);
             Controls.Add(gbxGameBoard_4x4);
             DoubleBuffered = true;
+            Icon = (Icon)resources.GetObject("$this.Icon");
             KeyPreview = true;
+            MaximizeBox = false;
+            MaximumSize = new Size(675, 450);
+            MinimumSize = new Size(510, 450);
             Name = "Board";
             SizeGripStyle = SizeGripStyle.Hide;
             Text = "Lights Out";
@@ -1541,6 +1684,6 @@
         private Light light_5x5_42;
         private Light light_5x5_41;
         private Light light_5x5_40;
-
+        private Label label1;
     }
 }

@@ -28,14 +28,24 @@ namespace LightsOut
         /// </summary>
         /// <param name="levels"></param>
         /// <returns></returns>
-        public static AllLevels LoadLevels(this AllLevels levels)
+        public static LevelDatabase LoadLevels(this LevelDatabase levels)
         {
             string jsonString;
             using (var streamReader = new StreamReader(FileUtil.GetLevelFile("Levels.json")))
             {
                 jsonString = streamReader.ReadToEnd();
             }
-            return JsonConvert.DeserializeObject<AllLevels>(jsonString);
+            return JsonConvert.DeserializeObject<LevelDatabase>(jsonString);
+        }
+
+        public static T LoadData<T>(this T levels)
+        {
+            string jsonString;
+            using (var streamReader = new StreamReader(FileUtil.GetLevelFile("Levels.json")))
+            {
+                jsonString = streamReader.ReadToEnd();
+            }
+            return JsonConvert.DeserializeObject<T>(jsonString);
         }
     }
 }

@@ -7,7 +7,7 @@ namespace LightsOut
     /// </summary>
     public partial class Board : Form
     {
-        private AllLevels LevelDatabase;
+        private LevelDatabase LevelDatabase;
         private LevelData levelData;
         private Light[] lights = [];
 
@@ -25,7 +25,7 @@ namespace LightsOut
 
         private void PreloadAllLevelsData()
         {
-            LevelDatabase = new AllLevels().LoadLevels();
+            LevelDatabase = new LevelDatabase().LoadData();
 #if DEBUG
 
             cbxLevelSelect.Items.Clear();

@@ -1,28 +1,20 @@
 ﻿namespace LightsOut
 {
+    /// <summary>
+    /// Struct containing data for each level.
+    /// </summary>
     public struct LevelData
     {
-        /// <summary>
-        /// The number of this level. Ex: Level 1.
-        /// </summary>
+        /// <summary>The number of this level. Ex: Level 1.</summary>
         public int Level;
-        /// <summary>
-        /// Size of board Ex: Size = 4 => 4x4 board.
-        /// </summary>
+        /// <summary>Size of board Ex: Size = 4 => 4x4 board.</summary>
         public int Size;
-        /// <summary>
-        /// >Minimum moves required to complete the level.
-        /// </summary>
+        /// <summary>Minimum moves required to complete the level.</summary>
         public int MinMoves;
-        /// <summary>
-        /// integer array representing a data model of the Board. 
-        /// </summary>
+        /// <summary>Integer array representing a data model of the Board.</summary>
         public int[] Board = [];
-        /// <summary>
-        /// True of this level has been completed, false otherwise.
-        /// </summary>
+        /// <summary>True of this level has been completed, false otherwise.</summary>
         public bool Completed = false;
-
         /// <summary>Return "Level {level}" Ex: "Level 1".</summary>
         public readonly string Name => $"Level {Level}";
 
@@ -30,7 +22,7 @@
         public LevelData() { }
 
         /// <summary>
-        /// Constructor
+        /// Construct a LevelData object with Level, Size, and Minimum moves.
         /// </summary>
         /// <param name="level">This levels index.</param>
         /// <param name="size">Size of board Ex: Size=4 => 4x4 board.</param>
