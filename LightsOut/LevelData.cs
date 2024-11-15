@@ -13,8 +13,10 @@
         public int MinMoves;
         /// <summary>Integer array representing a data model of the Board.</summary>
         public int[] Board = [];
-        /// <summary>True of this level has been completed, false otherwise.</summary>
-        public bool Completed = false;
+        /// <summary>The minimum number of moves used to beat this level. 9000 to begin.</summary>
+        public int BestScore = 9000;
+        /// <summary>The number of Stars earned for this level. 0 to begin.</summary>
+        public int Stars = 0;
         /// <summary>Return "Level {level}" Ex: "Level 1".</summary>
         public readonly string Name => $"Level {Level}";
 
@@ -35,8 +37,45 @@
             Board = new int[Size * Size];
         }
 
+        public LevelData(LevelData levelData, int moves)
+        {
+            Level = levelData.Level;
+            Size = levelData.Size;
+            MinMoves = levelData.MinMoves;
+            Board = new int[Size * Size];
+
+            for (int i = 0; i < Board.Length; i++)
+            {
+                Board[i] = levelData.Board[i];
+            }
+
+
+            if(moves < BestScore)
+            {
+                BestScore = moves;
+            }
+
+            if (BestScore <= MinMoves)
+            {
+                Stars = 3;
+            }
+            else if (BestScore <= MinMoves + 3)
+            {
+                Stars = 2;
+            }
+            else if (BestScore <= MinMoves + 6)
+            {
+                Stars = 1;
+            }
+            else
+            {
+                Stars = 3;
+            }
+        }
+
         /// <summary>
         /// Construct a new LevelData object from an existing LevelData object.
+        /// A new Board is created based on the passed in Board data.
         /// </summary>
         /// <param name="levelData">Existing LevelData object.</param>
         public LevelData(LevelData levelData)
@@ -45,6 +84,8 @@
             Size = levelData.Size;
             MinMoves = levelData.MinMoves;
             Board = new int[Size * Size];
+            BestScore = levelData.BestScore;
+            Stars = levelData.Stars;
 
             for (int i = 0; i < Board.Length; i++)
             {
@@ -70,7 +111,7 @@
         /// <returns>Human readable string of the LevelData fields.</returns>
         public override readonly string ToString()
         {
-            return $"Level_{Level}_{Size}x{Size}_Goal_{MinMoves}";
+            return $"Level_{Level}_{Size}x{Size}_Goal_{MinMoves}_Best Score_{BestScore}_Stars_{Stars}";
         }
     }
 }

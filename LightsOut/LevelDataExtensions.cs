@@ -10,17 +10,11 @@ namespace LightsOut
         /// <summary>
         /// 
         /// </summary>
-        /// <param name="levelData"></param>
-        /// <param name="jsonFile"></param>
+        /// <param name="levels"></param>
         /// <returns></returns>
-        public static LevelData LoadLevelDataFromJson(this LevelData levelData, string jsonFile)
+        public static LevelDatabase LoadLevelDatabase(this LevelDatabase levels)
         {
-            string jsonString;
-            using (var streamReader = new StreamReader(FileUtil.GetLevelFile(jsonFile)))
-            {
-                jsonString = streamReader.ReadToEnd();
-            }
-            return JsonConvert.DeserializeObject<LevelData>(jsonString);
+            return levels.LoadDatabase<LevelDatabase>("Levels.json");
         }
 
         /// <summary>
@@ -28,20 +22,22 @@ namespace LightsOut
         /// </summary>
         /// <param name="levels"></param>
         /// <returns></returns>
-        public static LevelDatabase LoadLevels(this LevelDatabase levels)
+        public static UserDatabase LoadUserDatabase(this UserDatabase levels)
         {
-            string jsonString;
-            using (var streamReader = new StreamReader(FileUtil.GetLevelFile("Levels.json")))
-            {
-                jsonString = streamReader.ReadToEnd();
-            }
-            return JsonConvert.DeserializeObject<LevelDatabase>(jsonString);
+            return levels.LoadDatabase<UserDatabase>("User.json");
         }
 
-        public static T LoadData<T>(this T levels)
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="levels"></param>
+        /// <param name="databaseName"></param>
+        /// <returns></returns>
+        private static T LoadDatabase<T>(this T levels, string databaseName)
         {
             string jsonString;
-            using (var streamReader = new StreamReader(FileUtil.GetLevelFile("Levels.json")))
+            using (var streamReader = new StreamReader(FileUtil.GetLevelDatabase(databaseName)))
             {
                 jsonString = streamReader.ReadToEnd();
             }

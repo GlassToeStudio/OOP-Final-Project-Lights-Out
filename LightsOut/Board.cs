@@ -7,9 +7,9 @@ namespace LightsOut
     /// </summary>
     public partial class Board : Form
     {
-        private LevelDatabase LevelDatabase;
-        private LevelData levelData;
         private Light[] lights = [];
+        private LevelData levelData = new();
+        DataHandler handler;
 
         private int moves = 0;
 
@@ -25,11 +25,11 @@ namespace LightsOut
 
         private void PreloadAllLevelsData()
         {
-            LevelDatabase = new LevelDatabase().LoadData();
+            handler = new DataHandler();
 #if DEBUG
 
             cbxLevelSelect.Items.Clear();
-            foreach (LevelData ld in LevelDatabase.Levels)
+            foreach (LevelData ld in handler.Levels)
             {
                 cbxLevelSelect.Items.Add(ld.Name);
             }
@@ -39,6 +39,7 @@ namespace LightsOut
 
         private void GenerateGameBoardsAndSelect()
         {
+            pbxWinImage.Visible = false;
             btnSaveLevel.Enabled = false;
             gbxGameBoard_3x3.Visible = false;
             gbxGameBoard_4x4.Visible = false;
@@ -74,7 +75,6 @@ namespace LightsOut
                     break;
                 case 5:
                     gbxGameBoard_5x5.Visible = true;
-                    gbxGameBoard_5x5.BringToFront();
                     lights = lights_5x5;
                     break;
                 default:
@@ -85,8 +85,6 @@ namespace LightsOut
 
             InitializeBoardLights();
             ConnectNeighbors();
-
-            pbxWinImage.Visible = false;
         }
 
         private void InitializeBoardLights()
@@ -135,9 +133,9 @@ namespace LightsOut
         private void GenerateLevelFromLevels()
         {
             moves = 0;
-            levelData = new LevelData(LevelDatabase[LevelDatabase.SelectedIndex]);
+            levelData = handler.Level;
 #if DEBUG
-            cbxLevelSelect.SelectedIndex = LevelDatabase.SelectedIndex;
+            cbxLevelSelect.SelectedIndex = handler.SelectedIndex;
 #endif
 
             GenerateGameBoardsAndSelect();
@@ -173,6 +171,24 @@ namespace LightsOut
 
         private void UpdateUI()
         {
+            switch (levelData.Stars)
+            {
+                case 0:
+                    pnlStars.Text = "☆☆☆";
+                    break;
+                case 1:
+                    pnlStars.Text = "★☆☆";
+                    break;
+                case 2:
+                    pnlStars.Text = "★★☆";
+                    break;
+                case 3:
+                    pnlStars.Text = "★★★";
+                    break;
+                default:
+                    pnlStars.Text = "☆☆☆";
+                    break;
+            }
             gbxStats.Text = levelData.Name;
             lblSize.Text = $"{levelData.Size} x {levelData.Size}";
             lblGoal.Text = $"{levelData.MinMoves}";
@@ -183,7 +199,9 @@ namespace LightsOut
         {
             moves += 1;
             lblMoves.Text = moves.ToString();
+#if DEBUG
             lblLog.Text = DebugBoardState();
+#endif
         }
 
         private void CheckWin()
@@ -196,20 +214,41 @@ namespace LightsOut
                 }
             }
 
-            pbxWinImage.BringToFront();
-            pbxWinImage.Visible = true;
-            pnlStars.Text = "★★★";
-            pnlStars.Text = "☆☆☆";
-            levelData.Completed = true;
+           //pbxWinImage.BringToFront();
+           // pbxWinImage.Visible = true;
+
+
+            if (moves <= levelData.MinMoves)
+            {
+                pnlStars.Text = "★★★";
+            }
+            else if (moves <= levelData.MinMoves + 3)
+            {
+                pnlStars.Text = "★★☆";
+            }
+            else if (moves <= levelData.MinMoves + 6)
+            {
+                pnlStars.Text = "★☆☆";
+            }
+            else
+            {
+                pnlStars.Text = "☆☆☆";
+            }
+
+            levelData = handler.UpdateUserData( moves);
+
             foreach (var light in lights)
             {
-                light.Enabled = false;
+               // light.Enabled = false;
             }
+            UpdateUI();
+            SaveUserData();
         }
 
         private void SaveUserData()
         {
-            MessageBox.Show("Saving user data...");
+            handler.SaveUserData(levelData);
+           // MessageBox.Show(levelData.ToString(), "Saving user data...");
         }
 
         #region Buttons
@@ -224,7 +263,7 @@ namespace LightsOut
         {
 #if DEBUG
             if (!e.Equals(EventArgs.Empty)) // If we are trying to load from the level list in the combo box
-                LevelDatabase.SelectedIndex = cbxLevelSelect.SelectedIndex;
+                handler.UpdateIndex(cbxLevelSelect.SelectedIndex);
 #endif
             GenerateLevelFromLevels();
             UpdateUI();
@@ -232,13 +271,13 @@ namespace LightsOut
 
         private void LoadPreviousLevel_Click(object sender, EventArgs e)
         {
-            LevelDatabase.SelectedIndex = LevelDatabase.Previous;
+            handler.DecrementLevel();
             LoadLevel_Click(this, EventArgs.Empty);
         }
 
         private void LoadNextLevel_Click(object sender, EventArgs e)
         {
-            LevelDatabase.SelectedIndex = LevelDatabase.Next;
+            handler.IncrementLevel();
             LoadLevel_Click(this, EventArgs.Empty);
         }
 

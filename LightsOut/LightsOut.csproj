@@ -24,6 +24,7 @@
     <None Remove="Resources\Levels\Levels_4.json" />
     <None Remove="Resources\Levels\Levels_5.json" />
     <None Remove="Resources\Levels\Snap-sound-effect.wav" />
+    <None Remove="Resources\Levels\User.json" />
     <None Remove="Resources\WinPanel.png" />
   </ItemGroup>
 
@@ -45,6 +46,9 @@
     <EmbeddedResource Include="Resources\ButtonOn.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Levels\User.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
     <EmbeddedResource Include="Resources\Levels\Levels.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </EmbeddedResource>
@@ -52,7 +56,7 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </EmbeddedResource>
     <EmbeddedResource Include="Resources\Levels\Levels_2.json">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </EmbeddedResource>
     <EmbeddedResource Include="Resources\Levels\Levels_3.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
