@@ -15,13 +15,13 @@
         /// </summary>
         /// <param name="index"></param>
         /// <returns></returns>
-        //public LevelData this[int index]
-        //{
-        //    get
-        //    {
-        //        return Levels[index];
-        //    }
-        //}
+        public LevelData this[int index]
+        {
+            get
+            {
+                return Levels[index];
+            }
+        }
 
         /// <summary>
         /// Default constructor.
