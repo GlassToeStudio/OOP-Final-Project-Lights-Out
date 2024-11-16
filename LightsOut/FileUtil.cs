@@ -23,13 +23,13 @@ namespace LightsOut
             return Path.Combine(SOUNDS, fileName);
         }
 
-        internal static void SaveUserData(UserDatabase userDataBase, LevelData levelData)
+        internal static void SaveUserData(UserDatabase userDataBase)
         {
             var data = JsonConvert.SerializeObject(userDataBase);
             File.WriteAllText(GetLevelDatabase("User.json"), data);
             File.WriteAllText($"{PROJECT_DIR}User.json", data);
         }  
-        internal static void SaveGameData(LevelDatabase levelDatabase, LevelData levelData)
+        internal static void SaveGameData(LevelDatabase levelDatabase)
         {
             var data = JsonConvert.SerializeObject(levelDatabase);
             File.WriteAllText(GetLevelDatabase("Levels.json"), data);

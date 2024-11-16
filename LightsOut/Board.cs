@@ -214,8 +214,8 @@ namespace LightsOut
                 }
             }
 
-           //pbxWinImage.BringToFront();
-           // pbxWinImage.Visible = true;
+           pbxWinImage.BringToFront();
+           pbxWinImage.Visible = true;
 
 
             if (moves <= levelData.MinMoves)
@@ -239,7 +239,7 @@ namespace LightsOut
 
             foreach (var light in lights)
             {
-               // light.Enabled = false;
+               light.Enabled = false;
             }
             UpdateUI();
             SaveUserData();
@@ -248,7 +248,7 @@ namespace LightsOut
         private void SaveUserData()
         {
             handler.SaveUserData(levelData);
-           // MessageBox.Show(levelData.ToString(), "Saving user data...");
+            // MessageBox.Show(levelData.ToString(), "Saving user data...");
         }
 
         #region Buttons
@@ -262,8 +262,13 @@ namespace LightsOut
         private void LoadLevel_Click(object sender, EventArgs e)
         {
 #if DEBUG
-            if (!e.Equals(EventArgs.Empty)) // If we are trying to load from the level list in the combo box
+            // If we are trying to load from the level list in the combo box
+            // we can check if the EventArgs are not empty. If not, this call
+            // comes from the Load button and not another function call.
+            if (!e.Equals(EventArgs.Empty))
+            { 
                 handler.UpdateIndex(cbxLevelSelect.SelectedIndex);
+            }
 #endif
             GenerateLevelFromLevels();
             UpdateUI();

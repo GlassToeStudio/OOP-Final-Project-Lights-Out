@@ -140,18 +140,14 @@ namespace LightsOut
 
         private void SaveLevelToFile_Click(object sender, EventArgs e)
         {
-            //string ProjectDir = "C:\\Users\\GlassToe\\Documents\\Calhoun Comminity College\\Fall 24\\CIS 285 - Object-Oriented Programming (11022)\\Final Project\\OOP-Final-Project-Lights-Out\\LightsOut\\Resources\\Levels\\";
-           
-            //cbxLevelSelect.Items.Add(levelData.Name);
-            //LevelDatabase.Levels.Add(levelData);
-            //cbxLevelSelect.SelectedIndex = cbxLevelSelect.Items.Count - 1;
+            cbxLevelSelect.Items.Add(levelData.Name);
+            handler.Levels.Add(levelData);
+            cbxLevelSelect.SelectedIndex = cbxLevelSelect.Items.Count - 1;
 
-            //string fileName = $"{levelData}_generated";
-            //var data = JsonConvert.SerializeObject(LevelDatabase);
-            //File.WriteAllText(FileUtil.GetLevelDatabase("Levels.json"), data);
-            //File.WriteAllText($"{ProjectDir}Levels.json", data);
-            //MessageBox.Show($"{fileName} created!", "Level Saved");
-            //btnSaveLevel.Enabled = false;
+            FileUtil.SaveGameData(handler.Game);
+            string fileName = $"{levelData}_generated";
+            MessageBox.Show($"{fileName} created!", "Level Saved");
+            btnSaveLevel.Enabled = false;
         }
 
         #endregion
