@@ -39,7 +39,7 @@ namespace LightsOut
 
         private void GenerateGameBoardsAndSelect()
         {
-            pbxWinImage.Visible = false;
+            //pbxWinImage.Visible = false;
             btnSaveLevel.Enabled = false;
             gbxGameBoard_3x3.Visible = false;
             gbxGameBoard_4x4.Visible = false;
@@ -171,24 +171,15 @@ namespace LightsOut
 
         private void UpdateUI()
         {
-            switch (levelData.Stars)
+            pnlStars.Text = levelData.Stars switch
             {
-                case 0:
-                    pnlStars.Text = "☆☆☆";
-                    break;
-                case 1:
-                    pnlStars.Text = "★☆☆";
-                    break;
-                case 2:
-                    pnlStars.Text = "★★☆";
-                    break;
-                case 3:
-                    pnlStars.Text = "★★★";
-                    break;
-                default:
-                    pnlStars.Text = "☆☆☆";
-                    break;
-            }
+                0 => "☆☆☆",
+                1 => "★☆☆",
+                2 => "★★☆",
+                3 => "★★★",
+                _ => "☆☆☆",
+            };
+
             gbxStats.Text = levelData.Name;
             lblSize.Text = $"{levelData.Size} x {levelData.Size}";
             lblGoal.Text = $"{levelData.MinMoves}";
@@ -214,8 +205,8 @@ namespace LightsOut
                 }
             }
 
-           pbxWinImage.BringToFront();
-           pbxWinImage.Visible = true;
+           //pbxWinImage.BringToFront();
+           //pbxWinImage.Visible = true;
 
 
             if (moves <= levelData.MinMoves)
@@ -247,7 +238,7 @@ namespace LightsOut
 
         private void SaveUserData()
         {
-            handler.SaveUserData(levelData);
+            handler.SaveUserData();
             // MessageBox.Show(levelData.ToString(), "Saving user data...");
         }
 

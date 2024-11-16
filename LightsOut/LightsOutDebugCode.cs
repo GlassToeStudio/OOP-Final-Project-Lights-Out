@@ -11,7 +11,7 @@ namespace LightsOut
             moves = 0;
             levelData.Size = GetBoardSizeForRandomGen();
             GenerateGameBoardsAndSelect();
-            Random rnd = new Random();
+            Random rnd = new();
             levelData.MinMoves = -1;
 
             while (levelData.MinMoves != numMinMoves.Value)
@@ -20,7 +20,7 @@ namespace LightsOut
                 {
                     light.TurnOff();
                 }
-                List<int> used = new List<int>();
+                List<int> used = [];
                 int iterations = rnd.Next(levelData.Size * levelData.Size + 1);
                 for (int i = 0; i < iterations; i++)
                 {

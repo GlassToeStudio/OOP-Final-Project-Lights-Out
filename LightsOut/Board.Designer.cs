@@ -46,7 +46,6 @@
             light_4x4_01 = new Light();
             light_4x4_00 = new Light();
             gbxGameBoard_4x4 = new GroupBox();
-            pbxWinImage = new PictureBox();
             lblLog = new Label();
             btnSolveAll = new Button();
             gbxStats = new GroupBox();
@@ -110,8 +109,9 @@
             light_5x5_01 = new Light();
             light_5x5_00 = new Light();
             label1 = new Label();
+            lblBest = new Label();
+            lblBestLabel = new Label();
             gbxGameBoard_4x4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pbxWinImage).BeginInit();
             gbxStats.SuspendLayout();
             bgxDebug.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)numMinMoves).BeginInit();
@@ -454,18 +454,6 @@
             gbxGameBoard_4x4.TabIndex = 0;
             gbxGameBoard_4x4.TabStop = false;
             // 
-            // pbxWinImage
-            // 
-            pbxWinImage.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            pbxWinImage.BackgroundImage = Properties.Resources.WinPanel;
-            pbxWinImage.BackgroundImageLayout = ImageLayout.Stretch;
-            pbxWinImage.Location = new Point(21, 15);
-            pbxWinImage.Name = "pbxWinImage";
-            pbxWinImage.Size = new Size(620, 136);
-            pbxWinImage.TabIndex = 9;
-            pbxWinImage.TabStop = false;
-            pbxWinImage.Visible = false;
-            // 
             // lblLog
             // 
             lblLog.AutoSize = true;
@@ -497,6 +485,8 @@
             // gbxStats
             // 
             gbxStats.BackColor = Color.Transparent;
+            gbxStats.Controls.Add(lblBest);
+            gbxStats.Controls.Add(lblBestLabel);
             gbxStats.Controls.Add(lblMoves);
             gbxStats.Controls.Add(pnlStars);
             gbxStats.Controls.Add(lblGoal);
@@ -1555,6 +1545,33 @@
             label1.TabIndex = 12;
             label1.Text = "Lights Out!";
             // 
+            // lblBest
+            // 
+            lblBest.AutoSize = true;
+            lblBest.BackColor = Color.Transparent;
+            lblBest.FlatStyle = FlatStyle.Flat;
+            lblBest.ForeColor = Color.Aquamarine;
+            lblBest.ImageAlign = ContentAlignment.MiddleRight;
+            lblBest.Location = new Point(85, 180);
+            lblBest.MinimumSize = new Size(50, 0);
+            lblBest.Name = "lblBest";
+            lblBest.RightToLeft = RightToLeft.No;
+            lblBest.Size = new Size(50, 21);
+            lblBest.TabIndex = 17;
+            lblBest.Text = "5";
+            lblBest.TextAlign = ContentAlignment.TopRight;
+            // 
+            // lblBestLabel
+            // 
+            lblBestLabel.AutoSize = true;
+            lblBestLabel.BackColor = Color.Transparent;
+            lblBestLabel.ForeColor = Color.Aquamarine;
+            lblBestLabel.Location = new Point(19, 180);
+            lblBestLabel.Name = "lblBestLabel";
+            lblBestLabel.Size = new Size(42, 21);
+            lblBestLabel.TabIndex = 16;
+            lblBestLabel.Text = "Best:";
+            // 
             // Board
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -1571,7 +1588,6 @@
             Controls.Add(bgxDebug);
             Controls.Add(gbxStats);
             Controls.Add(gbxGameBoard_5x5);
-            Controls.Add(pbxWinImage);
             Controls.Add(gbxGameBoard_3x3);
             Controls.Add(gbxGameBoard_4x4);
             DoubleBuffered = true;
@@ -1586,7 +1602,6 @@
             FormClosing += Board_FormClosing;
             KeyPress += ShowHideDebug_Click;
             gbxGameBoard_4x4.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)pbxWinImage).EndInit();
             gbxStats.ResumeLayout(false);
             gbxStats.PerformLayout();
             bgxDebug.ResumeLayout(false);
@@ -1599,8 +1614,7 @@
         }
 
         #endregion
-        private PictureBox pbxWinImage;
-        
+
         private GroupBox gbxGameBoard_4x4;
         private Light light_4x4_00;
         private Light light_4x4_01;
@@ -1685,5 +1699,7 @@
         private Light light_5x5_41;
         private Light light_5x5_40;
         private Label label1;
+        private Label lblBest;
+        private Label lblBestLabel;
     }
 }

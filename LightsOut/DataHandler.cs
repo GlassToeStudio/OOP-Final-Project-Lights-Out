@@ -11,17 +11,13 @@
     {
         bool manualLoad = false;
         /// Load UserDatabase and GameDatabase from disk.
-        private UserDatabase user = new UserDatabase().LoadUserDatabase();
+        private readonly UserDatabase user = new UserDatabase().LoadUserDatabase();
         private LevelDatabase game = new LevelDatabase().LoadLevelDatabase();
 
         /// <summary>
         /// Get the GameDatabase object which holds all pre-made loaded levels.
         /// </summary>
         public LevelDatabase Game => game;
-        /// <summary>
-        /// Get the UserDatabase object whioh holds all completed and unlocked leves with their progress.
-        /// </summary>
-        public UserDatabase User => user;
         /// <summary>
         /// Get the pre-made, loaded levels from the GameDatabase.
         /// </summary>
@@ -114,8 +110,7 @@
         /// <summary>
         /// Write any updated LevelData in the UserDatabase to disk.
         /// </summary>
-        /// <param name="levelData"></param>
-        public void SaveUserData(LevelData levelData)
+        public void SaveUserData()
         {
             if (manualLoad)
             {

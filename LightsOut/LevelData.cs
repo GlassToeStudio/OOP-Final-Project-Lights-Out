@@ -20,7 +20,9 @@
         /// <summary>Return "Level {level}" Ex: "Level 1".</summary>
         public readonly string Name => $"Level {Level}";
 
-        /// <summary>Default constructor.</summary>
+        /// <summary>
+        /// Default constructor.
+        /// </summary>
         public LevelData() { }
 
         /// <summary>
@@ -37,6 +39,13 @@
             Board = new int[Size * Size];
         }
 
+        /// <summary>
+        /// Construct a new LevelData object from an existing levelData object and set
+        /// its BestScore and Numbner of stars fields from the number of moves taken to
+        /// complete the level.
+        /// </summary>
+        /// <param name="levelData">The current LevelData object loaded for this Level.</param>
+        /// <param name="moves">The number of moves taken to beat this level.</param>
         public LevelData(LevelData levelData, int moves)
         {
             Level = levelData.Level;
@@ -50,7 +59,7 @@
             }
 
 
-            if(moves < BestScore)
+            if (moves < BestScore)
             {
                 BestScore = moves;
             }

@@ -15,13 +15,7 @@
         /// </summary>
         /// <param name="index"></param>
         /// <returns></returns>
-        public LevelData this[int index]
-        {
-            get
-            {
-                return Levels[index];
-            }
-        }
+        public readonly LevelData this[int index] => Levels[index];
 
         /// <summary>
         /// Default constructor.
