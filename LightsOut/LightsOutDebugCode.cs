@@ -123,15 +123,12 @@ namespace LightsOut
             {
                 case "d":
                 case "D":
-                    if (this.Width == 675)
+                    this.Width = this.Width switch
                     {
-                        this.Width = 510;
-                    }
-                    else
-                    {
-                        this.Width = 675;
-                    }
-
+                        675 => 510,
+                        510 => 675,
+                        _ => 510,
+                    };
                     break;
                 default:
                     break;
