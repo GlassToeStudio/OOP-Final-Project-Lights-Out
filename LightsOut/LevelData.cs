@@ -78,7 +78,7 @@
             }
             else
             {
-                Stars = 3;
+                Stars = 0;
             }
         }
 
@@ -113,6 +113,22 @@
                 Board[light.Index] = (int)light.State;
             }
         }
+
+        /// <summary>
+        /// Get a UI friendly string of stars based on number of stars earned for this level.
+        /// Ex: Stars = 2, StarText = "★★☆"
+        /// </summary>
+        public readonly string StarText =>
+        
+            this.Stars switch
+            {
+                0 => "☆☆☆",
+                1 => "★☆☆",
+                2 => "★★☆",
+                3 => "★★★",
+                _ => "☆☆☆",
+            };
+        
 
         /// <summary>
         /// The fully qualified type name.

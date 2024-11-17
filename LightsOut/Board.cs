@@ -171,19 +171,12 @@ namespace LightsOut
 
         private void UpdateUI()
         {
-            pnlStars.Text = levelData.Stars switch
-            {
-                0 => "☆☆☆",
-                1 => "★☆☆",
-                2 => "★★☆",
-                3 => "★★★",
-                _ => "☆☆☆",
-            };
-
-            gbxStats.Text = levelData.Name;
-            lblSize.Text = $"{levelData.Size} x {levelData.Size}";
-            lblGoal.Text = $"{levelData.MinMoves}";
-            lblMoves.Text = moves.ToString();
+            gbxStats.Text = levelData.Name;                         // Name
+            lblSize.Text = $"{levelData.Size} x {levelData.Size}";  // Size
+            lblGoal.Text = $"{levelData.MinMoves}";                 // Goal
+            lblMoves.Text = moves.ToString();                       // Moves
+            pnlStars.Text = levelData.StarText;                     // Stars ★
+            lblBest.Text = $"{levelData.BestScore}";                // Best Score
         }
 
         private void UpdateMoves()
@@ -204,33 +197,16 @@ namespace LightsOut
                     return;
                 }
             }
-
-            if (moves <= levelData.MinMoves)
-            {
-                pnlStars.Text = "★★★";
-            }
-            else if (moves <= levelData.MinMoves + 3)
-            {
-                pnlStars.Text = "★★☆";
-            }
-            else if (moves <= levelData.MinMoves + 6)
-            {
-                pnlStars.Text = "★☆☆";
-            }
-            else
-            {
-                pnlStars.Text = "☆☆☆";
-            }
-
             levelData = handler.UpdateUserData( moves);
 
             foreach (var light in lights)
             {
                light.Enabled = false;
             }
+
             UpdateUI();
             SaveUserData();
-            MessageBox.Show("YOU WIN", "WINNER!");
+            MessageBox.Show($"YOU WIN\n{levelData.StarText}", "WINNER!");
         }
 
         private void SaveUserData()
