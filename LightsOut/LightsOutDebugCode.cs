@@ -5,6 +5,7 @@ namespace LightsOut
 {
     partial class Board
     {
+#if DEBUG
         #region Generation
         private void GenerateRandomLevel()
         {
@@ -149,6 +150,7 @@ namespace LightsOut
 
         #endregion
 
+        #region DebugPanel
         private string DebugBoardState()
         {
             string onglyph = "⦿";
@@ -167,5 +169,7 @@ namespace LightsOut
 
             return output;
         }
+        #endregion
+#endif
     }
 }
