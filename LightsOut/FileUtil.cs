@@ -23,17 +23,22 @@ namespace LightsOut
             return Path.Combine(SOUNDS, fileName);
         }
 
+        private static void SaveDatabase(IDatabase dataBase, string dbName)
+        {
+            var data = JsonConvert.SerializeObject(dataBase);
+            // Write to internal directory
+            File.WriteAllText(GetLevelDatabase($"{dbName}.json"), data);
+            // Write to project dirctory to keep project and repo up to date with changes.
+            File.WriteAllText($"{PROJECT_DIR}{dbName}.json", data);
+        }
+
         internal static void SaveUserData(UserDatabase userDataBase)
         {
-            var data = JsonConvert.SerializeObject(userDataBase);
-            File.WriteAllText(GetLevelDatabase("User.json"), data);
-            File.WriteAllText($"{PROJECT_DIR}User.json", data);
+            SaveDatabase(userDataBase, "User");
         }  
         internal static void SaveGameData(LevelDatabase levelDatabase)
         {
-            var data = JsonConvert.SerializeObject(levelDatabase);
-            File.WriteAllText(GetLevelDatabase("Levels.json"), data);
-            File.WriteAllText($"{PROJECT_DIR}Levels.json", data);
+            SaveDatabase(levelDatabase, "Game");
         }
     }
 }

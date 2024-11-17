@@ -4,8 +4,8 @@
       "Level": 1,
       "Size": 3,
       "MinMoves": 2,
-      "BestScore": 2,
-      "Stars": 3,
+      "BestScore": 9000,
+      "Stars": 0,
       "Board": [
         0,
         1,
@@ -18,309 +18,29 @@
         1
       ],
       "Name": "Level 1",
-      "StarText": "★★★"
-    },
-    {
-      "Level": 2,
-      "Size": 3,
-      "MinMoves": 3,
-      "BestScore": 3,
-      "Stars": 3,
-      "Board": [
-        0,
-        1,
-        0,
-        1,
-        1,
-        0,
-        1,
-        1,
-        1
-      ],
-      "Name": "Level 2",
-      "StarText": "★★★"
-    },
-    {
-      "Level": 3,
-      "Size": 3,
-      "MinMoves": 3,
-      "BestScore": 3,
-      "Stars": 3,
-      "Board": [
-        1,
-        0,
-        1,
-        1,
-        1,
-        1,
-        1,
-        0,
-        1
-      ],
-      "Name": "Level 3",
-      "StarText": "★★★"
-    },
-    {
-      "Level": 4,
-      "Size": 3,
-      "MinMoves": 3,
-      "BestScore": 3,
-      "Stars": 3,
-      "Board": [
-        1,
-        1,
-        1,
-        0,
-        1,
-        1,
-        0,
-        1,
-        0
-      ],
-      "Name": "Level 4",
-      "StarText": "★★★"
-    },
-    {
-      "Level": 5,
-      "Size": 3,
-      "MinMoves": 3,
-      "BestScore": 3,
-      "Stars": 3,
-      "Board": [
-        1,
-        1,
-        0,
-        0,
-        1,
-        0,
-        0,
-        0,
-        1
-      ],
-      "Name": "Level 5",
-      "StarText": "★★★"
-    },
-    {
-      "Level": 6,
-      "Size": 3,
-      "MinMoves": 3,
-      "BestScore": 3,
-      "Stars": 3,
-      "Board": [
-        1,
-        0,
-        0,
-        0,
-        1,
-        0,
-        0,
-        1,
-        1
-      ],
-      "Name": "Level 6",
-      "StarText": "★★★"
-    },
-    {
-      "Level": 7,
-      "Size": 3,
-      "MinMoves": 6,
-      "BestScore": 6,
-      "Stars": 3,
-      "Board": [
-        0,
-        1,
-        0,
-        1,
-        1,
-        1,
-        0,
-        1,
-        1
-      ],
-      "Name": "Level 7",
-      "StarText": "★★★"
-    },
-    {
-      "Level": 8,
-      "Size": 3,
-      "MinMoves": 4,
-      "BestScore": 4,
-      "Stars": 3,
-      "Board": [
-        0,
-        0,
-        0,
-        1,
-        0,
-        0,
-        1,
-        0,
-        1
-      ],
-      "Name": "Level 8",
-      "StarText": "★★★"
-    },
-    {
-      "Level": 9,
-      "Size": 3,
-      "MinMoves": 4,
-      "BestScore": 4,
-      "Stars": 3,
-      "Board": [
-        1,
-        1,
-        0,
-        0,
-        1,
-        0,
-        1,
-        0,
-        1
-      ],
-      "Name": "Level 9",
-      "StarText": "★★★"
-    },
-    {
-      "Level": 10,
-      "Size": 3,
-      "MinMoves": 4,
-      "BestScore": 4,
-      "Stars": 3,
-      "Board": [
-        0,
-        1,
-        0,
-        1,
-        1,
-        1,
-        0,
-        0,
-        1
-      ],
-      "Name": "Level 10",
-      "StarText": "★★★"
-    },
-    {
-      "Level": 11,
-      "Size": 3,
-      "MinMoves": 4,
-      "BestScore": 4,
-      "Stars": 3,
-      "Board": [
-        0,
-        0,
-        0,
-        1,
-        0,
-        0,
-        0,
-        0,
-        0
-      ],
-      "Name": "Level 11",
-      "StarText": "★★★"
-    },
-    {
-      "Level": 12,
-      "Size": 3,
-      "MinMoves": 5,
-      "BestScore": 5,
-      "Stars": 3,
-      "Board": [
-        1,
-        1,
-        1,
-        0,
-        0,
-        0,
-        1,
-        1,
-        0
-      ],
-      "Name": "Level 12",
-      "StarText": "★★★"
-    },
-    {
-      "Level": 13,
-      "Size": 3,
-      "MinMoves": 6,
-      "BestScore": 16,
-      "Stars": 3,
-      "Board": [
-        0,
-        0,
-        0,
-        1,
-        1,
-        0,
-        1,
-        0,
-        0
-      ],
-      "Name": "Level 13",
-      "StarText": "★★★"
-    },
-    {
-      "Level": 14,
-      "Size": 3,
-      "MinMoves": 6,
-      "BestScore": 10,
-      "Stars": 1,
-      "Board": [
-        0,
-        1,
-        1,
-        1,
-        0,
-        1,
-        0,
-        0,
-        1
-      ],
-      "Name": "Level 14",
-      "StarText": "★☆☆"
-    },
-    {
-      "Level": 15,
-      "Size": 3,
-      "MinMoves": 6,
-      "BestScore": 9000,
-      "Stars": 0,
-      "Board": [
-        1,
-        0,
-        1,
-        1,
-        1,
-        1,
-        1,
-        0,
-        0
-      ],
-      "Name": "Level 15",
       "StarText": "☆☆☆"
     }
   ],
-  "SelectedIndex": 13,
-  "MaxIndex": 14,
+  "SelectedIndex": 0,
+  "MaxIndex": 1,
   "CurrentLevel": {
-    "Level": 14,
-    "Size": 3,
-    "MinMoves": 6,
-    "BestScore": 10,
-    "Stars": 1,
-    "Board": [
-      0,
-      1,
-      1,
-      1,
-      0,
-      1,
-      0,
-      0,
-      1
-    ],
-    "Name": "Level 14",
-    "StarText": "★☆☆"
+      "Level": 1,
+      "Size": 3,
+      "MinMoves": 2,
+      "BestScore": 9000,
+      "Stars": 0,
+      "Board": [
+        0,
+        1,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        1
+      ],
+      "Name": "Level 1",
+      "StarText": "☆☆☆"
+    }
   }
-}

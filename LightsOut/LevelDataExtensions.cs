@@ -14,7 +14,7 @@ namespace LightsOut
         /// <returns></returns>
         public static LevelDatabase LoadLevelDatabase(this LevelDatabase levels)
         {
-            return levels.LoadDatabase<LevelDatabase>("Levels.json");
+            return levels.LoadDatabase<LevelDatabase>("Game.json");
         }
 
         /// <summary>

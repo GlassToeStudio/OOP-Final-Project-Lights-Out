@@ -16,6 +16,7 @@
     <None Remove="Resources\Board.png" />
     <None Remove="Resources\ButtonOff.png" />
     <None Remove="Resources\ButtonOn.png" />
+    <None Remove="Resources\Levels\Game.json" />
     <None Remove="Resources\Levels\Levels.json" />
     <None Remove="Resources\Levels\Levels_1.json" />
 
@@ -44,6 +45,9 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </EmbeddedResource>
     <EmbeddedResource Include="Resources\ButtonOn.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Levels\Game.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </EmbeddedResource>
     <EmbeddedResource Include="Resources\Levels\User.json">
