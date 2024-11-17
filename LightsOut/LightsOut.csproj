@@ -17,13 +17,7 @@
     <None Remove="Resources\ButtonOff.png" />
     <None Remove="Resources\ButtonOn.png" />
     <None Remove="Resources\Levels\Game.json" />
-    <None Remove="Resources\Levels\Levels.json" />
-    <None Remove="Resources\Levels\Levels_1.json" />
-
-    <None Remove="Resources\Levels\Levels_2.json" />
-    <None Remove="Resources\Levels\Levels_3.json" />
-    <None Remove="Resources\Levels\Levels_4.json" />
-    <None Remove="Resources\Levels\Levels_5.json" />
+    <None Remove="Resources\Levels\Game.json.bak" />
     <None Remove="Resources\Levels\Snap-sound-effect.wav" />
     <None Remove="Resources\Levels\User.json" />
     <None Remove="Resources\Levels\User.json.bak" />
@@ -57,22 +51,7 @@
     <EmbeddedResource Include="Resources\Levels\User.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </EmbeddedResource>
-    <EmbeddedResource Include="Resources\Levels\Levels.json">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Resources\Levels\Levels_1.json">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Resources\Levels\Levels_2.json">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Resources\Levels\Levels_3.json">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Resources\Levels\Levels_4.json">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Resources\Levels\Levels_5.json">
+    <EmbeddedResource Include="Resources\Levels\Game.json.bak">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </EmbeddedResource>
     <EmbeddedResource Include="Resources\Sounds\Snap-sound-effect.wav">
