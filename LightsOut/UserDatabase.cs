@@ -6,7 +6,7 @@
     public class UserDatabase : IDatabase
     {
         /// <summary>
-        /// Array of LevelData. Holds users save data for each level.
+        /// List of LevelData. Holds users save data for each level.
         /// </summary>
         public List<LevelData> Levels { get; set; }
         /// <summary>
@@ -24,8 +24,8 @@
         /// <summary>
         /// Get level from database by index.
         /// </summary>
-        /// <param name="index"></param>
-        /// <returns></returns>
+        /// <param name="index">Index of level in list. Ex: Level 1 index is 0/</param>
+        /// <returns>The LevelData at the selected index.</returns>
         public LevelData this[int index]
         {
             get
