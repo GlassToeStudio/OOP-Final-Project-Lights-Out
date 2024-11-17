@@ -7,10 +7,10 @@ namespace LightsOut
     /// </summary>
     public partial class Board : Form
     {
+        private int moves = 0;
         private Light[] lights = [];
         private LevelData levelData = new();
         private DataHandler handler = new();
-        private int moves = 0;
 
         /// <summary>
         /// Construct board, preload all game data, levels, etc. and generate the first level or 
@@ -25,7 +25,7 @@ namespace LightsOut
 
         /// <summary>
         /// Load all pre-made levels from disk and created the data handler object.
-        /// For debuging mode, add all levels to a dropdown list so each level can
+        /// For debugging mode, add all levels to a dropdown list so each level can
         /// be manually loaded.
         /// </summary>
         private void PreloadAllLevelsData()
@@ -46,52 +46,49 @@ namespace LightsOut
         /// Generate game board from the current LevelData.
         /// 
         /// All three sized boards and created but only the current board is visible.
-        /// The debug save level button is disabled and only endabled when a random
+        /// The debug save level button is disabled and only enabled when a random
         /// board is generated.
         /// </summary>
         private void GenerateGameBoardsAndSelect()
         {
-            //pbxWinImage.Visible = false;
             btnSaveLevel.Enabled = false;
             gbxGameBoard_3x3.Visible = false;
             gbxGameBoard_4x4.Visible = false;
             gbxGameBoard_5x5.Visible = false;
 
-            Light[] lights_5x5 = [
+            switch (levelData.Size)
+            {
+                case 3:
+                    gbxGameBoard_3x3.Visible = true;
+                    lights = [
+                        light_3x3_00, light_3x3_01, light_3x3_02,
+                        light_3x3_10, light_3x3_11, light_3x3_12,
+                        light_3x3_20, light_3x3_21, light_3x3_22];
+                    break;
+                case 4:
+                    gbxGameBoard_4x4.Visible = true;
+                    lights = [
+                        light_4x4_00, light_4x4_01, light_4x4_02, light_4x4_03,
+                        light_4x4_10, light_4x4_11, light_4x4_12, light_4x4_13,
+                        light_4x4_20, light_4x4_21, light_4x4_22, light_4x4_23,
+                        light_4x4_30, light_4x4_31, light_4x4_32, light_4x4_33];
+                    break;
+                case 5:
+                    gbxGameBoard_5x5.Visible = true;
+                    lights = [
                         light_5x5_00, light_5x5_01, light_5x5_02, light_5x5_03, light_5x5_04,
                         light_5x5_10, light_5x5_11, light_5x5_12, light_5x5_13, light_5x5_14,
                         light_5x5_20, light_5x5_21, light_5x5_22, light_5x5_23, light_5x5_24,
                         light_5x5_30, light_5x5_31, light_5x5_32, light_5x5_33, light_5x5_34,
                         light_5x5_40, light_5x5_41, light_5x5_42, light_5x5_43, light_5x5_44];
-
-            Light[] lights_4x4 = [
+                    break;
+                default:
+                    gbxGameBoard_4x4.Visible = true;
+                    lights = [
                         light_4x4_00, light_4x4_01, light_4x4_02, light_4x4_03,
                         light_4x4_10, light_4x4_11, light_4x4_12, light_4x4_13,
                         light_4x4_20, light_4x4_21, light_4x4_22, light_4x4_23,
                         light_4x4_30, light_4x4_31, light_4x4_32, light_4x4_33];
-
-            Light[] lights_3x3 = [
-                        light_3x3_00, light_3x3_01, light_3x3_02,
-                        light_3x3_10, light_3x3_11, light_3x3_12,
-                        light_3x3_20, light_3x3_21, light_3x3_22];
-
-            switch (levelData.Size)
-            {
-                case 3:
-                    gbxGameBoard_3x3.Visible = true;
-                    lights = lights_3x3;
-                    break;
-                case 4:
-                    gbxGameBoard_4x4.Visible = true;
-                    lights = lights_4x4;
-                    break;
-                case 5:
-                    gbxGameBoard_5x5.Visible = true;
-                    lights = lights_5x5;
-                    break;
-                default:
-                    gbxGameBoard_4x4.Visible = true;
-                    lights = lights_4x4;
                     break;
             }
 
@@ -155,9 +152,6 @@ namespace LightsOut
         {
             moves = 0;
             levelData = handler.Level;
-#if DEBUG
-            cbxLevelSelect.SelectedIndex = handler.SelectedIndex;
-#endif
 
             GenerateGameBoardsAndSelect();
 
@@ -172,14 +166,17 @@ namespace LightsOut
                     lights[i].TurnOn();
                 }
             }
-
-            lblLog.Text = DebugBoardState();
+            
             UpdateUI();
+#if DEBUG
+            cbxLevelSelect.SelectedIndex = handler.SelectedIndex;
+            lblLog.Text = DebugBoardState();
+#endif
         }
 
         /// <summary>
-        /// For the given Ligh, call its ClickLight method and play a sound.
-        /// Update board data for LevelData objectg and update moves.
+        /// For the given Light, call its ClickLight method and play a sound.
+        /// Update board data for LevelData object and update moves.
         /// </summary>
         /// <param name="light"></param>
         private void OnCLickLight(Light light)
@@ -196,7 +193,7 @@ namespace LightsOut
         }
 
         /// <summary>
-        /// Update all relevent info on the user interface.
+        /// Update all relevant info on the user interface.
         /// </summary>
         private void UpdateUI()
         {
@@ -209,7 +206,7 @@ namespace LightsOut
         }
 
         /// <summary>
-        /// Update the numbner of moves taken so far to complete this level.
+        /// Update the number of moves taken so far to complete this level.
         /// Update the debug board in the UI.
         /// </summary>
         private void UpdateMoves()
@@ -224,7 +221,7 @@ namespace LightsOut
         /// <summary>
         /// Check if the board is in a winning state. (All lights off)
         /// If so, update the UI and save user data.
-        /// Disbale all lights until a new level is loaded. (Lights are enabled in their Init() method.
+        /// Disable all lights until a new level is loaded. (Lights are enabled in their Init() method.
         /// </summary>
         private void CheckWin()
         {
@@ -244,6 +241,8 @@ namespace LightsOut
 
             UpdateUI();
             SaveUserData();
+
+            // Might want a better way to show the user they have won.
             MessageBox.Show($"YOU WIN\n{levelData.StarText}", "WINNER!");
         }
 
@@ -253,12 +252,11 @@ namespace LightsOut
         private void SaveUserData()
         {
             handler.SaveUserData();
-            // MessageBox.Show(levelData.ToString(), "Saving user data...");
         }
 
         #region Buttons
         /// <summary>
-        /// Called when a light is clicked. Click the loght and check for winning condition.
+        /// Called when a light is clicked. Click the light and check for winning condition.
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -291,24 +289,24 @@ namespace LightsOut
         }
 
         /// <summary>
-        /// Decrement level index in the DataHanlder and load previous level.
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void LoadPreviousLevel_Click(object sender, EventArgs e)
-        {
-            handler.DecrementLevel();
-            LoadLevel_Click(this, EventArgs.Empty);
-        }
-
-        /// <summary>
-        /// Increment level index in the DataHanlder and load next level.
+        /// Increment level index in the DataHandler and load next level.
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
         private void LoadNextLevel_Click(object sender, EventArgs e)
         {
             handler.IncrementLevel();
+            LoadLevel_Click(this, EventArgs.Empty);
+        }
+
+        /// <summary>
+        /// Decrement level index in the DataHandler and load previous level.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void LoadPreviousLevel_Click(object sender, EventArgs e)
+        {
+            handler.DecrementLevel();
             LoadLevel_Click(this, EventArgs.Empty);
         }
 
@@ -332,6 +330,5 @@ namespace LightsOut
             SaveUserData();
         }
         #endregion
-
     }
 }
