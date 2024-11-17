@@ -5,20 +5,20 @@
     /// </summary>
     public struct LevelData
     {
+        /// <summary>Return "Level {level}" Ex: "Level 1".</summary>
+        public readonly string Name => $"Level {Level}";
         /// <summary>The number of this level. Ex: Level 1.</summary>
         public int Level;
         /// <summary>Size of board Ex: Size = 4 => 4x4 board.</summary>
         public int Size;
         /// <summary>Minimum moves required to complete the level.</summary>
         public int MinMoves;
-        /// <summary>Integer array representing a data model of the Board.</summary>
-        public int[] Board = [];
         /// <summary>The minimum number of moves used to beat this level. 9000 to begin.</summary>
         public int BestScore = 9000;
         /// <summary>The number of Stars earned for this level. 0 to begin.</summary>
         public int Stars = 0;
-        /// <summary>Return "Level {level}" Ex: "Level 1".</summary>
-        public readonly string Name => $"Level {Level}";
+        /// <summary>Integer array representing a data model of the Board.</summary>
+        public int[] Board = [];
 
         /// <summary>
         /// Default constructor.

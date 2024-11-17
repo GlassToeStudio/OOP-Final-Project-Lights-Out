@@ -1,1 +1,177 @@
-{"Levels":[{"Level":1,"Size":3,"MinMoves":2,"Board":[0,1,0,0,1,0,0,0,1],"BestScore":2,"Stars":3,"Name":"Level 1"},{"Level":2,"Size":3,"MinMoves":3,"Board":[0,1,0,1,1,0,1,1,1],"BestScore":3,"Stars":3,"Name":"Level 2"},{"Level":3,"Size":3,"MinMoves":3,"Board":[1,0,1,1,1,1,1,0,1],"BestScore":3,"Stars":3,"Name":"Level 3"},{"Level":4,"Size":3,"MinMoves":3,"Board":[1,1,1,0,1,1,0,1,0],"BestScore":3,"Stars":3,"Name":"Level 4"},{"Level":5,"Size":3,"MinMoves":3,"Board":[1,1,0,0,1,0,0,0,1],"BestScore":3,"Stars":3,"Name":"Level 5"},{"Level":6,"Size":3,"MinMoves":3,"Board":[1,0,0,0,1,0,0,1,1],"BestScore":3,"Stars":3,"Name":"Level 6"},{"Level":7,"Size":3,"MinMoves":6,"Board":[0,1,0,1,1,1,0,1,1],"BestScore":9000,"Stars":0,"Name":"Level 7"}],"SelectedIndex":3,"MaxIndex":6,"CurrentLevel":{"Level":4,"Size":3,"MinMoves":3,"Board":[1,1,1,0,1,1,0,1,0],"BestScore":3,"Stars":3,"Name":"Level 4"}}
+{
+  "Levels": [
+    {
+      "Level": 1,
+      "Size": 3,
+      "MinMoves": 2,
+      "BestScore": 2,
+      "Stars": 3,
+      "Board": [
+        0,
+        1,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        1
+      ],
+      "Name": "Level 1"
+    },
+    {
+      "Level": 2,
+      "Size": 3,
+      "MinMoves": 3,
+      "BestScore": 3,
+      "Stars": 3,
+      "Board": [
+        0,
+        1,
+        0,
+        1,
+        1,
+        0,
+        1,
+        1,
+        1
+      ],
+      "Name": "Level 2"
+    },
+    {
+      "Level": 3,
+      "Size": 3,
+      "MinMoves": 3,
+      "BestScore": 3,
+      "Stars": 3,
+      "Board": [
+        1,
+        0,
+        1,
+        1,
+        1,
+        1,
+        1,
+        0,
+        1
+      ],
+      "Name": "Level 3"
+    },
+    {
+      "Level": 4,
+      "Size": 3,
+      "MinMoves": 3,
+      "BestScore": 3,
+      "Stars": 3,
+      "Board": [
+        1,
+        1,
+        1,
+        0,
+        1,
+        1,
+        0,
+        1,
+        0
+      ],
+      "Name": "Level 4"
+    },
+    {
+      "Level": 5,
+      "Size": 3,
+      "MinMoves": 3,
+      "BestScore": 3,
+      "Stars": 3,
+      "Board": [
+        1,
+        1,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        1
+      ],
+      "Name": "Level 5"
+    },
+    {
+      "Level": 6,
+      "Size": 3,
+      "MinMoves": 3,
+      "BestScore": 3,
+      "Stars": 3,
+      "Board": [
+        1,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        1,
+        1
+      ],
+      "Name": "Level 6"
+    },
+    {
+      "Level": 7,
+      "Size": 3,
+      "MinMoves": 6,
+      "BestScore": 6,
+      "Stars": 3,
+      "Board": [
+        0,
+        1,
+        0,
+        1,
+        1,
+        1,
+        0,
+        1,
+        1
+      ],
+      "Name": "Level 7"
+    },
+    {
+      "Level": 8,
+      "Size": 3,
+      "MinMoves": 4,
+      "BestScore": 9000,
+      "Stars": 0,
+      "Board": [
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        1,
+        0,
+        1
+      ],
+      "Name": "Level 8"
+    }
+  ],
+  "SelectedIndex": 6,
+  "MaxIndex": 7,
+  "CurrentLevel": {
+    "Level": 7,
+    "Size": 3,
+    "MinMoves": 6,
+    "BestScore": 6,
+    "Stars": 3,
+    "Board": [
+      0,
+      1,
+      0,
+      1,
+      1,
+      1,
+      0,
+      1,
+      1
+    ],
+    "Name": "Level 7"
+  }
+}

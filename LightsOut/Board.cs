@@ -205,10 +205,6 @@ namespace LightsOut
                 }
             }
 
-           //pbxWinImage.BringToFront();
-           //pbxWinImage.Visible = true;
-
-
             if (moves <= levelData.MinMoves)
             {
                 pnlStars.Text = "★★★";
@@ -234,6 +230,7 @@ namespace LightsOut
             }
             UpdateUI();
             SaveUserData();
+            MessageBox.Show("YOU WIN", "WINNER!");
         }
 
         private void SaveUserData()
