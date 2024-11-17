@@ -26,6 +26,7 @@
     <None Remove="Resources\Levels\Levels_5.json" />
     <None Remove="Resources\Levels\Snap-sound-effect.wav" />
     <None Remove="Resources\Levels\User.json" />
+    <None Remove="Resources\Levels\User.json.bak" />
     <None Remove="Resources\WinPanel.png" />
   </ItemGroup>
 
@@ -48,6 +49,9 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </EmbeddedResource>
     <EmbeddedResource Include="Resources\Levels\Game.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Levels\User.json.bak">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </EmbeddedResource>
     <EmbeddedResource Include="Resources\Levels\User.json">
