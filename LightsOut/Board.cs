@@ -3,18 +3,18 @@
 namespace LightsOut
 {
     /// <summary>
-    /// 
+    /// Main UI containing buttons and game board.
     /// </summary>
     public partial class Board : Form
     {
         private Light[] lights = [];
         private LevelData levelData = new();
-        DataHandler handler;
-
+        private DataHandler handler = new();
         private int moves = 0;
 
         /// <summary>
-        /// 
+        /// Construct board, preload all game data, levels, etc. and generate the first level or 
+        /// last level the user played.
         /// </summary>
         public Board()
         {
@@ -23,11 +23,16 @@ namespace LightsOut
             GenerateLevelFromLevels();
         }
 
+        /// <summary>
+        /// Load all pre-made levels from disk and created the data handler object.
+        /// For debuging mode, add all levels to a dropdown list so each level can
+        /// be manually loaded.
+        /// </summary>
         private void PreloadAllLevelsData()
         {
             handler = new DataHandler();
 #if DEBUG
-
+            // Dropdown list of all level data for manual selecting and loading.
             cbxLevelSelect.Items.Clear();
             foreach (LevelData ld in handler.Levels)
             {
@@ -37,6 +42,13 @@ namespace LightsOut
 #endif
         }
 
+        /// <summary>
+        /// Generate game board from the current LevelData.
+        /// 
+        /// All three sized boards and created but only the current board is visible.
+        /// The debug save level button is disabled and only endabled when a random
+        /// board is generated.
+        /// </summary>
         private void GenerateGameBoardsAndSelect()
         {
             //pbxWinImage.Visible = false;
@@ -87,6 +99,9 @@ namespace LightsOut
             ConnectNeighbors();
         }
 
+        /// <summary>
+        /// Call the Init() method on each Light on the board.
+        /// </summary>
         private void InitializeBoardLights()
         {
             for (var i = 0; i < lights.Length; i++)
@@ -95,6 +110,9 @@ namespace LightsOut
             }
         }
 
+        /// <summary>
+        /// For each light, add it neighbors to its neighbors list.
+        /// </summary>
         private void ConnectNeighbors()
         {
             // Connect neighbors
@@ -130,6 +148,9 @@ namespace LightsOut
             }
         }
 
+        /// <summary>
+        /// Generate and initialize a new board from a given LevelData object. 
+        /// </summary>
         private void GenerateLevelFromLevels()
         {
             moves = 0;
@@ -156,6 +177,11 @@ namespace LightsOut
             UpdateUI();
         }
 
+        /// <summary>
+        /// For the given Ligh, call its ClickLight method and play a sound.
+        /// Update board data for LevelData objectg and update moves.
+        /// </summary>
+        /// <param name="light"></param>
         private void OnCLickLight(Light light)
         {
             using (var clickSound = new SoundPlayer())
@@ -169,6 +195,9 @@ namespace LightsOut
             UpdateMoves();
         }
 
+        /// <summary>
+        /// Update all relevent info on the user interface.
+        /// </summary>
         private void UpdateUI()
         {
             gbxStats.Text = levelData.Name;                         // Name
@@ -179,6 +208,10 @@ namespace LightsOut
             lblBest.Text = $"{levelData.BestScore}";                // Best Score
         }
 
+        /// <summary>
+        /// Update the numbner of moves taken so far to complete this level.
+        /// Update the debug board in the UI.
+        /// </summary>
         private void UpdateMoves()
         {
             moves += 1;
@@ -188,6 +221,11 @@ namespace LightsOut
 #endif
         }
 
+        /// <summary>
+        /// Check if the board is in a winning state. (All lights off)
+        /// If so, update the UI and save user data.
+        /// Disbale all lights until a new level is loaded. (Lights are enabled in their Init() method.
+        /// </summary>
         private void CheckWin()
         {
             foreach (var light in lights)
@@ -209,6 +247,9 @@ namespace LightsOut
             MessageBox.Show($"YOU WIN\n{levelData.StarText}", "WINNER!");
         }
 
+        /// <summary>
+        /// Save user data to disk
+        /// </summary>
         private void SaveUserData()
         {
             handler.SaveUserData();
@@ -216,6 +257,11 @@ namespace LightsOut
         }
 
         #region Buttons
+        /// <summary>
+        /// Called when a light is clicked. Click the loght and check for winning condition.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Light_Click(object sender, EventArgs e)
         {
             Light? light = sender as Light;
@@ -223,6 +269,12 @@ namespace LightsOut
             CheckWin();
         }
 
+        /// <summary>
+        /// Called when the Load Level button is clicked and when the Next, Previous, and Reload buttons are clicked.
+        /// Generate a level based on which button called this method.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void LoadLevel_Click(object sender, EventArgs e)
         {
 #if DEBUG
@@ -238,22 +290,43 @@ namespace LightsOut
             UpdateUI();
         }
 
+        /// <summary>
+        /// Decrement level index in the DataHanlder and load previous level.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void LoadPreviousLevel_Click(object sender, EventArgs e)
         {
             handler.DecrementLevel();
             LoadLevel_Click(this, EventArgs.Empty);
         }
 
+        /// <summary>
+        /// Increment level index in the DataHanlder and load next level.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void LoadNextLevel_Click(object sender, EventArgs e)
         {
             handler.IncrementLevel();
             LoadLevel_Click(this, EventArgs.Empty);
         }
 
+        /// <summary>
+        /// Reload this level.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void ReloadLevel_Click(object sender, EventArgs e)
         {
             LoadLevel_Click(this, EventArgs.Empty);
         }
+
+        /// <summary>
+        /// Save user data when the program exits.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Board_FormClosing(object sender, FormClosingEventArgs e)
         {
             SaveUserData();
