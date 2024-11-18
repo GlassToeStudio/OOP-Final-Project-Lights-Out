@@ -3,7 +3,7 @@
     /// <summary>
     /// Database for holding user save data for each level and general game play.
     /// </summary>
-    public class UserDatabase : IDatabase
+    public struct UserDatabase : IDatabase
     {
         /// <summary>
         /// List of LevelData. Holds users save data for each level.

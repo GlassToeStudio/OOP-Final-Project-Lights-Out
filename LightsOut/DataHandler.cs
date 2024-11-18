@@ -10,7 +10,7 @@
     public class DataHandler()
     {
         /// Load UserDatabase and GameDatabase from disk.
-        private readonly UserDatabase user = new UserDatabase().LoadUserDatabase();
+        private UserDatabase user = new UserDatabase().LoadUserDatabase();
         private LevelDatabase game = new LevelDatabase().LoadLevelDatabase();
 
 #if DEBUG
