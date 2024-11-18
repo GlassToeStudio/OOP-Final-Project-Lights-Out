@@ -1,11 +1,10 @@
-﻿using Newtonsoft.Json;
-using System.ComponentModel;
-
-namespace LightsOut
+﻿namespace LightsOut
 {
     partial class Board
     {
 #if DEBUG
+        public const string USER_DATA_BACKUP = "";
+
         #region Generation
         private void GenerateRandomLevel()
         {
