@@ -118,7 +118,7 @@
 
             if (CurrentLevel.BestScore > levelData.BestScore)
             {
-                user[SelectedIndex] = levelData;
+                user.UpdateLevel(levelData);
             }
 
             return levelData;
