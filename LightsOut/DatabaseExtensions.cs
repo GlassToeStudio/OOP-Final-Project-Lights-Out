@@ -37,7 +37,7 @@ namespace LightsOut
         private static T LoadDatabase<T>(this T db, string databaseName)
         {
             string jsonString;
-            using (var streamReader = new StreamReader(FileUtil.GetLevelDatabase(databaseName)))
+            using (var streamReader = new StreamReader(FileUtil.GetDatabase(databaseName)))
             {
                 jsonString = streamReader.ReadToEnd();
             }
