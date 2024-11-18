@@ -202,7 +202,8 @@ namespace LightsOut
             lblGoal.Text = $"{levelData.MinMoves}";                 // Goal
             lblMoves.Text = moves.ToString();                       // Moves
             pnlStars.Text = levelData.StarText;                     // Stars ★
-            lblBest.Text = $"{levelData.BestScore}";                // Best Score
+                                                                    // Best Score
+            lblBest.Text = levelData.BestScore == 9000 ? "---" : $"{levelData.BestScore}";                
         }
 
         /// <summary>
