@@ -15,12 +15,6 @@
         /// </summary>
         /// <param name="index">Index of level in list. Ex: Level 1 index is 0/</param>
         /// <returns>The LevelData at the selected index.</returns>
-        public LevelData this[int index]
-        {
-            get
-            {
-                return Levels[index];
-            }
-        }
+        public LevelData this[int index] => Levels[index];
     }
 }
