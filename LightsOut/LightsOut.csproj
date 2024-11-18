@@ -20,11 +20,11 @@
   <ItemGroup>
     <None Remove="Resources\Board.png" />
     <None Remove="Resources\ButtonOff.png" />
-    <None Remove="Resources\Levels\Game.json" />
-    <None Remove="Resources\Levels\Game.json.bak" />
-    <None Remove="Resources\Levels\Snap-sound-effect.wav" />
-    <None Remove="Resources\Levels\User.json" />
-    <None Remove="Resources\Levels\User.json.bak" />
+    <None Remove="Resources\Data\Game.json" />
+    <None Remove="Resources\Data\Game.json.bak" />
+    <None Remove="Resources\Data\Snap-sound-effect.wav" />
+    <None Remove="Resources\Data\User.json" />
+    <None Remove="Resources\Data\User.json.bak" />
     <None Remove="Resources\WinPanel.png" />
   </ItemGroup>
 
@@ -46,19 +46,19 @@
     <EmbeddedResource Include="Resources\ButtonOn.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </EmbeddedResource>
-    <EmbeddedResource Include="Resources\Levels\Game.json">
+    <EmbeddedResource Include="Resources\Data\Game.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </EmbeddedResource>
-    <EmbeddedResource Include="Resources\Levels\User.json.bak">
+    <EmbeddedResource Include="Resources\Data\User.json.bak">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </EmbeddedResource>
-    <EmbeddedResource Include="Resources\Levels\User.json">
+    <EmbeddedResource Include="Resources\Data\User.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </EmbeddedResource>
-    <EmbeddedResource Include="Resources\Levels\Game.json.bak">
+    <EmbeddedResource Include="Resources\Data\Game.json.bak">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </EmbeddedResource>
-    <EmbeddedResource Include="Resources\Sounds\Snap-sound-effect.wav">
+    <EmbeddedResource Include="Resources\Sounds\LightClick.wav">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </EmbeddedResource>
     <EmbeddedResource Include="Resources\WinPanel.png">
