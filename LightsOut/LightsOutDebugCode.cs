@@ -3,7 +3,7 @@
     partial class Board
     {
 #if DEBUG
-        public const string USER_DATA_BACKUP = "";
+        public const string USER_DATA_BACKUP = @"{ ""Levels"": [ { ""Level"": 1, ""Size"": 3, ""MinMoves"": 2, ""BestScore"": 9000, ""Stars"": 0, ""Board"": [ 0, 1, 0, 0, 1, 0, 0, 0, 1 ], ""Name"": ""Level 1"", ""StarText"": ""☆☆☆"" } ], ""SelectedIndex"": 0, ""MaxIndex"": 0, ""CurrentLevel"": { ""Level"": 1, ""Size"": 3, ""MinMoves"": 2, ""BestScore"": 9000, ""Stars"": 0, ""Board"": [ 0, 1, 0, 0, 1, 0, 0, 0, 1 ], ""Name"": ""Level 1"", ""StarText"": ""☆☆☆"" } }";
 
         #region Generation
         private void GenerateRandomLevel()
