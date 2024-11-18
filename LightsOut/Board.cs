@@ -183,7 +183,7 @@ namespace LightsOut
         {
             using (var clickSound = new SoundPlayer())
             {
-                clickSound.SoundLocation = FileUtil.GetSoundFile("Snap-sound-effect.wav");
+                clickSound.SoundLocation = FileUtil.GetSoundFile("LightClick.wav");
                 clickSound.Play();
             }
             light.ClickLight();
