@@ -49,6 +49,8 @@
             lblLog = new Label();
             btnSolveAll = new Button();
             gbxStats = new GroupBox();
+            lblBest = new Label();
+            lblBestLabel = new Label();
             lblMoves = new Label();
             pnlStars = new Label();
             lblGoal = new Label();
@@ -109,8 +111,6 @@
             light_5x5_01 = new Light();
             light_5x5_00 = new Light();
             label1 = new Label();
-            lblBest = new Label();
-            lblBestLabel = new Label();
             gbxGameBoard_4x4.SuspendLayout();
             gbxStats.SuspendLayout();
             bgxDebug.SuspendLayout();
@@ -503,6 +503,33 @@
             gbxStats.TabIndex = 3;
             gbxStats.TabStop = false;
             gbxStats.Text = "Level X";
+            // 
+            // lblBest
+            // 
+            lblBest.AutoSize = true;
+            lblBest.BackColor = Color.Transparent;
+            lblBest.FlatStyle = FlatStyle.Flat;
+            lblBest.ForeColor = Color.Aquamarine;
+            lblBest.ImageAlign = ContentAlignment.MiddleRight;
+            lblBest.Location = new Point(85, 180);
+            lblBest.MinimumSize = new Size(50, 0);
+            lblBest.Name = "lblBest";
+            lblBest.RightToLeft = RightToLeft.No;
+            lblBest.Size = new Size(50, 21);
+            lblBest.TabIndex = 17;
+            lblBest.Text = "5";
+            lblBest.TextAlign = ContentAlignment.TopRight;
+            // 
+            // lblBestLabel
+            // 
+            lblBestLabel.AutoSize = true;
+            lblBestLabel.BackColor = Color.Transparent;
+            lblBestLabel.ForeColor = Color.Aquamarine;
+            lblBestLabel.Location = new Point(19, 180);
+            lblBestLabel.Name = "lblBestLabel";
+            lblBestLabel.Size = new Size(42, 21);
+            lblBestLabel.TabIndex = 16;
+            lblBestLabel.Text = "Best:";
             // 
             // lblMoves
             // 
@@ -1544,33 +1571,6 @@
             label1.Size = new Size(363, 89);
             label1.TabIndex = 12;
             label1.Text = "Lights Out!";
-            // 
-            // lblBest
-            // 
-            lblBest.AutoSize = true;
-            lblBest.BackColor = Color.Transparent;
-            lblBest.FlatStyle = FlatStyle.Flat;
-            lblBest.ForeColor = Color.Aquamarine;
-            lblBest.ImageAlign = ContentAlignment.MiddleRight;
-            lblBest.Location = new Point(85, 180);
-            lblBest.MinimumSize = new Size(50, 0);
-            lblBest.Name = "lblBest";
-            lblBest.RightToLeft = RightToLeft.No;
-            lblBest.Size = new Size(50, 21);
-            lblBest.TabIndex = 17;
-            lblBest.Text = "5";
-            lblBest.TextAlign = ContentAlignment.TopRight;
-            // 
-            // lblBestLabel
-            // 
-            lblBestLabel.AutoSize = true;
-            lblBestLabel.BackColor = Color.Transparent;
-            lblBestLabel.ForeColor = Color.Aquamarine;
-            lblBestLabel.Location = new Point(19, 180);
-            lblBestLabel.Name = "lblBestLabel";
-            lblBestLabel.Size = new Size(42, 21);
-            lblBestLabel.TabIndex = 16;
-            lblBestLabel.Text = "Best:";
             // 
             // Board
             // 
