@@ -6,7 +6,7 @@
     public struct LevelDatabase : IDatabase
     {
         /// <summary>
-        /// List of all premade LevelData. Levels are initialized with this data.
+        /// List of all pre-made LevelData. Levels are initialized with this data.
         /// </summary>
         public List<LevelData> Levels { get; set; }
 

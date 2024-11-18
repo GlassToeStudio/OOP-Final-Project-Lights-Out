@@ -41,7 +41,7 @@
 
         /// <summary>
         /// Construct a new LevelData object from an existing levelData object and set
-        /// its BestScore and Numbner of stars fields from the number of moves taken to
+        /// its BestScore and Number of stars fields from the number of moves taken to
         /// complete the level.
         /// </summary>
         /// <param name="levelData">The current LevelData object loaded for this Level.</param>

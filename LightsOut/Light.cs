@@ -1,7 +1,7 @@
 ﻿namespace LightsOut
 {
     /// <summary>
-    /// A subcalss of Button. Used as the main game piece in Lights Out game. 
+    /// A subclass of Button. Used as the main game piece in Lights Out game. 
     /// </summary>
     public class Light : Button
     {
@@ -23,7 +23,7 @@
         public Light() { if (DesignMode) { return; } Init(TabIndex); } // Light controls were always deleted when editing main form.
 
         /// <summary>
-        /// Should be called when a <see cref="Light"/> is created and when a new gamebaord is generated.
+        /// Should be called when a <see cref="Light"/> is created and when a new game board is generated.
         /// </summary>
         /// <param name="i">integer to indicate at what Index this light is in an array of lights.</param>
         public void Init(int i)

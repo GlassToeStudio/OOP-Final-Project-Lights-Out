@@ -1,7 +1,7 @@
 ﻿namespace LightsOut
 {
     /// <summary>
-    /// Interface for databse classes.
+    /// Interface for database classes.
     /// </summary>
     public interface IDatabase
     {

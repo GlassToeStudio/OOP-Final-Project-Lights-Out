@@ -17,9 +17,8 @@ namespace LightsOut
         /// </summary>
         internal static readonly string SOUNDS = Path.Combine(RESOURCES, "Sounds\\");
         /// <summary>
-        /// This project directory on disk - specific for updaing game data and user data for the repo.
+        /// This project directory on disk - specific for updating game data and user data for the repo.
         /// </summary>
-        //internal static readonly string PROJECT_DIR = "C:\\Users\\GlassToe\\Documents\\Calhoun Comminity College\\Fall 24\\CIS 285 - Object-Oriented Programming (11022)\\Final Project\\OOP-Final-Project-Lights-Out\\LightsOut\\Resources\\Levels\\";
         internal static readonly string PROJECT_DIR = Path.Combine(Directory.GetParent(Environment.CurrentDirectory).Parent.Parent.FullName,"Resources\\Levels\\");
 
         internal static string GetLevelDatabase(string fileName)
@@ -37,7 +36,7 @@ namespace LightsOut
             var data = JsonConvert.SerializeObject(dataBase);
             // Write to internal directory
             File.WriteAllText(GetLevelDatabase($"{dbName}.json"), data);
-            // Write to project dirctory to keep project and repo up to date with changes.
+            // Write to project directory to keep project and repo up to date with changes.
             File.WriteAllText($"{PROJECT_DIR}{dbName}.json", data);
         }
 

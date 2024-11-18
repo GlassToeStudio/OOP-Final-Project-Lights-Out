@@ -1,7 +1,7 @@
 ﻿namespace LightsOut
 {
     /// <summary>
-    /// Databse for holding user save data for each level and general gameplay.
+    /// Database for holding user save data for each level and general game play.
     /// </summary>
     public class UserDatabase : IDatabase
     {
@@ -14,7 +14,7 @@
         /// </summary>
         public int SelectedIndex { get; set; } = 0;
         /// <summary>
-        /// The maximum index selectable in the databse. Indicates highest unlocked level.
+        /// The maximum index selectable in the database. Indicates highest unlocked level.
         /// </summary>
         public int MaxIndex { get; set; } = 0;
         /// <summary>

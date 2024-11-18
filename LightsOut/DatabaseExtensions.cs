@@ -3,7 +3,7 @@
 namespace LightsOut
 {
     /// <summary>
-    /// Static class for Database extensions for loading databse info from disk.
+    /// Static class for Database extensions for loading database info from disk.
     /// </summary>
     public static class DatabaseExtensions
     {

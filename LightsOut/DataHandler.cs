@@ -41,11 +41,11 @@
         /// </summary>
         public int MaxIndex => user.MaxIndex;
         /// <summary>
-        /// The level currenttly loaded from the UserDatabase.
+        /// The level currently loaded from the UserDatabase.
         /// </summary>
         public LevelData CurrentLevel => user.CurrentLevel;
         /// <summary>
-        /// Get a new LevelData object of the current loaded level from the UserDatabse.
+        /// Get a new LevelData object of the current loaded level from the UserDatabase.
         /// </summary>
         public LevelData Level
         {
@@ -53,7 +53,7 @@
             {
                 /* Normally we load the level based on the SelectedIndex that is
                  * Controlled through UI buttons and has checks in place to oly
-                 * attmept to load a valid unlocked level.
+                 * attempt to load a valid unlocked level.
                  * Manually loading a level would cause and index out of range error.
                  * We can check for that here and set the manualLoad flag to true if so.
                  */
@@ -95,7 +95,7 @@
 
         /// <summary>
         /// Update the LevelData for the current loaded level from the UserDatabase.
-        /// This will update the BestScore and Stars fields of the leveldata and save
+        /// This will update the BestScore and Stars fields of the levelData and save
         /// it to the UserDatabase.
         /// </summary>
         /// <param name="moves">The number of moves taken to beat this level.</param>
