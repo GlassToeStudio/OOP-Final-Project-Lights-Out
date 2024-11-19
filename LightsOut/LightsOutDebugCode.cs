@@ -141,7 +141,7 @@
             handler.Levels.Add(levelData);
             cbxLevelSelect.SelectedIndex = cbxLevelSelect.Items.Count - 1;
 
-            FileUtil.SaveGameData(handler.Game);
+            handler.SaveGameData();
             string fileName = $"{levelData}_generated";
             MessageBox.Show($"{fileName} created!", "Level Saved");
             btnSaveLevel.Enabled = false;

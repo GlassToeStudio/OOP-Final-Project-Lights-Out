@@ -1,10 +1,9 @@
-﻿using Newtonsoft.Json.Linq;
-
-namespace LightsOut
+﻿namespace LightsOut
 {
     /// <summary>
-    /// Database for holding user save data for each level and general game play.
-    /// </summary>
+    /// Database for holding user save data for each level and general game play. Implements <see cref="IDatabase"/>.
+    /// The data is loaded at startup. Completed levels are added and updated for user records.
+    /// /// </summary>
     public struct UserDatabase : IDatabase
     {
         /// <summary>
@@ -22,17 +21,14 @@ namespace LightsOut
         /// <summary>
         /// The current selected level.
         /// </summary>
-        public LevelData CurrentLevel => Levels[SelectedIndex];
+        public readonly LevelData CurrentLevel => Levels[SelectedIndex];
         /// <inheritdoc/>
         public readonly LevelData this[int index] => Levels[index];
 
         /// <summary>
-        /// Default constructor.
+        /// Initializes a new instance of the <see cref="UserDatabase"/> struct.
         /// </summary>
-        public UserDatabase()
-        {
-            Levels = [];
-        }
+        public UserDatabase() => Levels = [];
 
         /// <summary>
         /// Add a level to the database. When a level is first cleared, the level at the next index is added to this Levels list.

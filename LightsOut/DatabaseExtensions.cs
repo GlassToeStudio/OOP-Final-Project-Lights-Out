@@ -10,7 +10,7 @@ namespace LightsOut
         /// <summary>
         /// Load game data from disk for this LevelDatabase Object.
         /// </summary>
-        /// <param name="gameDb">this level database</param>
+        /// <param name="gameDb">this level <see cref="LevelDatabase"/></param>
         /// <returns></returns>
         public static LevelDatabase LoadLevelDatabase(this LevelDatabase gameDb)
         {
@@ -20,7 +20,7 @@ namespace LightsOut
         /// <summary>
         /// Load user data from disk for this UserDatabase Object.
         /// </summary>
-        /// <param name="userDb">this user database</param>
+        /// <param name="userDb">this <see cref="UserDatabase"/></param>
         /// <returns></returns>
         public static UserDatabase LoadUserDatabase(this UserDatabase userDb)
         {
@@ -33,7 +33,7 @@ namespace LightsOut
         /// <typeparam name="T">LevelDatabase or UserDatabase.</typeparam>
         /// <param name="db">this database</param>
         /// <param name="databaseName">database name in .json format: User.json or Game.json.</param>
-        /// <returns></returns>
+        /// <returns>this Database populated with data from disk.</returns>
         private static T LoadDatabase<T>(this T db, string databaseName)
         {
             string jsonString;

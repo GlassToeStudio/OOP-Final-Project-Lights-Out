@@ -51,6 +51,7 @@ namespace LightsOut
         /// </summary>
         private void GenerateGameBoardsAndSelect()
         {
+            moves = 0;
             btnSaveLevel.Enabled = false;
             gbxGameBoard_3x3.Visible = false;
             gbxGameBoard_4x4.Visible = false;
@@ -101,7 +102,7 @@ namespace LightsOut
         /// </summary>
         private void InitializeBoardLights()
         {
-            for (var i = 0; i < lights.Length; i++)
+            for (int i = 0; i < lights.Length; i++)
             {
                 lights[i].Init(i);
             }
@@ -109,48 +110,68 @@ namespace LightsOut
 
         /// <summary>
         /// For each light, add it neighbors to its neighbors list.
+        /// <para/><see cref="Light.Neighbors"/> are those <see cref="Light"/>s touching in each cardinal direction.
+        /// <code>
+        /// Ex:
+        ///  size = 4
+        ///  length = 16
+        ///  
+        /// LevelData.Board = [• n • • n L n • • n • • • • • •]
+        /// 
+        ///     • n • •
+        ///     n L n •
+        ///     • n • •
+        ///     • • • •
+        ///     • • • •
+        ///
+        /// LevelData.Board = [• 1 • • 4 5 6 • • 9 • • • • • •]
+        /// 
+        ///     • 1 • •
+        ///     4 5 6 •
+        ///     • 9 • •
+        ///     • • • •
+        /// </code>
         /// </summary>
         private void ConnectNeighbors()
         {
-            // Connect neighbors
-            var size = lights.Length;
+            int length = lights.Length;
+            int size = levelData.Size;
 
-            for (int pos = 0; pos < size; pos++)
+            for (int pos = 0; pos < length; pos++)
             {
-                var n1 = pos - levelData.Size;
-                var n2 = pos + levelData.Size;
+                int nAbove = pos - size; // Above
+                int nBelow = pos + size; // Below
+                int nLeft = pos - 1;    // Left
+                int nRight = pos + 1;    // Right
 
-                var n3 = pos - 1;
-                var n4 = pos + 1;
-
-                if (n1 >= 0)
+                // Above                    // nAbove = pos - size >= 0 => True
+                if (nAbove >= 0)            // nAbove =   5 - 4 = 1 > 0 => True; 5 has neighbor above at 1
                 {
-                    lights[pos].AddNeighbor(lights[n1]);
+                    lights[pos].AddNeighbor(lights[nAbove]);
                 }
-
-                if (n2 < size)
+                // Below                    // nBelow = pos + size  < 16 => True
+                if (nBelow < length)        // nBelow =   5 + 4 = 9 < 16 => True; 5 has neighbor below at 9
                 {
-                    lights[pos].AddNeighbor(lights[n2]);
+                    lights[pos].AddNeighbor(lights[nBelow]);
                 }
-
-                if (pos % levelData.Size != 0)
+                // Left                     // pos % 4 != 0 => True at            nLeft = pos - 1
+                if (pos % size != 0)        //   5 % 4 != 0 => True; 5 has neighbor left at 5 - 1 = 4
                 {
-                    lights[pos].AddNeighbor(lights[n3]);
+                    lights[pos].AddNeighbor(lights[nLeft]);
                 }
-
-                if (n4 % levelData.Size != 0)
+                // Right                    // nRight = pos + 1     % 4 == 0 => True
+                if (nRight % size != 0)     // nRight =   5 + 1 = 6 % 4 != 0 => True; 5 has neighbor right at 6
                 {
-                    lights[pos].AddNeighbor(lights[n4]);
+                    lights[pos].AddNeighbor(lights[nRight]);
                 }
             }
         }
 
         /// <summary>
-        /// Generate and initialize a new board from a given LevelData object. 
+        /// Generate and initialize a new game from a given <see cref="LevelData"/> object. 
         /// </summary>
         private void GenerateLevelFromLevels()
         {
-            moves = 0;
             levelData = handler.Level;
 
             GenerateGameBoardsAndSelect();
@@ -175,8 +196,8 @@ namespace LightsOut
         }
 
         /// <summary>
-        /// For the given Light, call its ClickLight method and play a sound.
-        /// Update board data for LevelData object and update moves.
+        /// For the given <see cref="Light"/>, call its <see cref="Light.ClickLight"/> method and play a sound.
+        /// Update <see cref="LevelData.Board"/> data for the current <see cref="LevelData"/> object and update <see cref="moves"/>.
         /// </summary>
         /// <param name="light"></param>
         private void OnCLickLight(Light light)
@@ -193,7 +214,7 @@ namespace LightsOut
         }
 
         /// <summary>
-        /// Update all relevant info on the user interface.
+        /// Update all relevant <see cref="LevelData"/> info on the user interface.
         /// </summary>
         private void UpdateUI()
         {
@@ -207,7 +228,7 @@ namespace LightsOut
         }
 
         /// <summary>
-        /// Update the number of moves taken so far to complete this level.
+        /// Update the number of <see cref="moves"/> taken so far to complete this level.
         /// Update the debug board in the UI.
         /// </summary>
         private void UpdateMoves()
@@ -220,9 +241,10 @@ namespace LightsOut
         }
 
         /// <summary>
-        /// Check if the board is in a winning state. (All lights off)
-        /// If so, update the UI and save user data.
-        /// Disable all lights until a new level is loaded. (Lights are enabled in their Init() method.
+        /// Check if the board is in a winning state. (All <see cref="Light"/>s <see cref="LightState.Off"/>)
+        /// If so, update the UI and save <see cref="DataHandler.user"/> data.
+        /// Disable all <see cref="Light"/>s until a new level is loaded.
+        /// (<see cref="Light"/>s are enabled in their <see cref="Light.Init"/>method.
         /// </summary>
         private void CheckWin()
         {
@@ -248,7 +270,7 @@ namespace LightsOut
         }
 
         /// <summary>
-        /// Save user data to disk
+        /// Save user data to disk. See <see cref="DataHandler.user"/>
         /// </summary>
         private void SaveUserData()
         {
@@ -257,10 +279,10 @@ namespace LightsOut
 
         #region Buttons
         /// <summary>
-        /// Called when a light is clicked. Click the light and check for winning condition.
+        /// Called when a <see cref="Light"/> <see cref="Button"/> is clicked with the mouse. Call <see cref="OnCLickLight"/> for the <see cref="Light"/> and check for winning condition.
         /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
+        /// <param name="sender">Object (<see cref="Light"/>) that triggerd this event.</param>
+        /// <param name="e">Not used.</param>
         private void Light_Click(object sender, EventArgs e)
         {
             Light? light = sender as Light;
@@ -269,11 +291,11 @@ namespace LightsOut
         }
 
         /// <summary>
-        /// Called when the Load Level button is clicked and when the Next, Previous, and Reload buttons are clicked.
-        /// Generate a level based on which button called this method.
+        /// Perform all actions required to initialze a new level. Current <see cref="LevelData"/> is controlled by <see cref="DataHandler.Level"/>.
+        /// <para>Called when the Debug button, <see cref="btnLoad"/>, is clicked or when the <see cref="btnNext"/>, <see cref="btnPrevious"/>, and <see cref="btnRedo"/> buttons are clicked.</para>
         /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
+        /// <param name="sender">Object (<see cref="btnLoad"/>) that triggerd this event.</param>
+        /// <param name="e">If <see cref="EventArgs.Empty"/>, event was triggered by another button. </param>
         private void LoadLevel_Click(object sender, EventArgs e)
         {
 #if DEBUG
@@ -290,10 +312,11 @@ namespace LightsOut
         }
 
         /// <summary>
-        /// Increment level index in the DataHandler and load next level.
+        /// Increment level index in the <see cref="DataHandler"/> and load next level.
+        /// <para> Calls <see cref="LoadLevel_Click"/>.</para>
         /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
+        /// <param name="sender">Not used.</param>
+        /// <param name="e">Not used</param>
         private void LoadNextLevel_Click(object sender, EventArgs e)
         {
             handler.IncrementLevel();
@@ -301,10 +324,11 @@ namespace LightsOut
         }
 
         /// <summary>
-        /// Decrement level index in the DataHandler and load previous level.
+        /// Decrement level index in the <see cref="DataHandler"/> and load previous level.
+        /// <para> Calls <see cref="LoadLevel_Click"/>.</para>
         /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
+        /// <param name="sender">Not used.</param>
+        /// <param name="e">Not used</param>
         private void LoadPreviousLevel_Click(object sender, EventArgs e)
         {
             handler.DecrementLevel();
@@ -313,9 +337,10 @@ namespace LightsOut
 
         /// <summary>
         /// Reload this level.
+        /// <para> Calls <see cref="LoadLevel_Click"/>.</para>
         /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
+        /// <param name="sender">Not used.</param>
+        /// <param name="e">Not used</param>
         private void ReloadLevel_Click(object sender, EventArgs e)
         {
             LoadLevel_Click(this, EventArgs.Empty);
@@ -324,8 +349,8 @@ namespace LightsOut
         /// <summary>
         /// Save user data when the program exits.
         /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
+        /// <param name="sender">Not used.</param>
+        /// <param name="e">Not used</param>
         private void Board_FormClosing(object sender, FormClosingEventArgs e)
         {
             SaveUserData();

@@ -140,6 +140,14 @@
 
 #if DEBUG
         /// <summary>
+        /// Save GameDatabase to disk. Used to update LevelDatabase when we generate a random level and wish to add it to the database. Not for use in production.
+        /// </summary>
+        public void SaveGameData()
+        {
+            FileUtil.SaveGameData(Game);
+        }
+
+        /// <summary>
         /// Manually change the SelectedIndex to load a level.
         /// </summary>
         /// <param name="index">index in Levels List that we wish to load.</param>
