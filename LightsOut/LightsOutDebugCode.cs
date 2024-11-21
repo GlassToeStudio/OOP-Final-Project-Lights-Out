@@ -9,37 +9,44 @@
         private void GenerateRandomLevel()
         {
             moves = 0;
-            levelData.Size = GetBoardSizeForRandomGen();
+            int size = GetBoardSizeForRandomGen();
             GenerateGameBoardsAndSelect();
             Random rnd = new();
-            levelData.MinMoves = -1;
+            int minMoves = -1;
 
-            while (levelData.MinMoves != numMinMoves.Value)
+            // numMinMoves is a NumericUpDown control where we have seleected a desired
+            // value for minimum moves. Loop until we have a solution that equals our
+            // desired value.
+            while (minMoves != numMinMoves.Value)
             {
                 foreach (var light in lights)
                 {
                     light.TurnOff();
                 }
+
                 List<int> used = [];
-                int iterations = rnd.Next(levelData.Size * levelData.Size + 1);
+                int iterations = rnd.Next(size * size + 1);
                 for (int i = 0; i < iterations; i++)
                 {
-                    int randLight = rnd.Next(0, levelData.Size * levelData.Size);
+                    int randLight = rnd.Next(0, size * size);
+
                     // We do this so that we can only ever touch each light once.
                     while (used.Contains(randLight))
                     {
-                        randLight = rnd.Next(0, levelData.Size * levelData.Size);
+                        randLight = rnd.Next(0, size * size);
                     }
                     used.Add(randLight);
 
                     lights[randLight].ClickLight();
 
                 }
-                levelData = new LevelData(rnd.Next(1000,9000), levelData.Size, 0);
+
+                levelData = new LevelData(handler.Levels.Count, size, 0);
                 levelData.UpdateBoard(lights);
                 levelData.MinMoves = Solver.GetSolutionMatrix(levelData).Sum();
                 lblLog.Text = DebugBoardState();
 
+                // If we did not select a value for min moves, take the current solution.
                 if (numMinMoves.Value == 0)
                 {
                     break;

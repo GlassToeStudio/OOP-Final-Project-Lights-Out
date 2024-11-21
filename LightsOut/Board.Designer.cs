@@ -1580,7 +1580,7 @@
             BackgroundImage = Properties.Resources.Board;
             BackgroundImageLayout = ImageLayout.Stretch;
             CancelButton = btnRedo;
-            ClientSize = new Size(659, 411);
+            ClientSize = new Size(494, 411);
             Controls.Add(label1);
             Controls.Add(btnNext);
             Controls.Add(btnRedo);
