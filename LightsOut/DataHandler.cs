@@ -57,16 +57,22 @@
                  * Manually loading a level would cause and index out of range error.
                  * We can check for that here and set the manualLoad flag to true if so.
                  */
+#if DEBUG
                 try
                 {
+
                     manualLoad = false;
+#endif
                     return new LevelData(user.CurrentLevel);
+#if DEBUG
                 }
                 catch
                 {
+
                     manualLoad = true;
                     return Levels[SelectedIndex];
                 }
+#endif
             }
         }
 

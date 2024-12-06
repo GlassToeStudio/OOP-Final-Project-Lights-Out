@@ -480,7 +480,9 @@
             btnSolveAll.Text = "Solve All";
             btnSolveAll.UseMnemonic = false;
             btnSolveAll.UseVisualStyleBackColor = false;
-            btnSolveAll.Click += SolveAll_Click;
+            #if DEBUG
+btnSolveAll.Click += SolveAll_Click;
+#endif
             // 
             // gbxStats
             // 
@@ -640,7 +642,9 @@
             btnSolveOne.Text = "Solve One";
             btnSolveOne.UseMnemonic = false;
             btnSolveOne.UseVisualStyleBackColor = false;
+#if DEBUG
             btnSolveOne.Click += SolveOne_Click;
+#endif
             // 
             // btnGenerateRandom
             // 
@@ -654,7 +658,9 @@
             btnGenerateRandom.Text = "Generate Random";
             btnGenerateRandom.UseMnemonic = false;
             btnGenerateRandom.UseVisualStyleBackColor = false;
+#if DEBUG
             btnGenerateRandom.Click += GenerateRandom_Click;
+#endif
             // 
             // btnLoad
             // 
@@ -794,7 +800,9 @@
             btnSaveLevel.Text = "Save to File";
             btnSaveLevel.UseMnemonic = false;
             btnSaveLevel.UseVisualStyleBackColor = false;
+#if DEBUG
             btnSaveLevel.Click += SaveLevelToFile_Click;
+#endif
             // 
             // gbxGameBoard_3x3
             // 
@@ -1600,7 +1608,9 @@
             SizeGripStyle = SizeGripStyle.Hide;
             Text = "Lights Out";
             FormClosing += Board_FormClosing;
-            KeyPress += ShowHideDebug_Click;
+#if DEBUG
+KeyPress += ShowHideDebug_Click;
+#endif
             gbxGameBoard_4x4.ResumeLayout(false);
             gbxStats.ResumeLayout(false);
             gbxStats.PerformLayout();
@@ -1613,7 +1623,7 @@
             PerformLayout();
         }
 
-        #endregion
+#endregion
 
         private GroupBox gbxGameBoard_4x4;
         private Light light_4x4_00;
