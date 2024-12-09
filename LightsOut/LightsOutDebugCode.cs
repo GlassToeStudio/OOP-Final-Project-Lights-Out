@@ -13,6 +13,7 @@
         {
             moves = 0;
             int size = GetBoardSizeForRandomGen();
+            levelData = new LevelData(handler.Levels.Count, size, 0);
             GenerateGameBoardsAndSelect();
             Random rnd = new();
             int minMoves = -1;
